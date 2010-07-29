@@ -78,3 +78,5 @@ desc "Cleanup all the files"
 task :clean do
   rm_rf "tmp"
 end
+
+task "default" => ["nerdtree", "command-t", "indent-object"]
