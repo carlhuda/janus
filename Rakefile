@@ -3,6 +3,7 @@ directory "tmp"
 directory "doc"
 directory "plugin"
 directory "ruby"
+directory "syntax"
 
 namespace :nerdtree do
   file "tmp/nerdtree" => "tmp" do
@@ -65,6 +66,12 @@ namespace :indent_object do
   end
 end
 
+namespace :mustache do
+  task "install" => "syntax" do
+    sh "curl http://github.com/defunkt/mustache/raw/master/contrib/mustache.vim > syntax/mustache.vim"
+  end
+end
+
 desc "Install the latest version of nerdtree"
 task :nerdtree => "nerdtree:install"
 
@@ -74,9 +81,12 @@ task "command-t" => "command_t:install"
 desc "Install the latest version of indent-object"
 task "indent-object" => "indent_object:install"
 
+desc "Install the Mustache syntax file"
+task "mustache" => "mustache:install"
+
 desc "Cleanup all the files"
 task :clean do
   rm_rf "tmp"
 end
 
-task "default" => ["nerdtree", "command-t", "indent-object"]
+task "default" => ["nerdtree", "command-t", "indent-object", "mustache"]
