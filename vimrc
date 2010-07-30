@@ -1,9 +1,11 @@
 set nocompatible
 
 set number
+set ruler
 syntax on
 
 " Whitespace stuff
+set nowrap
 set tabstop=2
 set shiftwidth=2
 set expandtab
