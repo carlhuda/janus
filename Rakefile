@@ -23,6 +23,24 @@ namespace :nerdtree do
   end
 end
 
+namespace :vim_javascript do
+  file "tmp/vim-javascript" => "tmp" do
+    sh "git clone http://github.com/pangloss/vim-javascript.git tmp/vim-javascript"
+  end
+
+  task :pull => "tmp/vim-javascript" do
+    Dir.chdir "tmp/vim-javascript" do
+      sh "git pull"
+    end
+  end
+
+  task "install" => "pull" do
+    Dir.chdir "tmp/vim-javascript" do
+      sh "rake install"
+    end
+  end
+end
+
 namespace :command_t do
   file "tmp/command_t" => "tmp" do
     sh "git clone http://github.com/wincent/Command-T.git tmp/command_t"
@@ -75,6 +93,9 @@ end
 desc "Install the latest version of nerdtree"
 task :nerdtree => "nerdtree:install"
 
+desc "Install vim-javascript"
+task "vim-javascript" => "vim_javascript:install"
+
 desc "Install the latest version of Command-T"
 task "command-t" => "command_t:install"
 
@@ -89,4 +110,4 @@ task :clean do
   rm_rf "tmp"
 end
 
-task "default" => ["nerdtree", "command-t", "indent-object", "mustache"]
+task "default" => ["nerdtree", "command-t", "indent-object", "mustache", "vim-javascript"]
