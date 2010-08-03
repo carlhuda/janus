@@ -41,6 +41,24 @@ namespace :vim_javascript do
   end
 end
 
+namespace "ack.vim" do
+  file "tmp/ack.vim" => "tmp" do
+    sh "git clone http://github.com/mileszs/ack.vim.git tmp/ack.vim"
+  end
+
+  task "pull" => "tmp/ack.vim" do
+    Dir.chdir "tmp/ack.vim" do
+      sh "git pull"
+    end
+  end
+
+  task "install" => "pull" do
+    Dir.chdir "tmp/ack.vim" do
+      sh "rake install"
+    end
+  end
+end
+
 namespace :command_t do
   file "tmp/command_t" => "tmp" do
     sh "git clone http://github.com/wincent/Command-T.git tmp/command_t"
@@ -105,9 +123,19 @@ task "indent-object" => "indent_object:install"
 desc "Install the Mustache syntax file"
 task "mustache" => "mustache:install"
 
+desc "Install ack.vim"
+task "ack.vim" => "ack.vim:install"
+
 desc "Cleanup all the files"
 task :clean do
   rm_rf "tmp"
 end
 
-task "default" => ["nerdtree", "command-t", "indent-object", "mustache", "vim-javascript"]
+task "default" => [
+  "nerdtree", 
+  "command-t", 
+  "indent-object",
+  "mustache", 
+  "vim-javascript",
+  "ack.vim"
+]
