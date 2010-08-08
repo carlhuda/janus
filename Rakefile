@@ -131,11 +131,27 @@ task :clean do
   rm_rf "tmp"
 end
 
+desc "Update the documentation"
+task :update_docs do
+  puts "Updating VIM Documentation..."
+  system "vim -e -s <<-EOF\n:helptags ~/.vim/doc\n:quit\nEOF"
+end
+
+desc "link vimrc to ~/.vimrc"
+task :link_vimrc do
+  dest = File.expand_path("~/.vimrc")
+  unless File.exist?(dest)
+    ln(File.expand_path("../vimrc", __FILE__), dest)
+  end
+end
+
 task "default" => [
   "nerdtree", 
   "command-t", 
   "indent-object",
   "mustache", 
   "vim-javascript",
-  "ack.vim"
+  "ack.vim",
+  :update_docs,
+  :link_vimrc
 ]
