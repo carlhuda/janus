@@ -2,6 +2,8 @@
 directory "tmp"
 directory "doc"
 directory "plugin"
+directory "ftdetect"
+directory "ftplugin"
 directory "ruby"
 directory "syntax"
 
@@ -102,6 +104,24 @@ namespace :indent_object do
   end
 end
 
+namespace :markdown do
+  file "tmp/markdown" => "tmp" do
+    sh "git clone http://github.com/tpope/vim-markdown.git tmp/markdown"
+  end
+
+  task :pull => "tmp/markdown" do
+    Dir.chdir "tmp/markdown" do
+      sh "git pull"
+    end
+  end
+
+  task "install" => ["ftdetect", "ftplugin", "syntax", "pull"] do
+    sh "cp -f tmp/markdown/ftdetect/* ftdetect/"
+    sh "cp -f tmp/markdown/ftplugin/* ftplugin/"
+    sh "cp -f tmp/markdown/syntax/* syntax/"
+  end
+end
+
 namespace :mustache do
   task "install" => "syntax" do
     sh "curl http://github.com/defunkt/mustache/raw/master/contrib/mustache.vim > syntax/mustache.vim"
@@ -140,6 +160,9 @@ task "fugitive" => "fugitive:install"
 desc "Install the latest version of indent-object"
 task "indent-object" => "indent_object:install"
 
+desc "Install the latest version of markdown"
+task "markdown" => "markdown:install"
+
 desc "Install the Mustache syntax file"
 task "mustache" => "mustache:install"
 
@@ -175,6 +198,7 @@ task "default" => [
   "vim-javascript",
   "ack.vim",
   "fugitive",
+  "markdown",
   :update_docs,
   :link_vimrc
 ]

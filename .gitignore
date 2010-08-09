@@ -5,4 +5,6 @@ indent
 nerdtree_plugin
 plugin
 ruby
+ftdetect
+ftplugin
 syntax

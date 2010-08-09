@@ -37,6 +37,7 @@ map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 autocmd FileType make   set noexpandtab
 autocmd FileType python set noexpandtab
 autocmd BufRead,BufNewFile {Gemfile,Rakefile,Thorfile} set ft=ruby
+autocmd BufRead,BufNewFile *.{md,markdown,mk}          set ft=markdown
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
