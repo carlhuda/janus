@@ -108,14 +108,34 @@ namespace :mustache do
   end
 end
 
+namespace :fugitive do
+  file "tmp/fugitive" => "tmp" do
+    sh "git clone git://github.com/tpope/vim-fugitive.git tmp/fugitive"
+  end
+
+  task :pull => "tmp/fugitive" do
+    Dir.chdir "tmp/fugitive" do
+      sh "git pull"
+    end
+  end
+
+  task "install" => ["doc", "plugin", "pull"] do
+    sh "cp -f tmp/fugitive/doc/* doc/"
+    sh "cp -f tmp/fugitive/plugin/* plugin/"
+  end
+end
+
 desc "Install the latest version of nerdtree"
-task :nerdtree => "nerdtree:install"
+task "nerdtree" => "nerdtree:install"
 
 desc "Install vim-javascript"
 task "vim-javascript" => "vim_javascript:install"
 
 desc "Install the latest version of Command-T"
 task "command-t" => "command_t:install"
+
+desc "Install the latest version of fugitive"
+task "fugitive" => "fugitive:install"
 
 desc "Install the latest version of indent-object"
 task "indent-object" => "indent_object:install"
@@ -152,6 +172,7 @@ task "default" => [
   "mustache", 
   "vim-javascript",
   "ack.vim",
+  "fugitive",
   :update_docs,
   :link_vimrc
 ]
