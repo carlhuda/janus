@@ -159,9 +159,11 @@ end
 
 desc "link vimrc to ~/.vimrc"
 task :link_vimrc do
-  dest = File.expand_path("~/.vimrc")
-  unless File.exist?(dest)
-    ln(File.expand_path("../vimrc", __FILE__), dest)
+  %w[ vimrc gvimrc ].each do |file|
+    dest = File.expand_path("~/.#{file}")
+    unless File.exist?(dest)
+      ln(File.expand_path("../#{file}", __FILE__), dest)
+    end
   end
 end
 
