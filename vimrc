@@ -34,10 +34,15 @@ let NERDTreeIgnore=['\.rbc$', '\~$']
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 
 " make and python use real tabs
-autocmd FileType make   set noexpandtab
-autocmd FileType python set noexpandtab
-autocmd BufRead,BufNewFile {Gemfile,Rakefile,Thorfile} set ft=ruby
-autocmd BufRead,BufNewFile *.{md,markdown,mk}          set ft=markdown
+au FileType make                                  set noexpandtab
+au FileType python                                set noexpandtab
+
+" Thorfile, Rakefile and Gemfile are Ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile} set ft=ruby
+
+" md, markdown, and mk are markdown and define buffer-local preview
+au BufRead,BufNewFile *.{md,markdown,mk}          set ft=markdown
+au BufRead,BufNewFile *.{md,markdown,mk}          map <buffer> <Leader>p :Mm <CR>
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start

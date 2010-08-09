@@ -104,6 +104,24 @@ namespace :indent_object do
   end
 end
 
+namespace :markdown_preview do
+  file "tmp/markdown_preview" => "tmp" do
+    sh "git clone http://github.com/robgleeson/vim-markdown-preview.git tmp/markdown_preview"
+  end
+
+  task :pull => "tmp/markdown_preview" do
+    Dir.chdir "tmp/markdown_preview" do
+      sh "git pull"
+    end
+  end
+
+  task "install" => ["plugin", "pull"] do
+    Dir.chdir "tmp/markdown_preview" do
+      sh "sh install.sh"
+    end
+  end
+end
+
 namespace :markdown do
   file "tmp/markdown" => "tmp" do
     sh "git clone http://github.com/tpope/vim-markdown.git tmp/markdown"
@@ -169,6 +187,9 @@ task "mustache" => "mustache:install"
 desc "Install ack.vim"
 task "ack.vim" => "ack.vim:install"
 
+desc "Install markdown preview"
+task "markdown_preview" => "markdown_preview:install"
+
 desc "Cleanup all the files"
 task :clean do
   rm_rf "tmp"
@@ -199,6 +220,7 @@ task "default" => [
   "ack.vim",
   "fugitive",
   "markdown",
+  "markdown_preview",
   :update_docs,
   :link_vimrc
 ]
