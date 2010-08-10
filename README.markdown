@@ -122,9 +122,15 @@ Janus ships with a few additional syntaxes:
 
 ## Color schemes
 
-Janus includes a few color schemes:
+Janus includes the vim color sampler pack, which includes [over 100 popular color themes](http://www.vi-improved.org/color_sampler_pack/):
 
+* jellybeans
+* matrix
+* railscasts2
+* tango
+* vibrantink
 * vividchalk
-* railscasts
+* wombat
+* xoria256
 
-Use `:color railscasts` to switch to a color scheme.
+Use `:color vibrantink` to switch to a color scheme.

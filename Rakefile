@@ -15,12 +15,21 @@ def vim_plugin_task(name, repo=nil)
   namespace(name) do
     if repo
       file dir => "tmp" do
-        sh "git clone #{repo} #{dir}"
+        if repo =~ /git$/
+          sh "git clone #{repo} #{dir}"
+        elsif repo =~ /download_script/
+          sh "curl #{repo} > #{dir}.zip"
+          sh "unzip -o #{dir}.zip -d #{dir}"
+        else
+          raise ArgumentError, 'unrecognized source url for plugin'
+        end
       end
 
       task :pull => dir do
-        Dir.chdir dir do
-          sh "git pull"
+        if repo =~ /git$/
+          Dir.chdir dir do
+            sh "git pull"
+          end
         end
       end
 
@@ -61,6 +70,7 @@ def vim_plugin_task(name, repo=nil)
 end
 
 vim_plugin_task "ack.vim",          "http://github.com/mileszs/ack.vim.git"
+vim_plugin_task "color-sampler",    "http://www.vim.org/scripts/download_script.php?src_id=12179"
 vim_plugin_task "fugitive",         "http://github.com/tpope/vim-fugitive.git"
 vim_plugin_task "haml",             "http://github.com/tpope/vim-haml.git"
 vim_plugin_task "indent_object",    "http://github.com/michaeljsmith/vim-indent-object.git"
