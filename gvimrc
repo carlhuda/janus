@@ -5,5 +5,5 @@ if has("gui_macvim")
   map <D-t> :CommandT<CR>
 
   macmenu Window.Toggle\ Full\ Screen\ Mode key=<nop>
-  map <D-F> :Ack
+  map <D-F> :Ack<space>
 endif
