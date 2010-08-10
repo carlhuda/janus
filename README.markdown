@@ -96,6 +96,11 @@ There's a lot more; check it out at `:help surround`
 Fugitive adds pervasive git support to git directories in vim. For more information, use
 `:help fugitive`
 
+Use `:Gstatus` to view `git status` and type `-` on any file to stage or unstage it. Type `p` on
+a file to enter `git add -p` and stage specific hunks in the file.
+
+Use `:Gdiff` on an open file to see what changes have been made to that file 
+
 ## Markdown Preview
 
 Markdown preview takes the current buffer, converts the Markdown to HTML, and opens it in your
@@ -114,3 +119,12 @@ Janus ships with a few additional syntaxes:
 * SCSS (bound to \*.scss)
 * An improved JavaScript syntax (bound to \*.js)
 * Map Gemfile, Rakefile and Thorfile to Ruby
+
+## Color schemes
+
+Janus includes a few color schemes:
+
+* vividchalk
+* railscasts
+
+Use `:color railscasts` to switch to a color scheme.
