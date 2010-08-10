@@ -27,7 +27,23 @@ To update to the latest version of the distribution, just run `rake` again insid
 
 This vim distribution includes a number of packages built by others.
 
-## NERDTree
+## Base Customizations
+
+Janus ships with a number of basic customizations for vim:
+
+* Line numbers
+* Ruler (line and column numbers)
+* No wrap (turn off per-buffer via set :wrap)
+* Soft 2-space tabs, and default hard tabs to 2 spaces
+* Show tabs as `|_` and tailing whitespace as `.`
+* Make searching highlighted, incremental, and case insensitive unless a capital letter is used
+* Always show a status line
+* Allow backspacing over everything (identations, eol, and start characters) in insert mode
+* \<Leader\>e expands to `:e {directory of current file}/` (open in the current buffer)
+* \<Leader\>tr expands to `:te {directory of current file}/` (open in a new MacVIM tab)
+* \<C-P\> inserts the directory of the current file into a command
+
+## "Project Drawer" aka NERDTree
 
 NERDTree is a file explorer plugin that provides "project drawer" functionality to your vim projects. 
 You can learn more about it with :help NERDTree.
@@ -38,6 +54,11 @@ You can learn more about it with :help NERDTree.
 * Automatically activate NERDTree when MacVIM opens and make the original buffer the active one
 * Provide alternative :e, :cd, :rm and :touch abbreviations which also refresh NERDTree when done
   (when NERDTree is open)
+* When opening vim with vim /path, open the left NERDTree to that directory, set the vim pwd,
+  and clear the right buffer
+* Disallow `:e`'ing files into the NERDTree buffer
+* In general, assume that there is a single NERDTree buffer on the left and one or more editing
+  buffers on the right
 
 ## Ack.vim
 
@@ -52,7 +73,7 @@ Command-T provides a mechanism for searching for a file inside the current worki
 behaves similarly to command-t in Textmate.
 
 **Customizations**: Janus rebinds command-t (<D-t>) to bring up this plugin. It defaults to
-<Leader>t.
+\<Leader\>t.
 
 ## indent\_object
 
@@ -60,4 +81,36 @@ Indent object creates a "text object" that is relative to the current ident. Tex
 inside of visual mode, and with `c` (change), `d` (delete) and `y` (yank). For instance, try
 going into a method in normal mode, and type `v ii`. Then repeat `ii`.
 
-**TO BE CONTINUED**
+**Note**: indent\_object seems a bit busted. It would also be nice if there was a text object
+for Ruby `class` and `def` blocks.
+
+## surround
+
+Surround allows you to modify "surroundings" around the current text. For instance, if the
+cursor was inside `"foo bar"`, you could type `cs"'` to convert the text to `'foo bar'`.
+
+There's a lot more; check it out at `:help surround`
+
+## Git Support (Fugitive)
+
+Fugitive adds pervasive git support to git directories in vim. For more information, use
+`:help fugitive`
+
+## Markdown Preview
+
+Markdown preview takes the current buffer, converts the Markdown to HTML, and opens it in your
+default browser.
+
+**Customizations**: Janus binds \<Leader\>p to this plugin.
+
+## Additional Syntaxes
+
+Janus ships with a few additional syntaxes:
+
+* Markdown (bound to \*.markdown, \*.md, and \*.mk)
+* Mustache (bound to \*.mustache)
+* Haml (bound to \*.haml)
+* Sass (bound to \*.sass)
+* SCSS (bound to \*.scss)
+* An improved JavaScript syntax (bound to \*.js)
+* Map Gemfile, Rakefile and Thorfile to Ruby
