@@ -2,7 +2,7 @@
 
 This is a basic distribution of vim plugins and tools intended to be run on top of the latest MacVIM snapshot.
 
-We (Carl and Yehuda) both use this distribution for their own use, and welcome patches and contributions to help make it
+We (Carl and Yehuda) both use this distribution for our own use, and welcome patches and contributions to help make it
 an effective way to get started with vim and then use it productively for years to come.
 
 At present, we are still learning to use vim ourselves, so you should anticipate a period of rapid development while
