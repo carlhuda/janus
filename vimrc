@@ -152,3 +152,7 @@ call s:DefineCommand("touch", "Touch")
 call s:DefineCommand("rm", "Remove")
 call s:DefineCommand("e", "Edit")
 
+" Include user's local vim config
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
