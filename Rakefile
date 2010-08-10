@@ -91,6 +91,18 @@ end
 
 vim_plugin_task "railscasts-theme" do
   sh "curl http://github.com/jpo/vim-railscasts-theme/raw/master/railscasts.vim > colors/railscasts.vim"
+  File.open(File.expand_path("../colors/railscasts+.vim", __FILE__), "w") do |file|
+    file.puts <<-VIM.gsub(/^      /, "")
+      runtime colors/railscasts.vim
+      let g:colors_name = "railscasts+"
+
+      set fillchars=vert:\\ 
+      set fillchars=stl:\\ 
+      set fillchars=stlnc:\\ 
+      hi  StatusLine guibg=#cccccc guifg=#000000
+      hi  VertSplit  guibg=#dddddd
+    VIM
+  end
 end
 
 vim_plugin_task "mustasche" do
