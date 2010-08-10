@@ -64,7 +64,24 @@ cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
+autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
 
+" Disable netrw's autocmd, since we're ALWAYS using NERDTree
+runtime plugin/netRwPlugin.vim
+augroup FileExplorer
+  au!
+augroup END
+
+let g:NERDTreeHijackNetrw = 0
+
+" If the parameter is a directory, cd into it
+function s:CdIfDirectory(directory)
+  if isdirectory(a:directory)
+    call ChangeDirectory(a:directory)
+  endif
+endfunction
+
+" NERDTree utility function
 function s:UpdateNERDTree()
   if exists("t:NERDTreeBufName")
     if bufwinnr(t:NERDTreeBufName) != -1
@@ -74,6 +91,7 @@ function s:UpdateNERDTree()
   endif
 endfunction
 
+" Utility functions to create file commands
 function s:CommandCabbr(abbreviation, expansion)
   execute 'cabbrev ' . a:abbreviation . ' <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "' . a:expansion . '" : "' . a:abbreviation . '"<CR>'
 endfunction
@@ -93,6 +111,7 @@ function s:DefineCommand(name, destination)
   call s:CommandCabbr(a:name, a:destination)
 endfunction
 
+" Public NERDTree-aware versions of builtin functions
 function ChangeDirectory(dir)
   execute "cd " . a:dir
   call s:UpdateNERDTree()
@@ -117,11 +136,17 @@ function Remove(file)
 endfunction
 
 function Edit(file)
+  if exists("b:NERDTreeRoot")
+    wincmd p
+  endif
+
   execute "e " . a:file
   call ChangeDirectory(system("dirname " . a:file))
 endfunction
 
+" Define the NERDTree-aware aliases
 call s:DefineCommand("cd", "ChangeDirectory")
 call s:DefineCommand("touch", "Touch")
 call s:DefineCommand("rm", "Remove")
 call s:DefineCommand("e", "Edit")
+
