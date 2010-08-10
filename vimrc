@@ -82,11 +82,13 @@ function s:CdIfDirectory(directory)
 endfunction
 
 " NERDTree utility function
-function s:UpdateNERDTree()
+function s:UpdateNERDTree(stay)
   if exists("t:NERDTreeBufName")
     if bufwinnr(t:NERDTreeBufName) != -1
       NERDTree
-      wincmd p
+      if !a:stay
+        wincmd p
+      end
     endif
   endif
 endfunction
@@ -112,14 +114,15 @@ function s:DefineCommand(name, destination)
 endfunction
 
 " Public NERDTree-aware versions of builtin functions
-function ChangeDirectory(dir)
+function ChangeDirectory(dir, ...)
   execute "cd " . a:dir
-  call s:UpdateNERDTree()
+  let stay = exists("a:1") ? a:1 : 1
+  call s:UpdateNERDTree(stay)
 endfunction
 
 function Touch(file)
   execute "!touch " . a:file
-  call s:UpdateNERDTree()
+  call s:UpdateNERDTree(1)
 endfunction
 
 function Remove(file)
@@ -141,7 +144,7 @@ function Edit(file)
   endif
 
   execute "e " . a:file
-  call ChangeDirectory(system("dirname " . a:file))
+  call ChangeDirectory(system("dirname " . a:file), 0)
 endfunction
 
 " Define the NERDTree-aware aliases
