@@ -1,194 +1,91 @@
+module VIM
+  Dirs = %w[ doc plugin ruby syntax ftdetect ftplugin colors indent ]
+end
 
 directory "tmp"
-directory "doc"
-directory "plugin"
-directory "ftdetect"
-directory "ftplugin"
-directory "ruby"
-directory "syntax"
+VIM::Dirs.each do |dir|
+  directory(dir)
+end
 
-namespace :nerdtree do
-  file "tmp/nerdtree" => "tmp" do
-    sh "git clone http://github.com/scrooloose/nerdtree.git tmp/nerdtree"
-  end
+def vim_plugin_task(name, repo=nil)
+  cwd = File.expand_path("../", __FILE__)
+  dir = "tmp/#{name}"
+  subdirs = VIM::Dirs
 
-  task :pull => "tmp/nerdtree" do
-    Dir.chdir "tmp/nerdtree" do
-      sh "git pull"
+  namespace(name) do
+    if repo
+      file dir => "tmp" do
+        sh "git clone #{repo} #{dir}"
+      end
+
+      task :pull => dir do
+        Dir.chdir dir do
+          sh "git pull"
+        end
+      end
+
+      task :install => [:pull] + subdirs do
+        Dir.chdir dir do
+          if File.exists?("Rakefile") and `rake -T` =~ /^rake install/
+            sh "rake install"
+          elsif File.exists?("install.sh")
+            sh "sh install.sh"
+          else
+            subdirs.each do |subdir|
+              if File.exists?(subdir)
+                sh "cp -rf #{subdir}/* #{cwd}/#{subdir}/"
+              end
+            end
+          end
+        end
+
+        yield if block_given?
+      end
+    else
+      task :install => subdirs do
+        yield if block_given?
+      end
     end
   end
 
-  task :install => :pull do
-    Dir.chdir "tmp/nerdtree" do
-      sh "rake install"
-    end
+  desc "Install #{name} plugin"
+  task name do
+    puts
+    puts "*" * 40
+    puts "*#{"Installing #{name}".center(38)}*"
+    puts "*" * 40
+    puts
+    Rake::Task["#{name}:install"].invoke
+  end
+  task :default => name
+end
+
+vim_plugin_task "ack.vim",          "http://github.com/mileszs/ack.vim.git"
+vim_plugin_task "fugitive",         "http://github.com/tpope/vim-fugitive.git"
+vim_plugin_task "haml",             "http://github.com/tpope/vim-haml.git"
+vim_plugin_task "indent_object",    "http://github.com/michaeljsmith/vim-indent-object.git"
+vim_plugin_task "javascript",       "http://github.com/pangloss/vim-javascript.git"
+vim_plugin_task "markdown",         "http://github.com/tpope/vim-markdown.git"
+vim_plugin_task "markdown_preview", "http://github.com/robgleeson/vim-markdown-preview.git"
+vim_plugin_task "nerdtree",         "http://github.com/scrooloose/nerdtree.git"
+vim_plugin_task "surround",         "http://github.com/tpope/vim-surround.git"
+vim_plugin_task "vividchalk",       "http://github.com/tpope/vim-vividchalk.git"
+
+vim_plugin_task "command_t",        "http://github.com/wincent/Command-T.git" do
+  sh "find ruby -name '.gitignore' | xargs rm"
+  Dir.chdir "ruby/command-t" do
+    sh "rvm system ruby extconf.rb"
+    sh "make clean && make"
   end
 end
 
-namespace :vim_javascript do
-  file "tmp/vim-javascript" => "tmp" do
-    sh "git clone http://github.com/pangloss/vim-javascript.git tmp/vim-javascript"
-  end
-
-  task :pull => "tmp/vim-javascript" do
-    Dir.chdir "tmp/vim-javascript" do
-      sh "git pull"
-    end
-  end
-
-  task "install" => "pull" do
-    Dir.chdir "tmp/vim-javascript" do
-      sh "rake install"
-    end
-  end
+vim_plugin_task "railscasts-theme" do
+  sh "curl http://github.com/jpo/vim-railscasts-theme/raw/master/railscasts.vim > colors/railscasts.vim"
 end
 
-namespace "ack.vim" do
-  file "tmp/ack.vim" => "tmp" do
-    sh "git clone http://github.com/mileszs/ack.vim.git tmp/ack.vim"
-  end
-
-  task "pull" => "tmp/ack.vim" do
-    Dir.chdir "tmp/ack.vim" do
-      sh "git pull"
-    end
-  end
-
-  task "install" => "pull" do
-    Dir.chdir "tmp/ack.vim" do
-      sh "rake install"
-    end
-  end
+vim_plugin_task "mustasche" do
+  sh "curl http://github.com/defunkt/mustache/raw/master/contrib/mustache.vim > syntax/mustache.vim"
 end
-
-namespace :command_t do
-  file "tmp/command_t" => "tmp" do
-    sh "git clone http://github.com/wincent/Command-T.git tmp/command_t"
-  end
-
-  task "pull" => "tmp/command_t" do
-    Dir.chdir "tmp/command_t" do
-      sh "git pull"
-    end
-  end
-
-  task "copy_files" => ["doc", "plugin", "ruby", "pull"] do
-    sh "cp -f  tmp/command_t/doc/*    doc/"
-    sh "cp -f  tmp/command_t/plugin/* plugin/"
-    sh "cp -rf tmp/command_t/ruby/*   ruby/"
-    sh "find ruby -name '.gitignore' | xargs rm"
-  end
-
-  task "install" => "copy_files" do
-    Dir.chdir "ruby/command-t" do
-      sh "rvm system ruby extconf.rb"
-      sh "make clean && make"
-    end
-  end
-end
-
-namespace :indent_object do
-  file "tmp/indent_object" => "tmp" do
-    sh "git clone http://github.com/michaeljsmith/vim-indent-object.git tmp/indent_object"
-  end
-
-  task :pull => "tmp/indent_object" do
-    Dir.chdir "tmp/indent_object" do
-      sh "git pull"
-    end
-  end
-
-  task "install" => ["doc", "plugin", "pull"] do
-    sh "cp -f tmp/indent_object/doc/* doc/"
-    sh "cp -f tmp/indent_object/plugin/* plugin/"
-  end
-end
-
-namespace :markdown_preview do
-  file "tmp/markdown_preview" => "tmp" do
-    sh "git clone http://github.com/robgleeson/vim-markdown-preview.git tmp/markdown_preview"
-  end
-
-  task :pull => "tmp/markdown_preview" do
-    Dir.chdir "tmp/markdown_preview" do
-      sh "git pull"
-    end
-  end
-
-  task "install" => ["plugin", "pull"] do
-    Dir.chdir "tmp/markdown_preview" do
-      sh "sh install.sh"
-    end
-  end
-end
-
-namespace :markdown do
-  file "tmp/markdown" => "tmp" do
-    sh "git clone http://github.com/tpope/vim-markdown.git tmp/markdown"
-  end
-
-  task :pull => "tmp/markdown" do
-    Dir.chdir "tmp/markdown" do
-      sh "git pull"
-    end
-  end
-
-  task "install" => ["ftdetect", "ftplugin", "syntax", "pull"] do
-    sh "cp -f tmp/markdown/ftdetect/* ftdetect/"
-    sh "cp -f tmp/markdown/ftplugin/* ftplugin/"
-    sh "cp -f tmp/markdown/syntax/* syntax/"
-  end
-end
-
-namespace :mustache do
-  task "install" => "syntax" do
-    sh "curl http://github.com/defunkt/mustache/raw/master/contrib/mustache.vim > syntax/mustache.vim"
-  end
-end
-
-namespace :fugitive do
-  file "tmp/fugitive" => "tmp" do
-    sh "git clone git://github.com/tpope/vim-fugitive.git tmp/fugitive"
-  end
-
-  task :pull => "tmp/fugitive" do
-    Dir.chdir "tmp/fugitive" do
-      sh "git pull"
-    end
-  end
-
-  task "install" => ["doc", "plugin", "pull"] do
-    sh "cp -f tmp/fugitive/doc/* doc/"
-    sh "cp -f tmp/fugitive/plugin/* plugin/"
-  end
-end
-
-desc "Install the latest version of nerdtree"
-task "nerdtree" => "nerdtree:install"
-
-desc "Install vim-javascript"
-task "vim-javascript" => "vim_javascript:install"
-
-desc "Install the latest version of Command-T"
-task "command-t" => "command_t:install"
-
-desc "Install the latest version of fugitive"
-task "fugitive" => "fugitive:install"
-
-desc "Install the latest version of indent-object"
-task "indent-object" => "indent_object:install"
-
-desc "Install the latest version of markdown"
-task "markdown" => "markdown:install"
-
-desc "Install the Mustache syntax file"
-task "mustache" => "mustache:install"
-
-desc "Install ack.vim"
-task "ack.vim" => "ack.vim:install"
-
-desc "Install markdown preview"
-task "markdown_preview" => "markdown_preview:install"
 
 desc "Cleanup all the files"
 task :clean do
@@ -211,16 +108,7 @@ task :link_vimrc do
   end
 end
 
-task "default" => [
-  "nerdtree", 
-  "command-t", 
-  "indent-object",
-  "mustache", 
-  "vim-javascript",
-  "ack.vim",
-  "fugitive",
-  "markdown",
-  "markdown_preview",
+task :default => [
   :update_docs,
   :link_vimrc
 ]
