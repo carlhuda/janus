@@ -146,7 +146,16 @@ function Edit(file)
   endif
 
   execute "e " . a:file
-  call ChangeDirectory(system("dirname " . a:file), 0)
+
+ruby << RUBY
+  destination = File.expand_path(VIM.evaluate(%{system("dirname " . a:file)}))
+  pwd         = File.expand_path(Dir.pwd)
+  home        = pwd == File.expand_path("~")
+
+  if home || Regexp.new("^" + Regexp.escape(pwd)) !~ destination
+    VIM.command(%{call ChangeDirectory(system("dirname " . a:file), 0)})
+  end
+RUBY
 endfunction
 
 " Define the NERDTree-aware aliases
