@@ -15,6 +15,7 @@ to the issue tracker.
 
 ## Installation
 
+0. `for i in ~/.vim ~/.vimrc; do [ -e $i ] && mv $i $i.old; done`
 1. `git clone git://github.com/carlhuda/janus.git ~/.vim`
 2. `cd ~/.vim`
 3. `rake`
