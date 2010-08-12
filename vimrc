@@ -30,6 +30,12 @@ let NERDTreeIgnore=['\.rbc$', '\~$']
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 
+" Remember last location in file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal g'\"" | endif
+endif
+
 " make and python use real tabs
 au FileType make                                     set noexpandtab
 au FileType python                                   set noexpandtab
