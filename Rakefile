@@ -92,6 +92,7 @@ vim_plugin_task "nerdtree",         "http://github.com/scrooloose/nerdtree.git"
 vim_plugin_task "surround",         "http://github.com/tpope/vim-surround.git"
 vim_plugin_task "taglist",          "http://vim.sourceforge.net/scripts/download_script.php?src_id=7701"
 vim_plugin_task "vividchalk",       "http://github.com/tpope/vim-vividchalk.git"
+vim_plugin_task "supertab",         "http://github.com/ervandew/supertab.git"
 
 vim_plugin_task "command_t",        "http://github.com/wincent/Command-T.git" do
   sh "find ruby -name '.gitignore' | xargs rm"
