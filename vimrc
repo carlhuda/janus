@@ -9,10 +9,7 @@ set nowrap
 set tabstop=2
 set shiftwidth=2
 set expandtab
-set list listchars=tab:\|_,trail:.
-
-" Indenting
-filetype plugin indent on
+set list listchars=tab:\ \ ,trail:.
 
 " Searching
 set hlsearch
@@ -151,6 +148,10 @@ call s:DefineCommand("cd", "ChangeDirectory")
 call s:DefineCommand("touch", "Touch")
 call s:DefineCommand("rm", "Remove")
 call s:DefineCommand("e", "Edit")
+
+" Use modeline overrides
+set modeline
+set modelines=10
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
