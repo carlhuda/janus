@@ -35,7 +35,7 @@ Janus ships with a number of basic customizations for vim:
 * Ruler (line and column numbers)
 * No wrap (turn off per-buffer via set :wrap)
 * Soft 2-space tabs, and default hard tabs to 2 spaces
-* Show tabs as `|_` and tailing whitespace as `.`
+* Show tailing whitespace as `.`
 * Make searching highlighted, incremental, and case insensitive unless a capital letter is used
 * Always show a status line
 * Allow backspacing over everything (identations, eol, and start characters) in insert mode
