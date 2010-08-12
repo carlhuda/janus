@@ -7,3 +7,8 @@ if has("gui_macvim")
   macmenu Window.Toggle\ Full\ Screen\ Mode key=<nop>
   map <D-F> :Ack<space>
 endif
+
+" Include user's local vim config
+if filereadable(expand("~/.gvimrc.local"))
+  source ~/.gvimrc.local
+endif
