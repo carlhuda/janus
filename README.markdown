@@ -15,8 +15,8 @@ to the issue tracker.
 
 ## Installation
 
-1. `git clone git@github.com:carlhuda/vimrc.git ~/.vimrc`
-2. `cd ~/.vimrc`
+1. `git clone git://github.com/carlhuda/vimrc.git ~/.vim`
+2. `cd ~/.vim`
 3. `rake`
 
 ## Updating to the latest version
