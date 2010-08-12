@@ -10,3 +10,4 @@ ftdetect
 ftplugin
 syntax
 colors
+autoload
