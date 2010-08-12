@@ -76,8 +76,6 @@ function Remove(file)
   let current_path = expand("%")
   let removed_path = fnamemodify(a:file, ":p")
 
-  echo current_path . ", " . removed_path
-  echo getbufvar("%", "&modified")
   if (current_path == removed_path) && (getbufvar("%", "&modified"))
     echo "You are trying to remove the file you are editing. Please close the buffer first."
   else
