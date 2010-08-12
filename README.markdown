@@ -15,7 +15,7 @@ to the issue tracker.
 
 ## Installation
 
-1. `git clone git://github.com/carlhuda/vimrc.git ~/.vim`
+1. `git clone git://github.com/carlhuda/janus.git ~/.vim`
 2. `cd ~/.vim`
 3. `rake`
 
