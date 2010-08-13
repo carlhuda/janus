@@ -19,7 +19,7 @@ set go-=T
 
 " ConqueTerm wrapper
 function StartTerm()
-  ConqueTerm bash --login
+  execute 'ConqueTerm ' . $SHELL . ' --login'
   setlocal listchars=tab:\ \ 
 endfunction
 
