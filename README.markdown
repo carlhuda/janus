@@ -40,9 +40,9 @@ Janus ships with a number of basic customizations for vim:
 * Make searching highlighted, incremental, and case insensitive unless a capital letter is used
 * Always show a status line
 * Allow backspacing over everything (identations, eol, and start characters) in insert mode
-* \<Leader\>e expands to `:e {directory of current file}/` (open in the current buffer)
-* \<Leader\>tr expands to `:te {directory of current file}/` (open in a new MacVIM tab)
-* \<C-P\> inserts the directory of the current file into a command
+* `<Leader>e` expands to `:e {directory of current file}/` (open in the current buffer)
+* `<Leader>tr` expands to `:te {directory of current file}/` (open in a new MacVIM tab)
+* `<C-P>` inserts the directory of the current file into a command
 
 ## "Project Drawer" aka NERDTree
 
@@ -57,7 +57,7 @@ You can learn more about it with :help NERDTree.
   (when NERDTree is open)
 * When opening vim with vim /path, open the left NERDTree to that directory, set the vim pwd,
   and clear the right buffer
-* Disallow `:e`'ing files into the NERDTree buffer
+* Disallow `:e`ing files into the NERDTree buffer
 * In general, assume that there is a single NERDTree buffer on the left and one or more editing
   buffers on the right
 
@@ -66,15 +66,25 @@ You can learn more about it with :help NERDTree.
 Ack.vim uses ack to search inside the current directory for a pattern. You can learn more about it with
 :help Ack
 
-**Customizations**: Janus rebinds command-shift-f (<D-F>) to bring up `:Ack `.
+**Customizations**: Janus rebinds command-shift-f (`<D-F>`) to bring up `:Ack `.
 
 ## Command-T
 
 Command-T provides a mechanism for searching for a file inside the current working directory. It
 behaves similarly to command-t in Textmate.
 
-**Customizations**: Janus rebinds command-t (<D-t>) to bring up this plugin. It defaults to
+**Customizations**: Janus rebinds command-t (`<D-t>`) to bring up this plugin. It defaults to
 \<Leader\>t.
+
+## ConqueTerm
+
+ConqueTerm embeds a basic terminal inside a vim buffer. The terminal has an insert mode in which you can
+type commands, tab complete and use the terminal like normal. You can also escape out of insert mode to
+use other vim commands on the buffer, like yank and paste.
+
+**Customizations**: Janus binds command-e (`<D-e>`) to bring up `:ConqueTerm bash --login` in the current buffer.
+
+**Note**: To get colors working, you might have to `export TERM=xterm` and use `ls -G` or `gls --color`
 
 ## indent\_object
 
@@ -91,6 +101,12 @@ Surround allows you to modify "surroundings" around the current text. For instan
 cursor was inside `"foo bar"`, you could type `cs"'` to convert the text to `'foo bar'`.
 
 There's a lot more; check it out at `:help surround`
+
+## Taglist
+
+`:Tlist` brings up an overview panel that lists all ctags for easy navigation.
+
+**Customizations**: Janus binds `<Leader>rt` to the ctags command to update tags.
 
 ## Git Support (Fugitive)
 
@@ -135,3 +151,14 @@ Janus includes the vim color sampler pack, which includes [over 100 popular colo
 * xoria256
 
 Use `:color vibrantink` to switch to a color scheme.
+
+Janus also has a few customized versions of popular themes:
+
+* jellybeans+
+* railscasts+
+
+To set a color scheme, update your local vimrc files:
+
+    echo color desert > ~/.vimrc.local
+    echo color jellybeans+ > ~/.gvimrc.local
+
