@@ -6,7 +6,16 @@ if has("gui_macvim")
   " Apple-Shift-F for Ack
   macmenu Window.Toggle\ Full\ Screen\ Mode key=<nop>
   map <D-F> :Ack<space>
+
+  " Apple-e for ConqueTerm
+  map <D-e> :call StartTerm()<CR>
 endif
+
+" ConqueTerm wrapper
+function StartTerm()
+  ConqueTerm bash --login
+  setlocal listchars=tab:\ \ 
+endfunction
 
 " Project Tree
 autocmd VimEnter * NERDTree
