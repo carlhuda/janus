@@ -1,5 +1,6 @@
 .netrwhist
 tmp
+autoload
 doc
 indent
 nerdtree_plugin

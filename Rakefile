@@ -1,5 +1,5 @@
 module VIM
-  Dirs = %w[ doc plugin ruby syntax ftdetect ftplugin colors indent ]
+  Dirs = %w[ autoload doc plugin ruby syntax ftdetect ftplugin colors indent ]
 end
 
 directory "tmp"
@@ -71,6 +71,7 @@ end
 
 vim_plugin_task "ack.vim",          "http://github.com/mileszs/ack.vim.git"
 vim_plugin_task "color-sampler",    "http://www.vim.org/scripts/download_script.php?src_id=12179"
+vim_plugin_task "conque",           "http://github.com/rson/vim-conque.git"
 vim_plugin_task "fugitive",         "http://github.com/tpope/vim-fugitive.git"
 vim_plugin_task "haml",             "http://github.com/tpope/vim-haml.git"
 vim_plugin_task "indent_object",    "http://github.com/michaeljsmith/vim-indent-object.git"
