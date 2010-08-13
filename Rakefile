@@ -91,8 +91,8 @@ vim_plugin_task "command_t",        "http://github.com/wincent/Command-T.git" do
   end
 end
 
-vim_plugin_task "railscasts-theme" do
-  sh "curl http://github.com/jpo/vim-railscasts-theme/raw/master/railscasts.vim > colors/railscasts.vim"
+vim_plugin_task "janus_themes" do
+  # custom version of railscasts theme
   File.open(File.expand_path("../colors/railscasts+.vim", __FILE__), "w") do |file|
     file.puts <<-VIM.gsub(/^      /, "")
       runtime colors/railscasts.vim
@@ -103,6 +103,18 @@ vim_plugin_task "railscasts-theme" do
       set fillchars=stlnc:\\ 
       hi  StatusLine guibg=#cccccc guifg=#000000
       hi  VertSplit  guibg=#dddddd
+    VIM
+  end
+
+  # custom version of jellybeans theme
+  File.open(File.expand_path("../colors/jellybeans+.vim", __FILE__), "w") do |file|
+    file.puts <<-VIM.gsub(/^      /, "")
+      runtime colors/jellybeans.vim
+      let g:colors_name = "jellybeans+"
+
+      hi  VertSplit    guibg=#888888
+      hi  StatusLine   guibg=#cccccc guifg=#000000
+      hi  StatusLineNC guibg=#888888 guifg=#000000
     VIM
   end
 end
