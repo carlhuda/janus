@@ -27,6 +27,9 @@ set laststatus=2
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$']
 
+" Command-T configuration
+let g:CommandTMaxHeight=20
+
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 
