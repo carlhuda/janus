@@ -14,6 +14,9 @@ if has("gui_macvim")
   map <D-e> :call StartTerm()<CR>
 endif
 
+" start without the toolbar
+set go-=T
+
 " ConqueTerm wrapper
 function StartTerm()
   ConqueTerm bash --login
