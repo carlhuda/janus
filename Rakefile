@@ -9,7 +9,7 @@ end
 
 def vim_plugin_task(name, repo=nil)
   cwd = File.expand_path("../", __FILE__)
-  dir = "tmp/#{name}"
+  dir = File.expand_path("tmp/#{name}")
   subdirs = VIM::Dirs
 
   namespace(name) do
@@ -17,9 +17,19 @@ def vim_plugin_task(name, repo=nil)
       file dir => "tmp" do
         if repo =~ /git$/
           sh "git clone #{repo} #{dir}"
-        elsif repo =~ /download_script/
+
+        elsif repo =~ /download_script/ # TODO: this assumes all vimscripts downloads are zips (can be vba or targz)
           sh "curl #{repo} > #{dir}.zip"
           sh "unzip -o #{dir}.zip -d #{dir}"
+
+        elsif repo =~ /tar\.gz$/
+          filename = File.basename(repo)
+          dirname  = File.basename(filename, '.tar.gz')
+
+          sh "curl #{repo} > tmp/#{filename}"
+          sh "tar zxvf tmp/#{filename}"
+          sh "mv #{dirname} #{dir}"
+
         else
           raise ArgumentError, 'unrecognized source url for plugin'
         end
@@ -71,7 +81,7 @@ end
 
 vim_plugin_task "ack.vim",          "http://github.com/mileszs/ack.vim.git"
 vim_plugin_task "color-sampler",    "http://www.vim.org/scripts/download_script.php?src_id=12179"
-vim_plugin_task "conque",           "http://github.com/rson/vim-conque.git"
+vim_plugin_task "conque",           "http://conque.googlecode.com/files/conque_1.1.tar.gz"
 vim_plugin_task "fugitive",         "http://github.com/tpope/vim-fugitive.git"
 vim_plugin_task "haml",             "http://github.com/tpope/vim-haml.git"
 vim_plugin_task "indent_object",    "http://github.com/michaeljsmith/vim-indent-object.git"
