@@ -155,6 +155,7 @@ Use `:color vibrantink` to switch to a color scheme.
 Janus also has a few customized versions of popular themes:
 
 * jellybeans+
+* molokai
 * railscasts+
 
 To set a color scheme, update your local vimrc files:
