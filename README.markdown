@@ -156,6 +156,12 @@ a file to enter `git add -p` and stage specific hunks in the file.
 
 Use `:Gdiff` on an open file to see what changes have been made to that file
 
+## ZoomWin
+
+When working with split windows, ZoomWin lets you zoom into a window and out again using `Ctrl-W o`
+
+**Customizations**: Janus binds `<Leader>z` to `:ZoomWin`
+
 ## Markdown Preview
 
 Markdown preview takes the current buffer, converts the Markdown to HTML, and opens it in your
