@@ -89,6 +89,7 @@ vim_plugin_task "javascript",       "http://github.com/pangloss/vim-javascript.g
 vim_plugin_task "markdown",         "http://github.com/tpope/vim-markdown.git"
 vim_plugin_task "markdown_preview", "http://github.com/robgleeson/vim-markdown-preview.git"
 vim_plugin_task "nerdtree",         "http://github.com/scrooloose/nerdtree.git"
+vim_plugin_task "nerdcommenter",    "http://github.com/scrooloose/nerdcommenter.git"
 vim_plugin_task "surround",         "http://github.com/tpope/vim-surround.git"
 vim_plugin_task "taglist",          "http://vim.sourceforge.net/scripts/download_script.php?src_id=7701"
 vim_plugin_task "vividchalk",       "http://github.com/tpope/vim-vividchalk.git"

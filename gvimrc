@@ -12,6 +12,9 @@ if has("gui_macvim")
 
   " Apple-e for ConqueTerm
   map <D-e> :call StartTerm()<CR>
+
+  " Apple-/ to toggle comments
+  map <D-/> <plug>NERDCommenterToggle<CR>
 endif
 
 " Start without the toolbar

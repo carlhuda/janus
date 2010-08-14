@@ -67,7 +67,7 @@ Janus ships with a number of basic customizations for vim:
 
 ## "Project Drawer" aka NERDTree
 
-NERDTree is a file explorer plugin that provides "project drawer" functionality to your vim projects. 
+NERDTree is a file explorer plugin that provides "project drawer" functionality to your vim projects.
 You can learn more about it with :help NERDTree.
 
 **Customizations**: Janus adds a number of customizations to the core NERDTree:
@@ -124,6 +124,13 @@ cursor was inside `"foo bar"`, you could type `cs"'` to convert the text to `'fo
 
 There's a lot more; check it out at `:help surround`
 
+## NERDCommenter
+
+NERDCommenter allows you to wrangle your code comments, regardless of filetype. View `help :NERDCommenter`
+for all the details.
+
+**Customizations**: Janus binds command-/ (`<D-/>`) to toggle comments.
+
 ## SuperTab
 
 In insert mode, start typing something and hit `<TAB>` to tab-complete based on the current context.
@@ -147,7 +154,7 @@ Fugitive adds pervasive git support to git directories in vim. For more informat
 Use `:Gstatus` to view `git status` and type `-` on any file to stage or unstage it. Type `p` on
 a file to enter `git add -p` and stage specific hunks in the file.
 
-Use `:Gdiff` on an open file to see what changes have been made to that file 
+Use `:Gdiff` on an open file to see what changes have been made to that file
 
 ## Markdown Preview
 
@@ -193,4 +200,3 @@ To set a color scheme, update your local vimrc files:
 
     echo color desert > ~/.vimrc.local
     echo color jellybeans+ > ~/.gvimrc.local
-
