@@ -96,7 +96,11 @@ vim_plugin_task "vividchalk",       "http://github.com/tpope/vim-vividchalk.git"
 vim_plugin_task "command_t",        "http://github.com/wincent/Command-T.git" do
   sh "find ruby -name '.gitignore' | xargs rm"
   Dir.chdir "ruby/command-t" do
-    sh "rvm system ruby extconf.rb"
+    if `rvm > /dev/null 2>&1` && $?.exitstatus == 1
+      sh "rvm system ruby extconf.rb"
+    else
+      sh "/usr/bin/ruby extconf.rb" # assume /usr/bin/ruby is system ruby
+    end
     sh "make clean && make"
   end
 end
