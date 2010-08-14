@@ -17,6 +17,9 @@ endif
 " start without the toolbar
 set go-=T
 
+" Default gui color scheme
+color molokai
+
 " ConqueTerm wrapper
 function StartTerm()
   execute 'ConqueTerm ' . $SHELL . ' --login'
