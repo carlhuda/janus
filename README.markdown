@@ -24,6 +24,27 @@ to the issue tracker.
 
 To update to the latest version of the distribution, just run `rake` again inside your `~/.vim` directory.
 
+# Intro to VIM
+
+Here's some tips if you've never used VIM before:
+
+## Tutorial
+
+* Type `vimtutor` into a shell to go through a brief interactive tutorial inside VIM.
+
+## Modes
+
+* VIM has two modes:
+  * insert mode- stuff you type is added to the buffer
+  * normal mode- keys you hit are interpretted as commands
+* To enter insert mode, hit `i`
+* To exit insert mode, hit `<ESC>`
+
+## Useful commands
+
+* Use `:q` to exit vim
+* Certain commands are prefixed with a `<Leader>` key, which maps to `\` by default. Use `let mapleader = ","` to change this.
+
 # Features
 
 This vim distribution includes a number of packages built by others.
@@ -51,6 +72,7 @@ You can learn more about it with :help NERDTree.
 
 **Customizations**: Janus adds a number of customizations to the core NERDTree:
 
+* Use `<Leader>n` to toggle NERDTree
 * Ignore `*.rbc` and `*~` files
 * Automatically activate NERDTree when MacVIM opens and make the original buffer the active one
 * Provide alternative :e, :cd, :rm and :touch abbreviations which also refresh NERDTree when done
@@ -74,7 +96,7 @@ Command-T provides a mechanism for searching for a file inside the current worki
 behaves similarly to command-t in Textmate.
 
 **Customizations**: Janus rebinds command-t (`<D-t>`) to bring up this plugin. It defaults to
-\<Leader\>t.
+`<Leader>t`.
 
 ## ConqueTerm
 
@@ -102,6 +124,10 @@ cursor was inside `"foo bar"`, you could type `cs"'` to convert the text to `'fo
 
 There's a lot more; check it out at `:help surround`
 
+## SuperTab
+
+In insert mode, start typing something and hit `<TAB>` to tab-complete based on the current context.
+
 ## ctags
 
 Janus includes the TagList plugin, which binds `:Tlist` to an overview panel that lists all ctags for easy navigation.
@@ -128,7 +154,7 @@ Use `:Gdiff` on an open file to see what changes have been made to that file
 Markdown preview takes the current buffer, converts the Markdown to HTML, and opens it in your
 default browser.
 
-**Customizations**: Janus binds \<Leader\>p to this plugin.
+**Customizations**: Janus binds `<Leader>p` to this plugin.
 
 ## Additional Syntaxes
 
