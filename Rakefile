@@ -18,20 +18,36 @@ def vim_plugin_task(name, repo=nil)
         if repo =~ /git$/
           sh "git clone #{repo} #{dir}"
 
-        elsif repo =~ /download_script/ # TODO: this assumes all vimscripts downloads are zips (can be vba or targz)
-          sh "curl #{repo} > #{dir}.zip"
-          sh "unzip -o #{dir}.zip -d #{dir}"
+        elsif repo =~ /download_script/
+          if filename = `curl --silent --head #{repo} | grep attachment`[/filename=(.+)/,1]
+            filename.strip!
+            sh "curl #{repo} > tmp/#{filename}"
+          else
+            raise ArgumentError, 'unable to determine script type'
+          end
 
-        elsif repo =~ /tar\.gz$/
+        elsif repo =~ /(tar|gz|vba|zip)$/
           filename = File.basename(repo)
-          dirname  = File.basename(filename, '.tar.gz')
-
           sh "curl #{repo} > tmp/#{filename}"
-          sh "tar zxvf tmp/#{filename}"
-          sh "mv #{dirname} #{dir}"
 
         else
           raise ArgumentError, 'unrecognized source url for plugin'
+        end
+
+        case filename
+        when /zip$/
+          sh "unzip -o tmp/#{filename} -d #{dir}"
+
+        when /tar\.gz$/
+          dirname  = File.basename(filename, '.tar.gz')
+
+          sh "tar zxvf tmp/#{filename}"
+          sh "mv #{dirname} #{dir}"
+
+        when /vba(\.gz)?$/
+          system "vim -c 'so %' -c 'q' tmp/#{filename}"
+          rm "tmp/#{File.basename(filename, '.gz')}" if filename =~ /gz$/
+          mkdir_p dir # TODO: hax, this needs to exist for :install task later
         end
       end
 
