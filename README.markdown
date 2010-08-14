@@ -102,11 +102,16 @@ cursor was inside `"foo bar"`, you could type `cs"'` to convert the text to `'fo
 
 There's a lot more; check it out at `:help surround`
 
-## Taglist
+## ctags
 
-`:Tlist` brings up an overview panel that lists all ctags for easy navigation.
+Janus includes the TagList plugin, which binds `:Tlist` to an overview panel that lists all ctags for easy navigation.
 
 **Customizations**: Janus binds `<Leader>rt` to the ctags command to update tags.
+
+**Note**: For full language support, run `brew install ctags` to install exuberant-ctags.
+
+**Tip**: Check out `:help ctags` for information about VIM's built-in ctag support. Tag navigation creates a stack which can
+traversed via `Ctrl-]` (to find the source of a token) and `Ctrl-T` (to jump back up one level).
 
 ## Git Support (Fugitive)
 
