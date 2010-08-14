@@ -2,18 +2,18 @@
 set fuoptions=maxhorz,maxvert
 
 if has("gui_macvim")
-  " Apple-T for CommandT
+  " Command-T for CommandT
   macmenu &File.New\ Tab key=<nop>
   map <D-t> :CommandT<CR>
 
-  " Apple-Shift-F for Ack
+  " Command-Shift-F for Ack
   macmenu Window.Toggle\ Full\ Screen\ Mode key=<nop>
   map <D-F> :Ack<space>
 
-  " Apple-e for ConqueTerm
+  " Command-e for ConqueTerm
   map <D-e> :call StartTerm()<CR>
 
-  " Apple-/ to toggle comments
+  " Command-/ to toggle comments
   map <D-/> <plug>NERDCommenterToggle<CR>
 endif
 
