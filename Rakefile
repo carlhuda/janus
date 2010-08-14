@@ -1,5 +1,5 @@
 module VIM
-  Dirs = %w[ autoload doc plugin ruby syntax ftdetect ftplugin colors indent ]
+  Dirs = %w[ after autoload doc plugin ruby snippets syntax ftdetect ftplugin colors indent ]
 end
 
 directory "tmp"
@@ -115,6 +115,7 @@ vim_plugin_task "textile",          "http://github.com/timcharper/textile.vim.gi
 vim_plugin_task "rails",            "http://github.com/tpope/vim-rails.git"
 vim_plugin_task "rspec",            "http://github.com/taq/vim-rspec.git"
 vim_plugin_task "zoomwin",          "http://www.vim.org/scripts/download_script.php?src_id=9865"
+vim_plugin_task "snipmate",         "http://github.com/msanders/snipmate.vim.git"
 
 vim_plugin_task "command_t",        "http://github.com/wincent/Command-T.git" do
   sh "find ruby -name '.gitignore' | xargs rm"
