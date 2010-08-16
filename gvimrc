@@ -20,8 +20,11 @@ endif
 " Start without the toolbar
 set guioptions-=T
 
+" Default gui font
+set guifont=Inconsolata:h20
+
 " Default gui color scheme
-color molokai
+color kellys
 
 " ConqueTerm wrapper
 function StartTerm()

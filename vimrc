@@ -1,4 +1,5 @@
 set nocompatible
+let mapleader = ","
 
 set number
 set ruler
@@ -73,10 +74,9 @@ cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 " Use modeline overrides
 set modeline
-set modelines=10
 
 " Default color scheme
-color desert
+color kellys
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
