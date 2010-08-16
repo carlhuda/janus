@@ -1,0 +1,34 @@
+" NERDTree colors
+let NERDChristmasTree=0
+
+" Mappings
+map <Leader>c :Rcontroller 
+map <Leader>d odebugger<cr>puts 'debugger'<esc>:w<cr>
+map <Leader>co <plug>NERDCommenterToggle<CR>
+map <Leader>vc :RVcontroller 
+map <Leader>sc :RScontroller 
+map <Leader>f :sp test/factories.rb<CR>
+map <Leader>vf :RVfunctional 
+map <Leader>l :!ruby %<CR>
+map <Leader>m :Rmodel 
+map <Leader>vm :RVmodel 
+map <Leader>sm :RSmodel 
+map <Leader>n ,w,t
+map <Leader>o ?def <CR>:nohl<CR>w"zy$:!ruby -I"test" <C-r>% -n <C-r>z<CR>
+map <Leader>pp :set paste<CR>i
+map <Leader>r :e doc/README_FOR_APP<CR> " Edit the README_FOR_APP (makes :R commands work)
+map <Leader>u :Runittest 
+map <Leader>vu :RVunittest 
+map <Leader>su :RSunittest 
+map <Leader>vv :RVview 
+map <Leader>sv :RSview 
+map <Leader>w <C-w>w
+
+map <C-h> :nohl<CR>
+imap <C-l> <Space>=><Space>
+map <C-s> <esc>:w<CR>
+imap <C-s> <esc>:w<CR>
+map <C-t> <esc>:tabnew<CR>
+map <C-x> <C-w>c
+map <C-n> :cn<CR>
+map <C-p> :cp<CR>
