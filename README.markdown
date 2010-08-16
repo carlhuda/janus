@@ -77,6 +77,7 @@ Janus ships with a number of basic customizations for vim:
 * `<Leader>tr` expands to `:te {directory of current file}/` (open in a
   new MacVIM tab)
 * `<C-P>` inserts the directory of the current file into a command
+* Automatic insertion of closing quotes, parenthesis, and braces
 
 ## "Project Drawer" aka NERDTree
 
@@ -212,6 +213,7 @@ Janus ships with a few additional syntaxes:
 * SCSS (bound to \*.scss)
 * An improved JavaScript syntax (bound to \*.js)
 * Map Gemfile, Rakefile and Thorfile to Ruby
+* Git commits (set your `EDITOR` to `mvim -f`)
 
 ## Color schemes
 
