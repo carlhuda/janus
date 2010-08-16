@@ -6,7 +6,7 @@ set ruler
 syntax on
 
 " Whitespace stuff
-set nowrap
+set tw=80
 set tabstop=2
 set shiftwidth=2
 set expandtab
