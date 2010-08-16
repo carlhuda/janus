@@ -54,6 +54,9 @@ au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
 " md, markdown, and mk are markdown and define buffer-local preview
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} map <buffer> <Leader>p :Mm <CR>
 
+" less is CSS
+au BufRead,BufNewFile *.less setfiletype css
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
