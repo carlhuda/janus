@@ -117,17 +117,7 @@ vim_plugin_task "rspec",            "http://github.com/taq/vim-rspec.git"
 vim_plugin_task "zoomwin",          "http://www.vim.org/scripts/download_script.php?src_id=9865"
 vim_plugin_task "snipmate",         "http://github.com/msanders/snipmate.vim.git"
 vim_plugin_task "autoclose",        "http://github.com/Townk/vim-autoclose.git"
-
-vim_plugin_task "markdown",         "http://github.com/tpope/vim-markdown.git" do
-  File.open("ftplugin/markdown.vim", "a") do |f|
-    f.puts <<-VIM.gsub(/^ +/, "")
-      " Set word wrapping
-      :set wrap
-      :set wm=2
-      :set textwidth=72
-    VIM
-  end
-end
+vim_plugin_task "markdown",         "http://github.com/tpope/vim-markdown.git"
 
 vim_plugin_task "command_t",        "http://github.com/wincent/Command-T.git" do
   sh "find ruby -name '.gitignore' | xargs rm"
