@@ -99,6 +99,7 @@ vim_plugin_task "ack.vim",          "http://github.com/mileszs/ack.vim.git"
 vim_plugin_task "color-sampler",    "http://www.vim.org/scripts/download_script.php?src_id=12179"
 vim_plugin_task "conque",           "http://conque.googlecode.com/files/conque_1.1.tar.gz"
 vim_plugin_task "fugitive",         "http://github.com/tpope/vim-fugitive.git"
+vim_plugin_task "git",              "http://github.com/tpope/vim-git.git"
 vim_plugin_task "haml",             "http://github.com/tpope/vim-haml.git"
 vim_plugin_task "indent_object",    "http://github.com/michaeljsmith/vim-indent-object.git"
 vim_plugin_task "javascript",       "http://github.com/pangloss/vim-javascript.git"
@@ -115,18 +116,8 @@ vim_plugin_task "rails",            "http://github.com/tpope/vim-rails.git"
 vim_plugin_task "rspec",            "http://github.com/taq/vim-rspec.git"
 vim_plugin_task "zoomwin",          "http://www.vim.org/scripts/download_script.php?src_id=9865"
 vim_plugin_task "snipmate",         "http://github.com/msanders/snipmate.vim.git"
-vim_plugin_task "autoclose",         "http://github.com/Townk/vim-autoclose.git"
-
-vim_plugin_task "markdown",         "http://github.com/tpope/vim-markdown.git" do
-  File.open("ftplugin/markdown.vim", "a") do |f|
-    f.puts <<-VIM.gsub(/^ +/, "")
-      " Set word wrapping
-      :set wrap
-      :set wm=2
-      :set textwidth=72
-    VIM
-  end
-end
+vim_plugin_task "autoclose",        "http://github.com/Townk/vim-autoclose.git"
+vim_plugin_task "markdown",         "http://github.com/tpope/vim-markdown.git"
 
 vim_plugin_task "command_t",        "http://github.com/wincent/Command-T.git" do
   sh "find ruby -name '.gitignore' | xargs rm"

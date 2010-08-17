@@ -44,6 +44,17 @@ if has("autocmd")
     \| exe "normal g'\"" | endif
 endif
 
+function s:setupWrapping()
+  set wrap
+  set wm=2
+  set textwidth=72
+endfunction
+
+function s:setupMarkup()
+  call s:setupMarkup()
+  map <buffer> <Leader>p :Mm <CR>
+endfunction
+
 " make and python use real tabs
 au FileType make                                     set noexpandtab
 au FileType python                                   set noexpandtab
@@ -52,7 +63,9 @@ au FileType python                                   set noexpandtab
 au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
 
 " md, markdown, and mk are markdown and define buffer-local preview
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} map <buffer> <Leader>p :Mm <CR>
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+
+au BufRead,BufNewFile *.txt call s:setupWrapping()
 
 " less is CSS
 au BufRead,BufNewFile *.less setfiletype css

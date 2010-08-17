@@ -13,7 +13,6 @@ map <Leader>l :!ruby %<CR>
 map <Leader>m :Rmodel 
 map <Leader>vm :RVmodel 
 map <Leader>sm :RSmodel 
-map <Leader>n ,w,t
 map <Leader>o ?def <CR>:nohl<CR>w"zy$:!ruby -I"test" <C-r>% -n <C-r>z<CR>
 map <Leader>pp :set paste<CR>i
 map <Leader>r :e doc/README_FOR_APP<CR> " Edit the README_FOR_APP (makes :R commands work)
