@@ -88,6 +88,9 @@ map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 " Command mode: Ctrl+P
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
+" Sudo to write
+cmap w!! w !sudo tee % >/dev/null
+
 " Use modeline overrides
 set modeline
 
