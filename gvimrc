@@ -24,7 +24,7 @@ set guioptions-=T
 set guifont=Inconsolata:h20
 
 " Default gui color scheme
-color kellys
+color github
 
 " ConqueTerm wrapper
 function StartTerm()
