@@ -21,7 +21,7 @@ endif
 set guioptions-=T
 
 " Default gui font
-set guifont=Inconsolata:h20
+set guifont=Inconsolata:h16
 
 " Default gui color scheme
 color github
