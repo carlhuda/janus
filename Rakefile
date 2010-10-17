@@ -142,6 +142,7 @@ vim_plugin_task "zoomwin",          "http://www.vim.org/scripts/download_script.
 vim_plugin_task "snipmate",         "http://github.com/msanders/snipmate.vim.git"
 vim_plugin_task "autoclose",        "http://github.com/Townk/vim-autoclose.git"
 vim_plugin_task "markdown",         "http://github.com/tpope/vim-markdown.git"
+vim_plugin_task "align",            "http://github.com/tsaleh/vim-align.git"
 
 vim_plugin_task "command_t",        "http://github.com/wincent/Command-T.git" do
   sh "find ruby -name '.gitignore' | xargs rm"
