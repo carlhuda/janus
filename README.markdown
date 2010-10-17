@@ -26,6 +26,11 @@ report an issue to the issue tracker.
 2. `cd ~/.vim`
 3. `rake`
 
+or
+
+  `curl http://github.com/carlhuda/janus/raw/master/bootstrap.sh \
+   -o - | sh`
+
 ## Updating to the latest version
 
 To update to the latest version of the distribution, just run `rake`
