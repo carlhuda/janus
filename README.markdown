@@ -28,8 +28,7 @@ report an issue to the issue tracker.
 
 or
 
-  `curl http://github.com/carlhuda/janus/raw/master/bootstrap.sh \
-   -o - | sh`
+  `curl http://github.com/carlhuda/janus/raw/master/bootstrap.sh -o - | sh`
 
 ## Updating to the latest version
 
@@ -112,6 +111,13 @@ You can learn more about it with :help Ack
 
 **Customizations**: Janus rebinds command-shift-f (`<D-F>`) to bring up
 `:Ack `.
+
+## Align
+
+Align lets you align statements on their equal signs, make comment
+boxes, align comments, align declarations, etc.
+
+* `:5,10Align =>` to align lines 5-10 on `=>`'s
 
 ## Command-T
 
