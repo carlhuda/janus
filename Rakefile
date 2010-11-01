@@ -64,7 +64,7 @@ def vim_plugin_task(name, repo=nil)
             num_lines = current[/^(\d+)$/, 1].to_i
 
             # the data itself
-            data = lines.slice!(0, num_lines)
+            data = lines.slice!(0, num_lines).join
 
             # install the data
             Dir.chdir dir do
