@@ -31,3 +31,7 @@ map <C-t> <esc>:tabnew<CR>
 map <C-x> <C-w>c
 map <C-n> :cn<CR>
 map <C-p> :cp<CR>
+
+" Store tmp files
+set backupdir=~/.vimtmp
+set directory=~/.vimtmp
