@@ -16,6 +16,12 @@ if has("gui_macvim")
 
   " Command-/ to toggle comments
   map <D-/> <plug>NERDCommenterToggle<CR>
+
+  " F1 to toggle full-screen
+  inoremap <F1> <ESC>:set invfullscreen<CR>a
+  nnoremap <F1> :set invfullscreen<CR>
+  vnoremap <F1> :set invfullscreen<CR>
+  
 endif
 
 " Start without the toolbar
