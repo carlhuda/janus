@@ -21,7 +21,10 @@ if has("gui_macvim")
   inoremap <F1> <ESC>:set invfullscreen<CR>a
   nnoremap <F1> :set invfullscreen<CR>
   vnoremap <F1> :set invfullscreen<CR>
-  
+
+  " F5 to toggle Gundo
+  nnoremap <F5> :GundoToggle<CR>
+
 endif
 
 " Start without the toolbar
