@@ -143,6 +143,7 @@ vim_plugin_task "snipmate",         "git://github.com/msanders/snipmate.vim.git"
 vim_plugin_task "autoclose",        "git://github.com/Townk/vim-autoclose.git"
 vim_plugin_task "markdown",         "git://github.com/tpope/vim-markdown.git"
 vim_plugin_task "align",            "git://github.com/tsaleh/vim-align.git"
+vim_plugin_task "unimpaired",       "git://github.com/tpope/vim-unimpaired.git"
 
 vim_plugin_task "command_t",        "git://github.com/wincent/Command-T.git" do
   sh "find ruby -name '.gitignore' | xargs rm"
