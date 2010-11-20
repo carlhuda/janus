@@ -146,6 +146,7 @@ vim_plugin_task "github",           "git://github.com/acarapetis/vim-github-them
 vim_plugin_task "align",            "git://github.com/tsaleh/vim-align.git"
 vim_plugin_task "scratch",          "git://github.com/duff/vim-scratch.git"
 vim_plugin_task "gundo",            "git://github.com/sjl/gundo.vim.git"
+vim_plugin_task "jslint",           "git://github.com/brianegan/jslint.vim.git"
 
 vim_plugin_task "command_t",        "git://github.com/wincent/Command-T.git" do
   sh "find ruby -name '.gitignore' | xargs rm"
@@ -208,7 +209,7 @@ end
 
 desc "link vimrc to ~/.vimrc"
 task :link_vimrc do
-  %w[ vimrc gvimrc vimrc.local ].each do |file|
+  %w[ vimrc gvimrc vimrc.local jslintrc ].each do |file|
     dest = File.expand_path("~/.#{file}")
     unless File.exist?(dest)
       ln_s(File.expand_path("../#{file}", __FILE__), dest)
