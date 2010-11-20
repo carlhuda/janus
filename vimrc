@@ -91,11 +91,20 @@ cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 " Sudo to write
 cmap w!! w !sudo tee % >/dev/null
 
+" Unimpaired configuration
+" Bubble single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+
 " Use modeline overrides
 set modeline
+set modelines=10
 
 " Default color scheme
-color kellys
+color github
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
