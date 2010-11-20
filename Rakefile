@@ -193,7 +193,11 @@ vim_plugin_task "molokai" do
 end
 
 vim_plugin_task "mustasche" do
-  sh "curl http://github.com/defunkt/mustache/raw/master/contrib/mustache.vim > syntax/mustache.vim"
+  sh "curl https://github.com/defunkt/mustache/raw/master/contrib/mustache.vim > syntax/mustache.vim"
+end
+
+vim_plugin_task "jade" do
+  sh "curl https://gist.github.com/raw/707600/903324316a157bb2bdb89c1202a8edec3808ad6d/jade.vim > syntax/jade.vim"
 end
 
 desc "Cleanup all the files"
