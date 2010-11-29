@@ -28,7 +28,7 @@ report an issue to the issue tracker.
 
 or
 
-  `curl http://github.com/carlhuda/janus/raw/master/bootstrap.sh -o - | sh`
+  `curl https://github.com/carlhuda/janus/raw/master/bootstrap.sh -o - | sh`
 
 ## Updating to the latest version
 
