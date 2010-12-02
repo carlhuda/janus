@@ -31,34 +31,46 @@ function StartTerm()
 endfunction
 
 " Project Tree
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
 autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
 
-" Disable netrw's autocmd, since we're ALWAYS using NERDTree
-runtime plugin/netRwPlugin.vim
-augroup FileExplorer
-  au!
-augroup END
-
-let g:NERDTreeHijackNetrw = 0
 
 " If the parameter is a directory, cd into it
 function s:CdIfDirectory(directory)
-  if isdirectory(a:directory)
-    call ChangeDirectory(a:directory)
+  let explicitDirectory = isdirectory(a:directory)
+  let directory = explicitDirectory || empty(a:directory)
+
+  if explicitDirectory
+    exe "cd " . a:directory
+  endif
+
+  if directory
+    NERDTree
+    wincmd p
+    bd
   endif
 endfunction
 
 " NERDTree utility function
-function s:UpdateNERDTree(stay)
+function s:UpdateNERDTree(...)
+  let stay = 0
+
+  if(exists("a:1"))
+    let stay = a:1
+  end
+
   if exists("t:NERDTreeBufName")
-    if bufwinnr(t:NERDTreeBufName) != -1
-      NERDTree
-      if !a:stay
+    let nr = bufwinnr(t:NERDTreeBufName)
+    if nr != -1
+      exe nr . "wincmd w"
+      exe substitute(mapcheck("R"), "<CR>", "", "")
+      if !stay
         wincmd p
       end
     endif
+  endif
+
+  if exists("CommandTFlush")
+    CommandTFlush
   endif
 endfunction
 
@@ -86,12 +98,17 @@ endfunction
 function ChangeDirectory(dir, ...)
   execute "cd " . a:dir
   let stay = exists("a:1") ? a:1 : 1
-  call s:UpdateNERDTree(stay)
+
+  NERDTree
+
+  if !stay
+    wincmd p
+  endif
 endfunction
 
 function Touch(file)
   execute "!touch " . a:file
-  call s:UpdateNERDTree(1)
+  call s:UpdateNERDTree()
 endfunction
 
 function Remove(file)
@@ -103,6 +120,8 @@ function Remove(file)
   else
     execute "!rm " . a:file
   endif
+
+  call s:UpdateNERDTree()
 endfunction
 
 function Edit(file)
