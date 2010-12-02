@@ -145,15 +145,17 @@ vim_plugin_task "markdown",         "git://github.com/tpope/vim-markdown.git"
 vim_plugin_task "align",            "git://github.com/tsaleh/vim-align.git"
 vim_plugin_task "unimpaired",       "git://github.com/tpope/vim-unimpaired.git"
 
-vim_plugin_task "command_t",        "git://github.com/wincent/Command-T.git" do
-  sh "find ruby -name '.gitignore' | xargs rm"
-  Dir.chdir "ruby/command-t" do
-    if `rvm > /dev/null 2>&1` && $?.exitstatus == 1
-      sh "rvm system ruby extconf.rb"
-    else
-      sh "/usr/bin/ruby extconf.rb" # assume /usr/bin/ruby is system ruby
+if RUBY_PLATFORM.downcase.include?('darwin')
+  vim_plugin_task "command_t",        "git://github.com/wincent/Command-T.git" do
+    sh "find ruby -name '.gitignore' | xargs rm"
+    Dir.chdir "ruby/command-t" do
+      if `rvm > /dev/null 2>&1` && $?.exitstatus == 1
+        sh "rvm system ruby extconf.rb"
+      else
+        sh "/usr/bin/ruby extconf.rb" # assume /usr/bin/ruby is system ruby
+      end
+      sh "make clean && make"
     end
-    sh "make clean && make"
   end
 end
 
