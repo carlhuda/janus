@@ -1,3 +1,7 @@
+" Include user's local gvim config before
+if filereadable(expand("~/.gvimrc.local.before"))
+  source ~/.gvimrc.local.before
+endif
 
 if has("gui_macvim")
   " Fullscreen takes up entire screen

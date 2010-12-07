@@ -1,3 +1,8 @@
+" Include user's local vim config 
+if filereadable(expand("~/.vimrc.local.before"))
+  source ~/.vimrc.local.before
+endif
+
 set nocompatible
 
 set number
