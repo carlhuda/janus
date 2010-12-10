@@ -20,6 +20,7 @@ endif
 
 " Start without the toolbar
 set guioptions-=T
+set guioptions-=r
 
 " Default gui color scheme
 color molokai
