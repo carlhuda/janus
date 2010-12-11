@@ -17,6 +17,8 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+" Press Space to dismiss highlighting
+:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " Tab completion
 set wildmode=list:longest,list:full
