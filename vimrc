@@ -130,3 +130,8 @@ nmap <leader>sw<down>  :botright new<CR>
 nmap <leader>s<right>   :rightbelow vnew<CR>
 nmap <leader>s<down>   :rightbelow new<CR>
 
+" xterm not recognized right by vim
+set term=builtin_ansi
+
+" No scrollbars "
+set guioptions=aAce
