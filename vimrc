@@ -103,3 +103,6 @@ color desert
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
+" No scrollbars "
+set guioptions=aAce

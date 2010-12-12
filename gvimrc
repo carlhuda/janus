@@ -16,13 +16,16 @@ if has("gui_macvim")
 
   " Command-/ to toggle comments
   map <D-/> <plug>NERDCommenterToggle<CR>
+
+  " Set font to Inconsolata "
+  set guifont=Inconsolata:h13
 endif
 
 " Start without the toolbar
 set guioptions-=T
 
 " Default gui color scheme
-color molokai
+color MadeOfCode 
 
 " ConqueTerm wrapper
 function StartTerm()
