@@ -8,6 +8,7 @@ syntax on
 set nowrap
 set tabstop=2
 set shiftwidth=2
+set softtabstop=2
 set expandtab
 set list listchars=tab:\ \ ,trail:·
 
@@ -106,3 +107,7 @@ endif
 
 " No scrollbars "
 set guioptions=aAce
+
+"Directories for swp files
+set backupdir=~/.vim/backup
+set directory=~/.vim/backup

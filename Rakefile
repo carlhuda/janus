@@ -56,8 +56,9 @@ def vim_plugin_task(name, repo=nil)
           current = lines.shift until current =~ /finish$/ # find finish line
 
           while current = lines.shift
-            # first line is the filename, followed by some unknown data
-            file = current[/^(.+?)\s+\[\[\[(\d+)$/, 1]
+            # first line is the filename (possibly followed by garbage)
+            # some vimballs use win32 style path separators
+            path = current[/^(.+?)(\t\[{3}\d)?$/, 1].gsub '\\', '/'
 
             # then the size of the payload in lines
             current = lines.shift
@@ -68,8 +69,8 @@ def vim_plugin_task(name, repo=nil)
 
             # install the data
             Dir.chdir dir do
-              mkdir_p File.dirname(file)
-              File.open(file, 'w'){ |f| f.write(data) }
+              mkdir_p File.dirname(path)
+              File.open(path, 'w'){ |f| f.write(data) }
             end
           end
         end
@@ -140,7 +141,7 @@ vim_plugin_task "rails",            "git://github.com/tpope/vim-rails.git"
 vim_plugin_task "rspec",            "git://github.com/taq/vim-rspec.git"
 vim_plugin_task "zoomwin",          "http://www.vim.org/scripts/download_script.php?src_id=9865"
 vim_plugin_task "snipmate",         "git://github.com/msanders/snipmate.vim.git"
-vim_plugin_task "autoclose",        "git://github.com/Townk/vim-autoclose.git"
+vim_plugin_task "autoclose",        "git://github.com/vim-scripts/AutoClose.git"
 vim_plugin_task "markdown",         "git://github.com/tpope/vim-markdown.git"
 vim_plugin_task "align",            "git://github.com/tsaleh/vim-align.git"
 vim_plugin_task "unimpaired",       "git://github.com/tpope/vim-unimpaired.git"
@@ -148,7 +149,7 @@ vim_plugin_task "unimpaired",       "git://github.com/tpope/vim-unimpaired.git"
 vim_plugin_task "command_t",        "git://github.com/wincent/Command-T.git" do
   sh "find ruby -name '.gitignore' | xargs rm"
   Dir.chdir "ruby/command-t" do
-    if `rvm > /dev/null 2>&1` && $?.exitstatus == 1
+    if `rvm > /dev/null 2>&1` && $?.exitstatus == 0
       sh "rvm system ruby extconf.rb"
     else
       sh "/usr/bin/ruby extconf.rb" # assume /usr/bin/ruby is system ruby
