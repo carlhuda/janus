@@ -21,13 +21,16 @@ if has("gui_macvim")
   " Command-][ to increase/decrease indentation
   vmap <D-]> >gv
   vmap <D-[> <gv
+
+  " Set font to Inconsolata "
+  set guifont=Inconsolata:h13
 endif
 
 " Start without the toolbar
 set guioptions-=T
 
 " Default gui color scheme
-color ir_black
+color MadeOfCode 
 
 " ConqueTerm wrapper
 function StartTerm()
