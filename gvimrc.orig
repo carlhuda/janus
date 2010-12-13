@@ -6,6 +6,7 @@ if has("gui_macvim")
   " Command-T for CommandT
   macmenu &File.New\ Tab key=<nop>
   map <D-t> :CommandT<CR>
+  imap <D-t> <Esc>:CommandT<CR>
 
   " Command-Shift-F for Ack
   macmenu Window.Toggle\ Full\ Screen\ Mode key=<nop>
@@ -17,12 +18,17 @@ if has("gui_macvim")
   " Command-/ to toggle comments
   map <D-/> <plug>NERDCommenterToggle<CR>
 
+<<<<<<< HEAD
   " Command-][ to increase/decrease indentation
   vmap <D-]> >gv
   vmap <D-[> <gv
 
   " Set font to Inconsolata "
   set guifont=Inconsolata:h13
+=======
+  " Set font to Monaco "
+  set guifont=Monaco:h12
+>>>>>>> Changed GUI font to Monaco. Yep, I like it.
 endif
 
 " Start without the toolbar
