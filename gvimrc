@@ -17,8 +17,8 @@ if has("gui_macvim")
   " Command-/ to toggle comments
   map <D-/> <plug>NERDCommenterToggle<CR>
 
-  " Set font to Inconsolata "
-  set guifont=Inconsolata:h13
+  " Set font to Monaco "
+  set guifont=Monaco:h12
 endif
 
 " Start without the toolbar
