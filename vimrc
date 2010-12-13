@@ -90,6 +90,7 @@ map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 " Command mode: Ctrl+P
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
+
 " Unimpaired configuration
 " Bubble single lines
 nmap <C-Up> [e
@@ -110,14 +111,21 @@ if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
-<<<<<<< HEAD
 "Directories for swp files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 
 " xterm not recognized right by vim
 set term=builtin_ansi
-=======
+
 " No scrollbars "
 set guioptions=aAce
->>>>>>> some changes to toolbar and font
+
+" easy window spliting
+nmap <leader>sw<right> :botright vnew<CR>
+nmap <leader>sw<down>  :botright new<CR>
+
+" easy buffer splitting
+nmap <leader>s<right>   :rightbelow vnew<CR>
+nmap <leader>s<down>   :rightbelow new<CR>
+
