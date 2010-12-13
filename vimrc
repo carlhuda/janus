@@ -115,9 +115,6 @@ if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
-" No scrollbars "
-set guioptions=aAce
-
 "Directories for swp files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
