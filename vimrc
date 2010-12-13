@@ -85,6 +85,7 @@ map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 " Command mode: Ctrl+P
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
+
 " Unimpaired configuration
 " Bubble single lines
 nmap <C-Up> [e
@@ -111,3 +112,12 @@ set guioptions=aAce
 "Directories for swp files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
+
+" easy window spliting
+nmap <leader>sw<right> :botright vnew<CR>
+nmap <leader>sw<down>  :botright new<CR>
+
+" easy buffer splitting
+nmap <leader>s<right>   :rightbelow vnew<CR>
+nmap <leader>s<down>   :rightbelow new<CR>
+
