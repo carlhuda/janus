@@ -34,9 +34,14 @@ function StartTerm()
   setlocal listchars=tab:\ \ 
 endfunction
 
+" NERDTree persists
+" unless set to 0 in .vimrc.local.before or .gvimrc.local.before
+if !exists("g:janus_nerd_tree_persists")
+  let g:janus_nerd_tree_persists = 1
+endif
+
 " Project Tree
 autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
-
 
 " If the parameter is a directory, cd into it
 function s:CdIfDirectory(directory)
@@ -47,7 +52,7 @@ function s:CdIfDirectory(directory)
     exe "cd " . a:directory
   endif
 
-  if directory
+  if directory && g:janus_nerd_tree_persists
     NERDTree
     wincmd p
     bd
@@ -102,11 +107,14 @@ endfunction
 function ChangeDirectory(dir, ...)
   execute "cd " . a:dir
   let stay = exists("a:1") ? a:1 : 1
+  let was_open = exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1
 
-  NERDTree
+  if was_open || g:janus_nerd_tree_persists
+    NERDTree
 
-  if !stay
-    wincmd p
+    if !stay
+      wincmd p
+    endif
   endif
 endfunction
 
