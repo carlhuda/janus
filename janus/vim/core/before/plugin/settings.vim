@@ -86,10 +86,10 @@ set laststatus=2  " always show the status bar
 " This is likely a bludgeon to solve some other issue, but it works
 set noequalalways
 
-" remember last position in file
+" Remember last location in file, but not for commit messages.
 " see :help last-position-jump
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+  au BufReadPost * if &filetype !~ 'commit\c' && line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g`\"" | endif
 endif
 
