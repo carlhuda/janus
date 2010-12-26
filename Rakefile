@@ -145,6 +145,7 @@ vim_plugin_task "delimitmate",      "git://github.com/Raimondi/delimitMate.git"
 vim_plugin_task "markdown",         "git://github.com/tpope/vim-markdown.git"
 vim_plugin_task "align",            "git://github.com/tsaleh/vim-align.git"
 vim_plugin_task "unimpaired",       "git://github.com/tpope/vim-unimpaired.git"
+vim_plugin_task "searchfold",       "git://github.com/vim-scripts/searchfold.vim.git"
 
 vim_plugin_task "command_t",        "git://github.com/wincent/Command-T.git" do
   sh "find ruby -name '.gitignore' | xargs rm"
@@ -194,11 +195,6 @@ vim_plugin_task "mustasche" do
   sh "curl http://github.com/defunkt/mustache/raw/master/contrib/mustache.vim > syntax/mustache.vim"
 end
 
-desc "Cleanup all the files"
-task :clean do
-  rm_rf "tmp"
-end
-
 desc "Update the documentation"
 task :update_docs do
   puts "Updating VIM Documentation..."
@@ -223,9 +219,10 @@ task :pull do
   system "git pull"
 end
 
-task :upgrade => [:clean, :pull, :update_docs, :link_vimrc]
-
 task :default => [
   :update_docs,
   :link_vimrc
 ]
+
+task :upgrade => [:clean, :pull, :default]
+
