@@ -25,6 +25,11 @@ set wildignore+=*.o,*.obj,.git,*.rbc
 " Status bar
 set laststatus=2
 
+" Without setting this, ZoomWin restores windows in a way that causes
+" equalalways behavior to be triggered the next time CommandT is used.
+" This is likely a bludgeon to solve some other issue, but it works
+set noequalalways
+
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$']
 map <Leader>n :NERDTreeToggle<CR>
@@ -33,7 +38,7 @@ map <Leader>n :NERDTreeToggle<CR>
 let g:CommandTMaxHeight=20
 
 " ZoomWin configuration
-map <Leader>z :ZoomWin<CR>
+map <Leader><Leader> :ZoomWin<CR>
 
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
