@@ -141,7 +141,7 @@ vim_plugin_task "rails",            "git://github.com/tpope/vim-rails.git"
 vim_plugin_task "rspec",            "git://github.com/taq/vim-rspec.git"
 vim_plugin_task "zoomwin",          "http://www.vim.org/scripts/download_script.php?src_id=9865"
 vim_plugin_task "snipmate",         "git://github.com/msanders/snipmate.vim.git"
-vim_plugin_task "autoclose",        "git://github.com/vim-scripts/AutoClose.git"
+vim_plugin_task "delimitmate",      "git://github.com/Raimondi/delimitMate.git"
 vim_plugin_task "markdown",         "git://github.com/tpope/vim-markdown.git"
 vim_plugin_task "align",            "git://github.com/tsaleh/vim-align.git"
 vim_plugin_task "unimpaired",       "git://github.com/tpope/vim-unimpaired.git"
@@ -214,6 +214,16 @@ task :link_vimrc do
     end
   end
 end
+
+task :clean do
+  system "git clean -dfx"
+end
+
+task :pull do
+  system "git pull"
+end
+
+task :upgrade => [:clean, :pull, :update_docs, :link_vimrc]
 
 task :default => [
   :update_docs,
