@@ -32,6 +32,7 @@ endfunction
 
 " Project Tree
 autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
+autocmd FocusGained * call s:UpdateNERDTree()
 
 
 " If the parameter is a directory, cd into it
@@ -69,7 +70,7 @@ function s:UpdateNERDTree(...)
     endif
   endif
 
-  if exists("CommandTFlush")
+  if exists(":CommandTFlush") == 2
     CommandTFlush
   endif
 endfunction
