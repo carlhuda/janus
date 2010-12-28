@@ -226,5 +226,6 @@ task :default => [
   :link_vimrc
 ]
 
+desc "Clear out all build artifacts and rebuild the latest Janus"
 task :upgrade => [:clean, :pull, :default]
 
