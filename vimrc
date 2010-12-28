@@ -113,3 +113,6 @@ endif
 "Directories for swp files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
+
+" xterm not recognized right by vim
+set term=builtin_ansi
