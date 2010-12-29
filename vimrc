@@ -132,3 +132,7 @@ nmap <leader>sw<down>  :botright new<CR>
 nmap <leader>s<right>   :rightbelow vnew<CR>
 nmap <leader>s<down>   :rightbelow new<CR>
 
+"emulate TextMate's Command-Return to insert a blank line below the current
+"line
+inoremap <D-CR> <C-O>o
+
