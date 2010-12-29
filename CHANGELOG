@@ -1,0 +1,11 @@
+2010-12-28  wycats
+
+	* TAG: 0.9.0
+	* BUGFIX: Interaction bug between NERDTree and ZoomWin
+	* BUGFIX: Arrow keys not working in xterm [akatz]
+	* FEATURE: SearchFold
+	* FEATURE: Refresh NERDTree and CommandT on refocus
+	* FEATURE: <Leader><Leader> triggers ZoomWin
+	* FEATURE: JSLint plugin
+	* FEATURE: Improved, more modern-looking NERDTree
+	* FEATURE: irblack theme (now default)
