@@ -43,7 +43,6 @@ autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 " buffer that's left is the NERDTree buffer
 function s:CloseIfOnlyNerdTreeLeft()
   if exists("t:NERDTreeBufName")
-    echo t:NERDTreeBufName
     if bufwinnr(t:NERDTreeBufName) != -1
       if winnr("$") == 1
         q
