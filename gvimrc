@@ -148,6 +148,11 @@ function Remove(file)
   call s:UpdateNERDTree()
 endfunction
 
+function Mkdir(file)
+  execute "!mkdir " . a:file
+  call s:UpdateNERDTree()
+endfunction
+
 function Edit(file)
   if exists("b:NERDTreeRoot")
     wincmd p
@@ -171,6 +176,7 @@ call s:DefineCommand("cd", "ChangeDirectory")
 call s:DefineCommand("touch", "Touch")
 call s:DefineCommand("rm", "Remove")
 call s:DefineCommand("e", "Edit")
+call s:DefineCommand("mkdir", "MkDir")
 
 " Include user's local vim config
 if filereadable(expand("~/.gvimrc.local"))
