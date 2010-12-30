@@ -217,6 +217,7 @@ task :clean do
   system "git clean -dfx"
 end
 
+desc "Pull the latest"
 task :pull do
   system "git pull"
 end
