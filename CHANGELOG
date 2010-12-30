@@ -1,3 +1,8 @@
+2010-12-29  wycats
+
+	* FEATURE: Opening with an explicit directory starts on NERDTree
+	* FEATURE: If you close the last window before NERDTree, close NERDTree
+
 2010-12-28  wycats
 
 	* TAG: 0.9.0
