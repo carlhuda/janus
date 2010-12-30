@@ -16,6 +16,10 @@ if has("gui_macvim")
 
   " Command-/ to toggle comments
   map <D-/> <plug>NERDCommenterToggle<CR>
+
+  " Command-][ to increase/decrease indentation
+  vmap <D-]> >gv
+  vmap <D-[> <gv
 endif
 
 " Start without the toolbar
