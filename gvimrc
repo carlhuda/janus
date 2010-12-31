@@ -68,8 +68,6 @@ function s:CdIfDirectory(directory)
 
   if explicitDirectory
     wincmd p
-  else
-
   endif
 endfunction
 
@@ -175,7 +173,7 @@ call s:DefineCommand("cd", "ChangeDirectory")
 call s:DefineCommand("touch", "Touch")
 call s:DefineCommand("rm", "Remove")
 call s:DefineCommand("e", "Edit")
-call s:DefineCommand("mkdir", "MkDir")
+call s:DefineCommand("mkdir", "Mkdir")
 
 " Include user's local vim config
 if filereadable(expand("~/.gvimrc.local"))
