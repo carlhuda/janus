@@ -1,3 +1,5 @@
+let mapleader=','
+
 if has("gui_macvim")
   " Fullscreen takes up entire screen
   set fuoptions=maxhorz,maxvert
@@ -9,9 +11,6 @@ endif
 
 " Start without the toolbar
 set guioptions-=T
-
-" Default gui color scheme
-color ir_black
 
 
 " Project Tree
