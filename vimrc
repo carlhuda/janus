@@ -1,3 +1,4 @@
+let mapleader=','
 set nocompatible
 
 set number
