@@ -195,7 +195,7 @@ vim_plugin_task "molokai" do
   sh "curl http://www.vim.org/scripts/download_script.php?src_id=9750 > colors/molokai.vim"
 end
 vim_plugin_task "mustache" do
-  sh "curl http://github.com/defunkt/mustache/raw/master/contrib/mustache.vim > syntax/mustache.vim"
+  sh "curl https://github.com/defunkt/mustache/raw/master/contrib/mustache.vim > syntax/mustache.vim"
 end
 vim_plugin_task "vwilight" do
   sh "curl https://gist.github.com/raw/796172/724c7ca237a7f6b8d857c4ac2991cfe5ffb18087/vwilight.vim > colors/vwilight.vim"
