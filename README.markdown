@@ -231,6 +231,9 @@ Janus ships with a few additional syntaxes:
 Janus includes the vim color sampler pack, which includes [over 100
 popular color themes](http://www.vi-improved.org/color_sampler_pack/):
 
+(The color schemes in this pack only work with MacVim gui interface, not
+terminal mode)
+
 * jellybeans
 * matrix
 * railscasts2
