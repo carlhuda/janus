@@ -105,6 +105,13 @@ set modelines=10
 
 " Default color scheme
 color desert
+<<<<<<< HEAD
+=======
+
+"Directories for swp files
+set backupdir=~/.vim/backup
+set directory=~/.vim/backup
+>>>>>>> d3087eb61db1193d28281cb3a14c12fe2efac31c
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
@@ -118,12 +125,15 @@ set guioptions=aAce
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 
+<<<<<<< HEAD
 " xterm not recognized right by vim
 set term=builtin_ansi
 
 " No scrollbars "
 set guioptions=aAce
 
+=======
+>>>>>>> d3087eb61db1193d28281cb3a14c12fe2efac31c
 " easy window spliting
 nmap <leader>sw<right> :botright vnew<CR>
 nmap <leader>sw<down>  :botright new<CR>
