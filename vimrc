@@ -22,6 +22,40 @@ set smartcase
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc
 
+" Paste in insert mode
+set paste
+
+" Leader
+let mapleader = ";"
+
+" Save a shortcut when typing commands
+nnoremap ; :
+
+imap <C-t> <Esc>
+
+" Selection
+nnoremap / /\v
+vnoremap / /\v
+set ignorecase
+set smartcase
+set incsearch
+set showmatch
+set hlsearch
+map <leader><space> :noh<cr>
+map <leader>d :cd %:p:h<cr>
+runtime macros/matchit.vim
+nmap <tab> %
+vmap <tab> %
+
+" Easy buffer navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" NERDTree
+map <Leader>nt :NERDTree<CR>
+
 " Status bar
 set laststatus=2
 
