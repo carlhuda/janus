@@ -146,6 +146,8 @@ vim_plugin_task "autoclose",        "https://github.com/Townk/vim-autoclose.git"
 vim_plugin_task "markdown",         "https://github.com/tpope/vim-markdown.git"
 vim_plugin_task "align",            "https://github.com/tsaleh/vim-align.git"
 vim_plugin_task "unimpaired",       "https://github.com/tpope/vim-unimpaired.git"
+vim_plugin_task "searchfold",       "https://github.com/vim-scripts/searchfold.vim.git"
+vim_plugin_task "irblack",          "https://github.com/wgibbs/vim-irblack.git"
 
 #vim_plugin_task "command_t",        "https://github.com/wincent/Command-T.git" do
 #  sh "find ruby -name '.gitignore' | xargs rm"
@@ -195,11 +197,6 @@ vim_plugin_task "mustasche" do
   sh "curl http://github.com/defunkt/mustache/raw/master/contrib/mustache.vim > syntax/mustache.vim"
 end
 
-desc "Cleanup all the files"
-task :clean do
-  rm_rf "tmp"
-end
-
 desc "Update the documentation"
 task :update_docs do
   puts "Updating VIM Documentation..."
@@ -216,7 +213,20 @@ task :link_vimrc do
   end
 end
 
+task :clean do
+  system "git clean -dfx"
+end
+
+desc "Pull the latest"
+task :pull do
+  system "git pull"
+end
+
 task :default => [
   :update_docs,
   :link_vimrc
 ]
+
+desc "Clear out all build artifacts and rebuild the latest Janus"
+task :upgrade => [:clean, :pull, :default]
+
