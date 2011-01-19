@@ -4,6 +4,9 @@ set number
 set ruler
 syntax on
 
+" Set encoding
+set encoding=utf-8
+
 " Whitespace stuff
 set nowrap
 set tabstop=2
