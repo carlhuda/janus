@@ -24,9 +24,11 @@ Janus is built primarily for [MacVim](http://code.google.com/p/macvim/) on OSX.
 Download it [here](https://github.com/b4winckler/macvim/downloads).
 
 Alternatively, you can use Janus with the bundled console `vim` installation on
-OSX (via Terminal), or with any other vim or gvim installation.
+OSX (via Terminal), or with any other `vim` or `gvim` installation.
 
-Debian/Ubuntu users can `apt-get install vim-full` for a similar setup.
+Linux users can install `gvim` for an experience identical to MacVim.
+On Debian/Ubuntu, simply `apt-get install vim-gnome`. For remote
+servers, install console vim with `apt-get install vim-nox`.
 
 ## Installation
 
