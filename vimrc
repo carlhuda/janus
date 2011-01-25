@@ -63,9 +63,8 @@ function s:setupMarkup()
   map <buffer> <Leader>p :Mm <CR>
 endfunction
 
-" make and python use real tabs
+" make uses real tabs
 au FileType make                                     set noexpandtab
-au FileType python                                   set noexpandtab
 
 " Thorfile, Rakefile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
@@ -74,6 +73,9 @@ au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
 au BufRead,BufNewFile *.txt call s:setupWrapping()
+
+" make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
+au FileType python  set tabstop=4 textwidth=79
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
