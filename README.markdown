@@ -271,4 +271,5 @@ Janus also has a few customized versions of popular themes:
 * jellybeans+
 * molokai
 * railscasts+
+* vwilight
 
