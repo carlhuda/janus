@@ -106,4 +106,5 @@ set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 
 " xterm not recognized right by vim
-set term=builtin_ansi
+" for basic unix shells - using the below disables the cursor
+" set term=builtin_ansi
