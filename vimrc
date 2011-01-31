@@ -95,7 +95,6 @@ map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 " Command mode: Ctrl+P
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
-
 " Unimpaired configuration
 " Bubble single lines
 nmap <C-Up> [e
@@ -114,6 +113,7 @@ set modelines=10
 " Default color scheme
 color desert
 
+" Directories for swp files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 
