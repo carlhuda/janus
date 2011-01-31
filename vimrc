@@ -101,6 +101,9 @@ nmap <C-Down> ]e
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
+" Enable syntastic syntax checking
+let g:syntastic_enable_signs=1
+
 " Use modeline overrides
 set modeline
 set modelines=10
