@@ -218,7 +218,8 @@ task :link_vimrc do
 end
 
 task :clean do
-  system "git clean -dfx"
+  rm_r "tmp" if File.exist?('tmp')
+  rm_r "janus_bundle" if File.exist?('janus_bundle')
 end
 
 desc "Pull the latest"
