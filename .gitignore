@@ -4,7 +4,9 @@ nerdtree_plugin
 
 after
 autoload
+bundle
 doc
+janus_bundle
 plugin
 ruby
 snippets

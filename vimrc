@@ -1,3 +1,9 @@
+filetype off
+call pathogen#runtime_append_all_bundles()
+call pathogen#runtime_append_all_bundles("janus_bundle")
+filetype plugin indent on
+
+
 set nocompatible
 
 set number

@@ -1,5 +1,5 @@
 module VIM
-  Dirs = %w[ after autoload doc plugin ruby snippets syntax ftdetect ftplugin colors indent ]
+  Dirs = %w[ autoload bundle janus_bundle janus_bundle/janus_themes/colors ]
 end
 
 directory "tmp"
@@ -10,6 +10,7 @@ end
 def vim_plugin_task(name, repo=nil)
   cwd = File.expand_path("../", __FILE__)
   dir = File.expand_path("tmp/#{name}")
+  bundle_target = File.expand_path("janus_bundle/#{name}")
   subdirs = VIM::Dirs
 
   namespace(name) do
@@ -85,21 +86,11 @@ def vim_plugin_task(name, repo=nil)
       end
 
       task :install => [:pull] + subdirs do
-        Dir.chdir dir do
-          if File.exists?("Rakefile") and `rake -T` =~ /^rake install/
-            sh "rake install"
-          elsif File.exists?("install.sh")
-            sh "sh install.sh"
-          else
-            subdirs.each do |subdir|
-              if File.exists?(subdir)
-                sh "cp -rf #{subdir}/* #{cwd}/#{subdir}/"
-              end
-            end
-          end
+        sh "cp -rf #{dir} #{bundle_target}"
+        rm_r "#{bundle_target}/.git" if repo =~ /git$/
+        Dir.chdir bundle_target do
+          yield if block_given?
         end
-
-        yield if block_given?
       end
     else
       task :install => subdirs do
@@ -118,6 +109,12 @@ def vim_plugin_task(name, repo=nil)
     Rake::Task["#{name}:install"].invoke
   end
   task :default => name
+end
+
+vim_plugin_task "pathogen.vim" do
+  file 'pathogen.vim' => 'autoload' do
+    sh "curl https://github.com/tpope/vim-pathogen/raw/master/autoload/pathogen.vim > autoload/pathogen.vim"
+  end
 end
 
 vim_plugin_task "ack.vim",          "git://github.com/mileszs/ack.vim.git"
@@ -163,9 +160,11 @@ vim_plugin_task "command_t",        "git://github.com/wincent/Command-T.git" do
   end
 end
 
+
+
 vim_plugin_task "janus_themes" do
   # custom version of railscasts theme
-  File.open(File.expand_path("../colors/railscasts+.vim", __FILE__), "w") do |file|
+  File.open(File.expand_path("../janus_bundle/janus_themes/colors/railscasts+.vim", __FILE__), "w") do |file|
     file.puts <<-VIM.gsub(/^ +/, "").gsub("<SP>", " ")
       runtime colors/railscasts.vim
       let g:colors_name = "railscasts+"
@@ -179,7 +178,7 @@ vim_plugin_task "janus_themes" do
   end
 
   # custom version of jellybeans theme
-  File.open(File.expand_path("../colors/jellybeans+.vim", __FILE__), "w") do |file|
+  File.open(File.expand_path("../janus_bundle/janus_themes/colors/jellybeans+.vim", __FILE__), "w") do |file|
     file.puts <<-VIM.gsub(/^      /, "")
       runtime colors/jellybeans.vim
       let g:colors_name = "jellybeans+"
@@ -192,13 +191,14 @@ vim_plugin_task "janus_themes" do
 end
 
 vim_plugin_task "molokai" do
-  sh "curl http://www.vim.org/scripts/download_script.php?src_id=9750 > colors/molokai.vim"
+  sh "curl http://www.vim.org/scripts/download_script.php?src_id=9750 > janus_bundle/janus_themes/colors/molokai.vim"
 end
 vim_plugin_task "mustasche" do
-  sh "curl http://github.com/defunkt/mustache/raw/master/contrib/mustache.vim > syntax/mustache.vim"
+  FileUtils.mkdir_p "janus_bundle/mustache/syntax"
+  sh "curl http://github.com/defunkt/mustache/raw/master/contrib/mustache.vim > janus_bundle/mustache/syntax/mustache.vim"
 end
 vim_plugin_task "vwilight" do
-  sh "curl https://gist.github.com/raw/796172/724c7ca237a7f6b8d857c4ac2991cfe5ffb18087/vwilight.vim > colors/vwilight.vim"
+  sh "curl https://gist.github.com/raw/796172/724c7ca237a7f6b8d857c4ac2991cfe5ffb18087/vwilight.vim > janus_bundle/janus_themes/colors/vwilight.vim"
 end
 
 desc "Update the documentation"
@@ -227,8 +227,8 @@ task :pull do
 end
 
 task :default => [
-  :update_docs,
-  :link_vimrc
+  :link_vimrc,
+  :update_docs
 ]
 
 desc "Clear out all build artifacts and rebuild the latest Janus"
