@@ -1,0 +1,6 @@
+# Copy this file to janus_load.local and use it to specify additional vim bundles 
+# that should be installed when running rake.
+
+# e.g.
+# vim_plugin_task "vim-repeat", "https://github.com/tpope/vim-repeat.git"
+# vim_plugin_task "scratch", "http://www.vim.org/scripts/download_script.php?src_id=2050", :plugin

@@ -214,6 +214,8 @@ vim_plugin_task "vwilight" do
   sh "curl https://gist.github.com/raw/796172/724c7ca237a7f6b8d857c4ac2991cfe5ffb18087/vwilight.vim > janus_bundle/janus_themes/colors/vwilight.vim"
 end
 
+import 'janus_load.local' if File.exist?('janus_load.local')
+
 desc "Update the documentation"
 task :update_docs do
   puts "Updating VIM Documentation..."
