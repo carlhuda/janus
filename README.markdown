@@ -247,7 +247,7 @@ Janus ships with a few additional syntaxes:
 * Sass (bound to \*.sass)
 * SCSS (bound to \*.scss)
 * An improved JavaScript syntax (bound to \*.js)
-* Map Gemfile, Rakefile and Thorfile to Ruby
+* Map Gemfile, Rakefile, Vagrantfile and Thorfile to Ruby
 * Git commits (set your `EDITOR` to `mvim -f`)
 
 ## Color schemes
