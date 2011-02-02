@@ -82,7 +82,7 @@ function s:CdIfDirectory(directory)
   let directory = explicitDirectory || empty(a:directory)
 
   if explicitDirectory
-    exe "cd " . a:directory
+    exe "cd " . fnameescape(a:directory)
   endif
 
   if directory
@@ -142,7 +142,7 @@ endfunction
 
 " Public NERDTree-aware versions of builtin functions
 function ChangeDirectory(dir, ...)
-  execute "cd " . a:dir
+  execute "cd " . fnameescape(a:dir)
   let stay = exists("a:1") ? a:1 : 1
 
   NERDTree
@@ -153,7 +153,7 @@ function ChangeDirectory(dir, ...)
 endfunction
 
 function Touch(file)
-  execute "!touch " . a:file
+  execute "!touch " . shellescape(a:file, 1)
   call s:UpdateNERDTree()
 endfunction
 
@@ -164,14 +164,14 @@ function Remove(file)
   if (current_path == removed_path) && (getbufvar("%", "&modified"))
     echo "You are trying to remove the file you are editing. Please close the buffer first."
   else
-    execute "!rm " . a:file
+    execute "!rm " . shellescape(a:file, 1)
   endif
 
   call s:UpdateNERDTree()
 endfunction
 
 function Mkdir(file)
-  execute "!mkdir " . a:file
+  execute "!mkdir " . shellescape(a:file, 1)
   call s:UpdateNERDTree()
 endfunction
 
@@ -180,15 +180,15 @@ function Edit(file)
     wincmd p
   endif
 
-  execute "e " . a:file
+  execute "e " . fnameescape(a:file)
 
 ruby << RUBY
-  destination = File.expand_path(VIM.evaluate(%{system("dirname " . a:file)}))
+  destination = File.expand_path(VIM.evaluate(%{system("dirname " . shellescape(a:file, 1))}))
   pwd         = File.expand_path(Dir.pwd)
   home        = pwd == File.expand_path("~")
 
   if home || Regexp.new("^" + Regexp.escape(pwd)) !~ destination
-    VIM.command(%{call ChangeDirectory(system("dirname " . a:file), 0)})
+    VIM.command(%{call ChangeDirectory(system("dirname " . shellescape(a:file, 1)), 0)})
   end
 RUBY
 endfunction
