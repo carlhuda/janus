@@ -7,7 +7,7 @@ VIM::Dirs.each do |dir|
   directory(dir)
 end
 
-def vim_plugin_task(name, repo=nil)
+def vim_plugin_task(name, repo=nil, type=nil)
   cwd = File.expand_path("../", __FILE__)
   dir = File.expand_path("tmp/#{name}")
   bundle_target = File.expand_path("janus_bundle/#{name}")
@@ -27,7 +27,7 @@ def vim_plugin_task(name, repo=nil)
             raise ArgumentError, 'unable to determine script type'
           end
 
-        elsif repo =~ /(tar|gz|vba|zip)$/
+        elsif repo =~ /(tar|gz|vba|zip|vim)$/
           filename = File.basename(repo)
           sh "curl #{repo} > tmp/#{filename}"
 
@@ -44,6 +44,19 @@ def vim_plugin_task(name, repo=nil)
 
           sh "tar zxvf tmp/#{filename}"
           sh "mv #{dirname} #{dir}"
+
+        when /vim(\.gz)?$/
+          if filename =~ /gz$/
+            sh "gunzip -f tmp/#{filename}"
+            filename = File.basename(filename, '.gz')
+          end
+
+          if type
+            mkdir_p "#{dir}/#{type}"
+            sh "mv tmp/#{filename} #{dir}/#{type}/"
+          else
+            raise ArgumentError, "When downloading a raw vim file, a type (plugin, syntax, etc) must be specified."
+          end
 
         when /vba(\.gz)?$/
           if filename =~ /gz$/
