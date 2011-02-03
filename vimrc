@@ -1,6 +1,7 @@
 filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#runtime_append_all_bundles("janus_bundle")
+call pathogen#helptags()
 filetype plugin indent on
 
 

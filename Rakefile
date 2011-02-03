@@ -216,12 +216,6 @@ end
 
 import 'janus_load.local' if File.exist?('janus_load.local')
 
-desc "Update the documentation"
-task :update_docs do
-  puts "Updating VIM Documentation..."
-  system "vim -e -s <<-EOF\n:helptags ~/.vim/doc\n:quit\nEOF"
-end
-
 desc "link vimrc to ~/.vimrc"
 task :link_vimrc do
   %w[ vimrc gvimrc ].each do |file|
@@ -242,10 +236,7 @@ task :pull do
   system "git pull"
 end
 
-task :default => [
-  :link_vimrc,
-  :update_docs
-]
+task :default => :link_vimrc
 
 desc "Clear out all build artifacts and rebuild the latest Janus"
 task :upgrade => [:clean, :pull, :default]
