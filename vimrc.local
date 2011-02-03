@@ -1,7 +1,6 @@
 " Thanks http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 
 set relativenumber
-set undofile
 set ttyfast
 set wildmenu
 
