@@ -1,0 +1,65 @@
+" Thanks http://stevelosh.com/blog/2010/09/coming-home-to-vim/
+
+set relativenumber
+set undofile
+set ttyfast
+set wildmenu
+
+" Remap leader to comma
+let mapleader = ","
+
+" More sane searching
+nnoremap / /\v
+vnoremap / /\v
+set ignorecase
+set smartcase
+set incsearch
+set showmatch
+set hlsearch
+
+" <leader><space> clears search
+nnoremap <leader><space> :noh<cr>
+
+" <tab> matches bracket pairs
+nnoremap <tab> %
+vnoremap <tab> %
+
+" show colored column at 100
+set colorcolumn=100
+
+" Disable arrow keys
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+" j and k move by screen lines
+nnoremap j gj
+nnoremap k gk
+
+" I never really want to hit F1
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" shortcut for :Ack
+nnoremap <leader>a :Ack
+
+" <leader>v selects text that was just pasted
+nnoremap <leader>v V`]
+
+" <leader>w opens a vertical split window and switches to it
+nnoremap <leader>w <C-w>v<C-w>l
+
+" moving among splits
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+colorscheme vividchalk
+highlight LineNr        guibg=#505050 ctermbg=DarkGrey
