@@ -99,8 +99,8 @@ def vim_plugin_task(name, repo=nil, type=nil)
       end
 
       task :install => [:pull] + subdirs do
-        sh "cp -rf #{dir} #{bundle_target}"
-        rm_r "#{bundle_target}/.git" if repo =~ /git$/
+        mkdir_p bundle_target
+        sh "cp -rf #{dir}/* #{bundle_target}/"
         Dir.chdir bundle_target do
           yield if block_given?
         end
