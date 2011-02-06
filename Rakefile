@@ -201,6 +201,8 @@ vim_plugin_task "vwilight" do
   sh "curl https://gist.github.com/raw/796172/724c7ca237a7f6b8d857c4ac2991cfe5ffb18087/vwilight.vim > colors/vwilight.vim"
 end
 
+vim_plugin_task "vimclojure", "http://www.vim.org/scripts/download_script.php?src_id=13986"
+
 desc "Update the documentation"
 task :update_docs do
   puts "Updating VIM Documentation..."

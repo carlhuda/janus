@@ -151,3 +151,5 @@ nmap <leader>s<down>   :rightbelow new<CR>
 "line
 inoremap <D-CR> <C-O>o
 
+"Vimclojure configuration
+let vimclojure#HighlightBuiltins = 1
