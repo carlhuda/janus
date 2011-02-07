@@ -64,4 +64,7 @@ nnoremap <C-l> <C-w>l
 nnoremap <leader>f :FufFile<CR>
 nnoremap <leader>b :FufBuffer<CR>
 
+" autosave
+au FocusLost * :wa
+
 colorscheme jellybeans+
