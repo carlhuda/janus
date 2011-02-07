@@ -188,7 +188,7 @@ ruby << RUBY
   home        = pwd == File.expand_path("~")
 
   if home || Regexp.new("^" + Regexp.escape(pwd)) !~ destination
-    VIM.command(%{call ChangeDirectory(system("dirname " . shellescape(a:file, 1)), 0)})
+    VIM.command(%{call ChangeDirectory(fnamemodify(a:file, ":h"), 0)})
   end
 RUBY
 endfunction
