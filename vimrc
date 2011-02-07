@@ -55,7 +55,7 @@ endif
 
 function s:setupWrapping()
   set wrap
-  set wm=2
+  set wrapmargin=2
   set textwidth=72
 endfunction
 
@@ -65,7 +65,7 @@ function s:setupMarkup()
 endfunction
 
 " make uses real tabs
-au FileType make                                     set noexpandtab
+au FileType make set noexpandtab
 
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
