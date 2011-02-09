@@ -1,6 +1,5 @@
 " Thanks http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 
-set relativenumber
 set ttyfast
 set wildmenu
 
@@ -68,3 +67,4 @@ nnoremap <leader>b :FufBuffer<CR>
 au FocusLost * :wa
 
 colorscheme jellybeans+
+set relativenumber
