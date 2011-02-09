@@ -249,7 +249,7 @@ Janus ships with a few additional syntaxes:
 * An improved JavaScript syntax (bound to \*.js)
 * Map Gemfile, Rakefile, Vagrantfile and Thorfile to Ruby
 * Git commits (set your `EDITOR` to `mvim -f`)
-* Slim (bout to \*.slim)
+* Slim (bound to \*.slim)
 
 ## Color schemes
 
