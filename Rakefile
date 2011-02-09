@@ -200,6 +200,10 @@ vim_plugin_task "mustache" do
     file << "au BufNewFile,BufRead *.mustache        setf mustache"
   end
 end
+vim_plugin_task "slim" do
+  sh "curl https://github.com/stonean/slim/raw/master/extra/vim/ftdetect/slim.vim > ftdetect/slim.vim"
+  sh "curl https://github.com/stonean/slim/raw/master/extra/vim/syntax/slim.vim > syntax/slim.vim"
+end
 vim_plugin_task "vwilight" do
   sh "curl https://gist.github.com/raw/796172/724c7ca237a7f6b8d857c4ac2991cfe5ffb18087/vwilight.vim > colors/vwilight.vim"
 end
