@@ -129,15 +129,8 @@ endif
 " No scrollbars "
 set guioptions=aAce
 
-"Directories for swp files
-set backupdir=~/.vim/backup
-set directory=~/.vim/backup
-
 " xterm not recognized right by vim
 set term=builtin_ansi
-
-" No scrollbars "
-set guioptions=aAce
 
 " easy window spliting
 nmap <leader>sw<right> :botright vnew<CR>
