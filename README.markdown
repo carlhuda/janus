@@ -28,7 +28,9 @@ OSX (via Terminal), or with any other `vim` or `gvim` installation.
 
 Linux users can install `gvim` for an experience identical to MacVim.
 On Debian/Ubuntu, simply `apt-get install vim-gnome`. For remote
-servers, install console vim with `apt-get install vim-nox`.
+servers, install console vim with `apt-get install vim-nox`. If you are
+not yet a ruby developer, you will propably also need to install `rake` and
+`ruby-dev` before installing the janus distribution.
 
 ## Installation
 
