@@ -154,10 +154,10 @@ vim_plugin_task "syntastic",        "git://github.com/scrooloose/syntastic.git"
 vim_plugin_task "command_t",        "git://github.com/wincent/Command-T.git" do
   sh "find ruby -name '.gitignore' | xargs rm"
   Dir.chdir "ruby/command-t" do
-    if `rvm > /dev/null 2>&1` && $?.exitstatus == 0
+    if File.exists?("/usr/bin/ruby") # prefer system rubies
+      sh "/usr/bin/ruby extconf.rb"
+    elsif `rvm > /dev/null 2>&1` && $?.exitstatus == 0
       sh "rvm system ruby extconf.rb"
-    else
-      sh "/usr/bin/ruby extconf.rb" # assume /usr/bin/ruby is system ruby
     end
     sh "make clean && make"
   end
