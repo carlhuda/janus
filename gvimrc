@@ -85,6 +85,12 @@ function s:CdIfDirectory(directory)
     exe "cd " . fnameescape(a:directory)
   endif
 
+  " Allows read from stdin without displaying an error
+  " ex: git diff | mvim -R -
+  if strlen(a:directory) == 0 
+    return
+  endif
+
   if directory
     NERDTree
     wincmd p
