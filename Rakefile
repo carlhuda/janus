@@ -155,6 +155,7 @@ vim_plugin_task "scala",            "git://github.com/bdd/vim-scala.git"
 vim_plugin_task "gist-vim",         "git://github.com/mattn/gist-vim.git"
 vim_plugin_task "l9",               "http://www.vim.org/scripts/download_script.php?src_id=13948"
 vim_plugin_task "fuzzyfinder",      "http://www.vim.org/scripts/download_script.php?src_id=13961"
+vim_plugin_task "vim-css-color",    "https://github.com/skammer/vim-css-color.git"
 
 vim_plugin_task "command_t",        "git://github.com/wincent/Command-T.git" do
   sh "find ruby -name '.gitignore' | xargs rm"
