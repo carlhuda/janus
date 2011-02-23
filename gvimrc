@@ -54,7 +54,7 @@ endif
 set guioptions-=T
 
 " Default gui color scheme
-color MadeOfCode 
+color ir_black
 
 " ConqueTerm wrapper
 function StartTerm()

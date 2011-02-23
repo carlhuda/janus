@@ -121,24 +121,11 @@ set directory=~/.vim/backup
 " MacVIM shift+arrow-keys behavior (required in .vimrc)
 let macvim_hig_shift_movement = 1
 
-" Include user's local vim config
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
-endif
-
 " No scrollbars "
 set guioptions=aAce
 
 " xterm not recognized right by vim
 set term=builtin_ansi
-
-" easy window spliting
-nmap <leader>sw<right> :botright vnew<CR>
-nmap <leader>sw<down>  :botright new<CR>
-
-" easy buffer splitting
-nmap <leader>s<right>   :rightbelow vnew<CR>
-nmap <leader>s<down>   :rightbelow new<CR>
 
 "emulate TextMate's Command-Return to insert a blank line below the current
 "line
@@ -146,3 +133,9 @@ inoremap <D-CR> <C-O>o
 
 "Vimclojure configuration
 let vimclojure#HighlightBuiltins = 1
+
+" Include user's local vim config
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
+
