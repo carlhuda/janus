@@ -88,6 +88,12 @@ function s:CdIfDirectory(directory)
     exe "cd " . fnameescape(a:directory)
   endif
 
+  " Allows reading from stdin
+  " ex: git diff | mvim -R -
+  if strlen(a:directory) == 0 
+    return
+  endif
+
   if directory
     NERDTree
     wincmd p
@@ -191,7 +197,7 @@ ruby << RUBY
   home        = pwd == File.expand_path("~")
 
   if home || Regexp.new("^" + Regexp.escape(pwd)) !~ destination
-    VIM.command(%{call ChangeDirectory(system("dirname " . shellescape(a:file, 1)), 0)})
+    VIM.command(%{call ChangeDirectory(fnamemodify(a:file, ":h"), 0)})
   end
 RUBY
 endfunction

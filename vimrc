@@ -1,5 +1,4 @@
 set nocompatible
-
 set number
 set ruler
 syntax on
@@ -133,6 +132,12 @@ inoremap <D-CR> <C-O>o
 
 "Vimclojure configuration
 let vimclojure#HighlightBuiltins = 1
+
+" Turn off jslint errors by default
+let g:JSLintHighlightErrorLine = 0
+
+" % to bounce from do to end etc.
+runtime! macros/matchit.vim
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))

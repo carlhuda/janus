@@ -30,6 +30,10 @@ Linux users can install `gvim` for an experience identical to MacVim.
 On Debian/Ubuntu, simply `apt-get install vim-gnome`. For remote
 servers, install console vim with `apt-get install vim-nox`.
 
+On a fresh Ubuntu install you also have to install the packages `rake` and `ruby-dev`
+before running the install script and `exuberant-ctags` for ctags
+support.
+
 ## Installation
 
 0. `for i in ~/.vim ~/.vimrc ~/.gvimrc; do [ -e $i ] && mv $i $i.old;
