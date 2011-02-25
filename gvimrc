@@ -8,8 +8,8 @@ if has("gui_macvim")
   map <D-t> :CommandT<CR>
   imap <D-t> <Esc>:CommandT<CR>
 
-  " Command-Return for fullscreen
-  macmenu Window.Toggle\ Full\ Screen\ Mode key=<F12>
+  " F5 for fullscreen
+  macmenu Window.Toggle\ Full\ Screen\ Mode key=<F5>
 
   " Command-Shift-F for Ack
   map <D-F> :Ack<space>
