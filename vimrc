@@ -117,9 +117,6 @@ color desert
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 
-" MacVIM shift+arrow-keys behavior (required in .vimrc)
-let macvim_hig_shift_movement = 1
-
 " No scrollbars "
 set guioptions=aAce
 
