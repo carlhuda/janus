@@ -151,6 +151,7 @@ vim_plugin_task "irblack",          "git://github.com/wgibbs/vim-irblack.git"
 vim_plugin_task "vim-coffee-script","git://github.com/kchmck/vim-coffee-script.git"
 vim_plugin_task "syntastic",        "git://github.com/scrooloose/syntastic.git"
 vim_plugin_task "puppet",           "git://github.com/ajf/puppet-vim.git"
+vim_plugin_task "scala",            "git://github.com/bdd/vim-scala.git"
 
 vim_plugin_task "command_t",        "git://github.com/wincent/Command-T.git" do
   sh "find ruby -name '.gitignore' | xargs rm"
@@ -203,13 +204,6 @@ vim_plugin_task "mustache" do
 end
 vim_plugin_task "vwilight" do
   sh "curl https://gist.github.com/raw/796172/724c7ca237a7f6b8d857c4ac2991cfe5ffb18087/vwilight.vim > colors/vwilight.vim"
-end
-
-vim_plugin_task "scala" do
-  sh "curl http://lampsvn.epfl.ch/trac/scala/export/24298/scala-tool-support/trunk/src/vim/indent/scala.vim > indent/scala.vim"
-  sh "curl http://lampsvn.epfl.ch/trac/scala/export/24298/scala-tool-support/trunk/src/vim/ftdetect/scala.vim > ftdetect/scala.vim"
-  sh "curl http://lampsvn.epfl.ch/trac/scala/export/24298/scala-tool-support/trunk/src/vim/syntax/scala.vim > syntax/scala.vim"
-  sh "curl http://lampsvn.epfl.ch/trac/scala/export/24298/scala-tool-support/trunk/src/vim/plugin/31-create-scala.vim > plugin/31-create-scala.vim"
 end
 
 desc "Update the documentation"
