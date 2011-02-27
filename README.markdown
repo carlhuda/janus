@@ -247,6 +247,7 @@ Janus ships with a few additional syntaxes:
 
 * Markdown (bound to \*.markdown, \*.md, and \*.mk)
 * Mustache (bound to \*.mustache)
+* Arduino  (bound to \*.pde)
 * Haml (bound to \*.haml)
 * Sass (bound to \*.sass)
 * SCSS (bound to \*.scss)
