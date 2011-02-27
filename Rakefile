@@ -201,8 +201,7 @@ vim_plugin_task "mustache" do
     file << "au BufNewFile,BufRead *.mustache        setf mustache"
   end
 end
-vim_plugin_task "arduino" do
-  sh "curl http://www.vim.org/scripts/download_script.php?src_id=14412 > syntax/arduino.vim"
+vim_plugin_task "arduino","git://github.com/vim-scripts/Arduino-syntax-file.git" do
   File.open(File.expand_path('../ftdetect/arduino.vim', __FILE__), 'w') do |file|
     file << "au BufNewFile,BufRead *.pde             setf arduino"
   end
