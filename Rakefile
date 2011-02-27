@@ -201,6 +201,12 @@ vim_plugin_task "mustache" do
     file << "au BufNewFile,BufRead *.mustache        setf mustache"
   end
 end
+vim_plugin_task "arduino" do
+  sh "curl http://www.vim.org/scripts/download_script.php?src_id=14412 > syntax/arduino.vim"
+  File.open(File.expand_path('../ftdetect/arduino.vim', __FILE__), 'w') do |file|
+    file << "au BufNewFile,BufRead *.pde             setf arduino"
+  end
+end
 vim_plugin_task "vwilight" do
   sh "curl https://gist.github.com/raw/796172/724c7ca237a7f6b8d857c4ac2991cfe5ffb18087/vwilight.vim > colors/vwilight.vim"
 end
