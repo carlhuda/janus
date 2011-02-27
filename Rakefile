@@ -194,6 +194,9 @@ vim_plugin_task "janus_themes" do
   end
 end
 
+vim_plugin_task "vim-rooter" do
+  sh "curl https://github.com/airblade/vim-rooter/raw/master/plugin/rooter.vim >plugin/rooter.vim"
+end
 vim_plugin_task "molokai" do
   sh "curl https://github.com/mrtazz/molokai.vim/raw/master/colors/molokai.vim > colors/molokai.vim"
 end
