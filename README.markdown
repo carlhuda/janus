@@ -229,9 +229,10 @@ file
 
 ## Gist-vim
 
-Nice [gist integration](https://github.com/mattn/gist-vim) by matz.
+Nice [gist integration](https://github.com/mattn/gist-vim) by mattn.
 Requires exporting your `GITHUB_TOKEN` and `GITHUB_USER` as environment
 variables or setup your [GitHub token config](http://help.github.com/git-email-settings/).
+
 Try `:Gist`, `:Gist -p` and visual blocks.
 
 ## ZoomWin
