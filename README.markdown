@@ -227,6 +227,12 @@ hunks in the file.
 Use `:Gdiff` on an open file to see what changes have been made to that
 file
 
+## Gist-vim
+
+Nice [gist integration](https://github.com/mattn/gist-vim) by matz.
+Requires exporting your `GITHUB_TOKEN` as an environment variable.
+Try `:Gist`, `:Gist -p` and visual blocks.
+
 ## ZoomWin
 
 When working with split windows, ZoomWin lets you zoom into a window and
