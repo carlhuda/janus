@@ -136,6 +136,10 @@ let macvim_hig_shift_movement = 1
 " % to bounce from do to end etc.
 runtime! macros/matchit.vim
 
+" enable ruby folding, default to unfolded
+let ruby_fold=1
+set foldlevelstart=99
+
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
