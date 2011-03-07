@@ -136,6 +136,9 @@ let macvim_hig_shift_movement = 1
 " % to bounce from do to end etc.
 runtime! macros/matchit.vim
 
+" Add Rails, Fugitive, and RVM info to statusline
+set statusline=%<%f\ %h%m%r%{rails#statusline()}%{fugitive#statusline()}%{rvm#statusline()}%=%-14.(%l,%c%V%)\ %P
+
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
