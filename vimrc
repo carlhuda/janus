@@ -23,7 +23,7 @@ set smartcase
 
 " Tab completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,test/fixtures/*,vendor/gems/*
 
 " Status bar
 set laststatus=2
@@ -107,6 +107,15 @@ vmap <C-Down> ]egv
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1
 
+" gist-vim defaults
+if has("mac")
+  let g:gist_clip_command = 'pbcopy'
+elseif has("unix")
+  let g:gist_clip_command = 'xclip -selection clipboard'
+endif
+let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1
+
 " Use modeline overrides
 set modeline
 set modelines=10
@@ -118,8 +127,14 @@ color desert
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 
+" Turn off jslint errors by default
+let g:JSLintHighlightErrorLine = 0
+
 " MacVIM shift+arrow-keys behavior (required in .vimrc)
 let macvim_hig_shift_movement = 1
+
+" % to bounce from do to end etc.
+runtime! macros/matchit.vim
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
