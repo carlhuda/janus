@@ -30,7 +30,7 @@ set smartcase
 
 " Tab completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,test/fixtures/*,vendor/gems/*
 
 " Status bar
 set laststatus=2
@@ -70,17 +70,19 @@ function s:setupMarkup()
   map <buffer> <Leader>p :Mm <CR>
 endfunction
 
-" make and python use real tabs
+" make uses real tabs
 au FileType make                                     set noexpandtab
-au FileType python                                   set noexpandtab
 
-" Thorfile, Rakefile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
+" Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
 
 " md, markdown, and mk are markdown and define buffer-local preview
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
 au BufRead,BufNewFile *.txt call s:setupWrapping()
+
+" make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
+au FileType python  set tabstop=4 textwidth=79
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -112,6 +114,15 @@ vmap <C-Down> ]egv
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1
 
+" gist-vim defaults
+if has("mac")
+  let g:gist_clip_command = 'pbcopy'
+elseif has("unix")
+  let g:gist_clip_command = 'xclip -selection clipboard'
+endif
+let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1
+
 " Use modeline overrides
 set modeline
 set modelines=10
@@ -123,8 +134,14 @@ color desert
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 
+" Turn off jslint errors by default
+let g:JSLintHighlightErrorLine = 0
+
 " MacVIM shift+arrow-keys behavior (required in .vimrc)
 let macvim_hig_shift_movement = 1
+
+" % to bounce from do to end etc.
+runtime! macros/matchit.vim
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
