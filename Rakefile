@@ -154,6 +154,12 @@ vim_plugin_task "puppet",           "git://github.com/ajf/puppet-vim.git"
 vim_plugin_task "scala",            "git://github.com/bdd/vim-scala.git"
 vim_plugin_task "gist-vim",         "git://github.com/mattn/gist-vim.git"
 
+vim_plugin_task "gundo",            "git://github.com/sjl/gundo.vim.git"
+vim_plugin_task "textobj-user",     "git://github.com/kana/vim-textobj-user.git"
+vim_plugin_task "textobj-rubyblock","git://github.com/nelstrom/vim-textobj-rubyblock.git"
+vim_plugin_task "zencoding-vim",    "git://github.com/mattn/zencoding-vim.git"
+
+
 vim_plugin_task "command_t",        "git://github.com/wincent/Command-T.git" do
   sh "find ruby -name '.gitignore' | xargs rm"
   Dir.chdir "ruby/command-t" do
