@@ -56,21 +56,11 @@ For example, to override the default color schemes:
     echo color desert  > ~/.vimrc.local
     echo color molokai > ~/.gvimrc.local
 
-If you want to add additional Vim plugins you can do so by adding ~/Rakefile 
-to your home directory and running rake from your home directory instead of 
-in ~/.vim:
+If you want to add additional Vim plugins you can do so by adding a
+~/.janus.rake like so: 
 
-    load '.vim/Rakefile'
-    
-    Dir.chdir(".vim")
-    
     vim_plugin_task "zencoding", "git://github.com/mattn/zencoding-vim.git"
     vim_plugin_task "minibufexpl", "git://github.com/fholgado/minibufexpl.vim.git"
-    
-    task :default => [
-      :update_docs,
-      :link_vimrc
-    ]
 
 ## Updating to the latest version
 
