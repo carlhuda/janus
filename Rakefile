@@ -7,9 +7,12 @@ VIM::Dirs.each do |dir|
   directory(dir)
 end
 
+def cwd
+    @cwd ||= File.expand_path("../", __FILE__)
+end
+
 def vim_plugin_task(name, repo=nil)
-  cwd = File.expand_path("../", __FILE__)
-  dir = File.expand_path("tmp/#{name}")
+  dir = File.expand_path(cwd + "/tmp/#{name}")
   subdirs = VIM::Dirs
 
   namespace(name) do
@@ -170,7 +173,7 @@ end
 
 vim_plugin_task "janus_themes" do
   # custom version of railscasts theme
-  File.open(File.expand_path("../colors/railscasts+.vim", __FILE__), "w") do |file|
+  File.open(File.expand_path("../colors/railscasts+.vim", cwd), "w") do |file|
     file.puts <<-VIM.gsub(/^ +/, "").gsub("<SP>", " ")
       runtime colors/railscasts.vim
       let g:colors_name = "railscasts+"
@@ -184,7 +187,7 @@ vim_plugin_task "janus_themes" do
   end
 
   # custom version of jellybeans theme
-  File.open(File.expand_path("../colors/jellybeans+.vim", __FILE__), "w") do |file|
+  File.open(File.expand_path("../colors/jellybeans+.vim", cwd), "w") do |file|
     file.puts <<-VIM.gsub(/^      /, "")
       runtime colors/jellybeans.vim
       let g:colors_name = "jellybeans+"
@@ -201,12 +204,12 @@ vim_plugin_task "molokai" do
 end
 vim_plugin_task "mustache" do
   sh "curl https://github.com/defunkt/mustache/raw/master/contrib/mustache.vim > syntax/mustache.vim"
-  File.open(File.expand_path('../ftdetect/mustache.vim', __FILE__), 'w') do |file|
+  File.open(File.expand_path('../ftdetect/mustache.vim', cwd), 'w') do |file|
     file << "au BufNewFile,BufRead *.mustache        setf mustache"
   end
 end
 vim_plugin_task "arduino","git://github.com/vim-scripts/Arduino-syntax-file.git" do
-  File.open(File.expand_path('../ftdetect/arduino.vim', __FILE__), 'w') do |file|
+  File.open(File.expand_path('../ftdetect/arduino.vim', cwd), 'w') do |file|
     file << "au BufNewFile,BufRead *.pde             setf arduino"
   end
 end
@@ -225,7 +228,7 @@ task :link_vimrc do
   %w[ vimrc gvimrc ].each do |file|
     dest = File.expand_path("~/.#{file}")
     unless File.exist?(dest)
-      ln_s(File.expand_path("../#{file}", __FILE__), dest)
+      ln_s(File.expand_path("../#{file}", cwd), dest)
     end
   end
 end
