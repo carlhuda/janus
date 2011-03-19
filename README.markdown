@@ -56,9 +56,9 @@ For example, to override the default color schemes:
     echo color desert  > ~/.vimrc.local
     echo color molokai > ~/.gvimrc.local
 
-If you want to add additional Vim plugins you can do so by adding a
-Rakefile to your home directory and running rake from your home
-directory instead of in .vim:
+If you want to add additional Vim plugins you can do so by adding ~/Rakefile 
+to your home directory and running rake from your home directory instead of 
+in ~/.vim:
 
     load '.vim/Rakefile'
     
