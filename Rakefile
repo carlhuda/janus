@@ -153,6 +153,7 @@ vim_plugin_task "syntastic",        "git://github.com/scrooloose/syntastic.git"
 vim_plugin_task "puppet",           "git://github.com/ajf/puppet-vim.git"
 vim_plugin_task "minibufexpl",      "git://github.com/fholgado/minibufexpl.vim.git"
 vim_plugin_task "scala",            "git://github.com/bdd/vim-scala.git"
+vim_plugin_task "gist-vim",         "git://github.com/mattn/gist-vim.git"
 
 vim_plugin_task "command_t",        "git://github.com/wincent/Command-T.git" do
   sh "find ruby -name '.gitignore' | xargs rm"
@@ -212,6 +213,11 @@ vim_plugin_task "arduino","git://github.com/vim-scripts/Arduino-syntax-file.git"
 end
 vim_plugin_task "vwilight" do
   sh "curl https://gist.github.com/raw/796172/724c7ca237a7f6b8d857c4ac2991cfe5ffb18087/vwilight.vim > colors/vwilight.vim"
+end
+
+if File.exists?(janus = File.expand_path("~/.janus.rake"))
+  puts "Loading your custom rake file"
+  import(janus)
 end
 
 desc "Update the documentation"
