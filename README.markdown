@@ -56,6 +56,12 @@ For example, to override the default color schemes:
     echo color desert  > ~/.vimrc.local
     echo color molokai > ~/.gvimrc.local
 
+If you want to add additional Vim plugins you can do so by adding a
+`~/.janus.rake` like so:
+
+    vim_plugin_task "zencoding", "git://github.com/mattn/zencoding-vim.git"
+    vim_plugin_task "minibufexpl", "git://github.com/fholgado/minibufexpl.vim.git"
+
 ## Updating to the latest version
 
 To update to the latest version of the distribution, just run `rake`
