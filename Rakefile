@@ -190,7 +190,7 @@ vim_plugin_task "janus_themes" do
 end
 
 vim_plugin_task "molokai" do
-  sh "curl http://www.vim.org/scripts/download_script.php?src_id=9750 > colors/molokai.vim"
+  sh "curl https://github.com/mrtazz/molokai.vim/raw/master/colors/molokai.vim > colors/molokai.vim"
 end
 vim_plugin_task "mustache" do
   sh "curl https://github.com/defunkt/mustache/raw/master/contrib/mustache.vim > syntax/mustache.vim"
@@ -198,8 +198,18 @@ vim_plugin_task "mustache" do
     file << "au BufNewFile,BufRead *.mustache        setf mustache"
   end
 end
+vim_plugin_task "arduino","git://github.com/vim-scripts/Arduino-syntax-file.git" do
+  File.open(File.expand_path('../ftdetect/arduino.vim', __FILE__), 'w') do |file|
+    file << "au BufNewFile,BufRead *.pde             setf arduino"
+  end
+end
 vim_plugin_task "vwilight" do
   sh "curl https://gist.github.com/raw/796172/724c7ca237a7f6b8d857c4ac2991cfe5ffb18087/vwilight.vim > colors/vwilight.vim"
+end
+
+if File.exists?(janus = File.expand_path("~/.janus.rake"))
+  puts "Loading your custom rake file"
+  import(janus)
 end
 
 desc "Update the documentation"
