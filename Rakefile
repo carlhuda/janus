@@ -18,6 +18,9 @@ def vim_plugin_task(name, repo=nil)
         if repo =~ /git$/
           sh "git clone #{repo} #{dir}"
 
+        elsif repo =~ %r{(^hg://)(.+)}
+          sh "hg clone https://#{$2} #{dir}"
+
         elsif repo =~ /download_script/
           if filename = `curl --silent --head #{repo} | grep attachment`[/filename=(.+)/,1]
             filename.strip!
