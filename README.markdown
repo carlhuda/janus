@@ -30,6 +30,10 @@ Linux users can install `gvim` for an experience identical to MacVim.
 On Debian/Ubuntu, simply `apt-get install vim-gnome`. For remote
 servers, install console vim with `apt-get install vim-nox`.
 
+On a fresh Ubuntu install you also have to install the packages `rake` and `ruby-dev`
+before running the install script and `exuberant-ctags` for ctags
+support.
+
 ## Installation
 
 0. `for i in ~/.vim ~/.vimrc ~/.gvimrc; do [ -e $i ] && mv $i $i.old;
@@ -51,6 +55,12 @@ For example, to override the default color schemes:
 
     echo color desert  > ~/.vimrc.local
     echo color molokai > ~/.gvimrc.local
+
+If you want to add additional Vim plugins you can do so by adding a
+`~/.janus.rake` like so:
+
+    vim_plugin_task "zencoding", "git://github.com/mattn/zencoding-vim.git"
+    vim_plugin_task "minibufexpl", "git://github.com/fholgado/minibufexpl.vim.git"
 
 ## Updating to the latest version
 
@@ -223,6 +233,14 @@ hunks in the file.
 Use `:Gdiff` on an open file to see what changes have been made to that
 file
 
+## Gist-vim
+
+Nice [gist integration](https://github.com/mattn/gist-vim) by mattn.
+Requires exporting your `GITHUB_TOKEN` and `GITHUB_USER` as environment
+variables or setup your [GitHub token config](http://help.github.com/git-email-settings/).
+
+Try `:Gist`, `:Gist -p` and visual blocks.
+
 ## ZoomWin
 
 When working with split windows, ZoomWin lets you zoom into a window and
@@ -243,6 +261,7 @@ Janus ships with a few additional syntaxes:
 
 * Markdown (bound to \*.markdown, \*.md, and \*.mk)
 * Mustache (bound to \*.mustache)
+* Arduino  (bound to \*.pde)
 * Haml (bound to \*.haml)
 * Sass (bound to \*.sass)
 * SCSS (bound to \*.scss)
