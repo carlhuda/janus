@@ -255,6 +255,10 @@ HTML, and opens it in your default browser.
 
 **Customizations**: Janus binds `<Leader>p` to this plugin.
 
+## JSHint
+
+Janus comes with http://jshint.com/ integration!
+
 ## Additional Syntaxes
 
 Janus ships with a few additional syntaxes:
