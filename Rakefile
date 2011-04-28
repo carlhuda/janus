@@ -156,10 +156,7 @@ vim_plugin_task "scala",            "git://github.com/bdd/vim-scala.git"
 vim_plugin_task "gist-vim",         "git://github.com/mattn/gist-vim.git"
 vim_plugin_task "vim-mru",          "git://github.com/ornicar/vim-mru.git"
 vim_plugin_task "git-grep-vim",     "git://github.com/tjennings/git-grep-vim.git"
-
-vim_plugin_task "vimclojure",       "git://github.com/vim-scripts/VimClojure.git" do
-
-end
+vim_plugin_task "vimclojure",       "git://github.com/vim-scripts/VimClojure.git"
 
 vim_plugin_task "command_t",        "git://github.com/wincent/Command-T.git" do
   sh "find ruby -name '.gitignore' | xargs rm"
