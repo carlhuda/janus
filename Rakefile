@@ -163,8 +163,7 @@ vim_plugin_task "hammer",           "git://github.com/robgleeson/hammer.vim.git"
   sh "gem install github-markup redcarpet"
 end
 
-vim_plugin_task "vimclojure",       "git://github.com/vim-scripts/VimClojure.git" do
-end
+vim_plugin_task "vimclojure",       "git://github.com/vim-scripts/VimClojure.git"
 
 vim_plugin_task "command_t",        "git://github.com/wincent/Command-T.git" do
   sh "find ruby -name '.gitignore' | xargs rm"
