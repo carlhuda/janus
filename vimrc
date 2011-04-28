@@ -144,9 +144,11 @@ runtime! macros/matchit.vim
 set showcmd
 
 " Enable 'offline' VimClojure features
+let vimclojure#WantNailgun = 0
 let vimclojure#HighlightBuiltins = 1 
 let vimclojure#ParenRainbow = 1 
-let vimclojure#WantNailgun = 0
+let vimclojure#HighlightContrib = 1
+let vimclojure#DynamicHighlighting = 1
 let clj_want_gorilla = 1 
 
 " Include user's local vim config
