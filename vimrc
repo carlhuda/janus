@@ -143,6 +143,12 @@ runtime! macros/matchit.vim
 " Show (partial) command in the status line
 set showcmd
 
+" Enable 'offline' VimClojure features
+let vimclojure#HighlightBuiltins = 1 
+let vimclojure#ParenRainbow = 1 
+let vimclojure#WantNailgun = 0
+let clj_want_gorilla = 1 
+
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local

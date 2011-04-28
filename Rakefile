@@ -159,11 +159,15 @@ vim_plugin_task "gist-vim",         "git://github.com/mattn/gist-vim.git"
 vim_plugin_task "vim-mru",          "git://github.com/ornicar/vim-mru.git"
 vim_plugin_task "git-grep-vim",     "git://github.com/tjennings/git-grep-vim.git"
 
-#vim_plugin_task "hammer",           "git://github.com/robgleeson/hammer.vim.git" do
-#  sh "gem install github-markup redcarpet"
-#end
+vim_plugin_task "hammer",           "git://github.com/robgleeson/hammer.vim.git" do
+  sh "gem install github-markup redcarpet"
+end
 
-vim_plugin_task "command_t",        "http://s3.wincent.com/command-t/releases/command-t-1.2.1.vba" do
+vim_plugin_task "vimclojure",       "git://github.com/vim-scripts/VimClojure.git" do
+end
+
+vim_plugin_task "command_t",        "git://github.com/wincent/Command-T.git" do
+  sh "find ruby -name '.gitignore' | xargs rm"
   Dir.chdir "ruby/command-t" do
     if File.exists?("/usr/bin/ruby1.8") # prefer 1.8 on *.deb systems
       sh "/usr/bin/ruby1.8 extconf.rb"
