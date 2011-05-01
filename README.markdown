@@ -248,12 +248,16 @@ out again using `Ctrl-W o`
 
 **Customizations**: Janus binds `<Leader>z` to `:ZoomWin`
 
-## Markdown Preview
+## Hammer
 
-Markdown preview takes the current buffer, converts the Markdown to
-HTML, and opens it in your default browser.
+Hammer takes the current buffer, tries to convert it to HTML, and opens
+it in your default browser. Hammer is enabled for Markdown files, but
+has support for much more.
 
 **Customizations**: Janus binds `<Leader>p` to this plugin.
+
+**Tip**: Check out [Hammer's README](https://github.com/robgleeson/hammer.vim#readme)
+to see the requirements for previewing other file formats.
 
 ## Additional Syntaxes
 
