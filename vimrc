@@ -151,9 +151,6 @@ let vimclojure#HighlightContrib = 1
 let vimclojure#DynamicHighlighting = 1
 let clj_want_gorilla = 1 
 
-" vim-flog
-:silent exe "g:flog_enable"
-
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
