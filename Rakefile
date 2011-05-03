@@ -47,31 +47,31 @@ def vim_plugin_task(name, repo=nil)
         when /vba(\.gz)?$/
           if filename =~ /gz$/
             sh "gunzip -f tmp/#{filename}"
-            filename = File.basename(filename, '.gz')
+          filename = File.basename(filename, '.gz')
           end
 
-          # TODO: move this into the install task
-          mkdir_p dir
-          lines = File.readlines("tmp/#{filename}")
-          current = lines.shift until current =~ /finish$/ # find finish line
+        # TODO: move this into the install task
+        mkdir_p dir
+        lines = File.readlines("tmp/#{filename}")
+        current = lines.shift until current =~ /finish$/ # find finish line
 
           while current = lines.shift
             # first line is the filename (possibly followed by garbage)
             # some vimballs use win32 style path separators
             path = current[/^(.+?)(\t\[{3}\d)?$/, 1].gsub '\\', '/'
 
-            # then the size of the payload in lines
-            current = lines.shift
-            num_lines = current[/^(\d+)$/, 1].to_i
+              # then the size of the payload in lines
+              current = lines.shift
+              num_lines = current[/^(\d+)$/, 1].to_i
 
-            # the data itself
-            data = lines.slice!(0, num_lines).join
+              # the data itself
+              data = lines.slice!(0, num_lines).join
 
-            # install the data
-            Dir.chdir dir do
-              mkdir_p File.dirname(path)
-              File.open(path, 'w'){ |f| f.write(data) }
-            end
+              # install the data
+              Dir.chdir dir do
+                mkdir_p File.dirname(path)
+                File.open(path, 'w'){ |f| f.write(data) }
+              end
           end
         end
       end
@@ -79,7 +79,7 @@ def vim_plugin_task(name, repo=nil)
       task :pull => dir do
         if repo =~ /git$/
           Dir.chdir dir do
-            sh "git pull"
+          sh "git pull"
           end
         end
       end
@@ -160,13 +160,14 @@ end
 
 vim_plugin_task "command_t",        "git://github.com/wincent/Command-T.git" do
   sh "find ruby -name '.gitignore' | xargs rm"
-  Dir.chdir "ruby/command-t" do
+  Dir.chdir "tmp/command_t/ruby/command-t" do
     if File.exists?("/usr/bin/ruby1.8") # prefer 1.8 on *.deb systems
       sh "/usr/bin/ruby1.8 extconf.rb"
     elsif File.exists?("/usr/bin/ruby") # prefer system rubies
       sh "/usr/bin/ruby extconf.rb"
     elsif `rvm > /dev/null 2>&1` && $?.exitstatus == 0
-      sh "rvm system ruby extconf.rb"
+      puts "using rvm"
+      sh "rvm default ruby extconf.rb"
     end
     sh "make clean && make"
   end
