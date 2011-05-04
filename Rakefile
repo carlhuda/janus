@@ -97,9 +97,8 @@ def vim_plugin_task(name, repo=nil)
               end
             end
           end
+          yield if block_given?
         end
-
-        yield if block_given?
       end
     else
       task :install => subdirs do
