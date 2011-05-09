@@ -20,6 +20,9 @@ if has("gui_macvim")
   map <D-/> <plug>NERDCommenterToggle<CR>
   imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
 
+  " Command-d to delete line
+  imap <D-d> <Esc>ddi
+  map <D-d> dd
 
   " Command-][ to increase/decrease indentation
   vmap <D-]> >gv
