@@ -76,6 +76,8 @@ Here's some tips if you've never used VIM before:
 * Type `vimtutor` into a shell to go through a brief interactive
   tutorial inside VIM.
 * Read the slides at [VIM: Walking Without Crutches](http://walking-without-crutches.heroku.com/#1).
+* Watch the screencasts at [vimcasts.org](http://vimcasts.org/)
+* Watch Derek Wyatt's energetic tutorial videos at [his site](http://www.derekwyatt.org/vim/vim-tutorial-videos/)
 
 ## Modes
 
