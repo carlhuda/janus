@@ -62,6 +62,15 @@ If you want to add additional Vim plugins you can do so by adding a
     vim_plugin_task "zencoding", "git://github.com/mattn/zencoding-vim.git"
     vim_plugin_task "minibufexpl", "git://github.com/fholgado/minibufexpl.vim.git"
 
+If you do not wish to use one of the plugins Janus provides out of the
+box you can have it skipped using the `skip_plugin_task` method in
+`~/.janus.rake`:
+
+    skip_plugin_task "color-sampler"
+
+**Note**: Skipping the plugin will only apply to installation. It won't
+remove configurations or mappings Janus might have added for it.
+
 ## Updating to the latest version
 
 To update to the latest version of the distribution, just run `rake`
