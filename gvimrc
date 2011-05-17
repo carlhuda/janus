@@ -6,7 +6,10 @@ if has("gui_macvim")
   macmenu &File.New\ Tab key=<D-T>
   map <D-t> :CommandT<CR>
   imap <D-t> <Esc>:CommandT<CR>
-
+  
+  " Command-O for list of Opened buffers (using command t buffers)
+  map <D-O> <Esc>:CommandTBuffer<CR>
+  
   " Command-Return for fullscreen
   macmenu Window.Toggle\ Full\ Screen\ Mode key=<D-CR>
 
@@ -231,3 +234,4 @@ call s:DefineCommand("mkdir", "Mkdir")
 if filereadable(expand("~/.gvimrc.local"))
   source ~/.gvimrc.local
 endif
+
