@@ -30,7 +30,7 @@ set smartcase
 
 " Tab completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,test/fixtures/*,vendor/gems/*
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 
 " Status bar
 set laststatus=2
@@ -41,7 +41,7 @@ set laststatus=2
 set noequalalways
 
 " NERDTree configuration
-let NERDTreeIgnore=['\.rbc$', '\~$']
+let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 map <Leader>n :NERDTreeToggle<CR>
 
 " Command-T configuration
@@ -52,6 +52,7 @@ map <Leader><Leader> :ZoomWin<CR>
 
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
+map <C-\> :tnext<CR>
 
 " Remember last location in file
 if has("autocmd")
@@ -61,17 +62,17 @@ endif
 
 function s:setupWrapping()
   set wrap
-  set wm=2
+  set wrapmargin=2
   set textwidth=72
 endfunction
 
 function s:setupMarkup()
   call s:setupWrapping()
-  map <buffer> <Leader>p :Mm <CR>
+  map <buffer> <Leader>p :Hammer<CR>
 endfunction
 
 " make uses real tabs
-au FileType make                                     set noexpandtab
+au FileType make set noexpandtab
 
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
@@ -79,10 +80,13 @@ au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set f
 " md, markdown, and mk are markdown and define buffer-local preview
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
+" add json syntax highlighting
+au BufNewFile,BufRead *.json set ft=javascript
+
 au BufRead,BufNewFile *.txt call s:setupWrapping()
 
-" make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
-au FileType python  set tabstop=4 textwidth=79
+" make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
+au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -142,6 +146,9 @@ let macvim_hig_shift_movement = 1
 
 " % to bounce from do to end etc.
 runtime! macros/matchit.vim
+
+" Show (partial) command in the status line
+set showcmd
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))

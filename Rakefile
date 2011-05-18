@@ -124,6 +124,10 @@ def vim_plugin_task(name, repo=nil, type=nil)
   task :default => name
 end
 
+def skip_vim_plugin(name)
+  Rake::Task[:default].prerequisites.delete(name)
+end
+
 vim_plugin_task "pathogen.vim" do
   file 'pathogen.vim' => 'autoload' do
     sh "curl https://github.com/tpope/vim-pathogen/raw/master/autoload/pathogen.vim > autoload/pathogen.vim"
@@ -139,12 +143,12 @@ vim_plugin_task "haml",             "git://github.com/tpope/vim-haml.git"
 vim_plugin_task "indent_object",    "git://github.com/michaeljsmith/vim-indent-object.git"
 vim_plugin_task "javascript",       "git://github.com/pangloss/vim-javascript.git"
 vim_plugin_task "jslint",           "git://github.com/hallettj/jslint.vim.git"
-vim_plugin_task "markdown_preview", "git://github.com/robgleeson/vim-markdown-preview.git"
 vim_plugin_task "nerdtree",         "git://github.com/wycats/nerdtree.git"
 vim_plugin_task "nerdcommenter",    "git://github.com/ddollar/nerdcommenter.git"
 vim_plugin_task "surround",         "git://github.com/tpope/vim-surround.git"
 vim_plugin_task "taglist",          "git://github.com/vim-scripts/taglist.vim.git"
 vim_plugin_task "vividchalk",       "git://github.com/tpope/vim-vividchalk.git"
+vim_plugin_task "solarized",        "git://github.com/altercation/vim-colors-solarized.git"
 vim_plugin_task "supertab",         "git://github.com/ervandew/supertab.git"
 vim_plugin_task "cucumber",         "git://github.com/tpope/vim-cucumber.git"
 vim_plugin_task "textile",          "git://github.com/timcharper/textile.vim.git"
@@ -164,8 +168,11 @@ vim_plugin_task "puppet",           "git://github.com/ajf/puppet-vim.git"
 vim_plugin_task "scala",            "git://github.com/bdd/vim-scala.git"
 vim_plugin_task "gist-vim",         "git://github.com/mattn/gist-vim.git"
 
-vim_plugin_task "command_t",        "git://github.com/wincent/Command-T.git" do
-  sh "find ruby -name '.gitignore' | xargs rm"
+vim_plugin_task "hammer",           "git://github.com/robgleeson/hammer.vim.git" do
+  sh "gem install github-markup redcarpet"
+end
+
+vim_plugin_task "command_t",        "http://s3.wincent.com/command-t/releases/command-t-1.2.1.vba" do
   Dir.chdir "ruby/command-t" do
     if File.exists?("/usr/bin/ruby1.8") # prefer 1.8 on *.deb systems
       sh "/usr/bin/ruby1.8 extconf.rb"
@@ -214,7 +221,7 @@ vim_plugin_task "mustache" do
   FileUtils.mkdir_p "janus_bundle/mustache/syntax"
   FileUtils.mkdir_p "janus_bundle/mustache/ftdetect"
 
-  sh "curl http://github.com/defunkt/mustache/raw/master/contrib/mustache.vim > janus_bundle/mustache/syntax/mustache.vim"
+  sh "curl https://github.com/defunkt/mustache/raw/master/contrib/mustache.vim > janus_bundle/mustache/syntax/mustache.vim"
 
   File.open(File.expand_path('../janus_bundle/mustache/ftdetect/mustache.vim', __FILE__), 'w') do |file|
     file << "au BufNewFile,BufRead *.mustache        setf mustache"
@@ -233,6 +240,17 @@ vim_plugin_task "vwilight" do
 end
 
 import 'janus_load.local' if File.exist?('janus_load.local')
+
+if File.exists?(janus = File.expand_path("~/.janus.rake"))
+  puts "Loading your custom rake file"
+  import(janus)
+end
+
+desc "Update the documentation"
+task :update_docs do
+  puts "Updating VIM Documentation..."
+  system "vim -e -s <<-EOF\n:helptags ~/.vim/doc\n:quit\nEOF"
+end
 
 desc "link vimrc to ~/.vimrc"
 task :link_vimrc do
@@ -254,7 +272,10 @@ task :pull do
   system "git pull"
 end
 
-task :default => :link_vimrc
+task :default => [
+  :update_docs,
+  :link_vimrc
+]
 
 desc "Clear out all build artifacts and rebuild the latest Janus"
 task :upgrade => [:clean, :pull, :default]
