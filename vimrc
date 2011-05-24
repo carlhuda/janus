@@ -1,3 +1,4 @@
+
 set nocompatible
 
 set number
@@ -147,3 +148,7 @@ set showcmd
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
+set exrc			" enable per-directory .vimrc files
+set secure			" disable unsafe commands in local .vimrc files
+
