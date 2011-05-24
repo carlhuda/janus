@@ -8,8 +8,9 @@ if has("gui_macvim")
   imap <D-t> <Esc>:CommandT<CR>
   
   " Command-O for list of Opened buffers (using command t buffers)
-  map <D-O> <Esc>:CommandTBuffer<CR>
-  
+  map <D-O> :CommandTBuffer<CR>
+  imap <D-O> <Esc>:CommandTBuffer<CR>
+
   " Command-Return for fullscreen
   macmenu Window.Toggle\ Full\ Screen\ Mode key=<D-CR>
 
