@@ -120,6 +120,10 @@ def vim_plugin_task(name, repo=nil)
   task :default => name
 end
 
+def skip_vim_plugin(name)
+  Rake::Task[:default].prerequisites.delete(name)
+end
+
 vim_plugin_task "ack.vim",          "git://github.com/mileszs/ack.vim.git"
 vim_plugin_task "color-sampler",    "git://github.com/vim-scripts/Color-Sampler-Pack.git"
 vim_plugin_task "conque",           "http://conque.googlecode.com/files/conque_1.1.tar.gz"
