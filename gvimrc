@@ -1,3 +1,8 @@
+" Include user's local pre .gvimrc config
+if filereadable(expand("~/.gvimrc.pre"))
+  source ~/.gvimrc.pre
+endif
+
 if has("gui_macvim")
   " Fullscreen takes up entire screen
   set fuoptions=maxhorz,maxvert
