@@ -64,6 +64,17 @@ if has("gui_macvim")
   map <D-M-Left> <C-w>h
   imap <D-M-Left> <C-w>h
 
+  " Command-Shift-Vim nav Keys to switch viewports
+  map <D-K> <C-w>k
+  imap <D-K> <Esc> <C-w>k
+  map <D-J> <C-w>j
+  imap <D-J> <Esc> <C-w>j
+  map <D-L> <C-w>l
+  imap <D-L> <Esc> <C-w>l
+  map <D-H> <C-w>h
+  imap <D-H> <C-w>h
+
+
   " Adjust viewports to the same size
   map <Leader>= <C-w>=
   imap <Leader>= <Esc> <C-w>=
