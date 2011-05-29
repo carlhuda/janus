@@ -17,6 +17,11 @@ if has("gui_macvim")
   " Command-Shift-F for Ack
   map <D-F> <Esc>:Ack<space>
   vmap <D-F> y<Esc>:Ack<space><C-r>"
+
+  " search pattern yank selection 
+  vmap / y<Esc>/<C-r>"
+  vmap ? y<Esc>?<C-r>"
+
   " Command-e for ConqueTerm
   map <D-e> :call StartTerm()<CR>
 
