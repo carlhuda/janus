@@ -45,8 +45,9 @@ let g:CommandTMaxHeight=20
 map <Leader><Leader> :ZoomWin<CR>
 
 " CTags
-map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
+map <Leader>rt :!ctags -f .tags --extra=+f -R *<CR><CR>
 map <C-\> :tnext<CR>
+set tags=.tags
 
 " Remember last location in file
 if has("autocmd")

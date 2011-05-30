@@ -2,6 +2,7 @@
 tmp
 nerdtree_plugin
 tags
+.tags
 after
 autoload
 doc
