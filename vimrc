@@ -143,6 +143,17 @@ runtime! macros/matchit.vim
 " Show (partial) command in the status line
 set showcmd
 
+" Folding
+set foldenable
+set foldmethod=indent
+
+" Folding expand/collapse mappings
+map + zo
+map - zc
+map ++ zR
+map -- zM
+nnoremap <space> @=((foldclosed(line(".")) < 0) ? 'zc' : 'zo')<cr>
+
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
