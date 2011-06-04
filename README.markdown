@@ -131,6 +131,7 @@ Janus ships with a number of basic customizations for vim:
   new MacVIM tab)
 * `<C-P>` inserts the directory of the current file into a command
 * Automatic insertion of closing quotes, parenthesis, and braces
+* Code folding (expand/collapse code blocks by pressing space tab)
 
 ## "Project Drawer" aka NERDTree
 
