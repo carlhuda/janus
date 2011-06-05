@@ -146,6 +146,7 @@ set showcmd
 " Folding
 set foldenable
 set foldmethod=indent
+set foldlevel=99999
 
 " Folding expand/collapse mappings
 map + zo
