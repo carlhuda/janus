@@ -44,7 +44,7 @@ support.
 
 or
 
-  `curl https://github.com/carlhuda/janus/raw/master/bootstrap.sh -o - | sh`
+  `curl https://raw.github.com/carlhuda/janus/master/bootstrap.sh -o - | sh`
 
 ## Customization
 
@@ -211,7 +211,7 @@ There's a lot more; check it out at `:help surround`
 ## NERDCommenter
 
 NERDCommenter allows you to wrangle your code comments, regardless of
-filetype. View `help :NERDCommenter` for all the details.
+filetype. View `:help NERDCommenter` for all the details.
 
 **Customizations**: Janus binds command-/ (`<D-/>`) to toggle comments.
 
