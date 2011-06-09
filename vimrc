@@ -1,3 +1,5 @@
+"enable option key commands in mac 
+set macmeta
 
 set nocompatible
 
