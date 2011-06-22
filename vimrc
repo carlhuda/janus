@@ -155,6 +155,10 @@ map ++ zR
 map -- zM
 nnoremap <space> @=((foldclosed(line(".")) < 0) ? 'zc' : 'zo')<cr>
 
+set cursorline " Highlight current line
+set cursorcolumn " Highlight current column
+set colorcolumn=80 " Right margin indicator
+
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
