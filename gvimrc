@@ -22,6 +22,10 @@ if has("gui_macvim")
   vmap / y<Esc>/<C-r>"
   vmap ? y<Esc>?<C-r>"
 
+  " map Alt-/ to remove highlited search results (nohl)
+  nn <M-/> :nohl<CR>
+  vn <M-/> :nohl<CR>
+  ino <M-/> <C-o>:nohl<CR>
   " Command-e for ConqueTerm
   map <D-e> :call StartTerm()<CR>
 
@@ -93,12 +97,12 @@ if has("gui_macvim")
   map <Leader>= <C-w>=
 
   " Remap select text (alt shift [left/right]) to visual commands B/E
-  nn   <S-M-Left> vB<C-g>
-  vn   <S-M-Left> B<C-g>
-  ino  <S-M-Left> <Esc>vB<C-g>
-  nn   <S-M-Right> vE<C-g>
-  vn   <S-M-Right> E<C-g>
-  ino  <S-M-Right> <Esc>vE<C-g>
+  nn   <S-M-Left> vb<C-g>
+  vn   <S-M-Left> b<C-g>
+  ino  <S-M-Left> <Esc>vb<C-g>
+  nn   <S-M-Right> ve<C-g>
+  vn   <S-M-Right> e<C-g>
+  ino  <S-M-Right> <Esc>ve<C-g>
 endif
 
 " Don't beep
