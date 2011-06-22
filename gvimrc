@@ -79,6 +79,16 @@ if has("gui_macvim")
   map <D-M-h> <C-w>h
   imap <D-M-h> <C-o><C-w>h
 
+  " Command-Shift-[hjkl] to switch viewports
+  map <D-K> <C-w>k
+  imap <D-K> <C-o><C-w>k
+  map <D-J> <C-w>j
+  imap <D-J> <C-o><C-w>j
+  map <D-L> <C-w>l
+  imap <D-L> <C-o><C-w>l
+  map <D-H> <C-w>h
+  imap <D-H> <C-o><C-w>h
+  
   " Adjust viewports to the same size
   map <Leader>= <C-w>=
 endif
@@ -99,9 +109,9 @@ function StartTerm()
 endfunction
 
 " Project Tree
-autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
-autocmd FocusGained * call s:UpdateNERDTree()
-autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+autocmd VimEnter * keepjumps call s:CdIfDirectory(expand("<amatch>"))
+autocmd FocusGained * keepjumps call s:UpdateNERDTree()
+autocmd WinEnter * keepjumps call s:CloseIfOnlyNerdTreeLeft()
 
 " Close all open buffers on entering a window if the only
 " buffer that's left is the NERDTree buffer
@@ -131,7 +141,7 @@ function s:CdIfDirectory(directory)
   endif
 
   if directory
-    NERDTree
+    keepjumps NERDTree
     wincmd p
     bd
   endif
@@ -190,7 +200,7 @@ function ChangeDirectory(dir, ...)
   execute "cd " . fnameescape(a:dir)
   let stay = exists("a:1") ? a:1 : 1
 
-  NERDTree
+  keepjumps NERDTree
 
   if !stay
     wincmd p

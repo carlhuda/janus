@@ -1,5 +1,8 @@
 "enable option key commands in mac 
-set macmeta
+if has("mac")
+  set macmeta
+endif
+
 
 set nocompatible
 
@@ -38,6 +41,8 @@ set noequalalways
 
 " NERDTree configuration
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
+let NERDTreeHijackNetrw=0
+
 map <Leader>n :NERDTreeToggle<CR>
 
 " Command-T configuration
