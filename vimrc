@@ -147,6 +147,7 @@ let g:JSLintHighlightErrorLine = 0
 let macvim_hig_shift_movement = 1
 set selection=exclusive
 
+
 " % to bounce from do to end etc.
 runtime! macros/matchit.vim
 

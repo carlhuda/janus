@@ -91,6 +91,14 @@ if has("gui_macvim")
   
   " Adjust viewports to the same size
   map <Leader>= <C-w>=
+
+  " Remap select text (alt shift [left/right]) to visual commands B/E
+  nn   <S-M-Left> vB
+  vn   <S-M-Left> B
+  ino  <S-M-Left> <Esc>vB
+  nn   <S-M-Right> vE
+  vn   <S-M-Right> E
+  ino  <S-M-Right> <Esc>vE
 endif
 
 " Don't beep
