@@ -93,12 +93,12 @@ if has("gui_macvim")
   map <Leader>= <C-w>=
 
   " Remap select text (alt shift [left/right]) to visual commands B/E
-  nn   <S-M-Left> vB
-  vn   <S-M-Left> B
-  ino  <S-M-Left> <Esc>vB
-  nn   <S-M-Right> vE
-  vn   <S-M-Right> E
-  ino  <S-M-Right> <Esc>vE
+  nn   <S-M-Left> vB<C-g>
+  vn   <S-M-Left> B<C-g>
+  ino  <S-M-Left> <Esc>vB<C-g>
+  nn   <S-M-Right> vE<C-g>
+  vn   <S-M-Right> E<C-g>
+  ino  <S-M-Right> <Esc>vE<C-g>
 endif
 
 " Don't beep
