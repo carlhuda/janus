@@ -1,5 +1,34 @@
 module VIM
+
+  class GitProtocol
+    def protocol
+      @protocol
+    end
+
+    def protocol=(protocol)
+      set_protocol protocol
+    end
+
+    def initialize(protocol)
+      set_protocol protocol
+    end
+
+    private
+
+      def set_protocol(protocol)
+        case protocol
+        when "git"
+          @protocol = "git://"
+        when "https"
+          @protocol = "https://"
+        else
+          @protocol = "git://"
+        end
+      end
+  end
+
   Dirs = %w[ after autoload doc plugin ruby snippets syntax ftdetect ftplugin colors indent ]
+  Protocol = GitProtocol.new "git"
 end
 
 directory "tmp"
@@ -15,6 +44,7 @@ def vim_plugin_task(name, repo=nil)
   namespace(name) do
     if repo
       file dir => "tmp" do
+        repo.gsub! /git:\/\//, VIM::Protocol.protocol
         if repo =~ /git$/
           sh "git clone #{repo} #{dir}"
 
@@ -122,6 +152,10 @@ end
 
 def skip_vim_plugin(name)
   Rake::Task[:default].prerequisites.delete(name)
+end
+
+def set_git_protocol(protocol)
+  VIM::Protocol.protocol = protocol
 end
 
 vim_plugin_task "ack.vim",          "git://github.com/mileszs/ack.vim.git"
