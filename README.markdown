@@ -261,7 +261,7 @@ Try `:Gist`, `:Gist -p` and visual blocks.
 When working with split windows, ZoomWin lets you zoom into a window and
 out again using `Ctrl-W o`
 
-**Customizations**: Janus binds `<Leader>z` to `:ZoomWin`
+**Customizations**: Janus binds `<Leader><Leader>` to `:ZoomWin`
 
 ## Hammer
 
