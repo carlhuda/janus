@@ -1,0 +1,33 @@
+[submodule "janus-core/unimpaired"]
+	path = janus-core/unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "janus-core/nerdcommenter"]
+	path = janus-core/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "janus-ftypes/haml"]
+	path = janus-ftypes/haml
+	url = https://github.com/tpope/vim-haml.git
+[submodule "janus-ftypes/javascript"]
+	path = janus-ftypes/javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "janus-ftypes/cucumber"]
+	path = janus-ftypes/cucumber
+	url = https://github.com/tpope/vim-cucumber.git
+[submodule "janus-ftypes/markdown"]
+	path = janus-ftypes/markdown
+	url = https://github.com/tpope/vim-markdown.git
+[submodule "janus-ftypes/puppet"]
+	path = janus-ftypes/puppet
+	url = https://github.com/ajf/puppet-vim.git
+[submodule "janus-langs/scala"]
+	path = janus-langs/scala
+	url = https://github.com/bdd/vim-scala.git
+[submodule "janus-langs/handlebars"]
+	path = janus-langs/handlebars
+	url = https://github.com/nono/vim-handlebars.git
+[submodule "janus-tools/matchit"]
+	path = janus-tools/matchit
+	url = https://github.com/edsono/vim-matchit.git
+[submodule "janus-tools/syntastic"]
+	path = janus-tools/syntastic
+	url = https://github.com/scrooloose/syntastic.git
