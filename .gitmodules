@@ -4,20 +4,20 @@
 [submodule "janus-core/nerdcommenter"]
 	path = janus-core/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule "janus-ftypes/haml"]
-	path = janus-ftypes/haml
+[submodule "janus-langs/haml"]
+	path = janus-langs/haml
 	url = https://github.com/tpope/vim-haml.git
-[submodule "janus-ftypes/javascript"]
-	path = janus-ftypes/javascript
+[submodule "janus-langs/javascript"]
+	path = janus-langs/javascript
 	url = https://github.com/pangloss/vim-javascript.git
-[submodule "janus-ftypes/cucumber"]
-	path = janus-ftypes/cucumber
+[submodule "janus-langs/cucumber"]
+	path = janus-langs/cucumber
 	url = https://github.com/tpope/vim-cucumber.git
-[submodule "janus-ftypes/markdown"]
-	path = janus-ftypes/markdown
+[submodule "janus-langs/markdown"]
+	path = janus-langs/markdown
 	url = https://github.com/tpope/vim-markdown.git
-[submodule "janus-ftypes/puppet"]
-	path = janus-ftypes/puppet
+[submodule "janus-langs/puppet"]
+	path = janus-langs/puppet
 	url = https://github.com/ajf/puppet-vim.git
 [submodule "janus-langs/scala"]
 	path = janus-langs/scala
@@ -31,3 +31,12 @@
 [submodule "janus-tools/syntastic"]
 	path = janus-tools/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "janus-tools/supertab"]
+	path = janus-tools/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "janus-tools/snipmate"]
+	path = janus-tools/snipmate
+	url = https://github.com/ervandew/snipmate.vim.git
+[submodule "janus-command-t/command-t"]
+	path = janus-command-t/command-t
+	url = git@github.com:wycats/Command-T.git
