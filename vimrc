@@ -131,6 +131,9 @@ map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 " new tab. <Leader>te
 map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
+" Map the arrow keys to be based on display lines, not physical lines
+map <Down> gj
+map <Up> gk
 
 ""
 "" Command-Line Mappings
