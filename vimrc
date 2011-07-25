@@ -4,7 +4,10 @@
 
 " Some file types should wrap their text
 function s:setupWrapping()
-  set wrap textwidth=72
+  set wrap
+  set linebreak
+  set textwidth=72
+  set nolist
 endfunction
 
 let s:current_file = expand("<sfile>:p")
