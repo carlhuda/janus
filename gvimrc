@@ -22,6 +22,8 @@ if has("gui_macvim")
   vmap / y<Esc>/<C-r>"
   vmap ? y<Esc>?<C-r>"
 
+  " map Command-Shift-5 (Command-%) for search replace pattern
+  vmap <D-%> y<Esc>:%s/<C-r>"/
   " map Alt-/ to remove highlited search results (nohl)
   nn <M-/> :nohl<CR>
   vn <M-/> :nohl<CR>
