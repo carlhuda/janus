@@ -1,3 +1,7 @@
+if filereadable(expand("~/.gvimrc.before"))
+  source ~/.gvimrc.before
+endif
+
 " Remapping menus must be done in gvimrc
 if g:command_t_loaded
   if has("gui_macvim")
@@ -7,3 +11,6 @@ if g:command_t_loaded
   endif
 endif
 
+if filereadable(expand("~/.gvimrc.after"))
+  source ~/.gvimrc.after
+endif
