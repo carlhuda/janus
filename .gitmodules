@@ -28,9 +28,6 @@
 [submodule "janus-tools/matchit"]
 	path = janus-tools/matchit
 	url = https://github.com/edsono/vim-matchit.git
-[submodule "janus-tools/syntastic"]
-	path = janus-tools/syntastic
-	url = https://github.com/scrooloose/syntastic.git
 [submodule "janus-tools/supertab"]
 	path = janus-tools/supertab
 	url = https://github.com/ervandew/supertab.git
