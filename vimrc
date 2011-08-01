@@ -35,6 +35,7 @@ endif
 call s:add_group("janus-core")
 call s:add_group("janus-langs")
 call s:add_group("janus-tools")
+call s:add_group("janus-colors")
 call s:add_group("janus-command-t")
 
 call pathogen#runtime_append_all_bundles()

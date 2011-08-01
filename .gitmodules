@@ -37,3 +37,6 @@
 [submodule "janus-command-t/command-t"]
 	path = janus-command-t/command-t
 	url = git@github.com:wycats/Command-T.git
+[submodule "janus-colors/sampler-pack"]
+	path = janus-colors/sampler-pack
+	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
