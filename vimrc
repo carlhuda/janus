@@ -136,6 +136,9 @@ map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 map <Down> gj
 map <Up> gk
 
+" Map <Leader><Leader> to ZoomWin
+map <Leader><Leader> :ZoomWin<CR>
+
 ""
 "" Command-Line Mappings
 ""
@@ -152,3 +155,10 @@ if filereadable(expand("~/.vimrc.after"))
   source ~/.vimrc.after
 endif
 
+""
+"" Disable swap files
+""
+
+set nobackup
+set nowritebackup
+set noswapfile

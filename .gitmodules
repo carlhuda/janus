@@ -40,3 +40,6 @@
 [submodule "janus-colors/sampler-pack"]
 	path = janus-colors/sampler-pack
 	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
+[submodule "janus-tools/zoomwin"]
+	path = janus-tools/zoomwin
+	url = git://github.com/vim-scripts/ZoomWin.git
