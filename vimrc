@@ -1,5 +1,8 @@
 set nocompatible
 
+"use bash for external commands
+set shell=bash
+
 set number
 set ruler
 syntax on
