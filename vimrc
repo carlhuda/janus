@@ -1,3 +1,7 @@
+if filereadable(expand("~/.vimrc.before"))
+   source ~/.vimrc.before
+ endif
+
 set nocompatible
 
 set number
