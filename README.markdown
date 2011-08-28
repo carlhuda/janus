@@ -106,7 +106,7 @@ Here's some tips if you've never used VIM before:
 * Certain commands are prefixed with a `<Leader>` key, which maps to `\`
   by default. Use `let mapleader = ","` to change this.
 * Keyboard [cheat sheet](http://walking-without-crutches.heroku.com/image/images/vi-vim-cheat-sheet.png).
-* Mapped key combinations using the command key (<D-something) are only
+* Mapped key combinations using the command key (<D-something>) are only
   available in gvim.
 
 # Features
