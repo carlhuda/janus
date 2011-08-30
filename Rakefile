@@ -16,7 +16,7 @@ def vim_plugin_task(name, repo=nil)
     if repo
       file dir => "tmp" do
         if repo =~ /git$/
-          sh "git clone #{repo} #{dir}"
+          sh "git clone #{repo} #{dir.sub(/ /, '\ ')}"
 
         elsif repo =~ /download_script/
           if filename = `curl --silent --head #{repo} | grep attachment`[/filename=(.+)/,1]
@@ -36,13 +36,13 @@ def vim_plugin_task(name, repo=nil)
 
         case filename
         when /zip$/
-          sh "unzip -o tmp/#{filename} -d #{dir}"
+          sh "unzip -o tmp/#{filename} -d #{dir.sub(/ /, '\ ')}"
 
         when /tar\.gz$/
           dirname  = File.basename(filename, '.tar.gz')
 
           sh "tar zxvf tmp/#{filename}"
-          sh "mv #{dirname} #{dir}"
+          sh "mv #{dirname} #{dir.sub(/ /, '\ ')}"
 
         when /vba(\.gz)?$/
           if filename =~ /gz$/
@@ -93,7 +93,7 @@ def vim_plugin_task(name, repo=nil)
           else
             subdirs.each do |subdir|
               if File.exists?(subdir)
-                sh "cp -RfL #{subdir}/* #{cwd}/#{subdir}/"
+                sh "cp -RfL #{subdir}/* #{cwd.sub(/ /, '\ ')}/#{subdir}/"
               end
             end
           end
