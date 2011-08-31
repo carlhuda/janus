@@ -15,3 +15,8 @@ ftplugin
 colors
 indent
 .VimballRecord
+
+janus.rake
+vimrc.local
+gvimrc.local
+

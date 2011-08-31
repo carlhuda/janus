@@ -225,6 +225,8 @@ call s:DefineCommand("e", "Edit")
 call s:DefineCommand("mkdir", "Mkdir")
 
 " Include user's local vim config
-if filereadable(expand("~/.gvimrc.local"))
+if ! empty($VIMFILES) && filereadable(expand("$VIMFILES/gvimrc.local"))
+  source $VIMFILES/gvimrc.local
+elseif filereadable(expand("~/.gvimrc.local"))
   source ~/.gvimrc.local
 endif
