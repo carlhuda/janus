@@ -1,0 +1,10 @@
+#!/bin/bash
+
+JANUS_DIR="$(dirname $(readlink -f $0))"
+JANUS_EDITOR=gvim
+if command -v mvim >/dev/null 2>&1 ; then
+  JANUS_EDITOR=mvim
+fi
+
+(unset GEM_PATH GEM_HOME; VIMFILES=$JANUS_DIR $JANUS_EDITOR --servername janus -u $JANUS_DIR/janus.vim -U $JANUS_DIR/gvimrc "$@")
+

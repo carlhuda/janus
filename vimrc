@@ -128,8 +128,13 @@ set modelines=10
 color desert
 
 " Directories for swp files
-set backupdir=~/.vim/backup
-set directory=~/.vim/backup
+if empty($VIMFILES)
+  set backupdir=~/.vim/backup
+  set directory=~/.vim/backup
+else
+  set backupdir=$VIMFILES/backup
+  set directory=$VIMFILES/backup
+end
 
 " Turn off jslint errors by default
 let g:JSLintHighlightErrorLine = 0

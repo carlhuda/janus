@@ -250,10 +250,9 @@ task :pull do
   system "git pull"
 end
 
-task :default => [
-  :update_docs,
-  :link_vimrc
-]
+defaults = [:update_docs]
+defaults << :link_vimrc unless ENV['SKIP_LINK'] && ENV['SKIP_LINK'] == 'true'
+task :default => defaults
 
 desc "Clear out all build artifacts and rebuild the latest Janus"
 task :upgrade => [:clean, :pull, :default]
