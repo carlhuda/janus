@@ -62,6 +62,13 @@ If you want to add additional Vim plugins you can do so by adding a
     vim_plugin_task "zencoding", "git://github.com/mattn/zencoding-vim.git"
     vim_plugin_task "minibufexpl", "git://github.com/fholgado/minibufexpl.vim.git"
 
+Plugins hosted at [vim.org](http://www.vim.org/scripts) use a unique URL for each
+version.  If you want `~/.janus.rake` to point to a plugin hosted there, use the GitHub
+mirror at [https://github.com/vim-scripts](https://github.com/vim-scripts)
+to automatically point to the latest version:
+
+    vim_plugin_task "bufexplorer", "git://github.com/vim-scripts/bufexplorer.zip"
+
 If you do not wish to use one of the plugins Janus provides out of the
 box you can have it skipped using the `skip_vim_plugin` method in
 `~/.janus.rake`:
