@@ -67,7 +67,7 @@ version.  If you want `~/.janus.rake` to point to a plugin hosted there, use the
 mirror at [https://github.com/vim-scripts](https://github.com/vim-scripts)
 to automatically point to the latest version:
 
-    vim_plugin_task "bufexplorer", "git://github.com/vim-scripts/bufexplorer.zip"
+    vim_plugin_task "bufexplorer", "git://github.com/vim-scripts/bufexplorer.zip.git"
 
 If you do not wish to use one of the plugins Janus provides out of the
 box you can have it skipped using the `skip_vim_plugin` method in
