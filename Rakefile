@@ -213,7 +213,7 @@ vim_plugin_task "molokai" do
 end
 
 vim_plugin_task "argonaut" do
-  sh "curl https://raw.github.com/effkay/argonaut.vim/master/argonaut.vim"
+  sh "curl https://raw.github.com/effkay/argonaut.vim/master/argonaut.vim > colors/argonaut.vim"
 end
 
 vim_plugin_task "mustache" do
