@@ -160,9 +160,9 @@ vim_plugin_task "vim-mru",          "git://github.com/ornicar/vim-mru.git"
 vim_plugin_task "git-grep-vim",     "git://github.com/tjennings/git-grep-vim.git"
 vim_plugin_task "vimclojure",       "git://github.com/vim-scripts/VimClojure.git"
 
-#vim_plugin_task "hammer",           "git://github.com/robgleeson/hammer.vim.git" do
-#  sh "gem install github-markup redcarpet"
-#end
+vim_plugin_task "hammer",           "git://github.com/robgleeson/hammer.vim.git" do
+  sh "rvm system; rvmsudo gem install github-markup redcarpet"
+end
 
 vim_plugin_task "command_t",        "http://s3.wincent.com/command-t/releases/command-t-1.2.1.vba" do
   Dir.chdir "ruby/command-t" do
@@ -172,7 +172,7 @@ vim_plugin_task "command_t",        "http://s3.wincent.com/command-t/releases/co
       sh "/usr/bin/ruby extconf.rb"
     elsif `rvm > /dev/null 2>&1` && $?.exitstatus == 0
       puts "using rvm"
-      sh "rvm default ruby extconf.rb"
+      sh "rvm system ruby extconf.rb"
     end
     sh "make clean && make"
   end
