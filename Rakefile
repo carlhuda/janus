@@ -214,6 +214,10 @@ vim_plugin_task "argonaut" do
   sh "curl https://raw.github.com/effkay/argonaut.vim/master/argonaut.vim > colors/argonaut.vim"
 end
 
+vim_plugin_task "railscasts_iterm" do
+  sh "curl https://raw.github.com/rickharris/vim-railscasts/master/colors/railscasts.vim > colors/railscasts_iterm"
+end
+
 vim_plugin_task "mustache" do
   sh "curl https://raw.github.com/defunkt/mustache/master/contrib/mustache.vim > syntax/mustache.vim"
   File.open(File.expand_path('../ftdetect/mustache.vim', __FILE__), 'w') do |file|
