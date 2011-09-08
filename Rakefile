@@ -119,25 +119,13 @@ def vim_plugin_task(name, repo=nil)
   end
   task :default => name
 end
-vim_plugin_task "taglist", "git://github.com/vim-scripts/taglist.vim.git"
-vim_plugin_task "supertab", "git://github.com/ervandew/supertab.git"
-vim_plugin_task "javascript",   "https://github.com/pangloss/vim-javascript.git"
-vim_plugin_task "coffescript",  "https://github.com/kchmck/vim-coffee-script.git"
-vim_plugin_task "nerdtree",         "git://github.com/scrooloose/nerdtree.git"
-vim_plugin_task "solarized", "git://github.com/altercation/vim-colors-solarized.git"
-vim_plugin_task "haml", "git://github.com/tpope/vim-haml.git"
-vim_plugin_task "command_t", "http://s3.wincent.com/command-t/releases/command-t-1.2.1.vba" do
-  Dir.chdir "ruby/command-t" do
-    if File.exists?("/usr/bin/ruby1.8") # prefer 1.8 on *.deb systems
-      sh "/usr/bin/ruby1.8 extconf.rb"
-    elsif File.exists?("/usr/bin/ruby") # prefer system rubies
-      sh "/usr/bin/ruby extconf.rb"
-    elsif `rvm > /dev/null 2>&1` && $?.exitstatus == 0
-      sh "rvm system ruby extconf.rb"
-    end
-    sh "make clean && make"
-  end
-end
+#vim_plugin_task "taglist", "git://github.com/vim-scripts/taglist.vim.git"
+#vim_plugin_task "supertab", "git://github.com/ervandew/supertab.git"
+#vim_plugin_task "javascript",   "https://github.com/pangloss/vim-javascript.git"
+#vim_plugin_task "coffescript",  "https://github.com/kchmck/vim-coffee-script.git"
+#vim_plugin_task "nerdtree",         "git://github.com/scrooloose/nerdtree.git"
+#vim_plugin_task "solarized", "git://github.com/altercation/vim-colors-solarized.git"
+#vim_plugin_task "haml", "git://github.com/tpope/vim-haml.git"
 
 vim_plugin_task "molokai" do
   sh "curl http://www.vim.org/scripts/download_script.php?src_id=9750 > colors/molokai.vim"
