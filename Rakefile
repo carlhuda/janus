@@ -123,7 +123,7 @@ end
 #vim_plugin_task "supertab", "git://github.com/ervandew/supertab.git"
 #vim_plugin_task "javascript",   "https://github.com/pangloss/vim-javascript.git"
 #vim_plugin_task "coffescript",  "https://github.com/kchmck/vim-coffee-script.git"
-#vim_plugin_task "nerdtree",         "git://github.com/scrooloose/nerdtree.git"
+vim_plugin_task "nerdtree",         "git://github.com/scrooloose/nerdtree.git"
 #vim_plugin_task "solarized", "git://github.com/altercation/vim-colors-solarized.git"
 #vim_plugin_task "haml", "git://github.com/tpope/vim-haml.git"
 
