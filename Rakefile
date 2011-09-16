@@ -215,7 +215,16 @@ vim_plugin_task "argonaut" do
 end
 
 vim_plugin_task "railscasts_iterm" do
-  sh "curl https://raw.github.com/rickharris/vim-railscasts/master/colors/railscasts.vim > colors/railscasts_iterm"
+  sh "curl https://raw.github.com/rickharris/vim-railscasts/master/colors/railscasts.vim > colors/railscasts_iterm.vim"
+  File.open(File.expand_path("../colors/railscasts_iterm.vim", __FILE__), "w") do |file|
+    file.puts <<-VIM.gsub(/^ +/, "").gsub("<SP>", " ")
+      set fillchars=vert:\\<SP>
+      set fillchars=stl:\\<SP>
+      set fillchars=stlnc:\\<SP>
+      hi  StatusLine guibg=#cccccc guifg=#000000
+      hi  VertSplit  guibg=#dddddd
+    VIM
+  end
 end
 
 vim_plugin_task "mustache" do
