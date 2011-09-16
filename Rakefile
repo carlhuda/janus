@@ -216,6 +216,22 @@ vim_plugin_task "argonaut" do
   sh "curl https://raw.github.com/effkay/argonaut.vim/master/argonaut.vim > colors/argonaut.vim"
 end
 
+<<<<<<< HEAD
+=======
+vim_plugin_task "railscasts_iterm" do
+  sh "curl https://raw.github.com/rickharris/vim-railscasts/master/colors/railscasts.vim > colors/railscasts_iterm.vim"
+  File.open(File.expand_path("../colors/railscasts_iterm.vim", __FILE__), "w") do |file|
+    file.puts <<-VIM.gsub(/^ +/, "").gsub("<SP>", " ")
+      set fillchars=vert:\\<SP>
+      set fillchars=stl:\\<SP>
+      set fillchars=stlnc:\\<SP>
+      hi  StatusLine guibg=#cccccc guifg=#000000
+      hi  VertSplit  guibg=#dddddd
+    VIM
+  end
+end
+
+>>>>>>> b88c1168ce0356dc0636891e0dee2e6de355c233
 vim_plugin_task "mustache" do
   sh "curl https://raw.github.com/defunkt/mustache/master/contrib/mustache.vim > syntax/mustache.vim"
   File.open(File.expand_path('../ftdetect/mustache.vim', __FILE__), 'w') do |file|
