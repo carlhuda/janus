@@ -262,6 +262,11 @@ Try `:Gist`, `:Gist -p` and visual blocks.
 When working with split windows, ZoomWin lets you zoom into a window and
 out again using `Ctrl-W o`
 
+## [Rename2](https://github.com/vim-scripts/Rename2/)
+
+Use :Rename command to rename the file you are currently editing and keep
+on editing
+
 **Customizations**: Janus binds `<Leader><Leader>` to `:ZoomWin`
 
 ## Additional Syntaxes
