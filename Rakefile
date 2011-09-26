@@ -174,6 +174,15 @@ vim_plugin_task "command_t",        "http://s3.wincent.com/command-t/releases/co
   end
 end
 
+vim_plugin_task "make_tabs" do
+  File.open(File.expand_path("../ftplugin/make_tabs.vim", __FILE__), "w") do |file|
+    file.puts <<-VIM.gsub(/^ +/, "")
+      " make uses real tabs
+      setlocal noexpandtab
+    VIM
+  end
+end
+
 vim_plugin_task "janus_themes" do
   # custom version of railscasts theme
   File.open(File.expand_path("../colors/railscasts+.vim", __FILE__), "w") do |file|
