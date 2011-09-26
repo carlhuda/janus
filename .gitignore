@@ -1,4 +1,5 @@
 # ViM files
 _backup
 _temp
+.netrwhist
 autoload/pathogen.vim
