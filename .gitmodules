@@ -46,3 +46,6 @@
 [submodule "janus-colors/solarized"]
 	path = janus-colors/solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "janus-tools/ack"]
+	path = janus-tools/ack
+	url = https://github.com/mileszs/ack.vim.git
