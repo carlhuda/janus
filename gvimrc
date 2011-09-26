@@ -14,3 +14,7 @@ endif
 if filereadable(expand("~/.gvimrc.after"))
   source ~/.gvimrc.after
 endif
+
+syntax enable
+set background=light
+colorscheme solarized

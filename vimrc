@@ -151,6 +151,10 @@ cmap <C-P> <C-R>=expand("%:p:h") . "/"
 "" Customizations
 ""
 
+syntax enable
+set background=dark
+colorscheme solarized
+
 if filereadable(expand("~/.vimrc.after"))
   source ~/.vimrc.after
 endif
