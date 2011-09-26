@@ -43,3 +43,12 @@
 [submodule "janus-tools/zoomwin"]
 	path = janus-tools/zoomwin
 	url = git://github.com/vim-scripts/ZoomWin.git
+[submodule "janus-colors/solarized"]
+	path = janus-colors/solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "janus-tools/ack"]
+	path = janus-tools/ack
+	url = https://github.com/mileszs/ack.vim.git
+[submodule "janus-tools/fugitive"]
+	path = janus-tools/fugitive
+	url = git://github.com/tpope/vim-fugitive.git
