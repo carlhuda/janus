@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/Users/wycats/.vim'
-let g:netrw_dirhist_2='/Users/wycats/.vim/janus-core'
-let g:netrw_dirhist_3='/Users/wycats/.vim'
