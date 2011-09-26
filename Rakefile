@@ -174,6 +174,18 @@ vim_plugin_task "command_t",        "http://s3.wincent.com/command-t/releases/co
   end
 end
 
+vim_plugin_task "pep8" do
+  File.open(File.expand_path("../ftplugin/python_pep8.vim", __FILE__), "w") do |file|
+    file.puts <<-VIM.gsub(/^ +/, "")
+      " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
+      setlocal softtabstop=4
+      setlocal tabstop=4
+      setlocal shiftwidth=4
+      setlocal textwidth=79
+    VIM
+  end
+end
+
 vim_plugin_task "make_tabs" do
   File.open(File.expand_path("../ftplugin/make_tabs.vim", __FILE__), "w") do |file|
     file.puts <<-VIM.gsub(/^ +/, "")
