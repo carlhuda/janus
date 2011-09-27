@@ -167,6 +167,8 @@ vim_plugin_task "command_t",        "http://s3.wincent.com/command-t/releases/co
       sh "/usr/bin/ruby1.8 extconf.rb"
     elsif File.exists?("/usr/bin/ruby") # prefer system rubies
       sh "/usr/bin/ruby extconf.rb"
+    elsif File.exists?("/usr/local/bin/ruby") # locally installed ruby
+      sh "/usr/local/bin/ruby extconf.rb"
     elsif `rvm > /dev/null 2>&1` && $?.exitstatus == 0
       sh "rvm system ruby extconf.rb"
     end
