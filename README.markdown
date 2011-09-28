@@ -46,6 +46,16 @@ or
 
   `curl https://raw.github.com/carlhuda/janus/master/bootstrap.sh -o - | sh`
 
+Note that MacVim and Janus must be compiled using the same version of
+Ruby.  This may cause problems for users of RVM or rbenv.  To solve,
+execute:
+
+    rvm system
+    brew uninstall macvim
+    brew install macvim
+    curl https://raw.github.com/carlhuda/janus/master/bootstrap.sh -o - | sh
+    rvm default
+
 ## Customization
 
 Create `~/.vimrc.local` and `~/.gvimrc.local` for any local
