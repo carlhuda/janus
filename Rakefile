@@ -1,5 +1,5 @@
 module VIM
-  Dirs = %w[ after autoload doc plugin ruby snippets syntax ftdetect ftplugin colors indent backup ]
+  Dirs = %w[ after autoload compiler doc plugin ruby snippets syntax ftdetect ftplugin colors indent backup ]
 end
 
 directory "tmp"
