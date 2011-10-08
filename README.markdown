@@ -127,7 +127,7 @@ Janus ships with a number of basic customizations for vim:
   characters) in insert mode
 * `<Leader>e` expands to `:e {directory of current file}/` (open in the
   current buffer)
-* `<Leader>tr` expands to `:te {directory of current file}/` (open in a
+* `<Leader>te` expands to `:te {directory of current file}/` (open in a
   new MacVIM tab)
 * `<C-P>` inserts the directory of the current file into a command
 
