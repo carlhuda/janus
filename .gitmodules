@@ -43,3 +43,6 @@
 [submodule "janus-tools/zoomwin"]
 	path = janus-tools/zoomwin
 	url = git://github.com/vim-scripts/ZoomWin.git
+[submodule "janus-langs/coffeescript"]
+	path = janus-langs/coffeescript
+	url = https://github.com/kchmck/vim-coffee-script.git
