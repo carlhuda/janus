@@ -46,3 +46,6 @@
 [submodule "janus-langs/coffeescript"]
 	path = janus-langs/coffeescript
 	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "janus-colors/solarized"]
+	path = janus-colors/solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
