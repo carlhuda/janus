@@ -46,3 +46,6 @@
 [submodule "janus-langs/coffeescript"]
 	path = janus-langs/coffeescript
 	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "janus-tools/gundo"]
+	path = janus-tools/gundo
+	url = git://github.com/sjl/gundo.vim.git
