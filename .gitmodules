@@ -46,3 +46,6 @@
 [submodule "janus-langs/coffeescript"]
 	path = janus-langs/coffeescript
 	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "janus-tools/hammer"]
+	path = janus-tools/hammer
+	url = git://github.com/robgleeson/hammer.vim.git
