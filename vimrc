@@ -1,4 +1,12 @@
 ""
+"" Customisations
+""
+
+if filereadable(expand("~/.vimrc.before"))
+  source ~/.vimrc.before
+endif
+
+""
 "" Helpers
 ""
 
@@ -162,3 +170,11 @@ endif
 set nobackup
 set nowritebackup
 set noswapfile
+
+""
+"" Customisations
+""
+
+if filereadable(expand("~/.vimrc.after"))
+  source ~/.vimrc.after
+endif
