@@ -46,3 +46,12 @@
 [submodule "janus-langs/coffeescript"]
 	path = janus-langs/coffeescript
 	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "janus-langs/rails"]
+	path = janus-langs/rails
+	url = git://github.com/tpope/vim-rails.git
+[submodule "janus-langs/textile"]
+	path = janus-langs/textile
+	url = git://github.com/timcharper/textile.vim.git
+[submodule "janus-langs/rspec"]
+	path = janus-langs/rspec
+	url = git://github.com/taq/vim-rspec.git
