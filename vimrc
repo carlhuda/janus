@@ -156,9 +156,8 @@ if filereadable(expand("~/.vimrc.after"))
 endif
 
 ""
-"" Disable swap files
+"" Backup and swap files
 ""
 
-set nobackup
-set nowritebackup
-set noswapfile
+set backupdir=~/.vim/_backup    " where to put backup files.
+set directory=~/.vim/_temp      " where to put swap files.
