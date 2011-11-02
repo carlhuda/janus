@@ -57,8 +57,8 @@ Janus
 
 For example, to override the default color schemes:
 
-    echo color desert  > ~/.vimrc.after
-    echo color molokai > ~/.gvimrc.after
+    echo color desert  >> ~/.vimrc.after
+    echo color molokai >> ~/.gvimrc.after
 
 If you want to add additional Vim plugins you can do so by adding a new
 submodule in the Janus repository like so:
@@ -67,6 +67,12 @@ submodule in the Janus repository like so:
 $ cd ~/.vim
 $ git submodule add git://github.com/vim-scripts/Rename2.git janus-tools/rename2
 ```
+
+If you want to disable one of the modules, add the folder name of the
+plugin without the janus-* group (nerdcommenter for example) to
+g:pathogen_disabled in your `~/.vimrc.before` file
+
+    echo "let g:pathogen_disabled = ['nerdcommenter']" >> ~/.vimrc.before
 
 Plugins hosted at [vim.org](http://www.vim.org/scripts) use a
 unique URL for each version, You can use the GitHub mirror at
