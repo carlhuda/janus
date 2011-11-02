@@ -34,4 +34,4 @@ task :update do
   sh "git submodule update"
 end
 
-task :default => [:update, expand("~/.vimrc"), expand("~/.gvimrc")]
+task :default => [:update, :folders, expand("~/.vimrc"), expand("~/.gvimrc")]
