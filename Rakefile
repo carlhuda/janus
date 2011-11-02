@@ -1,6 +1,7 @@
 module Janus
   # Errors
   JanusError = Class.new Exception
+  BlockNotGivenError = Class.new JanusError
   RubyGemsNotFoundError = Class.new JanusError
 
   module VIM
@@ -47,13 +48,41 @@ def find_gem(gem_name)
   end
 end
 
-namespace :plugins do
-  task :install do
-    # dummy task for plugin installation tasks.
+# Install a plugin
+#
+# @param [String] The group the plugin belongs to
+# @param [String] The plugin name
+# @param [&block] The installation block
+def install_vim_plugin(group, name, &block)
+  raise Janus::BlockNotGivenError unless block_given?
+
+  # Create a namespace for the plugin
+  namespace(name) do
+    task :verify_plugin do
+      unless Dir["#{root_path}/#{group}/#{name}/**"].any?
+        abort "The submodule #{group}/#{name} is not ready, please run 'git submodule update --init'"
+      end
+    end
+
+    # Define the plugin installation task
+    desc "Install #{name} plugin."
+    task :install do
+      puts
+      puts "*" * 40
+      puts "*#{"Installing #{name}".center(38)}*"
+      puts "*" * 40
+      puts
+      yield
+    end
+    task :install => :verify_plugin
   end
+
+  # Hook the plugin's install task to the global install task
+  task :install => "#{name}:install"
 end
 
-Dir["#{root_path}/janus-*/tasks/**.rake"].each { |f| load f }
+# Load all plugin installation tasks
+Dir["#{root_path}/janus-*/tasks/**.rake"].each { |f| import f }
 
 desc "link ViM configuration files."
 task :link_vim_conf_files do
@@ -78,8 +107,8 @@ task :update do
   sh "git submodule update"
 end
 
-task :install => [:update, :folders, "plugins:install"] do
-  # Dummy task to run plugin installation tasks
+task :install => [:update, :folders] do
+  # Dummy task.
 end
 
-task :default => [:update, :folders, :install, :link_vim_conf_files]
+task :default => [:install, :link_vim_conf_files]
