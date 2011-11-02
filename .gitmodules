@@ -46,3 +46,6 @@
 [submodule "janus-langs/coffeescript"]
 	path = janus-langs/coffeescript
 	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "janus-core/pathogen"]
+	path = janus-core/pathogen
+	url = git://github.com/tpope/vim-pathogen.git
