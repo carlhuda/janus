@@ -76,3 +76,6 @@
 [submodule "janus-tools/command-t"]
 	path = janus-tools/command-t
 	url = git@github.com:wycats/Command-T.git
+[submodule "janus-core/pathogen"]
+	path = janus-core/pathogen
+	url = git://github.com/tpope/vim-pathogen.git

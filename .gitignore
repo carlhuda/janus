@@ -1,3 +1,4 @@
 # ViM files
 _backup
 _temp
+autoload/pathogen.vim
