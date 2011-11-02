@@ -9,6 +9,13 @@ module Janus
   end
 end
 
+# Return the root path
+#
+# @return [String] The absolute path to Janus repository
+def root_path
+  @root_path ||= File.expand_path(File.dirname(__FILE__))
+end
+
 # Expand the path of a given file
 #
 # @param [String] file
@@ -16,6 +23,14 @@ end
 def expand(file)
   File.expand_path(file)
 end
+
+namespace :plugins do
+  task :install do
+    # dummy task for plugin installation tasks.
+  end
+end
+
+Dir["#{root_path}/janus-*/tasks/**.rake"].each { |f| load f }
 
 desc "link ViM configuration files."
 task :link_vim_conf_files do
@@ -40,4 +55,8 @@ task :update do
   sh "git submodule update"
 end
 
-task :default => [:update, :folders, :link_vim_conf_files]
+task :install => [:update, :folders, "plugins:install"] do
+  # Dummy task to run plugin installation tasks
+end
+
+task :default => [:update, :folders, :install, :link_vim_conf_files]
