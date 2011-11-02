@@ -73,3 +73,6 @@
 [submodule "janus-tools/hammer"]
 	path = janus-tools/hammer
 	url = git://github.com/robgleeson/hammer.vim.git
+[submodule "janus-tools/command-t"]
+	path = janus-tools/command-t
+	url = git@github.com:wycats/Command-T.git
