@@ -243,6 +243,10 @@ end
 vim_plugin_task "blackboard" do
   sh "curl https://raw.github.com/nelstrom/vim-blackboard/master/colors/blackboard.vim > colors/blackboard.vim"
 end
+vim_plugin_task "github" do
+  sh "curl https://raw.github.com/joshuaclayton/dotfiles/master/vim/colors/github.vim > colors/github.vim"
+end
+
 
 if File.exists?(janus = File.expand_path("~/.janus.rake"))
   puts "Loading your custom rake file"
