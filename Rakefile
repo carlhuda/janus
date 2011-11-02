@@ -1,5 +1,28 @@
+module Janus
+  # Errors
+  JanusError = Class.new Exception
+  RubyGemsNotFoundError = Class.new JanusError
+end
+
 def expand(file)
   File.expand_path(file)
+end
+
+# Find an installed gem
+#
+# @param [String] The gem name to search for
+# @return [Array] The found gems
+def find_gem(gem_name)
+  begin
+    require 'rubygems'
+    if Gem.respond_to?(:source_index)
+      Gem.source_index.find_name(gem_name)
+    else
+      Gem.cache.find_name(gem_name)
+    end
+  rescue LoadError
+    raise Janus::RubyGemsNotFoundError
+  end
 end
 
 task expand("~/.vimrc") => "vimrc" do
