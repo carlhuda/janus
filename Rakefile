@@ -9,12 +9,7 @@ def expand(file)
   File.expand_path(file)
 end
 
-namespace :plugins do
-  task :install do
-    # dummy task for plugins installations hooku.
-  end
-end
-
+# Load all plugin installation tasks
 Dir["#{root_path}/janus-*/tasks/**.rake"].each { |f| load f }
 
 task expand("~/.vimrc") => "vimrc" do
@@ -31,8 +26,8 @@ task :update do
   sh "git submodule update"
 end
 
-task :install => [:update, "plugins:install"] do
-  # Dummy task to run plugins installation tasks
+task :install => :update do
+  # Dummy task.
 end
 
 task :default => [:install, expand("~/.vimrc"), expand("~/.gvimrc")]
