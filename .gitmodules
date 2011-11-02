@@ -67,3 +67,6 @@
 [submodule "janus-langs/rspec"]
 	path = janus-langs/rspec
 	url = git://github.com/taq/vim-rspec.git
+[submodule "janus-colors/solarized"]
+	path = janus-colors/solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
