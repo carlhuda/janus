@@ -67,7 +67,7 @@ set backspace=indent,eol,start        " backspace through everything in insert m
 "" Searching
 ""
 
-set hlsearch    " highlight matches (TODO: Map something convenient to nohlsearch)
+set hlsearch    " highlight matches
 set incsearch   " incremental searching
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
@@ -138,6 +138,9 @@ map <Up> gk
 
 " Map <Leader><Leader> to ZoomWin
 map <Leader><Leader> :ZoomWin<CR>
+
+" Toggle hlsearch with <leader>hs
+nmap <leader>hs :set hlsearch! hlsearch?<CR>
 
 ""
 "" Command-Line Mappings
