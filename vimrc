@@ -75,7 +75,7 @@ set backspace=indent,eol,start        " backspace through everything in insert m
 "" Searching
 ""
 
-set hlsearch    " highlight matches (TODO: Map something convenient to nohlsearch)
+set hlsearch    " highlight matches
 set incsearch   " incremental searching
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
@@ -116,7 +116,7 @@ filetype plugin indent on " Turn on filetype plugins (:help filetype-plugin)
 au FileType make set noexpandtab
 
 " Set the Ruby filetype for a number of common Ruby files without .rb
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru,*.rake} set ft=ruby
 
 " Markdown and txt files should wrap
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} call s:setupWrapping()
@@ -147,6 +147,9 @@ map <Up> gk
 " Map <Leader><Leader> to ZoomWin
 map <Leader><Leader> :ZoomWin<CR>
 
+" Toggle hlsearch with <leader>hs
+nmap <leader>hs :set hlsearch! hlsearch?<CR>
+
 ""
 "" Command-Line Mappings
 ""
@@ -154,17 +157,15 @@ map <Leader><Leader> :ZoomWin<CR>
 " Insert the current directory into a command-line path
 cmap <C-P> <C-R>=expand("%:p:h") . "/"
 
+""
+"" Backup and swap files
+""
+
+set backupdir=~/.vim/_backup    " where to put backup files.
+set directory=~/.vim/_temp      " where to put swap files.
 
 ""
-"" Disable swap files
-""
-
-set nobackup
-set nowritebackup
-set noswapfile
-
-""
-"" Customisations
+"" Customizations
 ""
 
 if filereadable(expand("~/.vimrc.after"))

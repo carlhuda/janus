@@ -1,3 +1,14 @@
+module Janus
+  module VIM
+    extend self
+
+    # Folders
+    def folders
+      %w[ _backup _temp ]
+    end
+  end
+end
+
 # Expand the path of a given file
 #
 # @param [String] file
@@ -16,10 +27,17 @@ task :link_vim_conf_files do
   end
 end
 
+desc "Create necessary folders."
+task :folders do
+  Janus::VIM.folders.each do |folder|
+    mkdir_p folder
+  end
+end
+
 task :update do
   sh "git pull"
   sh "git submodule init"
   sh "git submodule update"
 end
 
-task :default => [:update, :link_vim_conf_files]
+task :default => [:update, :folders, :link_vim_conf_files]
