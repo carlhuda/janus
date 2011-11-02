@@ -38,14 +38,13 @@ support.
 
 0. `for i in ~/.vim ~/.vimrc ~/.gvimrc; do [ -e $i ] && mv $i $i.old;
    done`
-1. `git clone git://github.com/carlhuda/janus.git ~/.vim`
+1. `git clone git://github.com/TechnoGate/janus.git ~/.vim`
 2. `cd ~/.vim`
-3. `git checkout experimental`
 4. `rake`
 
 or
 
-  `curl https://raw.github.com/carlhuda/janus/experimental/bootstrap.sh -o - | sh`
+  `curl https://raw.github.com/TechnoGate/janus/master/bootstrap.sh -o - | sh`
 
 ## Customization
 
