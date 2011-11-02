@@ -73,3 +73,6 @@
 [submodule "janus-core/surround"]
 	path = janus-core/surround
 	url = git://github.com/tpope/vim-surround.git
+[submodule "janus-tools/hammer"]
+	path = janus-tools/hammer
+	url = git://github.com/robgleeson/hammer.vim.git

@@ -1,4 +1,8 @@
 module Janus
+  # Errors
+  JanusError = Class.new Exception
+  RubyGemsNotFoundError = Class.new JanusError
+
   module VIM
     extend self
 
@@ -22,6 +26,25 @@ end
 # @return [String] The expanded path to the given file.
 def expand(file)
   File.expand_path(file)
+end
+
+# Find an installed gem
+#
+# @param [String] The gem name to search for
+# @return [Array] The found gems
+def find_gem(gem_name)
+  begin
+    require 'rubygems'
+    if Gem.const_defined?(:Specification)
+      Gem::Specification.find_all_by_name(gem_name)
+    elsif Gem.respond_to?(:source_index)
+      Gem.source_index.find_name(gem_name)
+    else
+      Gem.cache.find_name(gem_name)
+    end
+  rescue LoadError
+    raise Janus::RubyGemsNotFoundError
+  end
 end
 
 namespace :plugins do
