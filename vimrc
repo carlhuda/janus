@@ -156,14 +156,6 @@ cmap <C-P> <C-R>=expand("%:p:h") . "/"
 
 
 ""
-"" Customizations
-""
-
-if filereadable(expand("~/.vimrc.after"))
-  source ~/.vimrc.after
-endif
-
-""
 "" Disable swap files
 ""
 
