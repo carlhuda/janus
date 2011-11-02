@@ -1,3 +1,14 @@
+module Janus
+  module VIM
+    extend self
+
+    # Folders
+    def folders
+      %w[ _backup _temp ]
+    end
+  end
+end
+
 def expand(file)
   File.expand_path(file)
 end
@@ -8,6 +19,13 @@ end
 
 task expand("~/.gvimrc") => "gvimrc" do
   sh "ln -s ~/.vim/gvimrc ~/.gvimrc"
+end
+
+desc "Create necessary folders."
+task :folders do
+  Janus::VIM.folders.each do |folder|
+    mkdir_p folder
+  end
 end
 
 task :update do
