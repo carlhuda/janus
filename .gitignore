@@ -2,3 +2,4 @@
 _backup
 _temp
 .netrwhist
+autoload/pathogen.vim
