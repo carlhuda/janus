@@ -11,16 +11,17 @@ end
 # Find an installed gem
 #
 # @param [String] The gem name to search for
+# @param [Mixed] The gem requirements
 # @return [Array] The found gems
-def find_gem(gem_name)
+def find_gem(gem_name, *requirements)
   begin
     require 'rubygems'
     if Gem.const_defined?(:Specification)
-      Gem::Specification.find_all_by_name(gem_name)
+      Gem::Specification.find_all_by_name(gem_name, *requirements)
     elsif Gem.respond_to?(:source_index)
-      Gem.source_index.find_name(gem_name)
+      Gem.source_index.find_name(gem_name, *requirements)
     else
-      Gem.cache.find_name(gem_name)
+      Gem.cache.find_name(gem_name, *requirements)
     end
   rescue LoadError
     raise Janus::RubyGemsNotFoundError
