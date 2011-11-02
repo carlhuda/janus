@@ -48,6 +48,21 @@ def find_gem(gem_name)
   end
 end
 
+# Install a gem
+#
+# @param [String] The gem name
+def install_gem(gem_name)
+  require 'rubygems'
+
+  # Install the gem only if it can't be found
+  if find_gem(gem_name).length == 0
+    sh "gem install #{gem_name}"
+  end
+rescue Janus::RubyGemsNotFoundError
+  puts "Could not install the gem #{gem_name}, please do so manually."
+  puts "gem install #{gem_name}"
+end
+
 # Install a plugin
 #
 # @param [String] The group the plugin belongs to
