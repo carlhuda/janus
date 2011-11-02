@@ -1,4 +1,12 @@
 ""
+"" Customisations
+""
+
+if filereadable(expand("~/.vimrc.before"))
+  source ~/.vimrc.before
+endif
+
+""
 "" Helpers
 ""
 
@@ -148,17 +156,17 @@ cmap <C-P> <C-R>=expand("%:p:h") . "/"
 
 
 ""
-"" Customizations
-""
-
-if filereadable(expand("~/.vimrc.after"))
-  source ~/.vimrc.after
-endif
-
-""
 "" Disable swap files
 ""
 
 set nobackup
 set nowritebackup
 set noswapfile
+
+""
+"" Customisations
+""
+
+if filereadable(expand("~/.vimrc.after"))
+  source ~/.vimrc.after
+endif
