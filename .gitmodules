@@ -55,3 +55,6 @@
 [submodule "janus-langs/git"]
 	path = janus-langs/git
 	url = git://github.com/tpope/vim-git.git
+[submodule "janus-tools/gundo"]
+	path = janus-tools/gundo
+	url = git://github.com/sjl/gundo.vim.git
