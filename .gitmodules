@@ -34,9 +34,6 @@
 [submodule "janus-tools/snipmate"]
 	path = janus-tools/snipmate
 	url = https://github.com/ervandew/snipmate.vim.git
-[submodule "janus-tools/command-t"]
-	path = janus-tools/command-t
-	url = git@github.com:wycats/Command-T.git
 [submodule "janus-colors/sampler-pack"]
 	path = janus-colors/sampler-pack
 	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
