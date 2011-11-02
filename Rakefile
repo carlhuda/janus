@@ -1,13 +1,19 @@
+# Expand the path of a given file
+#
+# @param [String] file
+# @return [String] The expanded path to the given file.
 def expand(file)
   File.expand_path(file)
 end
 
-task expand("~/.vimrc") => "vimrc" do
-  sh "ln -s ~/.vim/vimrc ~/.vimrc"
-end
-
-task expand("~/.gvimrc") => "gvimrc" do
-  sh "ln -s ~/.vim/gvimrc ~/.gvimrc"
+desc "link ViM configuration files."
+task :link_vim_conf_files do
+  %w[ vimrc gvimrc ].each do |file|
+    dest = expand("~/.#{file}")
+    unless File.exist?(dest)
+      ln_s(expand("../#{file}", __FILE__), dest)
+    end
+  end
 end
 
 task :update do
@@ -16,4 +22,4 @@ task :update do
   sh "git submodule update"
 end
 
-task :default => [:update, expand("~/.vimrc"), expand("~/.gvimrc")]
+task :default => [:update, :link_vim_conf_files]
