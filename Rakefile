@@ -15,7 +15,9 @@ end
 def find_gem(gem_name)
   begin
     require 'rubygems'
-    if Gem.respond_to?(:source_index)
+    if Gem.const_defined?(:Specification)
+      Gem::Specification.find_all_by_name(gem_name)
+    elsif Gem.respond_to?(:source_index)
       Gem.source_index.find_name(gem_name)
     else
       Gem.cache.find_name(gem_name)
