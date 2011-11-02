@@ -39,6 +39,7 @@ call s:add_group("janus-colors")
 call s:add_group("janus-command-t")
 
 call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 ""
 "" Basic Setup
