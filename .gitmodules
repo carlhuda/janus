@@ -58,3 +58,12 @@
 [submodule "janus-tools/gundo"]
 	path = janus-tools/gundo
 	url = git://github.com/sjl/gundo.vim.git
+[submodule "janus-langs/rails"]
+	path = janus-langs/rails
+	url = git://github.com/tpope/vim-rails.git
+[submodule "janus-langs/textile"]
+	path = janus-langs/textile
+	url = git://github.com/timcharper/textile.vim.git
+[submodule "janus-langs/rspec"]
+	path = janus-langs/rspec
+	url = git://github.com/taq/vim-rspec.git
