@@ -11,7 +11,7 @@ end
 
 namespace :plugins do
   task :install do
-    # dummy task for plugins installations hooku.
+    # dummy task for plugin installation tasks.
   end
 end
 
@@ -32,7 +32,7 @@ task :update do
 end
 
 task :install => [:update, "plugins:install"] do
-  # Dummy task to run plugins installation tasks
+  # Dummy task to run plugin installation tasks
 end
 
 task :default => [:install, expand("~/.vimrc"), expand("~/.gvimrc")]
