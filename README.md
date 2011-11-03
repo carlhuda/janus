@@ -65,12 +65,14 @@ $ cd ~/.vim
 $ git submodule add git://github.com/vim-scripts/Rename2.git janus-tools/rename2
 ```
 
-If you want to disable one of the modules, add the folder name of
-the plugin without the janus-* group (nerdcommenter for example) to
-g:pathogen_disabled in your `~/.vimrc.before` file
+If you would like to disable an included plugin, you can do that with
+the `janus#disable_plugin()` function from inside your
+`~/.vimrc.before`, this function takes a plugin name as an argument
+without the group, for example, if you would like to disable the
+NERDCommenter plugin, you can do that with the command:
 
 ```bash
-$ echo "let g:pathogen_disabled = ['nerdcommenter']" >> ~/.vimrc.before
+$ echo "call janus#disable_plugin('nerdcommenter')" >> ~/.vimrc.before
 ```
 
 Plugins hosted at [vim.org](http://www.vim.org/scripts) use a
