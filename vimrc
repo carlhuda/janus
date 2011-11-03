@@ -28,15 +28,6 @@ function! s:add_group(name)
 endfunction
 
 ""
-"" Customizations
-""
-
-if filereadable(expand("~/.vimrc.before"))
-  source ~/.vimrc.before
-endif
-
-
-""
 "" Pathogen Setup
 ""
 
