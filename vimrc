@@ -86,7 +86,9 @@ set smartcase   " ... unless they contain at least one capital letter
 
 " TODO: Investigate the precise meaning of these settings
 " set wildmode=list:longest,list:full
-" set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+
+" Disable output and VCS files
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,.bundle/*,.sass-cache/*
 
 ""
 "" Status bar
