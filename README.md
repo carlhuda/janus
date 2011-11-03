@@ -204,7 +204,7 @@ execute their script to find them.
 
 Tagbar is a vim plugin for browsing the tags of source code files.
 
-**Customizations**: Janus binds <Leader>rt to toggle Tagbar.
+**Customizations**: Janus binds `<Leader>rt` to toggle Tagbar.
 
 ## Git Support ([Fugitive](http://github.com/tpope/vim-fugitive))
 
