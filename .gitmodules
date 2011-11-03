@@ -91,3 +91,9 @@
 [submodule "janus-tools/syntastic"]
 	path = janus-tools/syntastic
 	url = git://github.com/scrooloose/syntastic.git
+[submodule "janus-tools/tagbar"]
+	path = janus-tools/tagbar
+	url = git://github.com/majutsushi/tagbar.git
+[submodule "janus-tools/nerdtree"]
+	path = janus-tools/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
