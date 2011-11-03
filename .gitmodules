@@ -88,3 +88,6 @@
 [submodule "janus-tools/snipmate-snippets"]
 	path = janus-tools/snipmate-snippets
 	url = git://github.com/honza/snipmate-snippets.git
+[submodule "janus-tools/syntastic"]
+	path = janus-tools/syntastic
+	url = git://github.com/scrooloose/syntastic.git
