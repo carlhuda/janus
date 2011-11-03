@@ -72,5 +72,8 @@ endfunction
 "
 " @param [String] The plugin name
 function! janus#is_plugin_disabled(name)
+  if !exists("g:janus_disabled_plugins")
+    return 0
+  endif
   return index(g:janus_disabled_plugins, janus#plugin_path(a:name)) != -1
 endfunction

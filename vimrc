@@ -20,10 +20,12 @@ source ~/.vim/lib/vim/janus.vim
 "" Pathogen Setup
 ""
 
-call janus#add_group("janus-core")
-call janus#add_group("janus-langs")
+" You should note that groups will be processed by Pathogen in reverse
+" order they were added.
 call janus#add_group("janus-tools")
+call janus#add_group("janus-langs")
 call janus#add_group("janus-colors")
+call janus#add_group("janus-core")
 
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
