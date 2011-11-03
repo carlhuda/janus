@@ -36,8 +36,12 @@ task :update do
   sh "git submodule update"
 end
 
-task :install => [:update, :folders] do
-  # Dummy task.
+task :install => [:folders, :link_vim_conf_files] do
+  # Dummy task, real work is done with the hooks.
 end
 
-task :default => [:install, :link_vim_conf_files]
+desc "Install or Update Janus."
+task :default do
+  sh "rake update"
+  sh "rake install"
+end
