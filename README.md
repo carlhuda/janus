@@ -115,7 +115,7 @@ Here's some tips if you've never used VIM before:
 * Certain commands are prefixed with a `<Leader>` key, which maps to `\`
   by default. Use `let mapleader = ","` to change this. If you want this
   to be in effect for uses of <Leader> in your .vimrc, make sure to define
-  this in the `~/.vimrc.pre`
+  this in the `~/.vimrc.before`
 * Keyboard [cheat sheet](http://walking-without-crutches.heroku.com/image/images/vi-vim-cheat-sheet.png).
 
 # Features
@@ -143,6 +143,14 @@ Janus ships with a number of basic customizations for vim:
 * `<C-P>` inserts the directory of the current file into a command
 * Automatically resize splits when resizing the MacVim window
 
+## [Ack.vim](http://github.com/mileszs/ack.vim)
+
+Ack.vim uses ack to search inside the current directory for a pattern.
+You can learn more about it with :help Ack
+
+**Customizations**: Janus rebinds command-shift-f (`<D-F>`) to bring up
+`:Ack `.
+
 ## [Command-T](https://wincent.com/products/command-t)
 
 Command-T provides a mechanism for searching for a file inside the
@@ -159,10 +167,44 @@ filetype. View `:help NERDCommenter` for all the details.
 
 **Customizations**: Janus binds command-/ (`<D-/>`) to toggle comments.
 
+## [NERDTree](https://github.com/scrooloose/nerdtree)
+
+NERDTree is a file explorer plugin that provides "project drawer"
+functionality to your vim projects.  You can learn more about it with
+:help NERDTree.
+
+**Customizations**: Janus adds a number of customizations to the core
+NERDTree:
+
+* Use `<Leader>n` to toggle NERDTree
+* Ignore compiled ruby, python, and java files
+* Automatically activate NERDTree when MacVIM opens and make the
+  original buffer the active one
+* Provide alternative :e, :cd, :rm and :touch abbreviations which also
+  refresh NERDTree when done (when NERDTree is open)
+* When opening vim with vim /path, open the left NERDTree to that
+  directory, set the vim pwd, and clear the right buffer
+* Disallow `:e`ing files into the NERDTree buffer
+* In general, assume that there is a single NERDTree buffer on the left
+  and one or more editing buffers on the right
+
 ## [SuperTab](http://github.com/ervandew/supertab)
 
 In insert mode, start typing something and hit `<TAB>` to tab-complete
 based on the current context.
+
+## [Syntastic](https://github.com/scrooloose/syntastic/)
+
+Syntastic is a syntax checking plugin that runs buffers through external syntax 
+checkers as they are saved and opened. If syntax errors are detected, the user 
+is notified and is happy because they didn't have to compile their code or 
+execute their script to find them.
+
+## [Tagbar](https://github.com/majutsushi/tagbar)
+
+Tagbar is a vim plugin for browsing the tags of source code files.
+
+**Customizations**: Janus binds <Leader>rt to toggle Tagbar.
 
 ## Git Support ([Fugitive](http://github.com/tpope/vim-fugitive))
 
