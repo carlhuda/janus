@@ -1,50 +1,46 @@
-# Janus: Carlhuda's vim Distribution
+# Janus: Vim Distribution
 
-This is a basic distribution of vim plugins and tools intended to be run
-on top of the latest MacVIM snapshot.
+This is a basic distribution of Vim plug-ins and tools intended to be
+run on top of Vim.
 
-We (Carl and Yehuda) both use this distribution for our own use, and
-welcome patches and contributions to help make it an effective way to
-get started with vim and then use it productively for years to come.
+It is designed to provide minimal working environment with Vim using the
+most popular plug-ins and the most common mappings.
 
-At present, we are still learning to use vim ourselves, so you should
-anticipate a period of rapid development while we get a handle on the
-best tools for the job. So far, we have mostly integrated existing
-plugins and tools, and we anticipate to continue doing so while also
-writing our own plugins as appropriate.
-
-In general, you can expect that the tools we use work well together and
-that we have given careful thought to the experience of using MacVIM
-with the tools in question. If you run into an issue using it, please
-report an issue to the issue tracker.
+The distribution is completely customisable using a `~/.vimrc.before`
+and `~/.vimrc.after` Vim RC files.
 
 ## Pre-requisites
 
-Janus is built primarily for [MacVim](http://code.google.com/p/macvim/) on OSX.
-Download it [here](https://github.com/b4winckler/macvim/downloads).
+The distribution is designed to work with ViM >= 7.3.
 
-Alternatively, you can use Janus with the bundled console `vim` installation on
-OSX (via Terminal), or with any other `vim` or `gvim` installation.
+The distribution also require `ctags`, `ruby` and `rake`,
+for the most comfortable experience, use the gui version of
+ViM. Linux users should install `gvim`, OSX users should
+install [MacVim](http://code.google.com/p/macvim/), Download it
+[here](https://github.com/b4winckler/macvim/downloads).
 
-Linux users can install `gvim` for an experience identical to MacVim.
-On Debian/Ubuntu, simply `apt-get install vim-gnome`. For remote
-servers, install console vim with `apt-get install vim-nox`.
+### Ubuntu
 
-On a fresh Ubuntu install you also have to install the packages `rake` and `ruby-dev`
-before running the install script and `exuberant-ctags` for ctags
-support.
+```bash
+$ sudo apt-get install ruby-dev rake exuberant-ctags
+```
+
+### OpenSuSe
+
+```bash
+$ sudo zypper install ruby rubygems rubygem-rake ctags
+```
 
 ## Installation
 
-0. `for i in ~/.vim ~/.vimrc ~/.gvimrc; do [ -e $i ] && mv $i $i.old;
-   done`
-1. `git clone git://github.com/TechnoGate/janus.git ~/.vim`
-2. `cd ~/.vim`
-4. `rake`
+To install Janus, please use our [automatic
+installer](https://github.com/TechnoGate/janus/blob/master/bootstrap.sh)
+, which backups up any Vim files found in your home folder and installs
+Janus.
 
-or
-
-  `curl https://raw.github.com/TechnoGate/janus/master/bootstrap.sh -o - | sh`
+```bash
+$ curl https://raw.github.com/TechnoGate/janus/master/bootstrap.sh -o- | sh`
+```
 
 ## Customization
 
@@ -56,8 +52,10 @@ Janus
 
 For example, to override the default color schemes:
 
-    echo color desert  >> ~/.vimrc.after
-    echo color molokai >> ~/.gvimrc.after
+```bash
+$ echo 'color desert'  >> ~/.vimrc.after
+$ echo 'color molokai' >> ~/.gvimrc.after
+```
 
 If you want to add additional Vim plugins you can do so by adding a new
 submodule in the Janus repository like so:
@@ -67,11 +65,13 @@ $ cd ~/.vim
 $ git submodule add git://github.com/vim-scripts/Rename2.git janus-tools/rename2
 ```
 
-If you want to disable one of the modules, add the folder name of the
-plugin without the janus-* group (nerdcommenter for example) to
+If you want to disable one of the modules, add the folder name of
+the plugin without the janus-* group (nerdcommenter for example) to
 g:pathogen_disabled in your `~/.vimrc.before` file
 
-    echo "let g:pathogen_disabled = ['nerdcommenter']" >> ~/.vimrc.before
+```bash
+$ echo "let g:pathogen_disabled = ['nerdcommenter']" >> ~/.vimrc.before
+```
 
 Plugins hosted at [vim.org](http://www.vim.org/scripts) use a
 unique URL for each version, You can use the GitHub mirror at
@@ -194,3 +194,33 @@ Janus ships with a few additional syntaxes:
 * An improved JavaScript syntax (bound to \*.js)
 * Map Gemfile, Rakefile, Vagrantfile and Thorfile to Ruby
 * Git commits (set your `EDITOR` to `mvim -f`)
+
+## Credits
+
+Janus is based on [Carlhuda's Janus
+distribution](https://github.com/carlhuda/janus).
+
+## License
+
+### This code is free to use under the terms of the MIT license.
+
+Copyright (c) 2011 TechnoGate &lt;support@technogate.fr&gt;
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be included
+in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
