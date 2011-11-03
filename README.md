@@ -1,10 +1,10 @@
 # Janus: Vim Distribution
 
-This is a basic distribution of Vim plug-ins and tools intended to be
-run on top of Vim.
+This is a distribution of plug-ins and mappings for Vim, Gvim and
+MacVim.
 
-It is designed to provide minimal working environment with Vim using the
-most popular plug-ins and the most common mappings.
+It is designed to provide minimal working environment using the most
+popular plug-ins and the most common mappings.
 
 The distribution is completely customisable using a `~/.vimrc.before`
 and `~/.vimrc.after` Vim RC files.
