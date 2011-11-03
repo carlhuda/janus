@@ -11,7 +11,7 @@ endif
 ""
 
 " Some file types should wrap their text
-function s:setupWrapping()
+function! s:setupWrapping()
   set wrap
   set linebreak
   set textwidth=72
@@ -20,7 +20,7 @@ endfunction
 
 let s:current_file = expand("<sfile>:p")
 
-function s:add_group(name)
+function! s:add_group(name)
   let resolved = resolve(s:current_file)
   let dir = fnamemodify(resolved, ":h")
   let file = dir . "/" . a:name
@@ -118,8 +118,8 @@ au FileType make set noexpandtab
 " Set the Ruby filetype for a number of common Ruby files without .rb
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru,*.rake} set ft=ruby
 
-" Markdown and txt files should wrap
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} call s:setupWrapping()
+" Make sure all mardown files have the correct filetype set and setup wrapping
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} set ft=markdown | call s:setupWrapping()
 
 " Treat JSON files like JavaScript
 au BufNewFile,BufRead *.json set ft=javascript
@@ -143,9 +143,6 @@ map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 " Map the arrow keys to be based on display lines, not physical lines
 map <Down> gj
 map <Up> gk
-
-" Map <Leader><Leader> to ZoomWin
-map <Leader><Leader> :ZoomWin<CR>
 
 " Toggle hlsearch with <leader>hs
 nmap <leader>hs :set hlsearch! hlsearch?<CR>
