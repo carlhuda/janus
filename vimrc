@@ -7,21 +7,23 @@ if filereadable(expand("~/.vimrc.before"))
 endif
 
 ""
+"" Janus setup
+""
+
+" Define the janus_path
+let g:janus_path = fnamemodify(resolve(expand("<sfile>:p")), ":h")
+
+" Source janus
+source ~/.vim/lib/vim/janus.vim
+
+""
 "" Pathogen Setup
 ""
 
-let s:current_file = expand("<sfile>:p")
-
-function! s:add_group(name)
-  let resolved = resolve(s:current_file)
-  let dir = fnamemodify(resolved, ":h")  . "/" . a:name
-  call pathogen#runtime_prepend_subdirectories(dir)
-endfunction
-
-call s:add_group("janus-core")
-call s:add_group("janus-langs")
-call s:add_group("janus-tools")
-call s:add_group("janus-colors")
+call janus#add_group("janus-core")
+call janus#add_group("janus-langs")
+call janus#add_group("janus-tools")
+call janus#add_group("janus-colors")
 
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
