@@ -136,9 +136,6 @@ map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 map <Down> gj
 map <Up> gk
 
-" Map <Leader><Leader> to ZoomWin
-map <Leader><Leader> :ZoomWin<CR>
-
 " Toggle hlsearch with <leader>hs
 nmap <leader>hs :set hlsearch! hlsearch?<CR>
 
