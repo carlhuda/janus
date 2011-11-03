@@ -1,5 +1,5 @@
 module VIM
-  Dirs = %w[ after autoload doc plugin ruby snippets syntax ftdetect ftplugin colors indent ]
+  Dirs = %w[ after autoload doc plugin ruby snippets syntax ftdetect ftplugin colors indent backup ]
 end
 
 directory "tmp"
@@ -174,6 +174,27 @@ vim_plugin_task "command_t",        "http://s3.wincent.com/command-t/releases/co
   end
 end
 
+vim_plugin_task "pep8" do
+  File.open(File.expand_path("../ftplugin/python_pep8.vim", __FILE__), "w") do |file|
+    file.puts <<-VIM.gsub(/^ +/, "")
+      " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
+      setlocal softtabstop=4
+      setlocal tabstop=4
+      setlocal shiftwidth=4
+      setlocal textwidth=79
+    VIM
+  end
+end
+
+vim_plugin_task "make_tabs" do
+  File.open(File.expand_path("../ftplugin/make_tabs.vim", __FILE__), "w") do |file|
+    file.puts <<-VIM.gsub(/^ +/, "")
+      " make uses real tabs
+      setlocal noexpandtab
+    VIM
+  end
+end
+
 vim_plugin_task "janus_themes" do
   # custom version of railscasts theme
   File.open(File.expand_path("../colors/railscasts+.vim", __FILE__), "w") do |file|
@@ -219,6 +240,13 @@ end
 vim_plugin_task "vwilight" do
   sh "curl https://raw.github.com/gist/796172/724c7ca237a7f6b8d857c4ac2991cfe5ffb18087 > colors/vwilight.vim"
 end
+vim_plugin_task "blackboard" do
+  sh "curl https://raw.github.com/nelstrom/vim-blackboard/master/colors/blackboard.vim > colors/blackboard.vim"
+end
+vim_plugin_task "github" do
+  sh "curl https://raw.github.com/joshuaclayton/dotfiles/master/vim/colors/github.vim > colors/github.vim"
+end
+
 
 if File.exists?(janus = File.expand_path("~/.janus.rake"))
   puts "Loading your custom rake file"
