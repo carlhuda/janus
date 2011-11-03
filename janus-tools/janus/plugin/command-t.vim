@@ -4,15 +4,15 @@ if has("gui_macvim")
   map <D-t> :CommandT<CR>
   imap <D-t> <ESC>:CommandT<CR>
 
-  map <D-M-t> :CommandTFlush<CR>
-  imap <D-M-t> <ESC>:CommandTFlush<CR>
+  map <D-A-t> :CommandTFlush<CR>
+  imap <D-A-t> <ESC>:CommandTFlush<CR>
 else
   map <C-t> :CommandT<CR>
   imap <C-t> <ESC>:CommandT<CR>
 
-  map <C-M-t> :CommandTFlush<CR>
-  imap <C-M-t> <ESC>:CommandTFlush<CR>
+  map <C-A-t> :CommandTFlush<CR>
+  imap <C-A-t> <ESC>:CommandTFlush<CR>
 endif
 
-map <M-t> :CommandTBuffer<CR>
-imap <M-t> <ESC>:CommandTBuffer<CR>
+map <A-t> :CommandTBuffer<CR>
+imap <A-t> <ESC>:CommandTBuffer<CR>

@@ -1,4 +1,4 @@
-function s:setupMarkup()
+function! s:setupMarkup()
   map <buffer> <Leader>p :Hammer<CR>
 endfunction
 

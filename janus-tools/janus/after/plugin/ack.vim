@@ -1,5 +1,5 @@
 if has("gui_macvim")
-  " Command-Shift-F for Ack on mac
+  " Command-Shift-F on OSX
   map <D-F> :Ack<space>
 else
   " Control-Shift-F on other systems
