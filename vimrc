@@ -1,12 +1,4 @@
 ""
-"" Customisations
-""
-
-if filereadable(expand("~/.vimrc.before"))
-  source ~/.vimrc.before
-endif
-
-""
 "" Janus setup
 ""
 
@@ -15,6 +7,14 @@ let g:janus_path = fnamemodify(resolve(expand("<sfile>:p")), ":h")
 
 " Source janus
 source ~/.vim/lib/vim/janus.vim
+
+""
+"" Customisations
+""
+
+if filereadable(expand("~/.vimrc.before"))
+  source ~/.vimrc.before
+endif
 
 ""
 "" Pathogen Setup
