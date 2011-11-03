@@ -31,9 +31,6 @@
 [submodule "janus-tools/supertab"]
 	path = janus-tools/supertab
 	url = https://github.com/ervandew/supertab.git
-[submodule "janus-tools/snipmate"]
-	path = janus-tools/snipmate
-	url = https://github.com/ervandew/snipmate.vim.git
 [submodule "janus-colors/sampler-pack"]
 	path = janus-colors/sampler-pack
 	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
@@ -79,3 +76,15 @@
 [submodule "janus-core/pathogen"]
 	path = janus-core/pathogen
 	url = git://github.com/tpope/vim-pathogen.git
+[submodule "janus-tools/snipmate"]
+	path = janus-tools/snipmate
+	url = git://github.com/garbas/vim-snipmate.git
+[submodule "janus-tools/tlib"]
+	path = janus-tools/tlib
+	url = git://github.com/tomtom/tlib_vim.git
+[submodule "janus-tools/vim-addon-mw-utils"]
+	path = janus-tools/vim-addon-mw-utils
+	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "janus-tools/snipmate-snippets"]
+	path = janus-tools/snipmate-snippets
+	url = git://github.com/honza/snipmate-snippets.git
