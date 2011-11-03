@@ -139,6 +139,7 @@ Janus ships with a number of basic customizations for vim:
 * `<Leader>te` expands to `:te {directory of current file}/` (open in a
   new MacVIM tab)
 * `<C-P>` inserts the directory of the current file into a command
+* Automatically resize splits when resizing the MacVim window
 
 ## [Command-T](https://wincent.com/products/command-t)
 

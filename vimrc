@@ -91,6 +91,15 @@ set smartcase   " ... unless they contain at least one capital letter
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,.bundle/*,.sass-cache/*
 
 ""
+"" Gui specific
+""
+
+if has("gui_running")
+  " Automatically resize splits when resizing MacVim window
+  autocmd VimResized * wincmd =
+endif
+
+""
 "" Status bar
 ""
 
