@@ -97,3 +97,6 @@
 [submodule "janus-tools/nerdtree"]
 	path = janus-tools/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
+[submodule "janus-tools/pep8"]
+	path = janus-tools/pep8
+	url = git://github.com/nvie/vim-pep8.git
