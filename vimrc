@@ -3,7 +3,7 @@
 ""
 
 " Some file types should wrap their text
-function s:setupWrapping()
+function! s:setupWrapping()
   set wrap
   set linebreak
   set textwidth=72
@@ -12,7 +12,7 @@ endfunction
 
 let s:current_file = expand("<sfile>:p")
 
-function s:add_group(name)
+function! s:add_group(name)
   let resolved = resolve(s:current_file)
   let dir = fnamemodify(resolved, ":h")
   let file = dir . "/" . a:name
