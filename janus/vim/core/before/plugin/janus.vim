@@ -64,6 +64,7 @@ endfunction
 " @return [String] The plugin name
 function! janus#plugin_path(...)
   if a:0 < 1 || a:0 > 2
+    " TODO: Should raise an error
     return ""
   elseif a:0 == 1
     " Fetch the group name of the plugin
@@ -94,6 +95,7 @@ endfunction
 " @param [String]* The mapping action
 function! janus#add_mapping(name, mapping_command, mapping_keys, ...)
   if len(a:000) < 1
+    " TODO: Should raise an error
     return 0
   endif
 
