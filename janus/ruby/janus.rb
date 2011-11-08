@@ -6,6 +6,20 @@ module Janus
     ROOT_PATH
   end
 
+  # Return the vim's path
+  #
+  # @return [String] The absolute path to ViM files
+  def vim_path
+    File.join ROOT_PATH, 'vim'
+  end
+
+  # Return the ruby's path
+  #
+  # @return [String] The absolute path to Ruby files
+  def ruby_path
+    File.join ROOT_PATH, 'ruby'
+  end
+
   # Expand the path of a given file
   #
   # @param [Array] args

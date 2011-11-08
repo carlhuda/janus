@@ -4,7 +4,7 @@ module Janus
   
   def self.included(base)
     # Load all plugin installation tasks
-    Dir["#{root_path}/*/tasks/**.rake"].each do |f|
+    Dir["#{vim_path}/*/tasks/**.rake"].each do |f|
       base.send :import, f
     end
   end
@@ -20,7 +20,7 @@ module Janus
     # Create a namespace for the plugin
     namespace(name) do
       task :verify_plugin do
-        unless Dir["#{root_path}/#{group}/#{name}/**"].any?
+        unless Dir["#{vim_path}/#{group}/#{name}/**"].any?
           abort "The submodule #{group}/#{name} is not ready, please run 'git submodule update --init'"
         end
       end

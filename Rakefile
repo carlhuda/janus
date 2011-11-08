@@ -1,5 +1,5 @@
 ROOT_PATH = File.expand_path(File.join(File.dirname(__FILE__), 'janus'))
-$: << File.join(ROOT_PATH, 'lib')
+$: << File.join(ROOT_PATH, 'ruby')
 
 require 'janus'
 include Janus
@@ -9,7 +9,7 @@ task :link_vim_conf_files do
   %w[ vimrc gvimrc ].each do |file|
     dest = expand("~/.#{file}")
     unless File.exist?(dest)
-      ln_s(expand("../janus/#{file}", __FILE__), dest)
+      ln_s(expand("../janus/vim/#{file}", __FILE__), dest)
     end
   end
 end

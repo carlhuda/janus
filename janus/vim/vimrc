@@ -5,8 +5,9 @@
 " Define the janus_path
 let g:janus_path = fnamemodify(resolve(expand("<sfile>:p")), ":h")
 
-" Source janus
-source ~/.vim/janus/lib/vim/janus.vim
+" Source janus's core
+source ~/.vim/janus/vim/core/pathogen/autoload/pathogen.vim
+source ~/.vim/janus/vim/core/janus/before/plugin/janus.vim
 
 ""
 "" Customisations

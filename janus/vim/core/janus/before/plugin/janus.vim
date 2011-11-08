@@ -1,7 +1,6 @@
-if exists("g:janus_loaded")
-  finish
-endif
-let g:janus_loaded = 1
+""
+"" Janus main functions
+""
 
 " Add a group of plug-ins to Pathogen
 "
