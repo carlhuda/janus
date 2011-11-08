@@ -110,3 +110,6 @@
 [submodule "janus/vim/tools/pep8"]
 	path = janus/vim/tools/pep8
 	url = git://github.com/jbking/vim-pep8.git
+[submodule "janus/vim/tools/vim-indent-object"]
+	path = janus/vim/tools/vim-indent-object
+	url = git://github.com/michaeljsmith/vim-indent-object.git
