@@ -1,5 +1,5 @@
-ROOT_PATH = File.expand_path(File.join(File.dirname(__FILE__), 'janus'))
-$: << File.join(ROOT_PATH, 'ruby')
+ROOT_PATH = File.expand_path(File.join(File.dirname(__FILE__)))
+$: << File.join(ROOT_PATH, 'janus', 'ruby')
 
 require 'janus'
 include Janus
