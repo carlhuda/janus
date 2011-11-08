@@ -58,11 +58,11 @@ $ echo 'color molokai' >> ~/.gvimrc.after
 ```
 
 If you want to add additional Vim plugins you can do so by adding a new
-submodule in the Janus repository like so:
+submodule in the Janus repository inside the `janus/vim/custom` like so:
 
 ```bash
 $ cd ~/.vim
-$ git submodule add git://github.com/vim-scripts/Rename2.git janus-tools/rename2
+$ git submodule add git://github.com/vim-scripts/Rename2.git janus/vim/custom/rename2
 ```
 
 If you would like to disable an included plugin, you can do that with
