@@ -42,17 +42,44 @@ endfunction
 " Disable a plugin
 "
 " @param [String] The plugin name
-function! janus#disable_plugin(name)
+" @param [String] The reason why it is disabled
+" @return [Bool]
+function! janus#disable_plugin(...)
+  if a:0 < 1
+    " TODO: Should raise an error
+    return ""
+  elseif a:0 < 2
+    let name = a:1
+    let reason = "No reason given."
+  else
+    let name = a:1
+    let reason = a:2
+  endif
+
+  " Verify the existance of the global variables
   if !exists("g:pathogen_disabled")
     let g:pathogen_disabled = []
   endif
   if !exists("g:janus_disabled_plugins")
-    let g:janus_disabled_plugins = []
+    let g:janus_disabled_plugins = {}
   endif
+
+  " Check if we need to add it
+  if has_key(g:janus_disabled_plugins, name)
+    " Just update the reason if necessary.
+    if reason != "No reason given." && g:janus_disabled_plugins[name]['reason'] == "No reason given."
+      let g:janus_disabled_plugins[name]['reason'] = reason
+    endif
+
+    return 0
+  endif
+
   " Find the plugin path
-  let plugin_path = janus#plugin_path(a:name)
+  let plugin_path = janus#plugin_path(name)
+
   " Add it to janus_disabled_plugins
-  call add(g:janus_disabled_plugins, plugin_path)
+  let g:janus_disabled_plugins[name] = {'path': plugin_path, 'reason': reason}
+
   " Add it to pathogen_disabled
   call add(g:pathogen_disabled, plugin_path)
 endfunction
@@ -84,7 +111,7 @@ function! janus#is_plugin_disabled(name)
   if !exists("g:janus_disabled_plugins")
     return 0
   endif
-  return index(g:janus_disabled_plugins, janus#plugin_path(a:name)) != -1
+  return has_key(g:janus_disabled_plugins, a:name)
 endfunction
 
 " Mapping function
