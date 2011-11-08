@@ -16,6 +16,9 @@
 [submodule "janus/vim/colors/vividchalk"]
 	path = janus/vim/colors/vividchalk
 	url = git://github.com/tpope/vim-vividchalk.git
+[submodule "janus/vim/colors/molokai"]
+	path = janus/vim/colors/molokai
+	url = git://github.com/vim-scripts/molokai.git
 
 # Langs
 [submodule "janus/vim/langs/haml"]
