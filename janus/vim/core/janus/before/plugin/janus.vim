@@ -45,7 +45,7 @@ function! janus#add_group(name)
   endif
 
   call add(g:janus_loaded_groups, a:name)
-  call pathogen#runtime_prepend_subdirectories(g:janus_path . janus#separator() . a:name)
+  call pathogen#runtime_prepend_subdirectories(g:janus_vim_path. janus#separator() . a:name)
 endfunction
 
 " Which group contains a plugin ?
@@ -98,7 +98,7 @@ function! janus#plugin_path(...)
     let group = a:2
   endif
 
-  return group . janus#separator() . a:1
+  return g:janus_vim_path . janus#separator() . group . janus#separator() . a:1
 endfunction
 
 " Is plugin disabled?

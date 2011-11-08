@@ -2,8 +2,9 @@
 "" Janus setup
 ""
 
-" Define the janus_path
+" Define pathes
 let g:janus_path = fnamemodify(resolve(expand("<sfile>:p")), ":h")
+let g:janus_vim_path = fnamemodify(resolve(expand("<sfile>:p" . "vim")), ":h")
 
 " Source janus's core
 source ~/.vim/janus/vim/core.vim
