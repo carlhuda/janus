@@ -1,6 +1,6 @@
 install_vim_plugin "core", "pathogen" do
-  unless File.exists?("autoload/pathogen.vim")
+  unless File.exists?("#{root_path}/autoload/pathogen.vim")
     mkdir_p "autoload"
-    ln_s "#{root_path}/core/pathogen/autoload/pathogen.vim", "autoload/pathogen.vim"
+    ln_s "#{vim_path}/core/pathogen/autoload/pathogen.vim", "#{root_path}/autoload/pathogen.vim"
   end
 end
