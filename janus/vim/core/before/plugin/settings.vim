@@ -10,15 +10,6 @@ function! s:setupWrapping()
   set nolist
 endfunction
 
-let s:current_file = expand("<sfile>:p")
-
-function! s:add_group(name)
-  let resolved = resolve(s:current_file)
-  let dir = fnamemodify(resolved, ":h")
-  let file = dir . "/" . a:name
-  call pathogen#runtime_prepend_subdirectories(file)
-endfunction
-
 ""
 "" Basic Setup
 ""
