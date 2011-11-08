@@ -1,4 +1,6 @@
-# Janus: Vim Distribution
+# Janus: Vim Distribution [![Still Maintained](http://stillmaintained.com/TechnoGate/janus.png)](http://stillmaintained.com/TechnoGate/janus)
+
+[![Click here to lend your support to: Open Source Projects and make a donation at www.pledgie.com!](http://pledgie.com/campaigns/16123.png?skin_name=chrome)](http://www.pledgie.com/campaigns/16123)
 
 This is a distribution of plug-ins and mappings for Vim, Gvim and
 MacVim.
