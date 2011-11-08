@@ -27,10 +27,10 @@ module Janus
 
     # Install the gem only if it can't be found
     if find_gem(gem_name).length == 0
-      sh "gem install #{gem_name}"
+      sudo "gem install #{gem_name}"
     end
   rescue RubyGemsNotFoundError
     puts "Could not install the gem #{gem_name}, please do so manually."
-    puts "gem install #{gem_name}"
+    puts "sudo gem install #{gem_name}"
   end
 end

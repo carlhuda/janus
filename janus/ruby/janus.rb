@@ -34,6 +34,20 @@ module Janus
   def expand(*args)
     File.expand_path(*args)
   end
+
+  # Execute a command under root
+  #
+  # @param [String]* commands to run
+  def sudo(*args)
+    if ENV["USER"] != "root"
+      command = "sudo #{args.join(" ")}"
+      puts "Please enter your password (if requested) for executing the command '#{command}'"
+    else
+      command = args.join(" ")
+    end
+
+    exec command
+  end
 end
 
 require 'janus/errors'
