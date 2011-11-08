@@ -1,5 +1,5 @@
-install_vim_plugin "janus-tools", "command-t" do
-  Dir.chdir "#{root_path}/janus-tools/command-t/ruby/command-t" do
+install_vim_plugin "tools", "command-t" do
+  Dir.chdir "#{root_path}/tools/command-t/ruby/command-t" do
     if File.exists?("/usr/bin/ruby1.8") # prefer 1.8 on *.deb systems
       sh "/usr/bin/ruby1.8 extconf.rb"
     elsif File.exists?("/usr/bin/ruby") # prefer system rubies

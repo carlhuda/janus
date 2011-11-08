@@ -6,7 +6,7 @@
 let g:janus_path = fnamemodify(resolve(expand("<sfile>:p")), ":h")
 
 " Source janus
-source ~/.vim/lib/vim/janus.vim
+source ~/.vim/janus/lib/vim/janus.vim
 
 ""
 "" Customisations
@@ -22,10 +22,11 @@ endif
 
 " You should note that groups will be processed by Pathogen in reverse
 " order they were added.
-call janus#add_group("janus-tools")
-call janus#add_group("janus-langs")
-call janus#add_group("janus-colors")
-call janus#add_group("janus-core")
+call janus#add_group("tools")
+call janus#add_group("langs")
+call janus#add_group("colors")
+call janus#add_group("custom")
+call janus#add_group("core")
 
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()

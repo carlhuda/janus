@@ -4,7 +4,7 @@ module Janus
   
   def self.included(base)
     # Load all plugin installation tasks
-    Dir["#{root_path}/janus-*/tasks/**.rake"].each do |f|
+    Dir["#{root_path}/*/tasks/**.rake"].each do |f|
       base.send :import, f
     end
   end

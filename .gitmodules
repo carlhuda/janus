@@ -1,105 +1,112 @@
-[submodule "janus-core/unimpaired"]
-	path = janus-core/unimpaired
-	url = https://github.com/tpope/vim-unimpaired.git
-[submodule "janus-core/nerdcommenter"]
-	path = janus-core/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule "janus-langs/haml"]
-	path = janus-langs/haml
-	url = https://github.com/tpope/vim-haml.git
-[submodule "janus-langs/javascript"]
-	path = janus-langs/javascript
-	url = https://github.com/pangloss/vim-javascript.git
-[submodule "janus-langs/cucumber"]
-	path = janus-langs/cucumber
-	url = https://github.com/tpope/vim-cucumber.git
-[submodule "janus-langs/markdown"]
-	path = janus-langs/markdown
-	url = https://github.com/tpope/vim-markdown.git
-[submodule "janus-langs/puppet"]
-	path = janus-langs/puppet
-	url = https://github.com/ajf/puppet-vim.git
-[submodule "janus-langs/scala"]
-	path = janus-langs/scala
-	url = https://github.com/bdd/vim-scala.git
-[submodule "janus-langs/handlebars"]
-	path = janus-langs/handlebars
-	url = https://github.com/nono/vim-handlebars.git
-[submodule "janus-tools/matchit"]
-	path = janus-tools/matchit
-	url = https://github.com/edsono/vim-matchit.git
-[submodule "janus-tools/supertab"]
-	path = janus-tools/supertab
-	url = https://github.com/ervandew/supertab.git
-[submodule "janus-colors/sampler-pack"]
-	path = janus-colors/sampler-pack
-	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
-[submodule "janus-tools/zoomwin"]
-	path = janus-tools/zoomwin
-	url = git://github.com/vim-scripts/ZoomWin.git
-[submodule "janus-langs/coffeescript"]
-	path = janus-langs/coffeescript
-	url = https://github.com/kchmck/vim-coffee-script.git
-[submodule "janus-tools/ack"]
-	path = janus-tools/ack
-	url = git://github.com/mileszs/ack.vim.git
-[submodule "janus-tools/fugitive"]
-	path = janus-tools/fugitive
-	url = git://github.com/tpope/vim-fugitive.git
-[submodule "janus-langs/git"]
-	path = janus-langs/git
-	url = git://github.com/tpope/vim-git.git
-[submodule "janus-tools/gundo"]
-	path = janus-tools/gundo
-	url = git://github.com/sjl/gundo.vim.git
-[submodule "janus-langs/rails"]
-	path = janus-langs/rails
-	url = git://github.com/tpope/vim-rails.git
-[submodule "janus-langs/textile"]
-	path = janus-langs/textile
-	url = git://github.com/timcharper/textile.vim.git
-[submodule "janus-langs/rspec"]
-	path = janus-langs/rspec
-	url = git://github.com/taq/vim-rspec.git
-[submodule "janus-colors/solarized"]
-	path = janus-colors/solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "janus-core/surround"]
-	path = janus-core/surround
-	url = git://github.com/tpope/vim-surround.git
-[submodule "janus-tools/hammer"]
-	path = janus-tools/hammer
-	url = git://github.com/robgleeson/hammer.vim.git
-[submodule "janus-tools/command-t"]
-	path = janus-tools/command-t
-	url = git@github.com:wycats/Command-T.git
-[submodule "janus-core/pathogen"]
-	path = janus-core/pathogen
+# Core
+[submodule "janus/core/pathogen"]
+	path = janus/core/pathogen
 	url = git://github.com/tpope/vim-pathogen.git
-[submodule "janus-tools/snipmate"]
-	path = janus-tools/snipmate
-	url = git://github.com/garbas/vim-snipmate.git
-[submodule "janus-tools/tlib"]
-	path = janus-tools/tlib
-	url = git://github.com/tomtom/tlib_vim.git
-[submodule "janus-tools/vim-addon-mw-utils"]
-	path = janus-tools/vim-addon-mw-utils
-	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "janus-tools/snipmate-snippets"]
-	path = janus-tools/snipmate-snippets
-	url = git://github.com/honza/snipmate-snippets.git
-[submodule "janus-tools/syntastic"]
-	path = janus-tools/syntastic
-	url = git://github.com/scrooloose/syntastic.git
-[submodule "janus-tools/tagbar"]
-	path = janus-tools/tagbar
-	url = git://github.com/majutsushi/tagbar.git
-[submodule "janus-tools/nerdtree"]
-	path = janus-tools/nerdtree
-	url = git://github.com/scrooloose/nerdtree.git
-[submodule "janus-langs/scss"]
-	path = janus-langs/scss
+
+# Colors
+[submodule "janus/colors/sampler-pack"]
+	path = janus/colors/sampler-pack
+	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
+[submodule "janus/colors/solarized"]
+	path = janus/colors/solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+
+# Langs
+[submodule "janus/langs/haml"]
+	path = janus/langs/haml
+	url = https://github.com/tpope/vim-haml.git
+[submodule "janus/langs/javascript"]
+	path = janus/langs/javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "janus/langs/cucumber"]
+	path = janus/langs/cucumber
+	url = https://github.com/tpope/vim-cucumber.git
+[submodule "janus/langs/markdown"]
+	path = janus/langs/markdown
+	url = https://github.com/tpope/vim-markdown.git
+[submodule "janus/langs/puppet"]
+	path = janus/langs/puppet
+	url = https://github.com/ajf/puppet-vim.git
+[submodule "janus/langs/scala"]
+	path = janus/langs/scala
+	url = https://github.com/bdd/vim-scala.git
+[submodule "janus/langs/handlebars"]
+	path = janus/langs/handlebars
+	url = https://github.com/nono/vim-handlebars.git
+[submodule "janus/langs/coffeescript"]
+	path = janus/langs/coffeescript
+	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "janus/langs/rails"]
+	path = janus/langs/rails
+	url = git://github.com/tpope/vim-rails.git
+[submodule "janus/langs/git"]
+	path = janus/langs/git
+	url = git://github.com/tpope/vim-git.git
+[submodule "janus/langs/textile"]
+	path = janus/langs/textile
+	url = git://github.com/timcharper/textile.vim.git
+[submodule "janus/langs/rspec"]
+	path = janus/langs/rspec
+	url = git://github.com/taq/vim-rspec.git
+[submodule "janus/langs/scss"]
+	path = janus/langs/scss
 	url = git://github.com/cakebaker/scss-syntax.vim.git
-[submodule "janus-tools/pep8"]
-	path = janus-tools/pep8
+
+# Tools
+[submodule "janus/tools/unimpaired"]
+	path = janus/tools/unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "janus/tools/nerdcommenter"]
+	path = janus/tools/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "janus/tools/matchit"]
+	path = janus/tools/matchit
+	url = https://github.com/edsono/vim-matchit.git
+[submodule "janus/tools/supertab"]
+	path = janus/tools/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "janus/tools/zoomwin"]
+	path = janus/tools/zoomwin
+	url = git://github.com/vim-scripts/ZoomWin.git
+[submodule "janus/tools/ack"]
+	path = janus/tools/ack
+	url = git://github.com/mileszs/ack.vim.git
+[submodule "janus/tools/fugitive"]
+	path = janus/tools/fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "janus/tools/gundo"]
+	path = janus/tools/gundo
+	url = git://github.com/sjl/gundo.vim.git
+[submodule "janus/tools/surround"]
+	path = janus/tools/surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule "janus/tools/hammer"]
+	path = janus/tools/hammer
+	url = git://github.com/robgleeson/hammer.vim.git
+[submodule "janus/tools/command-t"]
+	path = janus/tools/command-t
+	url = git@github.com:wycats/Command-T.git
+[submodule "janus/tools/snipmate"]
+	path = janus/tools/snipmate
+	url = git://github.com/garbas/vim-snipmate.git
+[submodule "janus/tools/tlib"]
+	path = janus/tools/tlib
+	url = git://github.com/tomtom/tlib_vim.git
+[submodule "janus/tools/vim-addon-mw-utils"]
+	path = janus/tools/vim-addon-mw-utils
+	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "janus/tools/snipmate-snippets"]
+	path = janus/tools/snipmate-snippets
+	url = git://github.com/honza/snipmate-snippets.git
+[submodule "janus/tools/syntastic"]
+	path = janus/tools/syntastic
+	url = git://github.com/scrooloose/syntastic.git
+[submodule "janus/tools/tagbar"]
+	path = janus/tools/tagbar
+	url = git://github.com/majutsushi/tagbar.git
+[submodule "janus/tools/nerdtree"]
+	path = janus/tools/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
+[submodule "janus/tools/pep8"]
+	path = janus/tools/pep8
 	url = git://github.com/jbking/vim-pep8.git
