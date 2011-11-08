@@ -7,8 +7,8 @@ let g:janus_path = fnamemodify(resolve(expand("<sfile>:p")), ":h")
 let g:janus_vim_path = fnamemodify(resolve(expand("<sfile>:p" . "vim")), ":h")
 
 " Source janus's core
-source ~/.vim/janus/vim/core/pathogen/autoload/pathogen.vim
-source ~/.vim/janus/vim/core/before/plugin/janus.vim
+exe 'source ' . g:janus_vim_path . '/core/pathogen/autoload/pathogen.vim'
+exe 'source ' . g:janus_vim_path . '/core/before/plugin/janus.vim'
 
 ""
 "" Customisations
