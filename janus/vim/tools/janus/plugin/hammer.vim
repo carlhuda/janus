@@ -1,5 +1,5 @@
 function! s:setupMarkup()
-  map <buffer> <Leader>p :Hammer<CR>
+  call janus#add_mapping('hammer', 'map' '<buffer>' '<Leader>p' ':Hammer<CR>')
 endfunction
 
 if executable("redcarpet")

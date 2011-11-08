@@ -1,5 +1,3 @@
-if !janus#is_plugin_disabled("gundo")
-  " Toggle Gundo
-  nmap <F5> :GundoToggle<CR>
-  imap <F5> <ESC>:GundoToggle<CR>
-endif
+" Toggle Gundo
+call janus#add_mapping('gundo', 'nmap', '<F5>', ':GundoToggle<CR>')
+call janus#add_mapping('gundo', 'imap', '<F5>', '<ESC>:GundoToggle<CR>')

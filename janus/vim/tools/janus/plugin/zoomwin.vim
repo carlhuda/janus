@@ -1,2 +1,2 @@
 " Map <Leader><Leader> to ZoomWin
-map <Leader><Leader> :ZoomWin<CR>
+call janus#add_mapping('zoomwin', 'map', '<Leader><Leader>', ':ZoomWin<CR>')

@@ -1,20 +1,18 @@
-if !janus#is_plugin_disabled("command-t")
-  if has("gui_macvim")
-    macmenu &File.New\ Tab key=<nop>
+if has("gui_macvim")
+  macmenu &File.New\ Tab key=<nop>
 
-    map <D-t> :CommandT<CR>
-    imap <D-t> <ESC>:CommandT<CR>
+  call janus#add_mapping('command-t', 'map', '<D-t>', ':CommandT<CR>')
+  call janus#add_mapping('command-t', 'imap', '<D-t>', '<ESC>:CommandT<CR>')
 
-    map <D-A-t> :CommandTFlush<CR>
-    imap <D-A-t> <ESC>:CommandTFlush<CR>
-  else
-    map <C-t> :CommandT<CR>
-    imap <C-t> <ESC>:CommandT<CR>
+  call janus#add_mapping('command-t', 'map', '<D-A-t>', ':CommandTFlush<CR>')
+  call janus#add_mapping('command-t', 'imap', '<D-A-t>', '<ESC>:CommandTFlush<CR>')
+else
+  call janus#add_mapping('command-t', 'map', '<C-t>', ':CommandT<CR>')
+  call janus#add_mapping('command-t', 'imap', '<C-t>', '<ESC>:CommandT<CR>')
 
-    map <C-A-t> :CommandTFlush<CR>
-    imap <C-A-t> <ESC>:CommandTFlush<CR>
-  endif
-
-  map <A-t> :CommandTBuffer<CR>
-  imap <A-t> <ESC>:CommandTBuffer<CR>
+  call janus#add_mapping('command-t', 'map', '<C-A-t>', ':CommandTFlush<CR>')
+  call janus#add_mapping('command-t', 'imap', '<C-A-t>', '<ESC>:CommandTFlush<CR>')
 endif
+
+call janus#add_mapping('command-t', 'map', '<A-t>', ':CommandTBuffer<CR>')
+call janus#add_mapping('command-t', 'imap', '<A-t>', '<ESC>:CommandTBuffer<CR>')

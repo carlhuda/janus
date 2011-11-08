@@ -1,2 +1,2 @@
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.class$', '\.o', '\~$']
-map <Leader>n :NERDTreeToggle<CR>
+call janus#add_mapping('nerdtree', 'map', '<Leader>n', ':NERDTreeToggle<CR>')
