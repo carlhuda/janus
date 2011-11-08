@@ -134,3 +134,6 @@
 [submodule "janus/vim/tools/vimwiki"]
 	path = janus/vim/tools/vimwiki
 	url = git://github.com/vim-scripts/vimwiki.git
+[submodule "janus/vim/tools/css-color"]
+	path = janus/vim/tools/css-color
+	url = git://github.com/skammer/vim-css-color.git
