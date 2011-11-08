@@ -2,6 +2,40 @@
 "" Janus main functions
 ""
 
+" Return a path separator on the current OS
+" Taken from pathogen
+"
+" @return [String] The separator / or \
+function! janus#separator()
+  return !exists("+shellslash") || &shellslash ? '/' : '\'
+endfunction "
+
+" Find vim files inside a folder
+"
+" @param [String] The path to a folder
+" @return [List] List of files.
+function! janus#vim_files(folder)
+  let files = []
+  let pattern = resolve(expand(a:folder)) . janus#separator() . "*"
+  " Add all found vim files
+  for file in split(glob(pattern), "\n")
+    if isdirectory(file)
+      if (file =~ "/before$")
+	for file2 in janus#vim_files(file)
+	  call insert(files, file2)
+	endfor
+      else
+        call extend(files, janus#vim_files(file))
+      endif
+    elseif (file =~ "\.vim$")
+      call add(files, file)
+    endif
+  endfor
+
+  return files
+endfunction
+
+
 " Add a group of plug-ins to Pathogen
 "
 " @param [String] The plugin name
@@ -11,7 +45,7 @@ function! janus#add_group(name)
   endif
 
   call add(g:janus_loaded_groups, a:name)
-  call pathogen#runtime_prepend_subdirectories(g:janus_path . pathogen#separator() . a:name)
+  call pathogen#runtime_prepend_subdirectories(g:janus_path . janus#separator() . a:name)
 endfunction
 
 " Which group contains a plugin ?
@@ -64,7 +98,7 @@ function! janus#plugin_path(...)
     let group = a:2
   endif
 
-  return group . pathogen#separator() . a:1
+  return group . janus#separator() . a:1
 endfunction
 
 " Is plugin disabled?
