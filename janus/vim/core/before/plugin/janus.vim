@@ -85,3 +85,24 @@ function! janus#is_plugin_disabled(name)
   endif
   return index(g:janus_disabled_plugins, janus#plugin_path(a:name)) != -1
 endfunction
+
+" Mapping function
+"
+" @param [String] The plugin name
+" @param [String] The mapping command (map, vmap, nmap or imap)
+" @param [String] The mapping keys
+" @param [String]* The mapping action
+function! janus#add_mapping(name, mapping_command, mapping_keys, ...)
+  if len(a:000) < 1
+    return 0
+  endif
+
+  if !janus#is_plugin_disabled(a:name)
+    let mapping_command = join(a:000)
+  else
+    let mapping_command = "<ESC>:echo 'The plugin " . a:name . " is disabled.'<CR>"
+  endif
+
+  let mapping_list = [a:mapping_command, a:mapping_keys, mapping_command]
+  exe join(mapping_list)
+endfunction
