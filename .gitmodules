@@ -125,3 +125,6 @@
 [submodule "janus/vim/tools/gist-vim"]
 	path = janus/vim/tools/gist
 	url = git://github.com/mattn/gist-vim.git
+[submodule "janus/vim/tools/vimwiki"]
+	path = janus/vim/tools/vimwiki
+	url = git://github.com/vim-scripts/vimwiki.git
