@@ -18,3 +18,8 @@ endif
 if !executable("ack")
   call janus#disable_plugin("ack", "The ack program is not installed")
 endif
+
+" Gist-vim requires curl
+if !executable("curl")
+  call janus#disable_plugin("gist-vim", "The curl program is not installed")
+endif

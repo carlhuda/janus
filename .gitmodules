@@ -116,3 +116,6 @@
 [submodule "janus/vim/tools/vim-endwise"]
 	path = janus/vim/tools/vim-endwise
 	url = git://github.com/tpope/vim-endwise.git
+[submodule "janus/vim/tools/gist-vim"]
+	path = janus/vim/tools/gist-vim
+	url = git://github.com/mattn/gist-vim.git
