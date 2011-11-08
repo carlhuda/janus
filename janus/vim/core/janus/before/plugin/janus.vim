@@ -8,31 +8,6 @@
 " @return [String] The separator / or \
 function! janus#separator()
   return !exists("+shellslash") || &shellslash ? '/' : '\'
-endfunction "
-
-" Find vim files inside a folder
-"
-" @param [String] The path to a folder
-" @return [List] List of files.
-function! janus#vim_files(folder)
-  let files = []
-  let pattern = resolve(expand(a:folder)) . janus#separator() . "*"
-  " Add all found vim files
-  for file in split(glob(pattern), "\n")
-    if isdirectory(file)
-      if (file =~ "/before$")
-	for file2 in janus#vim_files(file)
-	  call insert(files, file2)
-	endfor
-      else
-        call extend(files, janus#vim_files(file))
-      endif
-    elseif (file =~ "\.vim$")
-      call add(files, file)
-    endif
-  endfor
-
-  return files
 endfunction
 
 

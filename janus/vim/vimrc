@@ -7,7 +7,8 @@ let g:janus_path = fnamemodify(resolve(expand("<sfile>:p")), ":h")
 let g:janus_vim_path = fnamemodify(resolve(expand("<sfile>:p" . "vim")), ":h")
 
 " Source janus's core
-source ~/.vim/janus/vim/core.vim
+source ~/.vim/janus/vim/core/pathogen/autoload/pathogen.vim
+source ~/.vim/janus/vim/core/janus/before/plugin/janus.vim
 
 ""
 "" Customisations
@@ -27,6 +28,7 @@ call janus#add_group("tools")
 call janus#add_group("langs")
 call janus#add_group("colors")
 call janus#add_group("custom")
+call janus#add_group("core")
 
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
