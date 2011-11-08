@@ -8,10 +8,10 @@ module Janus
 
   # Expand the path of a given file
   #
-  # @param [String] file
+  # @param [Array] args
   # @return [String] The expanded path to the given file.
-  def expand(file)
-    File.expand_path(file)
+  def expand(*args)
+    File.expand_path(*args)
   end
 end
 
