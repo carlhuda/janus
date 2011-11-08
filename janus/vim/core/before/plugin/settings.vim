@@ -166,7 +166,7 @@ nmap <silent> gw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 nmap <silent> <leader>ul :t.\|s/./=/g\|:nohls<cr>
 
 " set text wrapping toggles
-nmap <silent> <leader>ww :set invwrap<CR>:set wrap?<CR>
+nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
 
 " find merge conflict markers
 nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
