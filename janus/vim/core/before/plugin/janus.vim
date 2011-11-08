@@ -129,7 +129,7 @@ function! janus#add_mapping(name, mapping_command, mapping_keys, ...)
   if !janus#is_plugin_disabled(a:name)
     let mapping_command = join(a:000)
   else
-    let mapping_command = "<ESC>:echo 'The plugin " . a:name . " is disabled.'<CR>"
+    let mapping_command = "<ESC>:echo 'The plugin " . a:name . " is disabled for the following reason: " . g:janus_disabled_plugins[a:name]['reason'] . ".'<CR>"
   endif
 
   let mapping_list = [a:mapping_command, a:mapping_keys, mapping_command]
