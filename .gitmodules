@@ -13,6 +13,9 @@
 [submodule "janus/vim/colors/irblack"]
 	path = janus/vim/colors/irblack
 	url = git://github.com/wgibbs/vim-irblack.git
+[submodule "janus/vim/colors/vividchalk"]
+	path = janus/vim/colors/vividchalk
+	url = git://github.com/tpope/vim-vividchalk.git
 
 # Langs
 [submodule "janus/vim/langs/haml"]
