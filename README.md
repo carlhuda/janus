@@ -13,23 +13,16 @@ and `~/.vimrc.after` Vim RC files.
 
 The distribution is designed to work with ViM >= 7.3.
 
-The distribution also require `ctags`, `ruby` and `rake`,
-for the most comfortable experience, use the gui version of
-ViM. Linux users should install `gvim`, OSX users should
-install [MacVim](http://code.google.com/p/macvim/), Download it
+The distribution also require `ack`, `pep8`, `ctags`, `ruby` and `rake`,
+for the most comfortable experience, use the gui version of ViM. Linux
+users should install `gvim`, OSX users should install
+[MacVim](http://code.google.com/p/macvim/), Download it
 [here](https://github.com/b4winckler/macvim/downloads).
 
-### Ubuntu
+Take a look at the [Pre-requisites wiki
+page](https://github.com/TechnoGate/janus/wiki/Pre-requisites) for more
+information.
 
-```bash
-$ sudo apt-get install ruby-dev rake exuberant-ctags
-```
-
-### OpenSuSe
-
-```bash
-$ sudo zypper install ruby rubygems rubygem-rake ctags
-```
 
 ## Installation
 
