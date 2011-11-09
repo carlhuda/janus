@@ -214,7 +214,8 @@ highlighted.
 
 EasyMotion is triggered by one of the provided mappings.
 
-check EasyMotion's [home page](https://github.com/Lokaltog/vim-easymotion)
+check EasyMotion's [home
+page](https://github.com/Lokaltog/vim-easymotion) for more information.
 
 ## Git Support ([Fugitive](http://github.com/tpope/vim-fugitive))
 
