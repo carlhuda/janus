@@ -17,6 +17,29 @@ module Vimius
   def install_vim_plugin(group, name, &block)
     raise Vimius::BlockNotGivenError unless block_given?
 
+    define_install_plugin_tasks(group, name, &block)
+  end
+
+  # Install a plugin in a submodule
+  #
+  # @param [String] The group the plugin belongs to
+  # @param [String] The plugin name
+  # @param [&block] The installation block
+  def install_vim_plugin_within_submodule(group, name, &block)
+    raise Vimius::BlockNotGivenError unless block_given?
+
+    define_verify_plugin_tasks(group, name, &block)
+    define_install_plugin_tasks(group, name, &block)
+  end
+
+  protected
+  
+  # Define tasks for verifying plugin rediness
+  #
+  # @param [String] The group the plugin belongs to
+  # @param [String] The plugin name
+  # @param [&block] The installation block
+  def define_verify_plugin_tasks(group, name, &block)
     # Create a namespace for the plugin
     namespace(name) do
       task :verify_plugin do
@@ -25,6 +48,18 @@ module Vimius
         end
       end
 
+      task :install => :verify_plugin
+    end
+  end
+
+  # Define tasks for installing a plugin
+  #
+  # @param [String] The group the plugin belongs to
+  # @param [String] The plugin name
+  # @param [&block] The installation block
+  def define_install_plugin_tasks(group, name, &block)
+    # Create a namespace for the plugin
+    namespace(name) do
       # Define the plugin installation task
       desc "Install #{name} plugin."
       task :install do
@@ -35,7 +70,6 @@ module Vimius
         puts
         yield
       end
-      task :install => :verify_plugin
     end
 
     # Hook the plugin's install task to the global install task
