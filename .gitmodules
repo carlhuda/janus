@@ -66,6 +66,9 @@
 [submodule "vimius/vim/langs/csv"]
 	path = vimius/vim/langs/csv
 	url = git://github.com/vim-scripts/csv.vim.git
+[submodule "vimius/vim/langs/nodejs"]
+	path = vimius/vim/langs/nodejs
+	url = git://github.com/mmalecki/vim-node.js.git
 
 # Tools
 [submodule "vimius/vim/tools/unimpaired"]
