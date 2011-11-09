@@ -3,3 +3,4 @@ _backup
 _temp
 .netrwhist
 autoload/pathogen.vim
+vimius/vim/tools/watchtower
