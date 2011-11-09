@@ -233,7 +233,7 @@ file
 When working with split windows, ZoomWin lets you zoom into a window and
 out again using `Ctrl-W o`
 
-**Customizations**: Vimius binds `<Leader><Leader>` to `:ZoomWin`
+**Customizations**: Vimius binds `<leader>zw` to `:ZoomWin`
 
 ## Additional Syntaxes
 
