@@ -4,3 +4,4 @@ _temp
 .netrwhist
 autoload/pathogen.vim
 vimius/vim/tools/watchtower
+vimius/vim/langs/mustache
