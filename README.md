@@ -131,12 +131,46 @@ Vimius ships with a number of basic customizations for vim:
 * Always show a status line
 * Allow backspacing over everything (identations, eol, and start
   characters) in insert mode
-* `<Leader>e` expands to `:e {directory of current file}/` (open in the
-  current buffer)
-* `<Leader>te` expands to `:te {directory of current file}/` (open in a
-  new MacVIM tab)
 * `<C-P>` inserts the directory of the current file into a command
-* Automatically resize splits when resizing the MacVim window
+* Automatically resize splits when resizing the Vim window (GUI only)
+* `<leader>ew` expands to `:e (directory of current file)/` (open in the
+  current buffer)
+* `<leader>es` expands to `:sp (directory of current file)/` (open in an
+  horisental split)
+* `<leader>ev` expands to `:vsp (directory of current file)/` (open in
+  an vertical split)
+* `<leader>et` expands to `:tabe (directory of current file)/` (open in
+  an new tab)
+* `:w!!` expands to `%!sudo tee > /dev/null %` Write to the current file
+  using sudo (if you forgot to run it with sudo), it will prompt for
+sudo password when writing.
+* `<F4>` Toggles paste mode
+* `<leader>fef` format the entire file
+* `,.` (comma followed by a dot) opens the next buffer.
+* `,m` (comma followed by m) opens the previous buffer.
+* `;'` (semi-column followed by a single quote) switch to next tab.
+* `;l` (semi-column followed by l) switch to next tab.
+* `<leader>u` Convert the entire word to uppercace.
+* `<leader>l` Convert the entire word to lowercase.
+* `<leader>U` Convert the first char of a word to uppercase.
+* `<leader>L` Convert the first char of a word to lowercase.
+* `<leader>cd` Change the path to the currently active buffer's file.
+* `<leader>md` Make the directory of the currently active buffer's file
+  (for example when editing a new file for which the path does not
+exist.)
+* `gw` Swap the current word with the one next to it.
+* `<leader>ul` Underline the current line with `=`
+* `<leader>tw` Toggle wrap
+* `<leader>fc` Finds the next conflict marker (Tested with Git
+  conflicted files).
+* Remap `<Down>` and `<Up>` to `gj` and `gk` (Wrapped text is not
+  considered a one-long-line of text.
+* `<leader>hs` Toggle highlight search.
+* `<leader>=` Adjust viewports to the same size (`<C-w>=`)
+* `<A-[` (`<D-[` on MacVim) Shift current line or selected lines
+  rightwards.
+* `<A-]` (`<D-]` on MacVim) Shift current line or selected lines
+  leftwards.
 
 ## [Ack.vim](http://github.com/mileszs/ack.vim)
 
