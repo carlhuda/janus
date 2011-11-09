@@ -100,10 +100,10 @@ filetype plugin indent on " Turn on filetype plugins (:help filetype-plugin)
 au FileType make set noexpandtab
 
 " Set the Ruby filetype for a number of common Ruby files without .rb
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru,*.rake} set ft=ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,config.ru,*.rake} set ft=ruby
 
 " Make sure all mardown files have the correct filetype set and setup wrapping
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} set ft=markdown | call s:setupWrapping()
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown | call s:setupWrapping()
 
 " Treat JSON files like JavaScript
 au BufNewFile,BufRead *.json set ft=javascript
@@ -128,10 +128,10 @@ imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
 nmap <leader>fef ggVG=
 
 " Next buffer
-nmap <silent> <leader>. :bnext<CR>
+nmap <silent> ,. :bnext<CR>
 
 " Previous buffer
-nmap <silent> <leader>m :bprev<CR>
+nmap <silent> ,m :bprev<CR>
 
 " Next tab
 nmap <silent> ;' :tabnext<CR>

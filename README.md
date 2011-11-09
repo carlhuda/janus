@@ -13,10 +13,10 @@ and `~/.vimrc.after` Vim RC files.
 
 ## Pre-requisites
 
-The distribution is designed to work with ViM >= 7.3.
+The distribution is designed to work with Vim >= 7.3.
 
 The distribution also require `ack`, `pep8`, `ctags`, `ruby` and `rake`,
-for the most comfortable experience, use the gui version of ViM. Linux
+for the most comfortable experience, use the GUI version of Vim. Linux
 users should install `gvim`, OSX users should install
 [MacVim](http://code.google.com/p/macvim/), Download it
 [here](https://github.com/b4winckler/macvim/downloads).
@@ -41,7 +41,7 @@ $ curl https://raw.github.com/TechnoGate/vimius/master/bootstrap.sh -o- | sh
 
 You can use `~/.gvimrc.before` and `~/.vimrc.before` for settings Vimius,
 like the __leader__ setting, you may also use `~/.gvimrc.after` and
-`~/.vimrc.after` for any additonal setting, it is also a good place for
+`~/.vimrc.after` for any additional setting, it is also a good place for
 overriding Vimius settings as both files will be loaded at the end of
 Vimius
 
@@ -52,7 +52,7 @@ $ echo 'color desert'  >> ~/.vimrc.after
 $ echo 'color molokai' >> ~/.gvimrc.after
 ```
 
-If you want to add additional Vim plugins you can do so by adding a new
+If you want to add additional Vim plug-ins you can do so by adding a new
 submodule in the Vimius repository inside the `vimius/vim/custom` like so:
 
 ```bash
@@ -60,20 +60,20 @@ $ cd ~/.vim
 $ git submodule add git://github.com/vim-scripts/Rename2.git vimius/vim/custom/rename2
 ```
 
-If you would like to disable an included plugin, you can do that with
+If you would like to disable an included plug-in, you can do that with
 the `vimius#disable_plugin()` function from inside your
-`~/.vimrc.before`, this function takes a plugin name as an argument
+`~/.vimrc.before`, this function takes a plug-in name as an argument
 without the group, for example, if you would like to disable the
-NERDCommenter plugin, you can do that with the command:
+NERDCommenter plug-in, you can do that with the command:
 
 ```bash
 $ echo "call vimius#disable_plugin('nerdcommenter')" >> ~/.vimrc.before
 ```
 
-Plugins hosted at [vim.org](http://www.vim.org/scripts) use a
+Plug-ins hosted at [vim.org](http://www.vim.org/scripts) use a
 unique URL for each version, You can use the GitHub mirror at
 [https://github.com/vim-scripts](https://github.com/vim-scripts) to get
-an url for any ViM script.
+an URL for any Vim script.
 
 ## Updating to the latest version
 
@@ -89,9 +89,9 @@ Here's some tips if you've never used VIM before:
 * Type `vimtutor` into a shell to go through a brief interactive
   tutorial inside VIM.
 * Read the slides at [VIM: Walking Without Crutches](http://walking-without-crutches.heroku.com/#1).
-* Watch the screencasts at [vimcasts.org](http://vimcasts.org/)
+* Watch the screen-casts at [vimcasts.org](http://vimcasts.org/)
 * Watch Derek Wyatt's energetic tutorial videos at [his site](http://www.derekwyatt.org/vim/vim-tutorial-videos/)
-* Read wycats' perspective on learning vim at
+* Read wycats' perspective on learning Vim at
   [Everyone who tried to convince me to use vim was wrong](http://yehudakatz.com/2010/07/29/everyone-who-tried-to-convince-me-to-use-vim-was-wrong/)
 * Read this and other answers to a question about vim at StackOverflow:
   [Your problem with Vim is that you don't grok vi](http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118)
@@ -100,7 +100,7 @@ Here's some tips if you've never used VIM before:
 
 * VIM has two modes:
   * insert mode- stuff you type is added to the buffer
-  * normal mode- keys you hit are interpretted as commands
+  * normal mode- keys you hit are interpreted as commands
 * To enter insert mode, hit `i`
 * To exit insert mode, hit `<ESC>`
 
@@ -115,7 +115,7 @@ Here's some tips if you've never used VIM before:
 
 # Features
 
-This vim distribution includes a number of packages built by others.
+This Vim distribution includes a number of packages built by others.
 
 ## Base Customizations
 
@@ -129,14 +129,14 @@ Vimius ships with a number of basic customizations for vim:
 * Make searching highlighted, incremental, and case insensitive unless a
   capital letter is used
 * Always show a status line
-* Allow backspacing over everything (identations, eol, and start
+* Allow backspacing over everything (indentations, eol, and start
   characters) in insert mode
 * `<C-P>` inserts the directory of the current file into a command
 * Automatically resize splits when resizing the Vim window (GUI only)
 * `<leader>ew` expands to `:e (directory of current file)/` (open in the
   current buffer)
 * `<leader>es` expands to `:sp (directory of current file)/` (open in an
-  horisental split)
+  horizontal split)
 * `<leader>ev` expands to `:vsp (directory of current file)/` (open in
   an vertical split)
 * `<leader>et` expands to `:tabe (directory of current file)/` (open in
