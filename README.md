@@ -173,13 +173,8 @@ NERDTree:
 
 * Use `<Leader>n` to toggle NERDTree
 * Ignore compiled ruby, python, and java files
-* Automatically activate NERDTree when MacVIM opens and make the
-  original buffer the active one
-* Provide alternative :e, :cd, :rm and :touch abbreviations which also
-  refresh NERDTree when done (when NERDTree is open)
 * When opening vim with vim /path, open the left NERDTree to that
   directory, set the vim pwd, and clear the right buffer
-* Disallow `:e`ing files into the NERDTree buffer
 * In general, assume that there is a single NERDTree buffer on the left
   and one or more editing buffers on the right
 
