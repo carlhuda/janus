@@ -149,3 +149,6 @@
 [submodule "vimius/vim/tools/narrowregion"]
 	path = vimius/vim/tools/narrowregion
 	url = git://github.com/chrisbra/NrrwRgn.git
+[submodule "vimius/vim/tools/buffergator"]
+	path = vimius/vim/tools/buffergator
+	url = git://github.com/jeetsukumaran/vim-buffergator.git
