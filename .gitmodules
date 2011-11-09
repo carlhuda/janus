@@ -63,6 +63,9 @@
 [submodule "vimius/vim/langs/scss"]
 	path = vimius/vim/langs/scss
 	url = git://github.com/cakebaker/scss-syntax.vim.git
+[submodule "vimius/vim/langs/csv"]
+	path = vimius/vim/langs/csv
+	url = git://github.com/vim-scripts/csv.vim.git
 
 # Tools
 [submodule "vimius/vim/tools/unimpaired"]
