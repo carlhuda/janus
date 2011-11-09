@@ -1,5 +1,5 @@
 function! s:setupMarkup()
-  call vimius#add_mapping('hammer', 'map' '<buffer>' '<Leader>p' ':Hammer<CR>')
+  call vimius#add_mapping('hammer', 'map <buffer>', '<Leader>p', ':Hammer<CR>')
 endfunction
 
 if executable("redcarpet")
