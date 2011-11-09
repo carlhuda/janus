@@ -34,7 +34,7 @@ installer](https://github.com/TechnoGate/vimius/blob/master/bootstrap.sh)
 Vimius.
 
 ```bash
-$ curl https://raw.github.com/TechnoGate/vimius/master/bootstrap.sh -o- | sh`
+$ curl https://raw.github.com/TechnoGate/vimius/master/bootstrap.sh -o- | sh
 ```
 
 ## Customization
