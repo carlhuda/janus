@@ -1,12 +1,12 @@
 ""
-"" Janus main functions
+"" Vimius main functions
 ""
 
 " Return a path separator on the current OS
 " Taken from pathogen
 "
 " @return [String] The separator / or \
-function! janus#separator()
+function! vimius#separator()
   return !exists("+shellslash") || &shellslash ? '/' : '\'
 endfunction
 
@@ -14,26 +14,26 @@ endfunction
 " Add a group of plug-ins to Pathogen
 "
 " @param [String] The plugin name
-function! janus#add_group(name)
-  if !exists("g:janus_loaded_groups")
-    let g:janus_loaded_groups = []
+function! vimius#add_group(name)
+  if !exists("g:vimius_loaded_groups")
+    let g:vimius_loaded_groups = []
   endif
 
-  call add(g:janus_loaded_groups, a:name)
-  call pathogen#runtime_prepend_subdirectories(g:janus_vim_path. janus#separator() . a:name)
+  call add(g:vimius_loaded_groups, a:name)
+  call pathogen#runtime_prepend_subdirectories(g:vimius_vim_path. vimius#separator() . a:name)
 endfunction
 
 " Which group contains a plugin ?
 "
 " @param [String] The plugin name
 " @return [String] The group name
-function! janus#which_group(name)
-  if !exists("g:janus_loaded_groups")
+function! vimius#which_group(name)
+  if !exists("g:vimius_loaded_groups")
     return ""
   endif
 
-  for group in g:janus_loaded_groups
-    if isdirectory(janus#plugin_path(a:name, group))
+  for group in g:vimius_loaded_groups
+    if isdirectory(vimius#plugin_path(a:name, group))
       return group
     endif
   endfor
@@ -44,7 +44,7 @@ endfunction
 " @param [String] The plugin name
 " @param [String] The reason why it is disabled
 " @return [Bool]
-function! janus#disable_plugin(...)
+function! vimius#disable_plugin(...)
   if a:0 < 1
     " TODO: Should raise an error
     return ""
@@ -60,25 +60,25 @@ function! janus#disable_plugin(...)
   if !exists("g:pathogen_disabled")
     let g:pathogen_disabled = []
   endif
-  if !exists("g:janus_disabled_plugins")
-    let g:janus_disabled_plugins = {}
+  if !exists("g:vimius_disabled_plugins")
+    let g:vimius_disabled_plugins = {}
   endif
 
   " Check if we need to add it
-  if has_key(g:janus_disabled_plugins, name)
+  if has_key(g:vimius_disabled_plugins, name)
     " Just update the reason if necessary.
-    if reason != "No reason given." && g:janus_disabled_plugins[name]['reason'] == "No reason given."
-      let g:janus_disabled_plugins[name]['reason'] = reason
+    if reason != "No reason given." && g:vimius_disabled_plugins[name]['reason'] == "No reason given."
+      let g:vimius_disabled_plugins[name]['reason'] = reason
     endif
 
     return 0
   endif
 
   " Find the plugin path
-  let plugin_path = janus#plugin_path(name)
+  let plugin_path = vimius#plugin_path(name)
 
-  " Add it to janus_disabled_plugins
-  let g:janus_disabled_plugins[name] = {'path': plugin_path, 'reason': reason}
+  " Add it to vimius_disabled_plugins
+  let g:vimius_disabled_plugins[name] = {'path': plugin_path, 'reason': reason}
 
   " Add it to pathogen_disabled
   call add(g:pathogen_disabled, plugin_path)
@@ -89,29 +89,29 @@ endfunction
 " @param [String] The plugin name
 " @param [String] Optional the group name
 " @return [String] The plugin name
-function! janus#plugin_path(...)
+function! vimius#plugin_path(...)
   if a:0 < 1 || a:0 > 2
     " TODO: Should raise an error
     return ""
   elseif a:0 == 1
     " Fetch the group name of the plugin
-    let group = janus#which_group(a:1)
+    let group = vimius#which_group(a:1)
   else
     " Assigns the group to the argument
     let group = a:2
   endif
 
-  return g:janus_vim_path . janus#separator() . group . janus#separator() . a:1
+  return g:vimius_vim_path . vimius#separator() . group . vimius#separator() . a:1
 endfunction
 
 " Is plugin disabled?
 "
 " @param [String] The plugin name
-function! janus#is_plugin_disabled(name)
-  if !exists("g:janus_disabled_plugins")
+function! vimius#is_plugin_disabled(name)
+  if !exists("g:vimius_disabled_plugins")
     return 0
   endif
-  return has_key(g:janus_disabled_plugins, a:name)
+  return has_key(g:vimius_disabled_plugins, a:name)
 endfunction
 
 " Mapping function
@@ -120,16 +120,16 @@ endfunction
 " @param [String] The mapping command (map, vmap, nmap or imap)
 " @param [String] The mapping keys
 " @param [String]* The mapping action
-function! janus#add_mapping(name, mapping_command, mapping_keys, ...)
+function! vimius#add_mapping(name, mapping_command, mapping_keys, ...)
   if len(a:000) < 1
     " TODO: Should raise an error
     return 0
   endif
 
-  if !janus#is_plugin_disabled(a:name)
+  if !vimius#is_plugin_disabled(a:name)
     let mapping_command = join(a:000)
   else
-    let mapping_command = "<ESC>:echo 'The plugin " . a:name . " is disabled for the following reason: " . g:janus_disabled_plugins[a:name]['reason'] . ".'<CR>"
+    let mapping_command = "<ESC>:echo 'The plugin " . a:name . " is disabled for the following reason: " . g:vimius_disabled_plugins[a:name]['reason'] . ".'<CR>"
   endif
 
   let mapping_list = [a:mapping_command, a:mapping_keys, mapping_command]

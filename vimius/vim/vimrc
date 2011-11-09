@@ -1,0 +1,42 @@
+""
+"" Vimius setup
+""
+
+" Define pathes
+let g:vimius_path = fnamemodify(resolve(expand("<sfile>:p")), ":h")
+let g:vimius_vim_path = fnamemodify(resolve(expand("<sfile>:p" . "vim")), ":h")
+
+" Source vimius's core
+exe 'source ' . g:vimius_vim_path . '/core/pathogen/autoload/pathogen.vim'
+exe 'source ' . g:vimius_vim_path . '/core/before/plugin/vimius.vim'
+
+""
+"" Customisations
+""
+
+if filereadable(expand("~/.vimrc.before"))
+  source ~/.vimrc.before
+endif
+
+""
+"" Pathogen Setup
+""
+
+" You should note that groups will be processed by Pathogen in reverse
+" order they were added.
+call vimius#add_group("tools")
+call vimius#add_group("langs")
+call vimius#add_group("colors")
+call vimius#add_group("custom")
+call vimius#add_group("core")
+
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+""
+"" Customizations
+""
+
+if filereadable(expand("~/.vimrc.after"))
+  source ~/.vimrc.after
+endif

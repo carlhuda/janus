@@ -1,4 +1,4 @@
-module Janus
+module Vimius
   # Find an installed gem
   #
   # @param [String] The gem name to search for

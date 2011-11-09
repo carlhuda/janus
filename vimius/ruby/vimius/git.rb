@@ -1,4 +1,4 @@
-module Janus
+module Vimius
   # Get a list of submodules
   #
   # @return [Array] of submodules

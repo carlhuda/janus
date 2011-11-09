@@ -1,5 +1,5 @@
 require 'rake'
-module Janus
+module Vimius
   include Rake::DSL
   
   def self.included(base)
@@ -15,7 +15,7 @@ module Janus
   # @param [String] The plugin name
   # @param [&block] The installation block
   def install_vim_plugin(group, name, &block)
-    raise Janus::BlockNotGivenError unless block_given?
+    raise Vimius::BlockNotGivenError unless block_given?
 
     # Create a namespace for the plugin
     namespace(name) do

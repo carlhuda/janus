@@ -1,4 +1,4 @@
-# Janus: Vim Distribution [![Still Maintained](http://stillmaintained.com/TechnoGate/janus.png)](http://stillmaintained.com/TechnoGate/janus)
+# Vimius: Vim Distribution [![Still Maintained](http://stillmaintained.com/TechnoGate/vimius.png)](http://stillmaintained.com/TechnoGate/vimius)
 
 [![Click here to lend your support to: Open Source Projects and make a donation at www.pledgie.com!](http://pledgie.com/campaigns/16123.png?skin_name=chrome)](http://www.pledgie.com/campaigns/16123)
 
@@ -22,28 +22,28 @@ users should install `gvim`, OSX users should install
 [here](https://github.com/b4winckler/macvim/downloads).
 
 Take a look at the [Pre-requisites wiki
-page](https://github.com/TechnoGate/janus/wiki/Pre-requisites) for more
+page](https://github.com/TechnoGate/vimius/wiki/Pre-requisites) for more
 information.
 
 
 ## Installation
 
-To install Janus, please use our [automatic
-installer](https://github.com/TechnoGate/janus/blob/master/bootstrap.sh)
+To install Vimius, please use our [automatic
+installer](https://github.com/TechnoGate/vimius/blob/master/bootstrap.sh)
 , which backups up any Vim files found in your home folder and installs
-Janus.
+Vimius.
 
 ```bash
-$ curl https://raw.github.com/TechnoGate/janus/master/bootstrap.sh -o- | sh`
+$ curl https://raw.github.com/TechnoGate/vimius/master/bootstrap.sh -o- | sh`
 ```
 
 ## Customization
 
-You can use `~/.gvimrc.before` and `~/.vimrc.before` for settings Janus,
+You can use `~/.gvimrc.before` and `~/.vimrc.before` for settings Vimius,
 like the __leader__ setting, you may also use `~/.gvimrc.after` and
 `~/.vimrc.after` for any additonal setting, it is also a good place for
-overriding Janus settings as both files will be loaded at the end of
-Janus
+overriding Vimius settings as both files will be loaded at the end of
+Vimius
 
 For example, to override the default color schemes:
 
@@ -53,21 +53,21 @@ $ echo 'color molokai' >> ~/.gvimrc.after
 ```
 
 If you want to add additional Vim plugins you can do so by adding a new
-submodule in the Janus repository inside the `janus/vim/custom` like so:
+submodule in the Vimius repository inside the `vimius/vim/custom` like so:
 
 ```bash
 $ cd ~/.vim
-$ git submodule add git://github.com/vim-scripts/Rename2.git janus/vim/custom/rename2
+$ git submodule add git://github.com/vim-scripts/Rename2.git vimius/vim/custom/rename2
 ```
 
 If you would like to disable an included plugin, you can do that with
-the `janus#disable_plugin()` function from inside your
+the `vimius#disable_plugin()` function from inside your
 `~/.vimrc.before`, this function takes a plugin name as an argument
 without the group, for example, if you would like to disable the
 NERDCommenter plugin, you can do that with the command:
 
 ```bash
-$ echo "call janus#disable_plugin('nerdcommenter')" >> ~/.vimrc.before
+$ echo "call vimius#disable_plugin('nerdcommenter')" >> ~/.vimrc.before
 ```
 
 Plugins hosted at [vim.org](http://www.vim.org/scripts) use a
@@ -119,7 +119,7 @@ This vim distribution includes a number of packages built by others.
 
 ## Base Customizations
 
-Janus ships with a number of basic customizations for vim:
+Vimius ships with a number of basic customizations for vim:
 
 * Line numbers
 * Ruler (line and column numbers)
@@ -143,7 +143,7 @@ Janus ships with a number of basic customizations for vim:
 Ack.vim uses ack to search inside the current directory for a pattern.
 You can learn more about it with :help Ack
 
-**Customizations**: Janus rebinds command-shift-f (`<D-F>`) to bring up
+**Customizations**: Vimius rebinds command-shift-f (`<D-F>`) to bring up
 `:Ack `.
 
 ## [Command-T](https://wincent.com/products/command-t)
@@ -152,7 +152,7 @@ Command-T provides a mechanism for searching for a file inside the
 current working directory. It behaves similarly to command-t in
 Textmate.
 
-**Customizations**: Janus rebinds command-t (`<D-t>`) to bring up this
+**Customizations**: Vimius rebinds command-t (`<D-t>`) to bring up this
 plugin. It defaults to `<Leader>t`.
 
 ## [NERDCommenter](http://github.com/ddollar/nerdcommenter)
@@ -160,7 +160,7 @@ plugin. It defaults to `<Leader>t`.
 NERDCommenter allows you to wrangle your code comments, regardless of
 filetype. View `:help NERDCommenter` for all the details.
 
-**Customizations**: Janus binds command-/ (`<D-/>`) to toggle comments.
+**Customizations**: Vimius binds command-/ (`<D-/>`) to toggle comments.
 
 ## [NERDTree](https://github.com/scrooloose/nerdtree)
 
@@ -168,7 +168,7 @@ NERDTree is a file explorer plugin that provides "project drawer"
 functionality to your vim projects.  You can learn more about it with
 :help NERDTree.
 
-**Customizations**: Janus adds a number of customizations to the core
+**Customizations**: Vimius adds a number of customizations to the core
 NERDTree:
 
 * Use `<Leader>n` to toggle NERDTree
@@ -199,7 +199,7 @@ execute their script to find them.
 
 Tagbar is a vim plugin for browsing the tags of source code files.
 
-**Customizations**: Janus binds `<Leader>rt` to toggle Tagbar.
+**Customizations**: Vimius binds `<Leader>rt` to toggle Tagbar.
 
 ## Git Support ([Fugitive](http://github.com/tpope/vim-fugitive))
 
@@ -218,11 +218,11 @@ file
 When working with split windows, ZoomWin lets you zoom into a window and
 out again using `Ctrl-W o`
 
-**Customizations**: Janus binds `<Leader><Leader>` to `:ZoomWin`
+**Customizations**: Vimius binds `<Leader><Leader>` to `:ZoomWin`
 
 ## Additional Syntaxes
 
-Janus ships with a few additional syntaxes:
+Vimius ships with a few additional syntaxes:
 
 * Markdown (bound to \*.markdown, \*.md, and \*.mk)
 * Mustache (bound to \*.mustache)
@@ -236,7 +236,7 @@ Janus ships with a few additional syntaxes:
 
 ## Credits
 
-Janus is based on [Carlhuda's Janus
+Vimius is based on [Carlhuda's Janus
 distribution](https://github.com/carlhuda/janus).
 
 ## License
