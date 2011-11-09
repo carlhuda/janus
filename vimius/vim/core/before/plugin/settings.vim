@@ -235,7 +235,7 @@ else
   " Make shift-insert work like in Xterm
   map <S-Insert> <MiddleMouse>
   map! <S-Insert> <MiddleMouse>
- 
+
   " Map Control-# to switch tabs
   map  <C-0> 0gt
   imap <C-0> <Esc>0gt
