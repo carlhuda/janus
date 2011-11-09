@@ -140,3 +140,6 @@
 [submodule "vimius/vim/tools/css-color"]
 	path = vimius/vim/tools/css-color
 	url = git://github.com/skammer/vim-css-color.git
+[submodule "vimius/vim/tools/easymotion"]
+	path = vimius/vim/tools/easymotion
+	url = git://github.com/Lokaltog/vim-easymotion.git

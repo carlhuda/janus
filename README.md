@@ -201,6 +201,21 @@ Tagbar is a vim plugin for browsing the tags of source code files.
 
 **Customizations**: Vimius binds `<Leader>rt` to toggle Tagbar.
 
+## [EasyMotion](https://github.com/Lokaltog/vim-easymotion)
+
+EasyMotion provides a much simpler way to use some motions in vim. It
+takes the <number> out of <number>w or <number>f{char} by highlighting
+all possible choices and allowing you to press one key to jump directly
+to the target.
+
+When one of the available motions is triggered, all visible text
+preceding or following the cursor is faded, and motion targets are
+highlighted.
+
+EasyMotion is triggered by one of the provided mappings.
+
+check EasyMotion's [home page](https://github.com/Lokaltog/vim-easymotion)
+
 ## Git Support ([Fugitive](http://github.com/tpope/vim-fugitive))
 
 Fugitive adds pervasive git support to git directories in vim. For more
