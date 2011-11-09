@@ -217,6 +217,17 @@ EasyMotion is triggered by one of the provided mappings.
 check EasyMotion's [home
 page](https://github.com/Lokaltog/vim-easymotion) for more information.
 
+## [NrrwRgn](https://github.com/chrisbra/NrrwRgn)
+
+Narrowing means focussing on a region and making the rest inaccessible.
+You simply select the region, call :NarrowRegion and the selected part
+will open in a new scratch buffer. The rest of the file will be
+protected, so you won't accidentally modify that buffer. In the new
+buffer, you can do a global replace, search or anything else to modify
+that part. When you are finished, simply write that buffer (e.g. by
+|:w|) and your modifications will be put in the original buffer making
+it accessible again.
+
 ## Git Support ([Fugitive](http://github.com/tpope/vim-fugitive))
 
 Fugitive adds pervasive git support to git directories in vim. For more

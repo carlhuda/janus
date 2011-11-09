@@ -143,3 +143,6 @@
 [submodule "vimius/vim/tools/easymotion"]
 	path = vimius/vim/tools/easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
+[submodule "vimius/vim/tools/narrowregion"]
+	path = vimius/vim/tools/narrowregion
+	url = git://github.com/chrisbra/NrrwRgn.git
