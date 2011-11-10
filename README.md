@@ -299,13 +299,17 @@ Vimius ships with a few additional syntaxes:
 
 * Markdown (bound to \*.markdown, \*.md, and \*.mk)
 * Mustache (bound to \*.mustache)
-* Arduino  (bound to \*.pde)
 * Haml (bound to \*.haml)
 * Sass (bound to \*.sass)
 * SCSS (bound to \*.scss)
 * An improved JavaScript syntax (bound to \*.js)
-* Map Gemfile, Rakefile, Vagrantfile and Thorfile to Ruby
-* Git commits (set your `EDITOR` to `mvim -f`)
+* Javascript for any file having `nodejs` in the shebang.
+* Map Gemfile, Rakefile, Vagrantfile, Procfile, Thorfile, config.ru and
+  *.rake to Ruby.
+* Git commits (set your `EDITOR` to `vim -f` or  `mvim -f` on OSX)
+  `$ echo "export EDITOR='vim -f'" >> ~/.bashrc`, you can also use Git
+  global config to set this if you have EDITOR set to something else
+  `$ git config --global core.editor 'vim -f'`
 
 ## Credits
 
