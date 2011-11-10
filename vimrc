@@ -137,8 +137,10 @@ runtime! macros/matchit.vim
 " Show (partial) command in the status line
 set showcmd
 
-" Automatically resize splits when resizing MacVim window
-autocmd VimResized * wincmd =
+if has("gui_running")
+  " Automatically resize splits when resizing MacVim window
+  autocmd VimResized * wincmd =
+endif
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
