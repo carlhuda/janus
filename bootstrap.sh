@@ -1,4 +1,13 @@
-for i in ~/.vim ~/.vimrc ~/.gvimrc; do [ -e $i ] && mv $i $i.old; done
+# Add <strong>.old</strong> to any existing Vim file in the home directory
+for i in ~/.vim ~/.vimrc ~/.gvimrc; do
+  if [ -e $i ]; then
+    echo "${i} has been renamed to ${i}.old"
+    mv $i $i.old;
+  fi
+done
+
+# Clone Vimius into .vim
 git clone git://github.com/TechnoGate/vimius.git ~/.vim
-cd ~/.vim
-rake
+
+# Run rake inside ~/.vim
+( cd ~/.vim && rake )
