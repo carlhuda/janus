@@ -268,6 +268,13 @@ hunks in the file.
 Use `:Gdiff` on an open file to see what changes have been made to that
 file
 
+**customizations**:
+* `<leader>gb` maps to `:Gblame<CR>`
+* `<leader>gs` maps to `:Gstatus<CR>`
+* `<leader>gd` maps to `:Gdiff<CR>`
+* `<leader>gl` maps to `:Glog<CR>`
+* `<leader>gc` maps to `:Gcommit<CR>`
+
 ## [ZoomWin](http://github.com/vim-scripts/ZoomWin)
 
 When working with split windows, ZoomWin lets you zoom into a window and
