@@ -148,7 +148,7 @@ sudo password when writing.
 * `,.` (comma followed by a dot) opens the next buffer.
 * `,m` (comma followed by m) opens the previous buffer.
 * `;'` (semi-column followed by a single quote) switch to next tab.
-* `;l` (semi-column followed by l) switch to next tab.
+* `;l` (semi-column followed by l) switch to previous tab.
 * `<leader>u` Convert the entire word to uppercace.
 * `<leader>l` Convert the entire word to lowercase.
 * `<leader>U` Convert the first char of a word to uppercase.
