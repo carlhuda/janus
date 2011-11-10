@@ -45,10 +45,17 @@ task :folders do
 end
 
 task :update do
-  sh "git clean -xdf --exclude=custom -- vimius"
-  sh "git pull"
-  sh "git submodule init"
-  sh "git submodule update"
+  puts "Cleaning the viminius folder"
+  `git clean -xdf --exclude=custom -- vimius &> /dev/null`
+
+  puts "Pulling latest changes"
+  `git pull &> /dev/null`
+
+  puts "Synchronising submodules urls"
+  `git submodule sync &> /dev/null`
+
+  puts "Updating the submodules"
+  `git submodule update --init &> /dev/null`
 end
 
 task :install => [:folders, :link_vim_conf_files] do
