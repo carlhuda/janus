@@ -269,6 +269,7 @@ Use `:Gdiff` on an open file to see what changes have been made to that
 file
 
 **customizations**:
+
 * `<leader>gb` maps to `:Gblame<CR>`
 * `<leader>gs` maps to `:Gstatus<CR>`
 * `<leader>gd` maps to `:Gdiff<CR>`
