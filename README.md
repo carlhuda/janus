@@ -70,6 +70,13 @@ NERDCommenter plug-in, you can do that with the command:
 $ echo "call vimius#disable_plugin('nerdcommenter')" >> ~/.vimrc.before
 ```
 
+**WARNING**: Any **uncommited** file inside the **vimius** folder and
+outside the `custom` folder will be removed the next time your run
+`rake` so make sure to either put them in the custom folder, or entirely
+outside the vimius folder or commit them with Git. We clean the vimius
+folder in case we replace a manually installed plugin (using rake tasks)
+with a submodule.
+
 For more information on how to customize Vimius, you might want to take
 a look at the [Customization wiki
 page](https://github.com/TechnoGate/vimius/wiki/Customization).
