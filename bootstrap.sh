@@ -1,5 +1,8 @@
 # Source RVM so vimius .rvmrc takes effect
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+if ! type rvm &> /dev/null; then
+  [[ -s /usr/local/rvm/scripts/rvm ]] && source /usr/local/rvm/scripts/rvm
+  [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+fi
 
 # Add <strong>.old</strong> to any existing Vim file in the home directory
 for i in ~/.vim ~/.vimrc ~/.gvimrc; do
