@@ -49,13 +49,13 @@ task :update do
   `git clean -xdf --exclude=custom -- vimius &> /dev/null`
 
   puts "Pulling latest changes"
-  `git pull &> /dev/null`
+  `git pull > /dev/null`
 
   puts "Synchronising submodules urls"
-  `git submodule sync &> /dev/null`
+  `git submodule sync > /dev/null`
 
   puts "Updating the submodules"
-  `git submodule update --init &> /dev/null`
+  `git submodule update --init > /dev/null`
 end
 
 task :install => [:folders, :link_vim_conf_files] do
