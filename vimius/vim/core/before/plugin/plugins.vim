@@ -1,12 +1,17 @@
-" Gundo and pep8 requires Python
+" Variables
+let s:no_python_support = "Vim is compiled without python support"
+let s:no_ruby_support = "Vim is compiled without ruby support"
+
+" Plugins that requires python support
 if !has("python")
-  call vimius#disable_plugin("gundo", "Vim is compiled without python support")
-  call vimius#disable_plugin("pep8", "Vim is compiled without python support")
+  call vimius#disable_plugin("gundo", s:no_python_support)
+  call vimius#disable_plugin("pep8", s:no_python_support)
 endif
 
-" CommandT requires ruby
+" Plugins that requires ruby support
 if !has("ruby")
-  call vimius#disable_plugin("command-t", "Vim is compiled without ruby support")
+  call vimius#disable_plugin("command-t", s:no_ruby_support)
+  call vimius#disable_plugin("ruby", s:no_ruby_support)
 endif
 
 " Pep8 requires pep8 installed

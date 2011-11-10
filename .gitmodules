@@ -69,6 +69,9 @@
 [submodule "vimius/vim/langs/nodejs"]
 	path = vimius/vim/langs/nodejs
 	url = git://github.com/mmalecki/vim-node.js.git
+[submodule "vimius/vim/langs/ruby"]
+	path = vimius/vim/langs/ruby
+	url = git://github.com/vim-ruby/vim-ruby.git
 
 # Tools
 [submodule "vimius/vim/tools/unimpaired"]
