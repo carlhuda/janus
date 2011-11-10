@@ -70,10 +70,9 @@ NERDCommenter plug-in, you can do that with the command:
 $ echo "call vimius#disable_plugin('nerdcommenter')" >> ~/.vimrc.before
 ```
 
-Plug-ins hosted at [vim.org](http://www.vim.org/scripts) use a
-unique URL for each version, You can use the GitHub mirror at
-[https://github.com/vim-scripts](https://github.com/vim-scripts) to get
-an URL for any Vim script.
+For more information on how to customize Vimius, you might want to take
+a look at the [Customization wiki
+page](https://github.com/TechnoGate/vimius/wiki/Customization).
 
 ## Updating to the latest version
 
