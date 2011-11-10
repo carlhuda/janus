@@ -1,6 +1,6 @@
 # Add <strong>.old</strong> to any existing Vim file in the home directory
 for i in ~/.vim ~/.vimrc ~/.gvimrc; do
-  if [ -e $i ]; then
+  if [[ ( -e $i ) || ( -h $i ) ]]; then
     echo "${i} has been renamed to ${i}.old"
     mv $i $i.old;
   fi
