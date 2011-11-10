@@ -45,6 +45,7 @@ task :folders do
 end
 
 task :update do
+  sh "git clean -xdf --exclude=custom -- vimius"
   sh "git pull"
   sh "git submodule init"
   sh "git submodule update"
