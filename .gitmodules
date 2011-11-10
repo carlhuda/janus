@@ -155,3 +155,6 @@
 [submodule "vimius/vim/tools/buffergator"]
 	path = vimius/vim/tools/buffergator
 	url = git://github.com/jeetsukumaran/vim-buffergator.git
+[submodule "vimius/vim/tools/kwbd"]
+	path = vimius/vim/tools/kwbd
+	url = git://github.com/rgarver/Kwbd.vim.git

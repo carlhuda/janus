@@ -170,7 +170,8 @@ exist.)
   rightwards.
 * `<A-]` (`<D-]` on MacVim) Shift current line or selected lines
   leftwards.
-* `<C-W>!` Invokes kvdb plugin (Kill Window Delete Buffer, without qutting)
+* `<C-u>` Invokes kwbd plugin, it closes all open buffers in the open
+  windows but keeps the windows open.
 
 ## [Ack.vim](http://github.com/mileszs/ack.vim)
 
