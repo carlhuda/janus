@@ -41,19 +41,26 @@ endfunction
 
 " Disable a plugin
 "
+" @param [String] The group the plugin belongs to, will be determined if
+"                 no group were given.
 " @param [String] The plugin name
 " @param [String] The reason why it is disabled
 " @return [Bool]
 function! vimius#disable_plugin(...)
-  if a:0 < 1
-    " TODO: Should raise an error
-    return ""
-  elseif a:0 < 2
+  if a:0 < 1 || a:0 > 3
+    throw "The arguments to vimius#disable_plugin() should bw [group], <name>, [reason]"
+  elseif a:0 == 1
+    let group = -1
     let name = a:1
-    let reason = "No reason given."
-  else
+    let reason = -1
+  elseif a:0 == 2
+    let group = -1
     let name = a:1
     let reason = a:2
+  elseif a:0 == 3
+    let group = a:1
+    let name = a:2
+    let reason = a:3
   endif
 
   " Verify the existance of the global variables
@@ -64,10 +71,15 @@ function! vimius#disable_plugin(...)
     let g:vimius_disabled_plugins = {}
   endif
 
+  " Fetch the group if necessary
+  if group == -1
+    let group = vimius#which_group(name)
+  endif
+
   " Check if we need to add it
-  if has_key(g:vimius_disabled_plugins, name)
+  if has_key(g:vimius_disabled_plugins, name) && g:vimius_disabled_plugins[name]['group'] == group
     " Just update the reason if necessary.
-    if reason != "No reason given." && g:vimius_disabled_plugins[name]['reason'] == "No reason given."
+    if reason != "No reason given." && g:vimius_disabled_plugins[name]['reason'] == -1
       let g:vimius_disabled_plugins[name]['reason'] = reason
     endif
 
@@ -75,10 +87,10 @@ function! vimius#disable_plugin(...)
   endif
 
   " Find the plugin path
-  let plugin_path = vimius#plugin_path(name)
+  let plugin_path = vimius#plugin_path(name, group)
 
   " Add it to vimius_disabled_plugins
-  let g:vimius_disabled_plugins[name] = {'path': plugin_path, 'reason': reason}
+  let g:vimius_disabled_plugins[name] = {'group': group, 'path': plugin_path, 'reason': reason}
 
   " Add it to pathogen_disabled
   call add(g:pathogen_disabled, plugin_path)
@@ -91,8 +103,7 @@ endfunction
 " @return [String] The plugin name
 function! vimius#plugin_path(...)
   if a:0 < 1 || a:0 > 2
-    " TODO: Should raise an error
-    return ""
+    throw "The arguments to vimius#plugin_path() should be <name> and [group]"
   elseif a:0 == 1
     " Fetch the group name of the plugin
     let group = vimius#which_group(a:1)
@@ -122,13 +133,16 @@ endfunction
 " @param [String]* The mapping action
 function! vimius#add_mapping(name, mapping_command, mapping_keys, ...)
   if len(a:000) < 1
-    " TODO: Should raise an error
-    return 0
+    throw "The arguments to vimius#add_mapping() should be <name> <mapping_command> <mapping_keys> <mapping_action> [mapping_action]*"
   endif
 
   if !vimius#is_plugin_disabled(a:name)
     let mapping_command = join(a:000)
   else
+    if g:vimius_disabled_plugins[a:name]['reason'] == -1
+      return 0
+    endif
+
     let mapping_command = "<ESC>:echo 'The plugin " . a:name . " is disabled for the following reason: " . g:vimius_disabled_plugins[a:name]['reason'] . ".'<CR>"
   endif
 
