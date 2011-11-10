@@ -22,6 +22,9 @@
 [submodule "vimius/vim/colors/pyte"]
 	path = vimius/vim/colors/pyte
 	url = git://github.com/vim-scripts/pyte.git
+[submodule "vimius/vim/colors/github"]
+	path = vimius/vim/colors/github
+	url = git://github.com/telamon/vim-color-github.git
 
 # Langs
 [submodule "vimius/vim/langs/haml"]
@@ -158,6 +161,3 @@
 [submodule "vimius/vim/tools/kwbd"]
 	path = vimius/vim/tools/kwbd
 	url = git://github.com/rgarver/Kwbd.vim.git
-[submodule "vimius/vim/colors/github"]
-	path = vimius/vim/colors/github
-	url = git://github.com/telamon/vim-color-github.git
