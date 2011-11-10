@@ -33,7 +33,7 @@ function! vimius#which_group(name)
   endif
 
   for group in g:vimius_loaded_groups
-    if isdirectory(vimius#plugin_path(a:name, group))
+    if isdirectory(vimius#plugin_path(group, a:name))
       return group
     endif
   endfor
@@ -87,7 +87,7 @@ function! vimius#disable_plugin(...)
   endif
 
   " Find the plugin path
-  let plugin_path = vimius#plugin_path(name, group)
+  let plugin_path = vimius#plugin_path(group, name)
 
   " Add it to vimius_disabled_plugins
   let g:vimius_disabled_plugins[name] = {'group': group, 'path': plugin_path, 'reason': reason}
@@ -98,18 +98,19 @@ endfunction
 
 " Return the plugin path
 "
+" @param [String] The group the plugin belongs to, will be determined if
+"                 no group were given.
 " @param [String] The plugin name
-" @param [String] Optional the group name
-" @return [String] The plugin name
+" @return [String] The plugin path relative to g:vimius_vim_path
 function! vimius#plugin_path(...)
   if a:0 < 1 || a:0 > 2
-    throw "The arguments to vimius#plugin_path() should be <name> and [group]"
+    throw "The arguments to vimius#plugin_path() should be [group], <name>"
   elseif a:0 == 1
-    " Fetch the group name of the plugin
-    let group = vimius#which_group(a:1)
+    let name  = a:1
+    let group = vimius#which_group(name)
   else
-    " Assigns the group to the argument
-    let group = a:2
+    let group = a:1
+    let name  = a:2
   endif
 
   return g:vimius_vim_path . vimius#separator() . group . vimius#separator() . a:1
