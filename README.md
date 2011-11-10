@@ -86,6 +86,10 @@ page](https://github.com/TechnoGate/vimius/wiki/Customization).
 To update to the latest version of the distribution, just run `rake`
 again inside your `~/.vim` directory.
 
+NOTE: If you even had an error updating Vimius, problem related to a
+missing commit in a submodule, please try running `rake` again before
+submitting an issue.
+
 # Intro to VIM
 
 Here's some tips if you've never used VIM before:
