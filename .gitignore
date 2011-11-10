@@ -7,4 +7,4 @@ _temp
 # Plugins without git-mirror
 watchtower.vim
 mustache.vim
-kvbd.vim
+kvdb.vim
