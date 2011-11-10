@@ -314,7 +314,8 @@ Vimius ships with a few additional syntaxes:
 ## Credits
 
 Vimius is based on [Carlhuda's Janus
-distribution](https://github.com/carlhuda/janus).
+distribution](https://github.com/carlhuda/janus) on their [Experimental
+branch](https://github.com/carlhuda/janus/tree/experimental)
 
 ## License
 
