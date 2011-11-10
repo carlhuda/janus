@@ -275,6 +275,7 @@ file
 * `<leader>gd` maps to `:Gdiff<CR>`
 * `<leader>gl` maps to `:Glog<CR>`
 * `<leader>gc` maps to `:Gcommit<CR>`
+* `<leager>gp` maps to `:Git push<CR>`
 
 ## [ZoomWin](http://github.com/vim-scripts/ZoomWin)
 
