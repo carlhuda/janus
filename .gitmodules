@@ -106,7 +106,7 @@
 	url = git://github.com/robgleeson/hammer.vim.git
 [submodule "vimius/vim/tools/command-t"]
 	path = vimius/vim/tools/command-t
-	url = git@github.com:wycats/Command-T.git
+	url = git://github.com/wincent/Command-T.git
 [submodule "vimius/vim/tools/snipmate"]
 	path = vimius/vim/tools/snipmate
 	url = git://github.com/garbas/vim-snipmate.git
