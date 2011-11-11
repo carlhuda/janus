@@ -10,6 +10,24 @@ function! vimius#separator()
   return !exists("+shellslash") || &shellslash ? '/' : '\'
 endfunction
 
+" Find vim files inside a folder
+"
+" @param [String] The path to a folder
+" @return [List] List of files.
+function! vimius#vim_files(folder)
+  let files = []
+  let pattern = resolve(expand(a:folder)) . vimius#separator() . "*"
+  " Add all found vim files
+  for file in split(glob(pattern), "\n")
+    if isdirectory(file)
+      call extend(files, vimius#vim_files(file))
+    elseif (file =~ "\.vim$")
+      call add(files, file)
+    endif
+  endfor
+
+  return files
+endfunction
 
 " Add a group of plug-ins to Pathogen
 "
@@ -124,6 +142,18 @@ function! vimius#is_plugin_disabled(name)
     return 0
   endif
   return has_key(g:vimius_disabled_plugins, a:name)
+endfunction
+
+" Is plugin enabled?
+"
+" @param [String] The plugin name
+" @return [Boolean]
+function! vimius#is_plugin_enabled(name)
+  if vimius#is_plugin_disabled(a:name)
+    return 0
+  endif
+
+  return len(vimius#vim_files(vimius#plugin_path(a:name))) > 0
 endfunction
 
 " Mapping function
