@@ -134,6 +134,14 @@ function! vimius#plugin_path(...)
   return g:vimius_vim_path . vimius#separator() . group . vimius#separator() . name
 endfunction
 
+" Is modules loaded?
+"
+" @param [String] The plugin name
+" @return [Boolean]
+function! vimius#is_module_loaded(name)
+  return len(vimius#vim_files(vimius#plugin_path(a:name))) > 0
+endfunction
+
 " Is plugin disabled?
 "
 " @param [String] The plugin name
@@ -141,6 +149,7 @@ function! vimius#is_plugin_disabled(name)
   if !exists("g:vimius_disabled_plugins")
     return 0
   endif
+
   return has_key(g:vimius_disabled_plugins, a:name)
 endfunction
 
@@ -149,11 +158,7 @@ endfunction
 " @param [String] The plugin name
 " @return [Boolean]
 function! vimius#is_plugin_enabled(name)
-  if vimius#is_plugin_disabled(a:name)
-    return 0
-  endif
-
-  return len(vimius#vim_files(vimius#plugin_path(a:name))) > 0
+  return vimius#is_module_loaded(a:name) && !vimius#is_plugin_disabled(a:name)
 endfunction
 
 " Mapping function
