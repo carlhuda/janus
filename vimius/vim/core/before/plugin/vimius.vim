@@ -172,14 +172,18 @@ function! vimius#add_mapping(name, mapping_command, mapping_keys, ...)
     throw "The arguments to vimius#add_mapping() should be <name> <mapping_command> <mapping_keys> <mapping_action> [mapping_action]*"
   endif
 
-  if !vimius#is_plugin_disabled(a:name)
+  if vimius#is_plugin_enabled(a:name)
     let mapping_command = join(a:000)
   else
-    if g:vimius_disabled_plugins[a:name]['reason'] == -1
+    if !vimius#disable_plugin(a:name)
+      let reason = "Module is not loaded"
+    elseif g:vimius_disabled_plugins[a:name]['reason'] == -1
       return 0
+    else
+      let reason = g:vimius_disabled_plugins[a:name]['reason']
     endif
 
-    let mapping_command = "<ESC>:echo 'The plugin " . a:name . " is disabled for the following reason: " . g:vimius_disabled_plugins[a:name]['reason'] . ".'<CR>"
+    let mapping_command = "<ESC>:echo 'The plugin " . a:name . " is disabled for the following reason: " . reason . ".'<CR>"
   endif
 
   let mapping_list = [a:mapping_command, a:mapping_keys, mapping_command]
