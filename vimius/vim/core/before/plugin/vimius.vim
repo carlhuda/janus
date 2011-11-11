@@ -113,7 +113,7 @@ function! vimius#plugin_path(...)
     let name  = a:2
   endif
 
-  return g:vimius_vim_path . vimius#separator() . group . vimius#separator() . a:1
+  return g:vimius_vim_path . vimius#separator() . group . vimius#separator() . name
 endfunction
 
 " Is plugin disabled?
