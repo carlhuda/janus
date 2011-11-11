@@ -87,9 +87,6 @@ if has("autocmd")
     \| exe "normal! g`\"" | endif
 endif
 
-" Set the status line.
-set stl=%f\ %m\ %r%{fugitive#statusline()}\ %#warningmsg#%{SyntasticStatuslineFlag()}%*\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
-
 ""
 "" File Types
 ""
