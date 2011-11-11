@@ -1,0 +1,166 @@
+---
+modules:
+  pathogen:
+    path: vimius/vim/core/pathogen
+    group: core
+  getafe:
+    path: vimius/vim/colors/getafe
+    group: colors
+  github:
+    path: vimius/vim/colors/github
+    group: colors
+  irblack:
+    path: vimius/vim/colors/irblack
+    group: colors
+  molokai:
+    path: vimius/vim/colors/molokai
+    group: colors
+  pyte:
+    path: vimius/vim/colors/pyte
+    group: colors
+  sampler-pack:
+    path: vimius/vim/colors/sampler-pack
+    group: colors
+  solarized:
+    path: vimius/vim/colors/solarized
+    group: colors
+  vividchalk:
+    path: vimius/vim/colors/vividchalk
+    group: colors
+  coffeescript:
+    path: vimius/vim/langs/coffeescript
+    group: langs
+  csv:
+    path: vimius/vim/langs/csv
+    group: langs
+  cucumber:
+    path: vimius/vim/langs/cucumber
+    group: langs
+  git:
+    path: vimius/vim/langs/git
+    group: langs
+  haml:
+    path: vimius/vim/langs/haml
+    group: langs
+  handlebars:
+    path: vimius/vim/langs/handlebars
+    group: langs
+  javascript:
+    path: vimius/vim/langs/javascript
+    group: langs
+  markdown:
+    path: vimius/vim/langs/markdown
+    group: langs
+  nodejs:
+    path: vimius/vim/langs/nodejs
+    group: langs
+  puppet:
+    path: vimius/vim/langs/puppet
+    group: langs
+  rails:
+    path: vimius/vim/langs/rails
+    group: langs
+  rspec:
+    path: vimius/vim/langs/rspec
+    group: langs
+  ruby:
+    path: vimius/vim/langs/ruby
+    group: langs
+  scala:
+    path: vimius/vim/langs/scala
+    group: langs
+  scss:
+    path: vimius/vim/langs/scss
+    group: langs
+  textile:
+    path: vimius/vim/langs/textile
+    group: langs
+  ack:
+    path: vimius/vim/tools/ack
+    group: tools
+  buffergator:
+    path: vimius/vim/tools/buffergator
+    group: tools
+  command-t:
+    path: vimius/vim/tools/command-t
+    group: tools
+  css-color:
+    path: vimius/vim/tools/css-color
+    group: tools
+  easymotion:
+    path: vimius/vim/tools/easymotion
+    group: tools
+  endwise:
+    path: vimius/vim/tools/endwise
+    group: tools
+  fugitive:
+    path: vimius/vim/tools/fugitive
+    group: tools
+  gist:
+    path: vimius/vim/tools/gist
+    group: tools
+  gundo:
+    path: vimius/vim/tools/gundo
+    group: tools
+  hammer:
+    path: vimius/vim/tools/hammer
+    group: tools
+  indent-object:
+    path: vimius/vim/tools/indent-object
+    group: tools
+  kwbd:
+    path: vimius/vim/tools/kwbd
+    group: tools
+  matchit:
+    path: vimius/vim/tools/matchit
+    group: tools
+  narrowregion:
+    path: vimius/vim/tools/narrowregion
+    group: tools
+  nerdcommenter:
+    path: vimius/vim/tools/nerdcommenter
+    group: tools
+  nerdtree:
+    path: vimius/vim/tools/nerdtree
+    group: tools
+  pep8:
+    path: vimius/vim/tools/pep8
+    group: tools
+  snipmate:
+    path: vimius/vim/tools/snipmate
+    group: tools
+    dependencies:
+      - vim-addon-mw-utils
+      - tlib
+  snipmate-snippets:
+    path: vimius/vim/tools/snipmate-snippets
+    group: tools
+    dependencies:
+      - snipmate
+  supertab:
+    path: vimius/vim/tools/supertab
+    group: tools
+  surround:
+    path: vimius/vim/tools/surround
+    group: tools
+  syntastic:
+    path: vimius/vim/tools/syntastic
+    group: tools
+  tagbar:
+    path: vimius/vim/tools/tagbar
+    group: tools
+  tlib:
+    path: vimius/vim/tools/tlib
+    group: tools
+  unimpaired:
+    path: vimius/vim/tools/unimpaired
+    group: tools
+  vim-addon-mw-utils:
+    path: vimius/vim/tools/vim-addon-mw-utils
+    group: tools
+  vimwiki:
+    path: vimius/vim/tools/vimwiki
+    group: tools
+  zoomwin:
+    path: vimius/vim/tools/zoomwin
+    group: tools
