@@ -53,13 +53,13 @@ if has("autocmd")
     \| exe "normal g'\"" | endif
 endif
 
-function s:setupWrapping()
+function! s:setupWrapping()
   set wrap
   set wrapmargin=2
   set textwidth=72
 endfunction
 
-function s:setupMarkup()
+function! s:setupMarkup()
   call s:setupWrapping()
   map <buffer> <Leader>p :Hammer<CR>
 endfunction
@@ -136,6 +136,14 @@ runtime! macros/matchit.vim
 
 " Show (partial) command in the status line
 set showcmd
+
+" Enable 'offline' VimClojure features
+let clj_want_gorilla = 1
+let vimclojure#DynamicHighlighting = 1
+let vimclojure#HighlightBuiltins = 1
+let vimclojure#HighlightContrib = 1
+let vimclojure#ParenRainbow = 1
+let vimclojure#WantNailgun = 0
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
