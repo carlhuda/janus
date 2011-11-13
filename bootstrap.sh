@@ -12,15 +12,15 @@ if ! type rbenv &> /dev/null; then
 fi
 
 # Add <strong>.old</strong> to any existing Vim file in the home directory
-for i in ~/.vim ~/.vimrc ~/.gvimrc; do
+for i in $HOME/.vim $HOME/.vimrc $HOME/.gvimrc; do
   if [[ ( -e $i ) || ( -h $i ) ]]; then
     echo "${i} has been renamed to ${i}.old"
-    mv $i $i.old;
+    mv "${i}" "${i}.old"
   fi
 done
 
 # Clone Vimius into .vim
-git clone git://github.com/TechnoGate/vimius.git ~/.vim
+git clone git://github.com/TechnoGate/vimius.git $HOME/.vim
 
-# Run rake inside ~/.vim
-( cd ~/.vim && rake )
+# Run rake inside .vim
+( cd $HOME/.vim && rake )
