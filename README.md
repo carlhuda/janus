@@ -333,6 +333,18 @@ Vimius ships with a few additional syntaxes:
   global config to set this if you have EDITOR set to something else
   `$ git config --global core.editor 'vim -f'`
 
+## Contact
+
+For bugs and feature request, please use __Github issues__, for other
+requests, you may use:
+
+- [Google Groups](http://groups.google.com/group/vimius)
+- [Github private message](https://github.com/inbox/new/eMxyzptlk)
+- Email: [contact@technogate.fr](mailto:contact@technogate.fr)
+
+Don't forget to follow me on [Github](https://github.com/eMxyzptlk) and
+[Twitter](https://twitter.com/eMxyzptlk) for news and updates.
+
 ## Credits
 
 Vimius is based on [Carlhuda's Janus
