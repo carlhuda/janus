@@ -6,7 +6,7 @@ fi
 
 # Source Rbenv so vimius .rbenv-version takes effect
 if ! type rbenv &> /dev/null; then
-  if [[ -s $HOME/.rvm/scripts/rvm ]]; then
+  if [[ -s $HOME/.rbenv/bin/rbenv ]]; then
     eval "`$HOME/.rbenv/bin/rbenv init -`"
   fi
 fi
