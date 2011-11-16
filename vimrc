@@ -35,6 +35,8 @@ set noequalalways
 
 " NERDTree configuration
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
+let NERDTreeDirArrows = 1
+let NERDTreeMouseMode = 3
 map <Leader>n :NERDTreeToggle<CR>
 
 " Command-T configuration
