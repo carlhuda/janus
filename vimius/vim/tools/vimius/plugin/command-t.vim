@@ -1,6 +1,4 @@
 if has("gui_macvim")
-  macmenu &File.New\ Tab key=<nop>
-
   call vimius#add_mapping('command-t', 'map', '<D-t>', ':CommandT<CR>')
   call vimius#add_mapping('command-t', 'imap', '<D-t>', '<ESC>:CommandT<CR>')
 
