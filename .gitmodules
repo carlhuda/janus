@@ -34,9 +34,6 @@
 [submodule "janus-tools/snipmate"]
 	path = janus-tools/snipmate
 	url = https://github.com/ervandew/snipmate.vim.git
-[submodule "janus-command-t/command-t"]
-	path = janus-command-t/command-t
-	url = git@github.com:wycats/Command-T.git
 [submodule "janus-colors/sampler-pack"]
 	path = janus-colors/sampler-pack
 	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
@@ -46,3 +43,39 @@
 [submodule "janus-langs/coffeescript"]
 	path = janus-langs/coffeescript
 	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "janus-tools/ack"]
+	path = janus-tools/ack
+	url = git://github.com/mileszs/ack.vim.git
+[submodule "janus-tools/fugitive"]
+	path = janus-tools/fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "janus-langs/git"]
+	path = janus-langs/git
+	url = git://github.com/tpope/vim-git.git
+[submodule "janus-tools/gundo"]
+	path = janus-tools/gundo
+	url = git://github.com/sjl/gundo.vim.git
+[submodule "janus-langs/rails"]
+	path = janus-langs/rails
+	url = git://github.com/tpope/vim-rails.git
+[submodule "janus-langs/textile"]
+	path = janus-langs/textile
+	url = git://github.com/timcharper/textile.vim.git
+[submodule "janus-langs/rspec"]
+	path = janus-langs/rspec
+	url = git://github.com/taq/vim-rspec.git
+[submodule "janus-colors/solarized"]
+	path = janus-colors/solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "janus-core/surround"]
+	path = janus-core/surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule "janus-tools/hammer"]
+	path = janus-tools/hammer
+	url = git://github.com/robgleeson/hammer.vim.git
+[submodule "janus-tools/command-t"]
+	path = janus-tools/command-t
+	url = git@github.com:wycats/Command-T.git
+[submodule "janus-core/pathogen"]
+	path = janus-core/pathogen
+	url = git://github.com/tpope/vim-pathogen.git

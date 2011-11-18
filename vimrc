@@ -1,9 +1,17 @@
 ""
+"" Customisations
+""
+
+if filereadable(expand("~/.vimrc.before"))
+  source ~/.vimrc.before
+endif
+
+""
 "" Helpers
 ""
 
 " Some file types should wrap their text
-function s:setupWrapping()
+function! s:setupWrapping()
   set wrap
   set linebreak
   set textwidth=72
@@ -12,7 +20,7 @@ endfunction
 
 let s:current_file = expand("<sfile>:p")
 
-function s:add_group(name)
+function! s:add_group(name)
   let resolved = resolve(s:current_file)
   let dir = fnamemodify(resolved, ":h")
   let file = dir . "/" . a:name
@@ -36,9 +44,9 @@ call s:add_group("janus-core")
 call s:add_group("janus-langs")
 call s:add_group("janus-tools")
 call s:add_group("janus-colors")
-call s:add_group("janus-command-t")
 
 call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 ""
 "" Basic Setup
@@ -67,7 +75,7 @@ set backspace=indent,eol,start        " backspace through everything in insert m
 "" Searching
 ""
 
-set hlsearch    " highlight matches (TODO: Map something convenient to nohlsearch)
+set hlsearch    " highlight matches
 set incsearch   " incremental searching
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
@@ -78,7 +86,9 @@ set smartcase   " ... unless they contain at least one capital letter
 
 " TODO: Investigate the precise meaning of these settings
 " set wildmode=list:longest,list:full
-" set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+
+" Disable output and VCS files
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,.bundle/*,.sass-cache/*
 
 ""
 "" Status bar
@@ -108,10 +118,10 @@ filetype plugin indent on " Turn on filetype plugins (:help filetype-plugin)
 au FileType make set noexpandtab
 
 " Set the Ruby filetype for a number of common Ruby files without .rb
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru,*.rake} set ft=ruby
 
-" Markdown and txt files should wrap
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} call s:setupWrapping()
+" Make sure all mardown files have the correct filetype set and setup wrapping
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} set ft=markdown | call s:setupWrapping()
 
 " Treat JSON files like JavaScript
 au BufNewFile,BufRead *.json set ft=javascript
@@ -136,8 +146,8 @@ map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 map <Down> gj
 map <Up> gk
 
-" Map <Leader><Leader> to ZoomWin
-map <Leader><Leader> :ZoomWin<CR>
+" Toggle hlsearch with <leader>hs
+nmap <leader>hs :set hlsearch! hlsearch?<CR>
 
 ""
 "" Command-Line Mappings
@@ -146,6 +156,12 @@ map <Leader><Leader> :ZoomWin<CR>
 " Insert the current directory into a command-line path
 cmap <C-P> <C-R>=expand("%:p:h") . "/"
 
+""
+"" Backup and swap files
+""
+
+set backupdir=~/.vim/_backup    " where to put backup files.
+set directory=~/.vim/_temp      " where to put swap files.
 
 ""
 "" Customizations
@@ -154,11 +170,3 @@ cmap <C-P> <C-R>=expand("%:p:h") . "/"
 if filereadable(expand("~/.vimrc.after"))
   source ~/.vimrc.after
 endif
-
-""
-"" Disable swap files
-""
-
-set nobackup
-set nowritebackup
-set noswapfile
