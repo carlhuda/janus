@@ -1,81 +1,166 @@
-[submodule "janus-core/unimpaired"]
-	path = janus-core/unimpaired
-	url = https://github.com/tpope/vim-unimpaired.git
-[submodule "janus-core/nerdcommenter"]
-	path = janus-core/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule "janus-langs/haml"]
-	path = janus-langs/haml
-	url = https://github.com/tpope/vim-haml.git
-[submodule "janus-langs/javascript"]
-	path = janus-langs/javascript
-	url = https://github.com/pangloss/vim-javascript.git
-[submodule "janus-langs/cucumber"]
-	path = janus-langs/cucumber
-	url = https://github.com/tpope/vim-cucumber.git
-[submodule "janus-langs/markdown"]
-	path = janus-langs/markdown
-	url = https://github.com/tpope/vim-markdown.git
-[submodule "janus-langs/puppet"]
-	path = janus-langs/puppet
-	url = https://github.com/ajf/puppet-vim.git
-[submodule "janus-langs/scala"]
-	path = janus-langs/scala
-	url = https://github.com/bdd/vim-scala.git
-[submodule "janus-langs/handlebars"]
-	path = janus-langs/handlebars
-	url = https://github.com/nono/vim-handlebars.git
-[submodule "janus-tools/matchit"]
-	path = janus-tools/matchit
-	url = https://github.com/edsono/vim-matchit.git
-[submodule "janus-tools/supertab"]
-	path = janus-tools/supertab
-	url = https://github.com/ervandew/supertab.git
-[submodule "janus-tools/snipmate"]
-	path = janus-tools/snipmate
-	url = https://github.com/ervandew/snipmate.vim.git
-[submodule "janus-colors/sampler-pack"]
-	path = janus-colors/sampler-pack
-	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
-[submodule "janus-tools/zoomwin"]
-	path = janus-tools/zoomwin
-	url = git://github.com/vim-scripts/ZoomWin.git
-[submodule "janus-langs/coffeescript"]
-	path = janus-langs/coffeescript
-	url = https://github.com/kchmck/vim-coffee-script.git
-[submodule "janus-tools/ack"]
-	path = janus-tools/ack
-	url = git://github.com/mileszs/ack.vim.git
-[submodule "janus-tools/fugitive"]
-	path = janus-tools/fugitive
-	url = git://github.com/tpope/vim-fugitive.git
-[submodule "janus-langs/git"]
-	path = janus-langs/git
-	url = git://github.com/tpope/vim-git.git
-[submodule "janus-tools/gundo"]
-	path = janus-tools/gundo
-	url = git://github.com/sjl/gundo.vim.git
-[submodule "janus-langs/rails"]
-	path = janus-langs/rails
-	url = git://github.com/tpope/vim-rails.git
-[submodule "janus-langs/textile"]
-	path = janus-langs/textile
-	url = git://github.com/timcharper/textile.vim.git
-[submodule "janus-langs/rspec"]
-	path = janus-langs/rspec
-	url = git://github.com/taq/vim-rspec.git
-[submodule "janus-colors/solarized"]
-	path = janus-colors/solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "janus-core/surround"]
-	path = janus-core/surround
-	url = git://github.com/tpope/vim-surround.git
-[submodule "janus-tools/hammer"]
-	path = janus-tools/hammer
-	url = git://github.com/robgleeson/hammer.vim.git
-[submodule "janus-tools/command-t"]
-	path = janus-tools/command-t
-	url = git@github.com:wycats/Command-T.git
-[submodule "janus-core/pathogen"]
-	path = janus-core/pathogen
+# Core
+[submodule "vimius/vim/core/pathogen"]
+	path = vimius/vim/core/pathogen
 	url = git://github.com/tpope/vim-pathogen.git
+
+# Colors
+[submodule "vimius/vim/colors/sampler-pack"]
+	path = vimius/vim/colors/sampler-pack
+	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
+[submodule "vimius/vim/colors/solarized"]
+	path = vimius/vim/colors/solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "vimius/vim/colors/irblack"]
+	path = vimius/vim/colors/irblack
+	url = git://github.com/wgibbs/vim-irblack.git
+[submodule "vimius/vim/colors/vividchalk"]
+	path = vimius/vim/colors/vividchalk
+	url = git://github.com/tpope/vim-vividchalk.git
+[submodule "vimius/vim/colors/molokai"]
+	path = vimius/vim/colors/molokai
+	url = git://github.com/vim-scripts/molokai.git
+[submodule "vimius/vim/colors/pyte"]
+	path = vimius/vim/colors/pyte
+	url = git://github.com/vim-scripts/pyte.git
+[submodule "vimius/vim/colors/github"]
+	path = vimius/vim/colors/github
+	url = git://github.com/telamon/vim-color-github.git
+[submodule "vimius/vim/colors/getafe"]
+	path = vimius/vim/colors/getafe
+	url = git://github.com/larssmit/getafe.git
+
+# Langs
+[submodule "vimius/vim/langs/haml"]
+	path = vimius/vim/langs/haml
+	url = https://github.com/tpope/vim-haml.git
+[submodule "vimius/vim/langs/javascript"]
+	path = vimius/vim/langs/javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "vimius/vim/langs/cucumber"]
+	path = vimius/vim/langs/cucumber
+	url = https://github.com/tpope/vim-cucumber.git
+[submodule "vimius/vim/langs/markdown"]
+	path = vimius/vim/langs/markdown
+	url = https://github.com/tpope/vim-markdown.git
+[submodule "vimius/vim/langs/puppet"]
+	path = vimius/vim/langs/puppet
+	url = https://github.com/ajf/puppet-vim.git
+[submodule "vimius/vim/langs/scala"]
+	path = vimius/vim/langs/scala
+	url = https://github.com/bdd/vim-scala.git
+[submodule "vimius/vim/langs/handlebars"]
+	path = vimius/vim/langs/handlebars
+	url = https://github.com/nono/vim-handlebars.git
+[submodule "vimius/vim/langs/coffeescript"]
+	path = vimius/vim/langs/coffeescript
+	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "vimius/vim/langs/rails"]
+	path = vimius/vim/langs/rails
+	url = git://github.com/tpope/vim-rails.git
+[submodule "vimius/vim/langs/git"]
+	path = vimius/vim/langs/git
+	url = git://github.com/tpope/vim-git.git
+[submodule "vimius/vim/langs/textile"]
+	path = vimius/vim/langs/textile
+	url = git://github.com/timcharper/textile.vim.git
+[submodule "vimius/vim/langs/rspec"]
+	path = vimius/vim/langs/rspec
+	url = git://github.com/taq/vim-rspec.git
+[submodule "vimius/vim/langs/scss"]
+	path = vimius/vim/langs/scss
+	url = git://github.com/cakebaker/scss-syntax.vim.git
+[submodule "vimius/vim/langs/csv"]
+	path = vimius/vim/langs/csv
+	url = git://github.com/vim-scripts/csv.vim.git
+[submodule "vimius/vim/langs/nodejs"]
+	path = vimius/vim/langs/nodejs
+	url = git://github.com/mmalecki/vim-node.js.git
+[submodule "vimius/vim/langs/ruby"]
+	path = vimius/vim/langs/ruby
+	url = git://github.com/vim-ruby/vim-ruby.git
+
+# Tools
+[submodule "vimius/vim/tools/unimpaired"]
+	path = vimius/vim/tools/unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "vimius/vim/tools/nerdcommenter"]
+	path = vimius/vim/tools/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "vimius/vim/tools/matchit"]
+	path = vimius/vim/tools/matchit
+	url = https://github.com/edsono/vim-matchit.git
+[submodule "vimius/vim/tools/supertab"]
+	path = vimius/vim/tools/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "vimius/vim/tools/zoomwin"]
+	path = vimius/vim/tools/zoomwin
+	url = git://github.com/vim-scripts/ZoomWin.git
+[submodule "vimius/vim/tools/ack"]
+	path = vimius/vim/tools/ack
+	url = git://github.com/mileszs/ack.vim.git
+[submodule "vimius/vim/tools/fugitive"]
+	path = vimius/vim/tools/fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "vimius/vim/tools/gundo"]
+	path = vimius/vim/tools/gundo
+	url = git://github.com/sjl/gundo.vim.git
+[submodule "vimius/vim/tools/surround"]
+	path = vimius/vim/tools/surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule "vimius/vim/tools/hammer"]
+	path = vimius/vim/tools/hammer
+	url = git://github.com/robgleeson/hammer.vim.git
+[submodule "vimius/vim/tools/command-t"]
+	path = vimius/vim/tools/command-t
+	url = git://github.com/wincent/Command-T.git
+[submodule "vimius/vim/tools/snipmate"]
+	path = vimius/vim/tools/snipmate
+	url = git://github.com/garbas/vim-snipmate.git
+[submodule "vimius/vim/tools/tlib"]
+	path = vimius/vim/tools/tlib
+	url = git://github.com/tomtom/tlib_vim.git
+[submodule "vimius/vim/tools/vim-addon-mw-utils"]
+	path = vimius/vim/tools/vim-addon-mw-utils
+	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "vimius/vim/tools/snipmate-snippets"]
+	path = vimius/vim/tools/snipmate-snippets
+	url = git://github.com/honza/snipmate-snippets.git
+[submodule "vimius/vim/tools/syntastic"]
+	path = vimius/vim/tools/syntastic
+	url = git://github.com/scrooloose/syntastic.git
+[submodule "vimius/vim/tools/tagbar"]
+	path = vimius/vim/tools/tagbar
+	url = git://github.com/majutsushi/tagbar.git
+[submodule "vimius/vim/tools/nerdtree"]
+	path = vimius/vim/tools/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
+[submodule "vimius/vim/tools/pep8"]
+	path = vimius/vim/tools/pep8
+	url = git://github.com/jbking/vim-pep8.git
+[submodule "vimius/vim/tools/indent-object"]
+	path = vimius/vim/tools/indent-object
+	url = git://github.com/michaeljsmith/vim-indent-object.git
+[submodule "vimius/vim/tools/endwise"]
+	path = vimius/vim/tools/endwise
+	url = git://github.com/tpope/vim-endwise.git
+[submodule "vimius/vim/tools/gist-vim"]
+	path = vimius/vim/tools/gist
+	url = git://github.com/mattn/gist-vim.git
+[submodule "vimius/vim/tools/vimwiki"]
+	path = vimius/vim/tools/vimwiki
+	url = git://github.com/vim-scripts/vimwiki.git
+[submodule "vimius/vim/tools/css-color"]
+	path = vimius/vim/tools/css-color
+	url = git://github.com/skammer/vim-css-color.git
+[submodule "vimius/vim/tools/easymotion"]
+	path = vimius/vim/tools/easymotion
+	url = git://github.com/Lokaltog/vim-easymotion.git
+[submodule "vimius/vim/tools/narrowregion"]
+	path = vimius/vim/tools/narrowregion
+	url = git://github.com/chrisbra/NrrwRgn.git
+[submodule "vimius/vim/tools/buffergator"]
+	path = vimius/vim/tools/buffergator
+	url = git://github.com/jeetsukumaran/vim-buffergator.git
+[submodule "vimius/vim/tools/kwbd"]
+	path = vimius/vim/tools/kwbd
+	url = git://github.com/rgarver/Kwbd.vim.git

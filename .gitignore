@@ -2,4 +2,8 @@
 _backup
 _temp
 .netrwhist
-autoload/pathogen.vim
+
+
+# Plugins without git-mirror
+watchtower.vim
+mustache.vim
