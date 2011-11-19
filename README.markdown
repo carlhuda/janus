@@ -66,6 +66,9 @@ For example, to override the default color schemes:
     echo color desert  > ~/.vimrc.local
     echo color molokai > ~/.gvimrc.local
 
+Create `~/.vimrc.pre` for any customizations that need to be run before
+the loading of ~/.vimrc, e.g. changing of <Leader>
+
 If you want to add additional Vim plugins you can do so by adding a
 `~/.janus.rake` like so:
 
@@ -121,7 +124,9 @@ Here's some tips if you've never used VIM before:
 
 * Use `:q` to exit vim
 * Certain commands are prefixed with a `<Leader>` key, which maps to `\`
-  by default. Use `let mapleader = ","` to change this.
+  by default. Use `let mapleader = ","` to change this. If you want this
+  to be in effect for uses of <Leader> in your .vimrc, make sure to define
+  this in the `~/.vimrc.pre`
 * Keyboard [cheat sheet](http://walking-without-crutches.heroku.com/image/images/vi-vim-cheat-sheet.png).
 
 # Features
