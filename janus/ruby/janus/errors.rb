@@ -1,6 +1,6 @@
-module Vimius
+module Janus
   # Errors
-  VimiusError = Class.new Exception
-  BlockNotGivenError = Class.new VimiusError
-  RubyGemsNotFoundError = Class.new VimiusError
+  JanusError = Class.new Exception
+  BlockNotGivenError = Class.new JanusError
+  RubyGemsNotFoundError = Class.new JanusError
 end

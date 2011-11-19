@@ -1,2 +1,2 @@
 " Tagbar mappings.
-call vimius#add_mapping('tagbar', 'map', '<Leader>rt', ':TagbarToggle<CR>')
+call janus#add_mapping('tagbar', 'map', '<Leader>rt', ':TagbarToggle<CR>')

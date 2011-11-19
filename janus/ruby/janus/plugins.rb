@@ -1,7 +1,7 @@
 require 'rake'
 require 'open-uri'
 
-module Vimius
+module Janus
   include Rake::DSL
 
   def self.included(base)
@@ -17,7 +17,7 @@ module Vimius
   # @param [String] The plugin name
   # @param [&block] The installation block
   def install_vim_plugin(group, name, &block)
-    raise Vimius::BlockNotGivenError unless block_given?
+    raise Janus::BlockNotGivenError unless block_given?
 
     define_install_plugin_tasks(group, name, &block)
   end
@@ -28,7 +28,7 @@ module Vimius
   # @param [String] The plugin name
   # @param [&block] The installation block
   def install_vim_plugin_within_submodule(group, name, &block)
-    raise Vimius::BlockNotGivenError unless block_given?
+    raise Janus::BlockNotGivenError unless block_given?
 
     define_verify_plugin_tasks(group, name, &block)
     define_install_plugin_tasks(group, name, &block)

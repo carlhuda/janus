@@ -102,7 +102,7 @@ filetype plugin indent on " Turn on filetype plugins (:help filetype-plugin)
 " In Makefiles, use real tabs, not tabs expanded to spaces
 au FileType make set noexpandtab
 
-if vimius#is_plugin_disabled("ruby")
+if janus#is_plugin_disabled("ruby")
   " Set the Ruby filetype for a number of common Ruby files without .rb
   au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,config.ru,*.rake} set ft=ruby
 endif

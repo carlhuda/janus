@@ -1,4 +1,4 @@
-module Vimius
+module Janus
   module VIM
     extend self
 

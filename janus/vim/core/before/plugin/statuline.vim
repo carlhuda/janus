@@ -3,12 +3,12 @@ if has("statusline") && !&cp
   set statusline=%f\ %m\ %r
 
   " Add fugitive if enabled
-  if vimius#is_plugin_enabled('fugitive')
+  if janus#is_plugin_enabled('fugitive')
     set statusline+=%{fugitive#statusline()}
   endif
 
   " Add syntastic if enabled
-  if vimius#is_plugin_enabled('syntastic')
+  if janus#is_plugin_enabled('syntastic')
     set statusline+=%#warningmsg#
     set statusline+=%{SyntasticStatuslineFlag()}
     set statusline+=%*

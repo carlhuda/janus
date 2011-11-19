@@ -1,4 +1,4 @@
-module Vimius
+module Janus
 
   # Return a fully-qualified url to the raw page of a file stores inside
   # a repository on github

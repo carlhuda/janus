@@ -1,30 +1,30 @@
-module Vimius
+module Janus
   # Return the root path
   #
-  # @return [String] The absolute path to Vimius repository
+  # @return [String] The absolute path to Janus repository
   def root_path
     ROOT_PATH
   end
 
-  # Return Vimius path
+  # Return Janus path
   #
-  # @return [String] The absolute path to Vimius distribution
-  def vimius_path
-    File.join ROOT_PATH, 'vimius'
+  # @return [String] The absolute path to Janus distribution
+  def janus_path
+    File.join ROOT_PATH, 'janus'
   end
 
   # Return the vim's path
   #
   # @return [String] The absolute path to ViM files
   def vim_path
-    File.join vimius_path, 'vim'
+    File.join janus_path, 'vim'
   end
 
   # Return the ruby's path
   #
   # @return [String] The absolute path to Ruby files
   def ruby_path
-    File.join vimius_path, 'ruby'
+    File.join janus_path, 'ruby'
   end
 
   # Expand the path of a given file
@@ -50,9 +50,9 @@ module Vimius
   end
 end
 
-require 'vimius/errors'
-require 'vimius/git'
-require 'vimius/vim'
-require 'vimius/gems'
-require 'vimius/github'
-require 'vimius/plugins'
+require 'janus/errors'
+require 'janus/git'
+require 'janus/vim'
+require 'janus/gems'
+require 'janus/github'
+require 'janus/plugins'

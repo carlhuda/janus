@@ -1,4 +1,4 @@
-if vimius#is_plugin_enabled('gist')
+if janus#is_plugin_enabled('gist')
   if executable("pbcopy")
     " The copy command
     let g:gist_clip_command = 'pbcopy'

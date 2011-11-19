@@ -1,6 +1,6 @@
-if vimius#is_plugin_enabled('hammer')
+if janus#is_plugin_enabled('hammer')
   function! s:setupMarkup()
-    call vimius#add_mapping('hammer', 'map <buffer>', '<Leader>p', ':Hammer<CR>')
+    call janus#add_mapping('hammer', 'map <buffer>', '<Leader>p', ':Hammer<CR>')
   endfunction
 
   if executable("redcarpet") && has("autocmd")
