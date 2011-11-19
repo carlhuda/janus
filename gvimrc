@@ -6,20 +6,38 @@ if has("gui_macvim")
   macmenu &File.New\ Tab key=<D-T>
   map <D-t> :CommandT<CR>
   imap <D-t> <Esc>:CommandT<CR>
+  
+  " Command-O for list of Opened buffers (using command t buffers)
+  map <D-O> :CommandTBuffer<CR>
+  imap <D-O> <Esc>:CommandTBuffer<CR>
 
   " Command-Return for fullscreen
   macmenu Window.Toggle\ Full\ Screen\ Mode key=<D-CR>
 
   " Command-Shift-F for Ack
-  map <D-F> :Ack<space>
+  map <D-F> <Esc>:Ack<space>
+  vmap <D-F> y<Esc>:Ack<space><C-r>"
 
+  " search pattern yank selection 
+  vmap / y<Esc>/<C-r>"
+  vmap ? y<Esc>?<C-r>"
+
+  " map Command-Shift-5 (Command-%) for search replace pattern
+  vmap <D-%> y<Esc>:%s/<C-r>"/
+  " map Alt-/ to remove highlited search results (nohl)
+  nn <M-/> :nohl<CR>
+  vn <M-/> :nohl<CR>
+  ino <M-/> <C-o>:nohl<CR>
   " Command-e for ConqueTerm
   map <D-e> :call StartTerm()<CR>
 
   " Command-/ to toggle comments
   map <D-/> <plug>NERDCommenterToggle<CR>
-  imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
+  imap <D-/> <Esc>0<plug>NERDCommenterToggle<CR>i
 
+  " Command-d to delete line
+  imap <D-d> <Esc>ddi
+  map <D-d> dd
 
   " Command-][ to increase/decrease indentation
   vmap <D-]> >gv
@@ -49,17 +67,45 @@ if has("gui_macvim")
 
   " Command-Option-ArrowKey to switch viewports
   map <D-M-Up> <C-w>k
-  imap <D-M-Up> <Esc> <C-w>k
+  imap <D-M-Up> <C-o><C-w>k
   map <D-M-Down> <C-w>j
-  imap <D-M-Down> <Esc> <C-w>j
+  imap <D-M-Down> <C-o><C-w>j
   map <D-M-Right> <C-w>l
-  imap <D-M-Right> <Esc> <C-w>l
+  imap <D-M-Right> <C-o><C-w>l
   map <D-M-Left> <C-w>h
-  imap <D-M-Left> <C-w>h
+  imap <D-M-Left> <C-o><C-w>h
 
+  " Command-Option-[hjkl] to switch viewports
+  map <D-M-k> <C-w>k
+  imap <D-M-k> <C-o><C-w>k
+  map <D-M-j> <C-w>j
+  imap <D-M-j> <C-o><C-w>j
+  map <D-M-l> <C-w>l
+  imap <D-M-l> <C-o><C-w>l
+  map <D-M-h> <C-w>h
+  imap <D-M-h> <C-o><C-w>h
+
+  " Command-Shift-[hjkl] to switch viewports
+  map <D-K> <C-w>k
+  imap <D-K> <C-o><C-w>k
+  map <D-J> <C-w>j
+  imap <D-J> <C-o><C-w>j
+  map <D-L> <C-w>l
+  imap <D-L> <C-o><C-w>l
+  map <D-H> <C-w>h
+  imap <D-H> <C-o><C-w>h
+  
   " Adjust viewports to the same size
   map <Leader>= <C-w>=
   imap <Leader>= <Esc> <C-w>=
+
+  " Remap select text (alt shift [left/right]) to visual commands B/E
+  nn   <S-M-Left> vb<C-g>
+  vn   <S-M-Left> b<C-g>
+  ino  <S-M-Left> <Esc>vb<C-g>
+  nn   <S-M-Right> ve<C-g>
+  vn   <S-M-Right> e<C-g>
+  ino  <S-M-Right> <Esc>ve<C-g>
 endif
 
 " Don't beep
@@ -83,6 +129,10 @@ if exists("loaded_nerd_tree")
   autocmd FocusGained * call s:UpdateNERDTree()
   autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 endif
+
+#autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
+#autocmd FocusGained * call s:UpdateNERDTree()
+#autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 
 " Close all open buffers on entering a window if the only
 " buffer that's left is the NERDTree buffer
@@ -112,7 +162,7 @@ function s:CdIfDirectory(directory)
   endif
 
   if directory
-    NERDTree
+    keepjumps NERDTree
     wincmd p
     bd
   endif
@@ -171,7 +221,7 @@ function ChangeDirectory(dir, ...)
   execute "cd " . fnameescape(a:dir)
   let stay = exists("a:1") ? a:1 : 1
 
-  NERDTree
+  keepjumps NERDTree
 
   if !stay
     wincmd p
@@ -233,3 +283,4 @@ endif
 if filereadable(expand("~/.gvimrc.local"))
   source ~/.gvimrc.local
 endif
+

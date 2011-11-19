@@ -1,7 +1,9 @@
 .netrwhist
+spell
 tmp
 nerdtree_plugin
-
+tags
+.tags
 after
 autoload
 doc
@@ -15,5 +17,6 @@ ftplugin
 colors
 indent
 .VimballRecord
+.DS_Store
 backup
 compiler

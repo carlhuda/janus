@@ -1,3 +1,9 @@
+"enable option key commands in mac 
+if has("mac")
+  set macmeta
+endif
+
+
 set nocompatible
 
 set number
@@ -35,6 +41,8 @@ set noequalalways
 
 " NERDTree configuration
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
+let NERDTreeHijackNetrw=0
+
 map <Leader>n :NERDTreeToggle<CR>
 
 " Command-T configuration
@@ -44,8 +52,9 @@ let g:CommandTMaxHeight=20
 map <Leader><Leader> :ZoomWin<CR>
 
 " CTags
-map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
+map <Leader>rt :!ctags -f .tags --extra=+f -R *<CR><CR>
 map <C-\> :tnext<CR>
+set tags=.tags
 
 " Gundo configuration
 nmap <F5> :GundoToggle<CR>
@@ -134,6 +143,8 @@ let g:JSLintHighlightErrorLine = 0
 
 " MacVIM shift+arrow-keys behavior (required in .vimrc)
 let macvim_hig_shift_movement = 1
+set selection=exclusive
+
 
 " % to bounce from do to end etc.
 runtime! macros/matchit.vim
@@ -150,3 +161,7 @@ endif
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
+set exrc			" enable per-directory .vimrc files
+set secure			" disable unsafe commands in local .vimrc files
+
