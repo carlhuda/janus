@@ -46,6 +46,16 @@ or
 
   `curl https://raw.github.com/carlhuda/janus/master/bootstrap.sh -o - | sh`
 
+If you use rvm to manage your ruby executable and have changed the default ruby version,
+you may get a segfault in libruby after using this script. Users experiencing this problem
+have reported success by reinstalling using the system ruby on OSX.
+
+`rvm use system`
+`curl https://raw.github.com/carlhuda/janus/master/bootstrap.sh -o - | sh`
+`rvm use default`
+
+More information is at https://github.com/carlhuda/janus/issues/225
+
 ## Customization
 
 Create `~/.vimrc.local` and `~/.gvimrc.local` for any local
