@@ -45,7 +45,7 @@ task :folders do
 end
 
 task :update do
-  puts "Cleaning the viminius folder"
+  puts "Cleaning the janus folder"
   `git clean -xdf --exclude=custom -- janus &> /dev/null`
 
   puts "Pulling latest changes"
