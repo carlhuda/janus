@@ -48,7 +48,8 @@ map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 map <C-\> :tnext<CR>
 
 " Gundo configuration
-map <Leader>g :GundoToggle<CR>
+nmap <F5> :GundoToggle<CR>
+imap <F5> <ESC>:GundoToggle<CR>
 
 " Remember last location in file
 if has("autocmd")
