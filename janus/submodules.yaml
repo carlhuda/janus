@@ -1,0 +1,110 @@
+---
+# Submodules
+#
+# Each submodule is defined by a name, the name should be the same as the
+# folder name.
+#
+# Each submodule has the following attributes:
+#
+#   Optional:
+#     +description+: The description of the submodule
+#     +path+: Override path defaulted to janus/vim/{group}/{name}
+#     +categories+: The categories for which this plugin belongs to
+#     +dependencies+: An array of submodules name on which this submodule depends on
+submodules:
+  # Core plugins
+  #
+  # Core plugins are installed by default, removal of core plugins is disabled
+  # We should keep this list as small as possible
+  core:
+    pathogen:
+
+
+  # Colors
+  #
+  colors:
+    getafe:
+    github:
+    irblack:
+    molokai:
+    pyte:
+    sampler-pack:
+    solarized:
+    vividchalk:
+
+
+  # Langs
+  #
+  langs:
+    coffeescript:
+    categories:
+      - coffeescript
+      - syntax
+    csv:
+    categories:
+      - csv
+      - syntax
+    cucumber:
+    categories:
+      - ruby
+      - rails
+      - syntax
+      - behavior driven development
+    git:
+    categories:
+      - git
+      - syntax
+    haml:
+    categories:
+      - ruby
+      - rails
+      - syntax
+    handlebars:
+    javascript:
+    markdown:
+    nodejs:
+    puppet:
+    rails:
+    rspec:
+    ruby:
+    scala:
+    scss:
+    textile:
+
+
+  # Tools
+  #
+  tools:
+    ack:
+    buffergator:
+    command-t:
+    css-color:
+    easymotion:
+    endwise:
+    fugitive:
+    gist:
+    gundo:
+    hammer:
+    indent-object:
+    kwbd:
+    matchit:
+    narrowregion:
+    nerdcommenter:
+    nerdtree:
+    pep8:
+    snipmate:
+    dependencies:
+      - vim-addon-mw-utils
+      - tlib
+    snipmate-snippets:
+    dependencies:
+      - snipmate
+    supertab:
+    surround:
+    syntastic:
+    tagbar:
+    tlib:
+    unimpaired:
+    vim-addon-mw-utils:
+    vimwiki:
+    zoomwin:
