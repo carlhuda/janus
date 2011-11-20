@@ -56,6 +56,13 @@ execute:
     curl https://raw.github.com/carlhuda/janus/master/bootstrap.sh -o - | sh
     rvm default
 
+or
+
+If you use [Babushka](http://babushka.me) you can using the following script to install Janus
+along with MacVim (will also setup mvim on your path)
+
+  `babushka joshholt:janus`
+
 ## Customization
 
 Create `~/.vimrc.local` and `~/.gvimrc.local` for any local
