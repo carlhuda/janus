@@ -170,8 +170,10 @@ vim_plugin_task "command_t",        "http://s3.wincent.com/command-t/releases/co
       sh "/usr/bin/ruby extconf.rb"
     elsif `rvm > /dev/null 2>&1` && $?.exitstatus == 0
       sh "rvm system ruby extconf.rb"
+    else
+      sh "ruby extconf.rb"
     end
-    sh "make clean && make"
+    sh "make clean all"
   end
 end
 
