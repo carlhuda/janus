@@ -89,7 +89,7 @@ set noequalalways
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
 if has("autocmd")
-  au BufReadPost * if &filetype !~ 'commit\c' && line("'\"") > 0 && line("'\"") <= line("$")
+  au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g`\"" | endif
 endif
 
