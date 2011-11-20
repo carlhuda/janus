@@ -7,6 +7,37 @@ VIM::Dirs.each do |dir|
   directory(dir)
 end
 
+# Detect the ruby version, vim is build against.
+# Since there is no way to find a 100% good match,
+# this method just assumes that you use your MacVim.app
+# if it is installed, otherwise it defaults back
+# to your system ruby
+def detect_ruby
+  ruby_path = nil
+
+  # If there is a MacVim.app, check this first if this
+  # is using rvm
+  if File.exists?("/Applications/MacVim.app/Contents/MacOS/Vim")
+    path = `otool -L /Applications/MacVim.app/Contents/MacOS/Vim|grep -i ruby`.strip
+    if path.match(/\.rvm\/rubies/)
+      ruby_path = File.join(path.match(/((?:.*)\/.rvm\/rubies\/[^\/]*\/).*/)[1], "bin", "ruby")
+    end
+  end
+
+  # If MacVim is not found or not using rvm, assume it is using the 
+  # default ruby
+  if ruby_path.nil?
+    ruby_path = if File.exists?("/usr/bin/ruby1.8") # prefer 1.8 on *.deb systems
+        "/usr/bin/ruby1.8"
+      elsif File.exists?("/usr/bin/ruby") # prefer system rubies
+        "/usr/bin/ruby"
+      elsif `rvm > /dev/null 2>&1` && $?.exitstatus == 0
+        "rvm system ruby"
+    end
+  end
+  ruby_path
+end
+
 def vim_plugin_task(name, repo=nil)
   cwd = File.expand_path("../", __FILE__)
   dir = File.expand_path("tmp/#{name}")
@@ -164,14 +195,7 @@ vim_plugin_task "gundo",            "git://github.com/sjl/gundo.vim.git"
 
 vim_plugin_task "command_t",        "http://s3.wincent.com/command-t/releases/command-t-1.2.1.vba" do
   Dir.chdir "ruby/command-t" do
-    if File.exists?("/usr/bin/ruby1.8") # prefer 1.8 on *.deb systems
-      sh "/usr/bin/ruby1.8 extconf.rb"
-    elsif File.exists?("/usr/bin/ruby") # prefer system rubies
-      sh "/usr/bin/ruby extconf.rb"
-    elsif `rvm > /dev/null 2>&1` && $?.exitstatus == 0
-      sh "rvm system ruby extconf.rb"
-    end
-    sh "make clean && make"
+    sh "#{detect_ruby} extconf.rb;make clean && make"
   end
 end
 
