@@ -304,6 +304,7 @@ Janus ships with a few additional syntaxes:
 * Haml (bound to \*.haml)
 * Sass (bound to \*.sass)
 * SCSS (bound to \*.scss)
+* Twig (bound to \*.twig)
 * An improved JavaScript syntax (bound to \*.js)
 * Map Gemfile, Rakefile, Vagrantfile and Thorfile to Ruby
 * Git commits (set your `EDITOR` to `mvim -f`)
