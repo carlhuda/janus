@@ -16,7 +16,18 @@ The distribution is designed to work with Vim >= 7.3.
 The distribution also require `ack`, `pep8`, `ctags`, `ruby` and `rake`,
 for the most comfortable experience, use the GUI version of Vim. Linux
 users should install `gvim`, OSX users should install
-[MacVim](http://code.google.com/p/macvim/), Download it
+[MacVim](http://code.google.com/p/macvim/), the recommanded way of
+installating MacVim is using
+[Homebrew](http://mxcl.github.com/homebrew/), but before installing
+MacVim you need to use system-wide ruby, if you're using **rvm** `rvm
+use system` switches to system ruby, if you're using **rbenv** `rbenv
+shell system` switches to system ruby.
+
+```bash
+$ brew install macvim
+```
+
+If you don't use Homebew, you can still download it
 [here](https://github.com/b4winckler/macvim/downloads).
 
 Take a look at the [Pre-requisites wiki
