@@ -27,7 +27,7 @@ shell system` switches to system ruby.
 $ brew install macvim
 ```
 
-If you don't use Homebew, you can still download it
+If you don't use Homebrew, you can still download it
 [here](https://github.com/b4winckler/macvim/downloads).
 
 Take a look at the [Pre-requisites wiki
