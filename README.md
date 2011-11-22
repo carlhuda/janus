@@ -12,9 +12,8 @@ and `~/.vimrc.after` Vim RC files.
 ## Mailing list
 
 The mailing list is hosted at [Google
-Groups](http://groups.google.com/group/vimius), please join it for
+Groups](http://groups.google.com/group/janus-vimius), please join it for
 discussion and announcements.
-
 
 ## Pre-requisites
 
