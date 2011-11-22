@@ -9,6 +9,13 @@ popular plug-ins and the most common mappings.
 The distribution is completely customisable using a `~/.vimrc.before`
 and `~/.vimrc.after` Vim RC files.
 
+## Mailing list
+
+The mailing list is hosted at [Google
+Groups](http://groups.google.com/group/vimius), please join it for
+discussion and announcements.
+
+
 ## Pre-requisites
 
 The distribution is designed to work with Vim >= 7.3.
