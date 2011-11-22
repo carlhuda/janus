@@ -18,6 +18,12 @@ that we have given careful thought to the experience of using MacVIM
 with the tools in question. If you run into an issue using it, please
 report an issue to the issue tracker.
 
+## Mailing list
+
+The mailing list is hosted at [Google
+Groups](http://groups.google.com/group/vimius), please join it for
+discussion and announcements.
+
 ## Pre-requisites
 
 Janus is built primarily for [MacVim](http://code.google.com/p/macvim/) on OSX.
