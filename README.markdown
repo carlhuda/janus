@@ -74,7 +74,7 @@ For example, to override the default color schemes:
     echo color molokai > ~/.gvimrc.local
 
 Create `~/.vimrc.pre` for any customizations that need to be run before
-the loading of ~/.vimrc, e.g. changing of <Leader>
+the loading of ~/.vimrc, e.g. changing of `<Leader>`.
 
 If you want to add additional Vim plugins you can do so by adding a
 `~/.janus.rake` like so:
