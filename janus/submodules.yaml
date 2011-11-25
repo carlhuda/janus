@@ -37,28 +37,28 @@ submodules:
   #
   langs:
     coffeescript:
-    categories:
-      - coffeescript
-      - syntax
+      categories:
+        - coffeescript
+        - syntax
     csv:
-    categories:
-      - csv
-      - syntax
+      categories:
+        - csv
+        - syntax
     cucumber:
-    categories:
-      - ruby
-      - rails
-      - syntax
-      - behavior driven development
+      categories:
+        - ruby
+        - rails
+        - syntax
+        - behavior driven development
     git:
-    categories:
-      - git
-      - syntax
+      categories:
+        - git
+        - syntax
     haml:
-    categories:
-      - ruby
-      - rails
-      - syntax
+      categories:
+        - ruby
+        - rails
+        - syntax
     handlebars:
     javascript:
     markdown:
@@ -93,12 +93,12 @@ submodules:
     nerdtree:
     pep8:
     snipmate:
-    dependencies:
-      - vim-addon-mw-utils
-      - tlib
+      dependencies:
+        - vim-addon-mw-utils
+        - tlib
     snipmate-snippets:
-    dependencies:
-      - snipmate
+      dependencies:
+        - snipmate
     supertab:
     surround:
     syntastic:
