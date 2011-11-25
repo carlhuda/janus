@@ -1,8 +1,6 @@
 # Source RVM so janus .rvmrc takes effect
-if ! type rvm &> /dev/null; then
-  [[ -s /usr/local/rvm/scripts/rvm ]] && source /usr/local/rvm/scripts/rvm
-  [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
-fi
+[[ -s /usr/local/rvm/scripts/rvm ]] && source /usr/local/rvm/scripts/rvm
+[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
 # Source Rbenv so janus .rbenv-version takes effect
 if ! type rbenv &> /dev/null; then
