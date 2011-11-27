@@ -141,6 +141,8 @@ Here's some tips if you've never used VIM before:
   to be in effect for uses of <Leader> in your .vimrc, make sure to define
   this in the `~/.vimrc.pre`
 * Keyboard [cheat sheet](http://walking-without-crutches.heroku.com/image/images/vi-vim-cheat-sheet.png).
+* Mapped key combinations using the command key (<D-something>) are only
+  available in gvim.
 
 # Features
 
