@@ -16,6 +16,7 @@ def vim_plugin_task(name, repo=nil)
     if repo
       file dir => "tmp" do
         if repo =~ /git$/
+          repo.gsub!(/git:/, 'https:') if ENV['GIT_HTTPS_ONLY']=="true"
           sh "git clone #{repo} #{dir}"
 
         elsif repo =~ /download_script/
