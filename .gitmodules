@@ -164,3 +164,6 @@
 [submodule "janus/vim/tools/kwbd"]
 	path = janus/vim/tools/kwbd
 	url = https://github.com/rgarver/Kwbd.vim.git
+[submodule "janus/vim/tools/rename2"]
+	path = janus/vim/tools/rename2
+	url = https://github.com/vim-scripts/Rename2.git
