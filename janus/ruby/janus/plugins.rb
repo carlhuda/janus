@@ -22,17 +22,6 @@ module Janus
     define_install_plugin_tasks(group, name, &block)
   end
 
-  # Install a plugin in a submodule
-  #
-  # @param [String] The group the plugin belongs to
-  # @param [String] The plugin name
-  # @param [&block] The installation block
-  def install_vim_plugin_within_submodule(group, name, &block)
-    raise Janus::BlockNotGivenError unless block_given?
-
-    define_install_plugin_tasks(group, name, &block)
-  end
-
   # Download and save file
   #
   # @param [String] url
