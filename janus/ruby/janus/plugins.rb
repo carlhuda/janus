@@ -30,7 +30,6 @@ module Janus
   def install_vim_plugin_within_submodule(group, name, &block)
     raise Janus::BlockNotGivenError unless block_given?
 
-    define_verify_plugin_tasks(group, name, &block)
     define_install_plugin_tasks(group, name, &block)
   end
 
@@ -63,24 +62,6 @@ module Janus
 
   protected
 
-  # Define tasks for verifying plugin rediness
-  #
-  # @param [String] The group the plugin belongs to
-  # @param [String] The plugin name
-  # @param [&block] The installation block
-  def define_verify_plugin_tasks(group, name, &block)
-    # Create a namespace for the plugin
-    namespace(name) do
-      task :verify_plugin do
-        unless Dir["#{vim_path}/#{group}/#{name}/**"].any?
-          abort "The submodule #{group}/#{name} is not ready, please run 'git submodule update --init'"
-        end
-      end
-
-      task :install => :verify_plugin
-    end
-  end
-
   # Define tasks for installing a plugin
   #
   # @param [String] The group the plugin belongs to
@@ -92,12 +73,14 @@ module Janus
       # Define the plugin installation task
       desc "Install #{name} plugin."
       task :install do
-        puts
-        puts "*" * 40
-        puts "*#{"Installing #{name}".center(38)}*"
-        puts "*" * 40
-        puts
-        yield
+        if Dir["#{vim_path}/#{group}/#{name}/**"].any?
+          puts
+          puts "*" * 40
+          puts "*#{"Installing #{name}".center(38)}*"
+          puts "*" * 40
+          puts
+          yield
+        end
       end
     end
 
