@@ -38,7 +38,21 @@ function! janus#add_group(name)
   endif
 
   call add(g:janus_loaded_groups, a:name)
-  call pathogen#runtime_prepend_subdirectories(g:janus_vim_path. janus#separator() . a:name)
+endfunction
+
+" Load pathgoen groups
+function! janus#load_pathogen()
+  if !exists("g:loaded_pathogen")
+    " Source Pathogen
+    exe 'source ' . g:janus_vim_path . '/core/pathogen/autoload/pathogen.vim'
+  endif
+
+  for group in g:janus_loaded_groups
+    call pathogen#runtime_prepend_subdirectories(g:janus_vim_path. janus#separator() . group)
+  endfor
+
+  call pathogen#runtime_append_all_bundles()
+  call pathogen#helptags()
 endfunction
 
 " Which group contains a plugin ?
