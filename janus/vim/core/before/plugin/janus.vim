@@ -125,7 +125,7 @@ function! janus#disable_plugin(...)
   let g:janus_disabled_plugins[name] = {'group': group, 'path': plugin_path, 'reason': reason}
 
   " Add it to pathogen_disabled
-  call add(g:pathogen_disabled, plugin_path)
+  call add(g:pathogen_disabled, name)
 endfunction
 
 " Return the plugin path
