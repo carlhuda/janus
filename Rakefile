@@ -62,8 +62,10 @@ task :install => [:folders, :link_vim_conf_files] do
   # Dummy task, real work is done with the hooks.
 end
 
-desc "Install or Update Janus."
-task :default do
-  sh "rake update"
-  sh "rake install"
+if File.exists?(janus = File.expand_path("~/.janus.rake"))
+  puts "Loading your custom rake file"
+  import(janus)
 end
+
+desc "Install or Update Janus."
+task :default => :install# => [:update, :install]
