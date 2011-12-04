@@ -98,6 +98,11 @@ module Janus
     task :install => "#{name}:install"
   end
 
+  # Set "rake" or "rake update" to always `git pull` in submodules
+  def always_update_submodules
+    task :install => "dev:update_submodules"
+  end
+
   protected
 
   # Define tasks for installing a plugin
