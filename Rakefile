@@ -37,6 +37,15 @@ namespace :dev do
   end
 end
 
+desc "Remove the given git submodule, e.g. rake remove_submodule SUBMODULE=path/to/submodule"
+task :remove_submodule do
+  abort "please specify SUBMODULE" unless submodule = ENV["SUBMODULE"]
+
+  sh "git config -f .git/config --remove-section submodule.#{submodule}"
+  sh "git config -f .gitmodules --remove-section submodule.#{submodule}"
+  sh "rm -rfv #{submodule}"
+end
+
 desc "Create necessary folders."
 task :folders do
   Janus::VIM.folders.each do |folder|
@@ -62,8 +71,10 @@ task :install => [:folders, :link_vim_conf_files] do
   # Dummy task, real work is done with the hooks.
 end
 
-desc "Install or Update Janus."
-task :default do
-  sh "rake update"
-  sh "rake install"
+if File.exists?(janus = File.expand_path("~/.janus.rake"))
+  puts "Loading your custom rake file"
+  import(janus)
 end
+
+desc "Install or Update Janus."
+task :default => :install# => [:update, :install]

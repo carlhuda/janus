@@ -49,6 +49,60 @@ module Janus
     end
   end
 
+  # Define a custom plugin
+  #
+  # If repo is provided, this will set up a git submodule. Otherwise it
+  # will create the directory in custom.
+  #
+  # If a block is provided, it is yielded with the current working
+  # directory set to the plugin's directory.
+  #
+  # @param [String] Plugin name
+  # @param [String] Optional git repo path
+  # @param &block
+  def plugin(name, repo = nil, &block)
+    plugin_dir = "#{vim_path}/custom/#{name}"
+
+    namespace name do
+      local_plugin_dir = "janus/vim/custom/#{name}"
+
+      if repo
+        # git submodule status does not exit nonzero on error
+        status = `git submodule status -q #{local_plugin_dir} 2>&1`
+        if status != ""
+          desc "install the #{name} plugin"
+          task :install do
+            install_banner name
+            sh "rm -rf #{plugin_dir}" if File.exist? plugin_dir
+            sh "git submodule add #{repo} #{local_plugin_dir}"
+            Dir.chdir(plugin_dir) { yield } if block
+          end
+        else
+          # the submodule already exists
+          task :install do
+            Dir.chdir(plugin_dir) { yield } if block
+          end
+        end
+      else
+        directory plugin_dir
+
+        desc "install the #{name} plugin"
+        task :install => plugin_dir do
+          install_banner name
+          Dir.chdir(plugin_dir) { yield } if block
+        end
+      end
+    end
+
+    # Hook the plugin's install task to the global install task
+    task :install => "#{name}:install"
+  end
+
+  # Set "rake" or "rake update" to always `git pull` in submodules
+  def always_update_submodules
+    task :install => "dev:update_submodules"
+  end
+
   protected
 
   # Define tasks for installing a plugin
@@ -63,11 +117,7 @@ module Janus
       desc "Install #{name} plugin."
       task :install do
         if Dir["#{vim_path}/#{group}/#{name}/**"].any?
-          puts
-          puts "*" * 40
-          puts "*#{"Installing #{name}".center(38)}*"
-          puts "*" * 40
-          puts
+          install_banner name
           yield
         end
       end
@@ -75,5 +125,16 @@ module Janus
 
     # Hook the plugin's install task to the global install task
     task :install => "#{name}:install"
+  end
+
+  # Display an "installing" banner for the given plugin name
+  #
+  # @param [String] Plugin name
+  def install_banner(name)
+    puts
+    puts "*" * 40
+    puts "*#{"Installing #{name}".center(38)}*"
+    puts "*" * 40
+    puts
   end
 end
