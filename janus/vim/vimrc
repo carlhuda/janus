@@ -32,10 +32,4 @@ endif
 " Load all groups
 call janus#load_pathogen()
 
-""
-"" Customizations
-""
-
-if filereadable(expand("~/.vimrc.after"))
-  source ~/.vimrc.after
-endif
+" .vimrc.after is loaded after the janus plugins have loaded
