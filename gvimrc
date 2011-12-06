@@ -84,9 +84,10 @@ endfunction
 
 " Project Tree
 if exists("loaded_nerd_tree")
-  autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
-  autocmd FocusGained * call s:UpdateNERDTree()
-  autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+  augroup AuNERDTreeCmd
+  autocmd AuNERDTreeCmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
+  autocmd AuNERDTreeCmd FocusGained * call s:UpdateNERDTree()
+  autocmd AuNERDTreeCmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 endif
 
 " Close all open buffers on entering a window if the only
