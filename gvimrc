@@ -61,11 +61,35 @@ if has("gui_macvim")
   imap <D-M-Right> <Esc> <C-w>l
   map <D-M-Left> <C-w>h
   imap <D-M-Left> <C-w>h
+else
+  " Ctrl-T for Command-T
+  map <C-t> :CommandT<CR>
+  imap <C-t> <Esc>:CommandT<CR>
 
-  " Adjust viewports to the same size
-  map <Leader>= <C-w>=
-  imap <Leader>= <Esc> <C-w>=
+  " Ctrl-Shift-F for Ack
+  map <C-F> :Ack<space>
+
+  " Ctrl-e for ConqueTerm
+  map <C-e> :call StartTerm()<CR>
+
+  " Alt-][ to increase/decrease indentation
+  vmap <A-]> >gv
+  vmap <A-[> <gv
+
+  " Ctrl-Option-ArrowKey to switch viewports
+  map <C-S-Up> <C-w>k
+  imap <C-S-Up> <Esc> <C-w>k
+  map <C-S-Down> <C-w>j
+  imap <C-S-Down> <Esc> <C-w>j
+  map <C-S-Right> <C-w>l
+  imap <C-S-Right> <Esc> <C-w>l
+  map <C-S-Left> <C-w>h
+  imap <C-S-Left> <C-w>h
 endif
+
+" Adjust viewports to the same size
+map <Leader>= <C-w>=
+imap <Leader>= <Esc> <C-w>=
 
 " Don't beep
 set visualbell
@@ -79,7 +103,7 @@ color ir_black
 " ConqueTerm wrapper
 function StartTerm()
   execute 'ConqueTerm ' . $SHELL . ' --login'
-  setlocal listchars=tab:\ \ 
+  setlocal listchars=tab:\ \
 endfunction
 
 " Project Tree
@@ -113,7 +137,7 @@ function s:CdIfDirectory(directory)
 
   " Allows reading from stdin
   " ex: git diff | mvim -R -
-  if strlen(a:directory) == 0 
+  if strlen(a:directory) == 0
     return
   endif
 

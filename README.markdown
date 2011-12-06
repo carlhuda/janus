@@ -197,7 +197,7 @@ Ack.vim uses ack to search inside the current directory for a pattern.
 You can learn more about it with :help Ack
 
 **Customizations**: Janus rebinds command-shift-f (`<D-F>`) to bring up
-`:Ack `.
+`:Ack `. [Ctrl-Shift-F (`<C-F>`) for GVim.]
 
 ## [Align](http://github.com/tsaleh/vim-align)
 
@@ -213,7 +213,7 @@ current working directory. It behaves similarly to command-t in
 Textmate.
 
 **Customizations**: Janus rebinds command-t (`<D-t>`) to bring up this
-plugin. It defaults to `<Leader>t`.
+plugin. [Ctrl-t (`<C-t>`) for GVim.] It defaults to `<Leader>t`.
 
 ## [ConqueTerm](http://code.google.com/p/conque/)
 
@@ -223,7 +223,8 @@ terminal like normal. You can also escape out of insert mode to use
 other vim commands on the buffer, like yank and paste.
 
 **Customizations**: Janus binds command-e (`<D-e>`) to bring up
-`:ConqueTerm bash --login` in the current buffer.
+`:ConqueTerm bash --login` in the current buffer. [Ctrl-e (`C-e`) for
+GVim.]
 
 **Note**: To get colors working, you might have to `export TERM=xterm`
 and use `ls -G` or `gls --color`
