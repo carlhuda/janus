@@ -82,6 +82,18 @@ if has("gui_macvim")
   imap <D-]> <Esc>>>i
   imap <D-[> <Esc><<i
 
+  " Bubble single lines
+  nmap <D-Up> [e
+  nmap <D-Down> ]e
+  nmap <D-k> [e
+  nmap <D-j> ]e
+
+  " Bubble multiple lines
+  vmap <D-Up> [egv
+  vmap <D-Down> ]egv
+  vmap <D-k> [egv
+  vmap <D-j> ]egv
+
   " Map Command-# to switch tabs
   map  <D-0> 0gt
   imap <D-0> <Esc>0gt
@@ -117,6 +129,18 @@ else
 
   imap <A-]> <Esc>>>i
   imap <A-[> <Esc><<i
+ 
+  " Bubble single lines
+  nmap <C-Up> [e
+  nmap <C-Down> ]e
+  nmap <C-k> [e
+  nmap <C-j> ]e
+
+  " Bubble multiple lines
+  vmap <C-Up> [egv
+  vmap <C-Down> ]egv
+  vmap <C-k> [egv
+  vmap <C-j> ]egv
 
   " Make shift-insert work like in Xterm
   map <S-Insert> <MiddleMouse>
