@@ -32,15 +32,17 @@ endfunction
 " Add a group of plug-ins to Pathogen
 "
 " @param [String] The plugin name
-function! janus#add_group(name)
+" @param [String] (Optional) the base path of the group
+function! janus#add_group(name, ...)
   if !exists("g:janus_loaded_groups")
     let g:janus_loaded_groups = []
   endif
 
-  call add(g:janus_loaded_groups, a:name)
+  let base_path = exists("a:1") ? a:1 : g:janus_vim_path
+  call add(g:janus_loaded_groups, base_path . janus#separator() . a:name)
 endfunction
 
-" Load pathgoen groups
+" Load pathogen groups
 function! janus#load_pathogen()
   if !exists("g:loaded_pathogen")
     " Source Pathogen
@@ -48,7 +50,7 @@ function! janus#load_pathogen()
   endif
 
   for group in g:janus_loaded_groups
-    call pathogen#runtime_prepend_subdirectories(g:janus_vim_path. janus#separator() . group)
+    call pathogen#runtime_prepend_subdirectories(group)
   endfor
 
   call pathogen#runtime_append_all_bundles()
