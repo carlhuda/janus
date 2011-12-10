@@ -14,6 +14,12 @@ exe 'source ' . g:janus_vim_path . '/core/before/plugin/janus.vim'
 call janus#add_group("tools")
 call janus#add_group("langs")
 call janus#add_group("colors")
+
+" add custom ~/.janus directory to pathogen if it exists
+if isdirectory(expand("~/.janus"))
+  call janus#add_group(".janus", expand("~"))
+endif
+
 call janus#add_group("custom")
 call janus#add_group("core")
 
