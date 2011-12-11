@@ -14,3 +14,5 @@ endif
 
 call janus#add_mapping('command-t', 'map', '<A-t>', ':CommandTBuffer<CR>')
 call janus#add_mapping('command-t', 'imap', '<A-t>', '<ESC>:CommandTBuffer<CR>')
+
+let CommandTMaxHeight=10
