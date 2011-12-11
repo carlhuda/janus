@@ -146,7 +146,7 @@ function! janus#plugin_path(...)
   elseif a:0 == 1
     let name  = a:1
     let group = janus#which_group(name)
-    return group .janus#seperator() . name
+    return group .janus#separator() . name
   else
     let group = a:1
     let name  = a:2
