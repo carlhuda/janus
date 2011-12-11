@@ -56,9 +56,9 @@ $ curl https://raw.github.com/carlhuda/janus/experimental/bootstrap.sh -o- | sh
 
 You can use `~/.gvimrc.before` and `~/.vimrc.before` for settings Janus,
 like the __leader__ setting, you may also use `~/.gvimrc.after` and
-`~/.vimrc.after` for any additional setting, it is also a good place for
+`~/.vimrc.after` for any additional settings; it is also a good place for
 overriding Janus settings as both files will be loaded at the end of
-Janus
+Janus.
 
 For example, to override the default color schemes:
 
@@ -67,12 +67,21 @@ $ echo 'color desert'  >> ~/.vimrc.after
 $ echo 'color molokai' >> ~/.gvimrc.after
 ```
 
-If you want to add additional Vim plug-ins you can do so by adding a new
-submodule in the Janus repository inside the `janus/vim/custom` like so:
+If you want to do additional customization or add more Vim plugins,
+create a `~/.janus` directory and add your plugins there, either with a
+`git clone` or by adding submodules to your own git repository there.
+This directory is treated like a normal pathogen directory. For example:
 
 ```bash
-$ cd ~/.vim
-$ git submodule add git://github.com/vim-scripts/Rename2.git janus/vim/custom/rename2
+$ cd ~/.janus
+$ git checkout git://github.com/vim-scripts/Rename2.git rename2
+```
+
+Or, if you have a git repository in `~/.janus`, you can use a submodule:
+
+```bash
+$ cd ~/.janus
+$ git submodule add git://github.com/vim-scripts/Rename2.git rename2
 ```
 
 If you would like to disable an included plug-in, you can do that with

@@ -46,7 +46,7 @@ end
 
 task :update do
   puts "Cleaning the janus folder"
-  `git clean -xdf --exclude=custom -- janus &> /dev/null`
+  `git clean -xdf -- janus &> /dev/null`
 
   puts "Pulling latest changes"
   `git pull > /dev/null`
