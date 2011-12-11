@@ -20,7 +20,6 @@ if isdirectory(expand("~/.janus"))
   call janus#add_group(".janus", expand("~"))
 endif
 
-call janus#add_group("custom")
 call janus#add_group("core")
 
 ""
