@@ -38,6 +38,7 @@ function! janus#add_group(name, ...)
     let g:janus_loaded_groups = []
   endif
 
+  " Loaded group array will contain full path to group
   let base_path = exists("a:1") ? a:1 : g:janus_vim_path
   call add(g:janus_loaded_groups, base_path . janus#separator() . a:name)
 endfunction
@@ -60,14 +61,17 @@ endfunction
 " Which group contains a plugin ?
 "
 " @param [String] The plugin name
-" @return [String] The group name
+" @return [String] The full path to the group
 function! janus#which_group(name)
   if !exists("g:janus_loaded_groups")
     return ""
   endif
 
   for group in g:janus_loaded_groups
-    if isdirectory(janus#plugin_path(group, a:name))
+    " Plugin groups are now added as a full path
+    let plugin_path = group . janus#separator() . a:name
+
+    if isdirectory(plugin_path)
       return group
     endif
   endfor
@@ -142,6 +146,7 @@ function! janus#plugin_path(...)
   elseif a:0 == 1
     let name  = a:1
     let group = janus#which_group(name)
+    return group .janus#seperator() . name
   else
     let group = a:1
     let name  = a:2
