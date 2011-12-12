@@ -62,14 +62,12 @@ module Janus
       # Define the plugin installation task
       desc "Install #{name} plugin."
       task :install do
-        if Dir["#{vim_path}/#{group}/#{name}/**"].any?
-          puts
-          puts "*" * 40
-          puts "*#{"Installing #{name}".center(38)}*"
-          puts "*" * 40
-          puts
-          yield
-        end
+        puts
+        puts "*" * 40
+        puts "*#{"Installing #{name}".center(38)}*"
+        puts "*" * 40
+        puts
+        yield(Dir["#{vim_path}/#{group}/#{name}/**"].any?)
       end
     end
 
