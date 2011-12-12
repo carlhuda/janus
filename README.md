@@ -94,10 +94,9 @@ NERDCommenter plug-in, you can do that with the command:
 $ echo "call janus#disable_plugin('nerdcommenter')" >> ~/.vimrc.before
 ```
 
-**WARNING**: Any **uncommited** file inside the **janus** folder and
-outside the `custom` folder will be removed the next time your run
-`rake` so make sure to either put them in the custom folder, or entirely
-outside the janus folder or commit them with Git. We clean the janus
+**WARNING**: Any **uncommited** file inside the **janus** folder will be
+removed the next time you run `rake` so make sure to either put them in
+the custom folder (`~/.janus`), or commit them. We clean the janus
 folder in case we replace a manually installed plugin (using rake tasks)
 with a submodule.
 
