@@ -42,6 +42,26 @@ function! janus#basename(path)
   return fnamemodify(janus#resolve_path(a:path), ":t")
 endfunction
 
+" Return the group name
+"
+" @param [String] The group path
+" @return [String] The group name
+function! janus#group_name(path)
+  return janus#basename(a:path)
+endfunction
+
+" Return the group path
+"
+" @param [String] The group name
+" @return [String] The group path
+function! janus#group_path(name)
+  for group in g:janus_loaded_groups
+    if janus#group_name(group) == a:name
+      return group
+    endif
+  endfor
+endfunction
+
 " Find vim files inside a folder
 "
 " @param [String] The path to a folder
