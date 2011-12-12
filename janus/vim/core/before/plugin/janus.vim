@@ -68,7 +68,7 @@ endfunction
 " @return [List] List of files.
 function! janus#vim_files(folder)
   let files = []
-  let pattern = resolve(expand(a:folder)) . janus#separator() . "*"
+  let pattern = janus#resolve_path(a:folder) . janus#separator() . "*"
   " Add all found vim files
   for file in split(glob(pattern), "\n")
     if isdirectory(file)
@@ -113,18 +113,15 @@ endfunction
 " Which group contains a plugin ?
 "
 " @param [String] The plugin name
-" @return [String] The full path to the group
+" @return [String] The group name (not an absolute path)
 function! janus#which_group(name)
   if !exists("g:janus_loaded_groups")
     return ""
   endif
 
   for group in g:janus_loaded_groups
-    " Plugin groups are now added as a full path
-    let plugin_path = group . janus#separator() . a:name
-
-    if isdirectory(plugin_path)
-      return group
+    if isdirectory(janus#plugin_path(group, a:name))
+      return janus#group_name(group)
     endif
   endfor
 endfunction
@@ -138,7 +135,7 @@ endfunction
 " @return [Bool]
 function! janus#disable_plugin(...)
   if a:0 < 1 || a:0 > 3
-    throw "The arguments to janus#disable_plugin() should bw [group], <name>, [reason]"
+    throw "The arguments to janus#disable_plugin() should be [group], <name>, [reason]"
   elseif a:0 == 1
     let group = -1
     let name = a:1
@@ -198,13 +195,12 @@ function! janus#plugin_path(...)
   elseif a:0 == 1
     let name  = a:1
     let group = janus#which_group(name)
-    return group .janus#separator() . name
   else
     let group = a:1
     let name  = a:2
   endif
 
-  return g:janus_vim_path . janus#separator() . group . janus#separator() . name
+  return janus#group_path . janus#separator() . name
 endfunction
 
 " Is modules loaded?
