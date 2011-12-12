@@ -31,7 +31,7 @@ endfunction
 " @param [String] path
 " @return [String] The dirname of the path given in the param
 function! janus#dirname(path)
-  return fnamemodify(janus#expand_path(a:path), ":h")
+  return fnamemodify(janus#resolve_path(a:path), ":h")
 endfunction
 
 " Return the basename of a path
@@ -39,7 +39,7 @@ endfunction
 " @param [String] path
 " @return [String] The basename of the path given in the param
 function! janus#basename(path)
-  return fnamemodify(janus#expand_path(a:path), ":t")
+  return fnamemodify(janus#resolve_path(a:path), ":t")
 endfunction
 
 " Find vim files inside a folder
