@@ -94,6 +94,20 @@ NERDCommenter plug-in, you can do that with the command:
 $ echo "call janus#disable_plugin('nerdcommenter')" >> ~/.vimrc.before
 ```
 
+**WARNING**: We've noticed over and over, that people fork Janus just to
+customize it, this is bad practice for several reasons and you should
+not do that, here's why:
+
+- Janus is fully customisable and there's no need to change the core for
+  using a different plugin fork or using a different mapping.
+- Forking means maintenance, maintenance means burden, do not burden
+  yourself with maintaining a fork, that's what the `~/.janus` folder
+  is for.
+
+if you find yourself needing a customisation that is not possible with
+the current setup, then please open an issue or submit a pull request to
+make it possible to do so without having a fork.
+
 **WARNING**: Any **uncommited** file inside the **janus** folder will be
 removed the next time you run `rake` so make sure to either put them in
 the custom folder (`~/.janus`), or commit them. We clean the janus
