@@ -244,7 +244,7 @@ function! janus#add_mapping(name, mapping_command, mapping_keys, ...)
   if janus#is_plugin_enabled(a:name)
     let mapping_command = join(a:000)
   else
-    if !janus#disable_plugin(a:name)
+    if !janus#is_module_loaded(a:name)
       let reason = "Module is not loaded"
     elseif g:janus_disabled_plugins[a:name]['reason'] == -1
       return 0
