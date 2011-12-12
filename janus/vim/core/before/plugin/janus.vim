@@ -200,7 +200,7 @@ function! janus#plugin_path(...)
     let name  = a:2
   endif
 
-  return janus#group_path . janus#separator() . name
+  return janus#group_path(group) . janus#separator() . name
 endfunction
 
 " Is modules loaded?
