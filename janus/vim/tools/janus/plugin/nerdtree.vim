@@ -5,19 +5,6 @@ if janus#is_plugin_enabled("nerdtree")
   augroup AuNERDTreeCmd
   autocmd AuNERDTreeCmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
   autocmd AuNERDTreeCmd FocusGained * call s:UpdateNERDTree()
-  autocmd AuNERDTreeCmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
-
-  " Close all open buffers on entering a window if the only
-  " buffer that's left is the NERDTree buffer
-  function s:CloseIfOnlyNerdTreeLeft()
-    if exists("t:NERDTreeBufName")
-      if bufwinnr(t:NERDTreeBufName) != -1
-        if winnr("$") == 1
-          q
-        endif
-      endif
-    endif
-  endfunction
 
   " If the parameter is a directory, cd into it
   function s:CdIfDirectory(directory)
@@ -70,4 +57,5 @@ if janus#is_plugin_enabled("nerdtree")
   endfunction
 endif
 
-call janus#add_mapping('nerdtree', 'map', '<Leader>n', ':NERDTreeToggle<CR>')
+" Default mapping, <leader>n
+call janus#add_mapping('nerdtree', 'map', '<leader>n', ':NERDTreeToggle<CR>')
