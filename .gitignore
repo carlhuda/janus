@@ -3,6 +3,8 @@ _backup
 _temp
 .netrwhist
 
+# Vimius file
+.vimius
 
 # Plugins without git-mirror
 watchtower.vim
