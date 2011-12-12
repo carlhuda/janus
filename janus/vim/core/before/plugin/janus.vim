@@ -18,6 +18,14 @@ function! janus#expand_path(path)
   return expand(a:path)
 endfunction
 
+" Return a resolved path
+"
+" @param [String] path
+" @return resolved path
+function! janus#resolve_path(path)
+  return resolve(janus#expand_path(a:path))
+endfunction
+
 " Return the dirname of a path
 "
 " @param [String] path
