@@ -10,6 +10,30 @@ function! janus#separator()
   return !exists("+shellslash") || &shellslash ? '/' : '\'
 endfunction
 
+" Return the expanded path
+"
+" @param [String] path
+" @return [String] Absolute path
+function! janus#expand_path(path)
+  return expand(a:path)
+endfunction
+
+" Return the dirname of a path
+"
+" @param [String] path
+" @return [String] The dirname of the path given in the param
+function! janus#dirname(path)
+  return fnamemodify(janus#expand_path(a:path), ":h")
+endfunction
+
+" Return the basename of a path
+"
+" @param [String] path
+" @return [String] The basename of the path given in the param
+function! janus#basename(path)
+  return fnamemodify(janus#expand_path(a:path), ":t")
+endfunction
+
 " Find vim files inside a folder
 "
 " @param [String] The path to a folder
