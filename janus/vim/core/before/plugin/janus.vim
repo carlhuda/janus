@@ -103,7 +103,7 @@ function! janus#load_pathogen()
   endif
 
   for group in g:janus_loaded_groups
-    call pathogen#runtime_prepend_subdirectories(group)
+    call pathogen#infect(group)
   endfor
 
   call pathogen#runtime_append_all_bundles()
