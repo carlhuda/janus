@@ -106,7 +106,7 @@ function! janus#load_pathogen()
     call pathogen#infect(group)
   endfor
 
-  call pathogen#runtime_append_all_bundles()
+  call pathogen#infect()
   call pathogen#helptags()
 endfunction
 
