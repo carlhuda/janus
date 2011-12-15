@@ -2,7 +2,7 @@ require 'rake'
 require 'open-uri'
 
 module Janus
-  include Rake::DSL
+  include Rake::DSL if defined?(Rake::DSL)
 
   def self.included(base)
     # Load all plugin installation tasks
