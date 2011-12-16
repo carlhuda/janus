@@ -7,10 +7,14 @@ VIM::Dirs.each do |dir|
   directory(dir)
 end
 
-def vim_plugin_task(name, repo=nil)
+def vim_plugin_task(name, repo=nil, extra_dirs=[])
   cwd = File.expand_path("../", __FILE__)
   dir = File.expand_path("tmp/#{name}")
   subdirs = VIM::Dirs
+
+  extra_dirs.each do |dir|
+    directory(dir)
+  end
 
   namespace(name) do
     if repo
@@ -84,7 +88,7 @@ def vim_plugin_task(name, repo=nil)
         end
       end
 
-      task :install => [:pull] + subdirs do
+      task :install => [:pull] + subdirs + extra_dirs do
         Dir.chdir dir do
           if File.exists?("Rakefile") and `rake -T` =~ /^rake install/
             sh "rake install"
@@ -96,13 +100,16 @@ def vim_plugin_task(name, repo=nil)
                 sh "cp -RfL #{subdir}/* #{cwd}/#{subdir}/"
               end
             end
+            extra_dirs.each do |extra|
+              sh "cp -Rfl #{extra}/* #{cwd}/#{extra}/"
+            end
           end
         end
 
         yield if block_given?
       end
     else
-      task :install => subdirs do
+      task :install => subdirs + extra_dirs do
         yield if block_given?
       end
     end
@@ -152,7 +159,7 @@ vim_plugin_task "searchfold",       "git://github.com/vim-scripts/searchfold.vim
 vim_plugin_task "endwise",          "git://github.com/tpope/vim-endwise.git"
 vim_plugin_task "irblack",          "git://github.com/wgibbs/vim-irblack.git"
 vim_plugin_task "vim-coffee-script","git://github.com/kchmck/vim-coffee-script.git"
-vim_plugin_task "syntastic",        "git://github.com/scrooloose/syntastic.git"
+vim_plugin_task "syntastic",        "git://github.com/scrooloose/syntastic.git", ['syntax_checkers']
 vim_plugin_task "puppet",           "git://github.com/ajf/puppet-vim.git"
 vim_plugin_task "scala",            "git://github.com/bdd/vim-scala.git"
 vim_plugin_task "gist-vim",         "git://github.com/mattn/gist-vim.git"
