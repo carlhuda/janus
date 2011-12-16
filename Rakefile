@@ -10,11 +10,12 @@ end
 def vim_plugin_task(name, repo=nil, extra_dirs=[])
   cwd = File.expand_path("../", __FILE__)
   dir = File.expand_path("tmp/#{name}")
-  subdirs = VIM::Dirs
 
   extra_dirs.each do |dir|
     directory(dir)
   end
+
+  subdirs = VIM::Dirs + extra_dirs
 
   namespace(name) do
     if repo
@@ -88,7 +89,7 @@ def vim_plugin_task(name, repo=nil, extra_dirs=[])
         end
       end
 
-      task :install => [:pull] + subdirs + extra_dirs do
+      task :install => [:pull] + subdirs do
         Dir.chdir dir do
           if File.exists?("Rakefile") and `rake -T` =~ /^rake install/
             sh "rake install"
@@ -100,16 +101,13 @@ def vim_plugin_task(name, repo=nil, extra_dirs=[])
                 sh "cp -RfL #{subdir}/* #{cwd}/#{subdir}/"
               end
             end
-            extra_dirs.each do |extra|
-              sh "cp -Rfl #{extra}/* #{cwd}/#{extra}/"
-            end
           end
         end
 
         yield if block_given?
       end
     else
-      task :install => subdirs + extra_dirs do
+      task :install => subdirs do
         yield if block_given?
       end
     end
