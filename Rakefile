@@ -7,10 +7,15 @@ VIM::Dirs.each do |dir|
   directory(dir)
 end
 
-def vim_plugin_task(name, repo=nil)
+def vim_plugin_task(name, repo=nil, extra_dirs=[])
   cwd = File.expand_path("../", __FILE__)
   dir = File.expand_path("tmp/#{name}")
-  subdirs = VIM::Dirs
+
+  extra_dirs.each do |dir|
+    directory(dir)
+  end
+
+  subdirs = VIM::Dirs + extra_dirs
 
   namespace(name) do
     if repo
@@ -152,7 +157,7 @@ vim_plugin_task "searchfold",       "git://github.com/vim-scripts/searchfold.vim
 vim_plugin_task "endwise",          "git://github.com/tpope/vim-endwise.git"
 vim_plugin_task "irblack",          "git://github.com/wgibbs/vim-irblack.git"
 vim_plugin_task "vim-coffee-script","git://github.com/kchmck/vim-coffee-script.git"
-vim_plugin_task "syntastic",        "git://github.com/scrooloose/syntastic.git"
+vim_plugin_task "syntastic",        "git://github.com/scrooloose/syntastic.git", ['syntax_checkers']
 vim_plugin_task "puppet",           "git://github.com/ajf/puppet-vim.git"
 vim_plugin_task "scala",            "git://github.com/bdd/vim-scala.git"
 vim_plugin_task "gist-vim",         "git://github.com/mattn/gist-vim.git"
