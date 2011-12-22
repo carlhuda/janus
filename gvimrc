@@ -72,6 +72,10 @@ else
   " Ctrl-e for ConqueTerm
   map <C-e> :call StartTerm()<CR>
 
+  " Alt-/ to toggle comments
+  map <A-/> <plug>NERDCommenterToggle<CR>
+  imap <A-/> <Esc><plug>NERDCommenterToggle<CR>i
+
   " Alt-][ to increase/decrease indentation
   vmap <A-]> >gv
   vmap <A-[> <gv
