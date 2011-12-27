@@ -65,7 +65,7 @@
 	url = https://github.com/timcharper/textile.vim.git
 [submodule "janus/vim/langs/rspec"]
 	path = janus/vim/langs/rspec
-	url = https://github.com/taq/vim-rspec.git
+	url = https://github.com/skwp/vim-rspec.git
 [submodule "janus/vim/langs/scss"]
 	path = janus/vim/langs/scss
 	url = https://github.com/cakebaker/scss-syntax.vim.git
