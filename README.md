@@ -44,12 +44,12 @@ information.
 ## Installation
 
 To install Janus, please use our [automatic
-installer](https://github.com/carlhuda/janus/blob/experimental/bootstrap.sh)
+installer](https://github.com/carlhuda/janus/blob/master/bootstrap.sh)
 , which backups up any Vim files found in your home folder and installs
 Janus.
 
 ```bash
-$ curl https://raw.github.com/carlhuda/janus/experimental/bootstrap.sh -o- | sh
+$ curl https://raw.github.com/carlhuda/janus/master/bootstrap.sh -o- | sh
 ```
 
 ## Customization
