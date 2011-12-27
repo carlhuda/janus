@@ -1,0 +1,169 @@
+# Core
+[submodule "janus/vim/core/pathogen"]
+	path = janus/vim/core/pathogen
+	url = https://github.com/tpope/vim-pathogen.git
+
+# Colors
+[submodule "janus/vim/colors/sampler-pack"]
+	path = janus/vim/colors/sampler-pack
+	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
+[submodule "janus/vim/colors/solarized"]
+	path = janus/vim/colors/solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "janus/vim/colors/irblack"]
+	path = janus/vim/colors/irblack
+	url = https://github.com/wgibbs/vim-irblack.git
+[submodule "janus/vim/colors/vividchalk"]
+	path = janus/vim/colors/vividchalk
+	url = https://github.com/tpope/vim-vividchalk.git
+[submodule "janus/vim/colors/molokai"]
+	path = janus/vim/colors/molokai
+	url = https://github.com/vim-scripts/molokai.git
+[submodule "janus/vim/colors/pyte"]
+	path = janus/vim/colors/pyte
+	url = https://github.com/vim-scripts/pyte.git
+[submodule "janus/vim/colors/github"]
+	path = janus/vim/colors/github
+	url = https://github.com/telamon/vim-color-github.git
+[submodule "janus/vim/colors/getafe"]
+	path = janus/vim/colors/getafe
+	url = https://github.com/larssmit/getafe.git
+
+# Langs
+[submodule "janus/vim/langs/haml"]
+	path = janus/vim/langs/haml
+	url = https://github.com/tpope/vim-haml.git
+[submodule "janus/vim/langs/javascript"]
+	path = janus/vim/langs/javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "janus/vim/langs/cucumber"]
+	path = janus/vim/langs/cucumber
+	url = https://github.com/tpope/vim-cucumber.git
+[submodule "janus/vim/langs/markdown"]
+	path = janus/vim/langs/markdown
+	url = https://github.com/tpope/vim-markdown.git
+[submodule "janus/vim/langs/puppet"]
+	path = janus/vim/langs/puppet
+	url = https://github.com/ajf/puppet-vim.git
+[submodule "janus/vim/langs/scala"]
+	path = janus/vim/langs/scala
+	url = https://github.com/bdd/vim-scala.git
+[submodule "janus/vim/langs/handlebars"]
+	path = janus/vim/langs/handlebars
+	url = https://github.com/nono/vim-handlebars.git
+[submodule "janus/vim/langs/coffeescript"]
+	path = janus/vim/langs/coffeescript
+	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "janus/vim/langs/rails"]
+	path = janus/vim/langs/rails
+	url = https://github.com/tpope/vim-rails.git
+[submodule "janus/vim/langs/git"]
+	path = janus/vim/langs/git
+	url = https://github.com/tpope/vim-git.git
+[submodule "janus/vim/langs/textile"]
+	path = janus/vim/langs/textile
+	url = https://github.com/timcharper/textile.vim.git
+[submodule "janus/vim/langs/rspec"]
+	path = janus/vim/langs/rspec
+	url = https://github.com/skwp/vim-rspec.git
+[submodule "janus/vim/langs/scss"]
+	path = janus/vim/langs/scss
+	url = https://github.com/cakebaker/scss-syntax.vim.git
+[submodule "janus/vim/langs/csv"]
+	path = janus/vim/langs/csv
+	url = https://github.com/vim-scripts/csv.vim.git
+[submodule "janus/vim/langs/nodejs"]
+	path = janus/vim/langs/nodejs
+	url = https://github.com/mmalecki/vim-node.js.git
+[submodule "janus/vim/langs/ruby"]
+	path = janus/vim/langs/ruby
+	url = https://github.com/vim-ruby/vim-ruby.git
+
+# Tools
+[submodule "janus/vim/tools/unimpaired"]
+	path = janus/vim/tools/unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "janus/vim/tools/nerdcommenter"]
+	path = janus/vim/tools/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "janus/vim/tools/matchit"]
+	path = janus/vim/tools/matchit
+	url = https://github.com/edsono/vim-matchit.git
+[submodule "janus/vim/tools/supertab"]
+	path = janus/vim/tools/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "janus/vim/tools/zoomwin"]
+	path = janus/vim/tools/zoomwin
+	url = https://github.com/vim-scripts/ZoomWin.git
+[submodule "janus/vim/tools/ack"]
+	path = janus/vim/tools/ack
+	url = https://github.com/mileszs/ack.vim.git
+[submodule "janus/vim/tools/fugitive"]
+	path = janus/vim/tools/fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "janus/vim/tools/gundo"]
+	path = janus/vim/tools/gundo
+	url = https://github.com/sjl/gundo.vim.git
+[submodule "janus/vim/tools/surround"]
+	path = janus/vim/tools/surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "janus/vim/tools/hammer"]
+	path = janus/vim/tools/hammer
+	url = https://github.com/robgleeson/hammer.vim.git
+[submodule "janus/vim/tools/command-t"]
+	path = janus/vim/tools/command-t
+	url = https://github.com/wincent/Command-T.git
+[submodule "janus/vim/tools/snipmate"]
+	path = janus/vim/tools/snipmate
+	url = https://github.com/garbas/vim-snipmate.git
+[submodule "janus/vim/tools/tlib"]
+	path = janus/vim/tools/tlib
+	url = https://github.com/tomtom/tlib_vim.git
+[submodule "janus/vim/tools/vim-addon-mw-utils"]
+	path = janus/vim/tools/vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "janus/vim/tools/snipmate-snippets"]
+	path = janus/vim/tools/snipmate-snippets
+	url = https://github.com/honza/snipmate-snippets.git
+[submodule "janus/vim/tools/syntastic"]
+	path = janus/vim/tools/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "janus/vim/tools/tagbar"]
+	path = janus/vim/tools/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "janus/vim/tools/nerdtree"]
+	path = janus/vim/tools/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "janus/vim/tools/pep8"]
+	path = janus/vim/tools/pep8
+	url = https://github.com/jbking/vim-pep8.git
+[submodule "janus/vim/tools/indent-object"]
+	path = janus/vim/tools/indent-object
+	url = https://github.com/michaeljsmith/vim-indent-object.git
+[submodule "janus/vim/tools/endwise"]
+	path = janus/vim/tools/endwise
+	url = https://github.com/tpope/vim-endwise.git
+[submodule "janus/vim/tools/gist-vim"]
+	path = janus/vim/tools/gist
+	url = https://github.com/mattn/gist-vim.git
+[submodule "janus/vim/tools/vimwiki"]
+	path = janus/vim/tools/vimwiki
+	url = https://github.com/vim-scripts/vimwiki.git
+[submodule "janus/vim/tools/css-color"]
+	path = janus/vim/tools/css-color
+	url = https://github.com/skammer/vim-css-color.git
+[submodule "janus/vim/tools/easymotion"]
+	path = janus/vim/tools/easymotion
+	url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule "janus/vim/tools/narrowregion"]
+	path = janus/vim/tools/narrowregion
+	url = https://github.com/chrisbra/NrrwRgn.git
+[submodule "janus/vim/tools/buffergator"]
+	path = janus/vim/tools/buffergator
+	url = https://github.com/jeetsukumaran/vim-buffergator.git
+[submodule "janus/vim/tools/kwbd"]
+	path = janus/vim/tools/kwbd
+	url = https://github.com/rgarver/Kwbd.vim.git
+[submodule "janus/vim/tools/rename2"]
+	path = janus/vim/tools/rename2
+	url = https://github.com/vim-scripts/Rename2.git

@@ -1,0 +1,40 @@
+""
+"" Janus setup
+""
+
+" Define paths
+let g:janus_path = fnamemodify(resolve(expand("<sfile>:p")), ":h")
+let g:janus_vim_path = fnamemodify(resolve(expand("<sfile>:p" . "vim")), ":h")
+
+" Source janus's core
+exe 'source ' . g:janus_vim_path . '/core/before/plugin/janus.vim'
+
+" You should note that groups will be processed by Pathogen in reverse
+" order they were added.
+call janus#add_group("tools")
+call janus#add_group("langs")
+call janus#add_group("colors")
+
+" add custom ~/.janus directory to pathogen if it exists
+if isdirectory(expand("~/.janus"))
+  call janus#add_group(".janus", expand("~"))
+endif
+
+call janus#add_group("core")
+
+""
+"" Customisations
+""
+
+if filereadable(expand("~/.vimrc.before"))
+  source ~/.vimrc.before
+endif
+
+""
+"" Pathogen setup
+""
+
+" Load all groups
+call janus#load_pathogen()
+
+" .vimrc.after is loaded after the plugins have loaded

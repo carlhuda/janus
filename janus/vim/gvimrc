@@ -1,0 +1,12 @@
+if filereadable(expand("~/.gvimrc.before"))
+  source ~/.gvimrc.before
+endif
+
+" Command-T OS-X Menu remapping
+if janus#is_plugin_enabled('command-t') && has("gui_macvim")
+  macmenu &File.New\ Tab key=<nop>
+endif
+
+if filereadable(expand("~/.gvimrc.after"))
+  source ~/.gvimrc.after
+endif
