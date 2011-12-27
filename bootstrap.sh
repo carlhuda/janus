@@ -24,7 +24,7 @@ for i in $HOME/.vim $HOME/.vimrc $HOME/.gvimrc; do
 done
 
 # Clone Janus into .vim
-git clone git://github.com/carlhuda/janus.git $HOME/.vim \
+git clone https://github.com/carlhuda/janus.git $HOME/.vim \
   || die "Could not clone the repository to ${HOME}/.vim"
 
 # Run rake inside .vim
