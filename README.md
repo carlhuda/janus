@@ -370,6 +370,13 @@ Janus ships with a few additional syntaxes:
   global config to set this if you have EDITOR set to something else
   `$ git config --global core.editor 'vim -f'`
 
+## Rakefile
+
+If you're looking for the old janus distribution controlled by a
+Rakefile then please head over to the [rakefile
+branch](https://github.com/carlhuda/janus/tree/rakefile) but please note
+that the rakefile branch will not be maintained.
+
 ## License
 
 ### This code is free to use under the terms of the MIT license.
