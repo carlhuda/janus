@@ -13,7 +13,7 @@ and `~/.vimrc.after` Vim RC files.
 
 If you were using Janus before January 2012, note that Janus has gone
 through a rewrite to make it more stable and customizable. Most notably,
-you can now disable plugins using janus#disable_plugin and customize
+you can now disable plugins using `janus#disable_plugin` and customize
 Janus using `~/.vimrc.before` and `~/.vimrc.after`. See the rest of this
 `README` and the [Customization wiki page](https://github.com/carlhuda/janus/wiki/Customization).
 
