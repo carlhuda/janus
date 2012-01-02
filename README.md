@@ -9,6 +9,22 @@ popular plug-ins and the most common mappings.
 The distribution is completely customisable using a `~/.vimrc.before`
 and `~/.vimrc.after` Vim RC files.
 
+# UPGRADING FROM BEFORE JANUARY 2012
+
+If you were using Janus before January 2012, note that Janus has gone
+through a rewrite to make it more stable and customizable. Most notably,
+you can now disable plugins using janus#disable_plugin and customize
+Janus using `~/.vimrc.before` and `~/.vimrc.after`. See the rest of this
+`README` and the [Customization wiki page](https://github.com/carlhuda/janus/wiki/Customization).
+
+To upgrade to the latest version:
+
+1. remove `~/.vim`, `~/.vimrc` and `~/.gvimrc`.
+2. move customizations from `~/.vimrc.local` to `~/.vimrc.before` and
+   `~/.vimrc.after`.
+3. Do the same with `/.gvimrc.local`.
+4. Run the installer: `curl -Lo- http://bit.ly/janus-bootstrap | bash`
+
 ## Mailing list
 
 The mailing list is hosted at [Google
