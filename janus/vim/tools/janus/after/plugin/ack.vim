@@ -8,5 +8,5 @@ else
   else
     " >leader>f on systems where <C-f> == <C-F>
     call janus#add_mapping('ack', 'map', '<leader>f', ':Ack<space>')
-  end
+  endif
 endif
