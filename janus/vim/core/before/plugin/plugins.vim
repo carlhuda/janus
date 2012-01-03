@@ -28,3 +28,9 @@ endif
 if !executable("curl")
   call janus#disable_plugin("gist", "The curl program is not installed")
 endif
+
+" nodejs does not protect itself
+" See #336
+if exists("*DetectNode")
+  call janus#disable_plugin("nodejs", "Nodejs already exists on your system.")
+endif
