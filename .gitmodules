@@ -107,9 +107,6 @@
 [submodule "janus/vim/tools/surround"]
 	path = janus/vim/tools/surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule "janus/vim/tools/hammer"]
-	path = janus/vim/tools/hammer
-	url = https://github.com/robgleeson/hammer.vim.git
 [submodule "janus/vim/tools/snipmate"]
 	path = janus/vim/tools/snipmate
 	url = https://github.com/garbas/vim-snipmate.git
