@@ -247,15 +247,6 @@ You can learn more about it with :help Ack
 **Customizations**: Janus rebinds command-shift-f (`<D-F>`) to bring up
 `:Ack `.
 
-## [Command-T](https://wincent.com/products/command-t)
-
-Command-T provides a mechanism for searching for a file inside the
-current working directory. It behaves similarly to command-t in
-Textmate.
-
-**Customizations**: Janus rebinds command-t (`<D-t>`) to bring up this
-plugin. It defaults to `<Leader>t`.
-
 ## [NERDCommenter](http://github.com/ddollar/nerdcommenter)
 
 NERDCommenter allows you to wrangle your code comments, regardless of
