@@ -95,6 +95,40 @@ function! janus#add_group(name, ...)
   call add(g:janus_loaded_groups, base_path . janus#separator() . a:name)
 endfunction
 
+
+" Prepends custom plugins first so they will end up last after pathogen loads
+" other janus groups
+function! janus#load_custom_before()
+  if isdirectory(g:janus_custom_path)
+    let rtp = pathogen#split(&rtp)
+    let custom_path = g:janus_custom_path . janus#separator() . "*"
+    let custom = filter(pathogen#glob_directories(custom_path), '!pathogen#is_disabled(v:val)')
+    let &rtp = pathogen#join(pathogen#uniq(custom + rtp))
+  endif
+endfunction
+
+" Append custom plugins 'after' directories to rtp
+function! janus#load_custom_after()
+  if isdirectory(g:janus_custom_path)
+    let rtp = pathogen#split(&rtp)
+    let custom_path = g:janus_custom_path . janus#separator() . "*" . janus#separator() . "after"
+    let custom_after  = filter(pathogen#glob_directories(custom_path), '!pathogen#is_disabled(v:val[0:-7])')
+    let &rtp = pathogen#join(pathogen#uniq(rtp + custom_after))
+
+    " Add the custom group to the list of loaded groups
+    call janus#add_group(".janus", expand("~"))
+  endif
+endfunction
+
+" Load/wrap core around the rtp
+function! janus#load_core()
+  " pathogen#infect will prepend core's 'before' and append 'janus/after' to
+  " the rtp
+  call janus#add_group("core")
+  let core = g:janus_vim_path . janus#separator() . "core"
+  call pathogen#infect(core)
+endfunction
+
 " Load pathogen groups
 function! janus#load_pathogen()
   if !exists("g:loaded_pathogen")
@@ -102,11 +136,16 @@ function! janus#load_pathogen()
     exe 'source ' . g:janus_vim_path . '/core/pathogen/autoload/pathogen.vim'
   endif
 
+  " Add custom plugins before bundled groups
+  call janus#load_custom_before()
+
   for group in g:janus_loaded_groups
     call pathogen#infect(group)
   endfor
 
-  call pathogen#infect()
+  " Add custom 'after' directories to rtp and then load the core
+  call janus#load_custom_after()
+  call janus#load_core()
   call pathogen#helptags()
 endfunction
 
