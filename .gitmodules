@@ -107,12 +107,6 @@
 [submodule "janus/vim/tools/surround"]
 	path = janus/vim/tools/surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule "janus/vim/tools/hammer"]
-	path = janus/vim/tools/hammer
-	url = https://github.com/robgleeson/hammer.vim.git
-[submodule "janus/vim/tools/command-t"]
-	path = janus/vim/tools/command-t
-	url = https://github.com/wincent/Command-T.git
 [submodule "janus/vim/tools/snipmate"]
 	path = janus/vim/tools/snipmate
 	url = https://github.com/garbas/vim-snipmate.git
@@ -167,3 +161,6 @@
 [submodule "janus/vim/tools/rename2"]
 	path = janus/vim/tools/rename2
 	url = https://github.com/vim-scripts/Rename2.git
+[submodule "janus/vim/tools/ctrlp"]
+	path = janus/vim/tools/ctrlp
+	url = https://github.com/kien/ctrlp.vim.git

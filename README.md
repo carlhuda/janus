@@ -41,10 +41,9 @@ users should install `gvim`, OSX users should install
 [MacVim](http://code.google.com/p/macvim/), the recommended way of
 installing MacVim is using
 [Homebrew](http://mxcl.github.com/homebrew/), but before installing
-MacVim you need to use system-wide Ruby and Python:
+MacVim you need to use system-wide Python (If you are using python that
+is):
 
-* If you're using **rvm**: do `rvm use system`
-* If you're using **rbenv**: do `rbenv shell system`
 * If you're using **pythonbrew**: do `pythonbrew off`
 
 ```bash
@@ -246,15 +245,6 @@ You can learn more about it with :help Ack
 
 **Customizations**: Janus rebinds command-shift-f (`<D-F>`) to bring up
 `:Ack `.
-
-## [Command-T](https://wincent.com/products/command-t)
-
-Command-T provides a mechanism for searching for a file inside the
-current working directory. It behaves similarly to command-t in
-Textmate.
-
-**Customizations**: Janus rebinds command-t (`<D-t>`) to bring up this
-plugin. It defaults to `<Leader>t`.
 
 ## [NERDCommenter](http://github.com/ddollar/nerdcommenter)
 
