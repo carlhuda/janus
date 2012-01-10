@@ -9,6 +9,11 @@ popular plug-ins and the most common mappings.
 The distribution is completely customisable using a `~/.vimrc.before`
 and `~/.vimrc.after` Vim RC files.
 
+# UPGRADING FROM BEFORE JANUARY 10th 2012 and after JANUARY 1st 2012
+
+Please run `rake` twice before running macvim, make sure `command-t` is
+gone
+
 # UPGRADING FROM BEFORE JANUARY 2012
 
 If you were using Janus before January 2012, note that Janus has gone
