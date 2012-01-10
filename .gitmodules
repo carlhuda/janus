@@ -151,7 +151,7 @@
 	url = https://github.com/vim-scripts/vimwiki.git
 [submodule "janus/vim/tools/css-color"]
 	path = janus/vim/tools/css-color
-	url = https://github.com/skammer/vim-css-color.git
+	url = https://github.com/ap/vim-css-color.git
 [submodule "janus/vim/tools/easymotion"]
 	path = janus/vim/tools/easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
