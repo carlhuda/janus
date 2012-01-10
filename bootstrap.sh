@@ -1,14 +1,3 @@
-# Source RVM so janus .rvmrc takes effect
-[[ -s /usr/local/rvm/scripts/rvm ]] && source /usr/local/rvm/scripts/rvm
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
-
-# Source Rbenv so janus .rbenv-version takes effect
-if ! type rbenv &> /dev/null; then
-  if [[ -s $HOME/.rbenv/bin/rbenv ]]; then
-    eval "`$HOME/.rbenv/bin/rbenv init -`"
-  fi
-fi
-
 function die()
 {
     echo "${@}"
