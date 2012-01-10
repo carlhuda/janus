@@ -41,11 +41,11 @@ users should install `gvim`, OSX users should install
 [MacVim](http://code.google.com/p/macvim/), the recommended way of
 installing MacVim is using
 [Homebrew](http://mxcl.github.com/homebrew/), but before installing
-MacVim you need to use system-wide ruby and Python:
+MacVim you need to use system-wide ruby and python:
 
 * If you're using **rvm**: do `rvm use system`
 * If you're using **rbenv**: do `rbenv shell system`
-* If you're using **Pythonbrew**: do `pythonbrew off`
+* If you're using **pythonbrew**: do `pythonbrew off`
 
 ```bash
 $ brew install macvim
