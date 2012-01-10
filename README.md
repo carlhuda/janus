@@ -251,6 +251,12 @@ You can learn more about it with :help Ack
 **Customizations**: Janus rebinds command-shift-f (`<D-F>`) to bring up
 `:Ack `.
 
+## [CtrlP](https://github.com/kien/ctrlp.vim)
+
+Fuzzy file, buffer, mru and tag finder. Replaces [Command-T](https://github.com/wincent/Command-T)
+
+**Customizations**: For users of Command-T Janus maps CtrlP to command-t (`<D-t>`)
+
 ## [NERDCommenter](http://github.com/ddollar/nerdcommenter)
 
 NERDCommenter allows you to wrangle your code comments, regardless of
