@@ -2,6 +2,7 @@ ROOT_PATH = File.expand_path(File.join(File.dirname(__FILE__)))
 $: << File.join(ROOT_PATH, 'janus', 'ruby')
 
 require 'janus'
+require 'fileutils'
 include Janus
 
 desc "link ViM configuration files."
@@ -47,9 +48,18 @@ end
 task :update do
   puts "Cleaning the janus folder"
   `git clean -xdf -- janus &> /dev/null`
+  `git ls-files --exclude-standard --others -- janus`.split("\n").each do |untracked|
+    FileUtils.rm_rf File.expand_path(untracked.chomp, File.dirname(__FILE__))
+  end
 
   puts "Pulling latest changes"
   `git pull > /dev/null`
+
+  puts "Cleaning the janus folder"
+  `git clean -xdf -- janus &> /dev/null`
+  `git ls-files --exclude-standard --others -- janus`.split("\n").each do |untracked|
+    FileUtils.rm_rf File.expand_path(untracked.chomp, File.dirname(__FILE__))
+  end
 
   puts "Synchronising submodules urls"
   `git submodule sync > /dev/null`
