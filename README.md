@@ -38,12 +38,14 @@ The distribution is designed to work with Vim >= 7.3.
 The distribution also require `ack`, `pep8`, `ctags`, `ruby` and `rake`,
 for the most comfortable experience, use the GUI version of Vim. Linux
 users should install `gvim`, OSX users should install
-[MacVim](http://code.google.com/p/macvim/), the recommanded way of
-installating MacVim is using
+[MacVim](http://code.google.com/p/macvim/), the recommended way of
+installing MacVim is using
 [Homebrew](http://mxcl.github.com/homebrew/), but before installing
-MacVim you need to use system-wide ruby, if you're using **rvm** `rvm
-use system` switches to system ruby, if you're using **rbenv** `rbenv
-shell system` switches to system ruby.
+MacVim you need to use system-wide ruby and Python:
+
+* If you're using **rvm**: do `rvm use system`
+* If you're using **rbenv**: do `rbenv shell system`
+* If you're using **Pythonbrew**: do `pythonbrew off`
 
 ```bash
 $ brew install macvim
