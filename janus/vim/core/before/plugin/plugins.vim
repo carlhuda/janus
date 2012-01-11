@@ -10,7 +10,6 @@ endif
 
 " Plugins that requires ruby support
 if !has("ruby")
-  call janus#disable_plugin("command-t", s:no_ruby_support)
   call janus#disable_plugin("ruby", s:no_ruby_support)
 endif
 
