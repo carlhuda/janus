@@ -28,6 +28,11 @@ if !executable("curl")
   call janus#disable_plugin("gist", "The curl program is not installed")
 endif
 
+" Tagbar requires ctags
+if !executable("ctags")
+  call janus#disable_plugin("tagbar", "The ctags program is not installed")
+endif
+
 " nodejs does not protect itself
 " See #336
 if exists("*DetectNode")
