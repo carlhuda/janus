@@ -2,14 +2,17 @@ if has("gui_macvim")
   " Command-Shift-F on OSX
   call janus#add_mapping('ack', 'map', '<D-F>', ':Ack<space>')
 else
-  " Control-Shift-F on other systems
-  call janus#add_mapping('ack', 'map', '<C-F>', ':Ack<space>')
+  " Define <C-F> to a dummy value to see if it would set <C-f> as well.
+  map <C-F> :dummy
 
-  " Check if we defined <C-f> in the process
-  if maparg("<C-f>") == ":Ack "
-    " >leader>f on systems where <C-f> == <C-F>
+  if maparg("<C-f>") == ":dummy"
+    " <leader>f on systems where <C-f> == <C-F>
     call janus#add_mapping('ack', 'map', '<leader>f', ':Ack<space>')
-    map <C-f> <S-Down>
-  end
+  else
+    " <C-F> if we can still map <C-f> to <S-Down>
+    call janus#add_mapping('ack', 'map', '<C-F>', ':Ack<space>')
+  endif
+
+  map <C-f> <S-Down>
 endif
 
