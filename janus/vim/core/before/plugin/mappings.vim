@@ -67,7 +67,7 @@ nmap <leader>hs :set hlsearch! hlsearch?<CR>
 " Adjust viewports to the same size
 map <Leader>= <C-w>=
 
-if has("gui_macvim")
+if has("gui_macvim") && has("gui_running")
   " Map command-[ and command-] to indenting or outdenting
   " while keeping the original selection in visual mode
   vmap <D-]> >gv
