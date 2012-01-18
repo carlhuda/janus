@@ -1,4 +1,4 @@
-if has("gui_macvim")
+if has("gui_macvim") && has("gui_running")
   " Command-Shift-F on OSX
   call janus#add_mapping('ack', 'map', '<D-F>', ':Ack<space>')
 else
