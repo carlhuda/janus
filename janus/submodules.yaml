@@ -77,14 +77,13 @@ submodules:
   tools:
     ack:
     buffergator:
-    command-t:
     css-color:
+    ctrlp:
     easymotion:
     endwise:
     fugitive:
     gist:
     gundo:
-    hammer:
     indent-object:
     kwbd:
     matchit:
