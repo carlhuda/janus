@@ -28,6 +28,9 @@
 [submodule "janus/vim/colors/getafe"]
 	path = janus/vim/colors/getafe
 	url = https://github.com/larssmit/getafe.git
+[submodule "janus/vim/colors/janus-colors"]
+	path = janus/vim/colors/janus-colors
+	url = https://github.com/TechnoGate/janus-colors.git
 
 # Langs
 [submodule "janus/vim/langs/haml"]

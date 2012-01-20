@@ -31,6 +31,9 @@ submodules:
     sampler-pack:
     solarized:
     vividchalk:
+    janus-colors:
+      dependencies:
+        - sampler-pack
 
 
   # Langs
