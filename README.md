@@ -96,14 +96,14 @@ This directory is treated like a normal pathogen directory. For example:
 
 ```bash
 $ cd ~/.janus
-$ git checkout git://github.com/vim-scripts/Rename2.git rename2
+$ git clone https://github.com/vim-scripts/Rename2.git rename2
 ```
 
 Or, if you have a git repository in `~/.janus`, you can use a submodule:
 
 ```bash
 $ cd ~/.janus
-$ git submodule add git://github.com/vim-scripts/Rename2.git rename2
+$ git submodule add https://github.com/vim-scripts/Rename2.git rename2
 ```
 
 If you would like to disable an included plug-in, you can do that with
