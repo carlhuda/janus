@@ -81,6 +81,9 @@
 [submodule "janus/vim/langs/ruby"]
 	path = janus/vim/langs/ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule "janus/vim/langs/arduino"]
+	path = janus/vim/langs/arduino
+	url = https://github.com/vim-scripts/Arduino-syntax-file.git
 
 # Tools
 [submodule "janus/vim/tools/unimpaired"]

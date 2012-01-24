@@ -39,6 +39,7 @@ submodules:
   # Langs
   #
   langs:
+    arduino:
     coffeescript:
       categories:
         - coffeescript
