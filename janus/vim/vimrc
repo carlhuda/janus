@@ -24,6 +24,10 @@ if filereadable(expand("~/.vimrc.before"))
   source ~/.vimrc.before
 endif
 
+
+" Disable plugins prior to loading pathogen
+exe 'source ' . g:janus_vim_path . '/core/plugins.vim'
+
 ""
 "" Pathogen setup
 ""
