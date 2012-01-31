@@ -11,7 +11,7 @@ CONTENTS                                               *janus-contents*
  Janus features                        |janus-features|
      Base customizations               |janus-features-base-customizations|
      Ack                               |janus-features-ack|
-     Command-T                         |janus-features-command-t|
+     CtrlP                             |janus-features-ctrlp|
      NERDCommenter                     |janus-features-nerdcommenter|
      NERDTree                          |janus-features-nerdtree|
      SuperTab                          |janus-features-supertab|
@@ -272,14 +272,13 @@ You can learn more about it with :help Ack
 `:Ack `.
 
 
-## [Command-T](https://wincent.com/products/command-t)   *janus-features-command-t*
+## [CtrlP](https://github.com/kien/ctrlp.vim)   *janus-features-ctrlp*
 
-Command-T provides a mechanism for searching for a file inside the
-current working directory. It behaves similarly to command-t in
-Textmate.
+Fuzzy file, buffer, mru and tag finder. Replaces
+[Command-T](https://github.com/wincent/Command-T)
 
-**Customizations**: Janus rebinds command-t (`<D-t>`) to bring up this
-plugin. It defaults to `<Leader>t`.
+**Customizations**: For users of Command-T Janus maps CtrlP to command-t
+(`<D-t>`)
 
 
 ## [NERDCommenter](http://github.com/ddollar/nerdcommenter)    *janus-features-nerdcommenter*
