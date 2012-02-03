@@ -27,7 +27,7 @@
 	url = https://github.com/telamon/vim-color-github.git
 [submodule "janus/vim/colors/getafe"]
 	path = janus/vim/colors/getafe
-	url = https://github.com/larssmit/getafe.git
+	url = https://github.com:larssmit/vim-getafe.git
 [submodule "janus/vim/colors/janus-colors"]
 	path = janus/vim/colors/janus-colors
 	url = https://github.com/TechnoGate/janus-colors.git
