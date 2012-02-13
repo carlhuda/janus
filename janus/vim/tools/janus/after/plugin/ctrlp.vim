@@ -1,5 +1,6 @@
 if janus#is_plugin_enabled("ctrlp")
   let g:ctrlp_map = ''
+  let g:ctrlp_working_path_mode = 0
 endif
 
 if has("gui_macvim") && has("gui_running")
