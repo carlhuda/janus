@@ -50,10 +50,6 @@ if janus#is_plugin_enabled("nerdtree")
         end
       endif
     endif
-
-    if exists(":CommandTFlush") == 2
-      CommandTFlush
-    endif
   endfunction
 endif
 
