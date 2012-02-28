@@ -13,16 +13,6 @@ imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
 " format the entire file
 nmap <leader>fef ggVG=
 
-" Next buffer
-nmap <silent> ,. :bnext<CR>
-
-" Previous buffer
-nmap <silent> ,m :bprev<CR>
-
-" Next tab
-nmap <silent> ;' :tabnext<CR>
-nmap <silent> ;l :tabprev<CR>
-
 " upper/lower word
 nmap <leader>u mQviwU`Q
 nmap <leader>l mQviwu`Q
