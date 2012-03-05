@@ -50,7 +50,7 @@
 	url = https://github.com/ajf/puppet-vim.git
 [submodule "janus/vim/langs/scala"]
 	path = janus/vim/langs/scala
-	url = https://github.com/bdd/vim-scala.git
+  url = https://github.com/rosstimson/scala-vim-support.git
 [submodule "janus/vim/langs/handlebars"]
 	path = janus/vim/langs/handlebars
 	url = https://github.com/nono/vim-handlebars.git
