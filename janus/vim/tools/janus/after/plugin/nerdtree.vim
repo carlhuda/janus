@@ -2,6 +2,9 @@ if janus#is_plugin_enabled("nerdtree")
   let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
   let NERDTreeHijackNetrw = 0
 
+  " Default mapping, <leader>n
+  call janus#add_mapping('nerdtree', 'map', '<leader>n', ':NERDTreeToggle<CR>')
+
   augroup AuNERDTreeCmd
   autocmd AuNERDTreeCmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
   autocmd AuNERDTreeCmd FocusGained * call s:UpdateNERDTree()
@@ -52,6 +55,3 @@ if janus#is_plugin_enabled("nerdtree")
     endif
   endfunction
 endif
-
-" Default mapping, <leader>n
-call janus#add_mapping('nerdtree', 'map', '<leader>n', ':NERDTreeToggle<CR>')
