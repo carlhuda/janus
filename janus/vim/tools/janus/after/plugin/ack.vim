@@ -15,4 +15,3 @@ else
 
   map <C-f> <S-Down>
 endif
-
