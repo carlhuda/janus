@@ -164,4 +164,4 @@ endif
 ""
 
 " Insert the current directory into a command-line path
-cmap <C-P> <C-R>=expand("%:p:h") . "/"
+cmap <C-P> <C-R>=expand("%:p:h") . "/"<CR>
