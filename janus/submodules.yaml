@@ -86,7 +86,10 @@ submodules:
     easymotion:
     endwise:
     fugitive:
+    webapi:
     gist:
+      dependencies:
+        - webapi
     gundo:
     indent-object:
     kwbd:
