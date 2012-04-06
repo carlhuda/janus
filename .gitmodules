@@ -143,7 +143,10 @@
 [submodule "janus/vim/tools/endwise"]
 	path = janus/vim/tools/endwise
 	url = https://github.com/tpope/vim-endwise.git
-[submodule "janus/vim/tools/gist-vim"]
+[submodule "janus/vim/tools/webapi"]
+	path = janus/vim/tools/webapi
+	url = https://github.com/mattn/webapi-vim.git
+[submodule "janus/vim/tools/gist"]
 	path = janus/vim/tools/gist
 	url = https://github.com/mattn/gist-vim.git
 [submodule "janus/vim/tools/vimwiki"]
