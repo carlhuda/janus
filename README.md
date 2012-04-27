@@ -5,17 +5,20 @@ MacVim. It is forked from https://github.com/carlhuda/janus however I am also ad
 file so that other can use it directly. In case you face any issue please let me know.
 
  Extra plugins added
-    https://github.com/jistr/vim-nerdtree-tabs
-    https://github.com/vim-scripts/HTML-AutoCloseTag
+ 
+    https://github.com/jistr/vim-nerdtree-tabs 
+    https://github.com/vim-scripts/HTML-AutoCloseTag 
     https://github.com/maksimr/vim-jsbeautify
     https://github.com/jnwhteh/vim-golang
-Apart from nice features provided by Janus Following extra features have been added
+    
+Apart from nice features provided by Janus Following extra features have been added<br />
+
 1. NerdTree will open in each tab by default - It will always look the
-   same in all tabs
-2. Autocomplete for Html, XML, XSL, XHTML file extension by default
-3. By Default XML opened will be folded
-4. Remove trailing whitespaces and ^M chars
-5. Golang support
+   same in all tabs<br />
+2. Autocomplete for Html, XML, XSL, XHTML file extension by default<br />
+3. By Default XML opened will be folded<br />
+4. Remove trailing whitespaces and ^M chars<br />
+5. Golang support<br />
 
 #Usage Instructions
 1. run the add-custom-plugin.sh file
@@ -27,10 +30,6 @@ popular plug-ins and the most common mappings.
 
 The distribution is completely customisable using a `~/.vimrc.before`
 and `~/.vimrc.after` Vim RC files.
-
-
-
-
 
 
 ## Customization
