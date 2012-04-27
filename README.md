@@ -2,7 +2,7 @@
 
 This is a distribution of plug-ins and mappings for Vim, Gvim and
 MacVim. It is forked from https://github.com/carlhuda/janus however I am also adding few plugins and modified .vimrc.after
-file so that other can use it directly
+file so that other can use it directly. In case you face any issue please let me know.
 
 It is designed to provide minimal working environment using the most
 popular plug-ins and the most common mappings.
