@@ -9,6 +9,7 @@ file so that other can use it directly. In case you face any issue please let me
     https://github.com/vim-scripts/HTML-AutoCloseTag
     https://github.com/maksimr/vim-jsbeautify
     https://github.com/jnwhteh/vim-golang
+    https://github.com/hallettj/jslint.vim
 Apart from nice features provided by Janus Following extra features have been added
 1. NerdTree will open in each tab by default - It will always look the
    same in all tabs
@@ -16,6 +17,7 @@ Apart from nice features provided by Janus Following extra features have been ad
 3. By Default XML opened will be folded
 4. Remove trailing whitespaces and ^M chars
 5. Golang support
+6. JSLint support
 
 #Usage Instructions
 1. run the add-custom-plugin.sh file

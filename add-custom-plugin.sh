@@ -19,3 +19,6 @@ git clone https://github.com/maksimr/vim-jsbeautify.git
 
 echo "4. Installing golang plugin"
 git clone https://github.com/jnwhteh/vim-golang.git
+
+echo "4. Installing JSLint plugin"
+git clone https://github.com/hallettj/jslint.vim.gite
