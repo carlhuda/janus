@@ -12,6 +12,7 @@ color Zenburn
 	" Remove trailing whitespaces and ^M chars
 	autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 " }
+set tags=tags,./tags;$HOME
 autocmd VimEnter * NERDTree
 " NerdTree {
 		map <C-e> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
