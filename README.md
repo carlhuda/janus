@@ -26,6 +26,23 @@ Apart from nice features provided by Janus Following extra features have been ad
 1. run the add-custom-plugin.sh file
 2. copy content from .vimrc.after and append it in your .vimrc.after
    file which is located in $HOME directory
+#Extra Item
+To use 'go to definition' I am using ctags. To generate tags use following command in your project directory
+ctags *
+
+And add following line in your .vimrc.after
+ set tags=tags,./tags;$HOME
+
+further you can use following keyboard shortcuts
+C-] - go to definition
+C-T - Jump back from the definition.
+C-W C-] - Open the definition in a horizontal split
+
+C-\ - Open the definition in a new tab
+A-] - Open the definition in a vertical split
+
+After the tags are generated. You can use the following keys to tag into and tag out of functions:
+
 
 It is designed to provide minimal working environment using the most
 popular plug-ins and the most common mappings.
