@@ -134,9 +134,6 @@
 [submodule "janus/vim/tools/nerdtree"]
 	path = janus/vim/tools/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "janus/vim/tools/pep8"]
-	path = janus/vim/tools/pep8
-	url = https://github.com/jbking/vim-pep8.git
 [submodule "janus/vim/tools/indent-object"]
 	path = janus/vim/tools/indent-object
 	url = https://github.com/michaeljsmith/vim-indent-object.git

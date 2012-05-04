@@ -97,7 +97,6 @@ submodules:
     narrowregion:
     nerdcommenter:
     nerdtree:
-    pep8:
     snipmate:
       dependencies:
         - vim-addon-mw-utils
