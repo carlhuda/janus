@@ -49,7 +49,7 @@ discussion and announcements.
 
 The distribution is designed to work with Vim >= 7.3.
 
-The distribution also requires `ack`, `pep8`, `ctags`, `ruby` and `rake`.
+The distribution also requires `ack`, `ctags`, `ruby` and `rake`.
 For the most comfortable experience, use the GUI version of Vim. Linux
 users should install `gvim`, OSX users should install
 [MacVim](http://code.google.com/p/macvim/). The recommended way of
