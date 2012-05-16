@@ -27,7 +27,8 @@ module Janus
   # @param [String] url
   # @param [String] path
   def download_and_save_file(url, path)
-    open_and_save_file(path, open(url).read)
+    proxy = ENV['http_proxy'] || ENV['HTTP_PROXY']
+    open_and_save_file(path, open(url, :proxy => proxy).read)
   end
 
   # Open and save file
