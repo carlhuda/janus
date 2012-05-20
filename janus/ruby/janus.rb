@@ -51,7 +51,6 @@ module Janus
 end
 
 require 'janus/errors'
-require 'janus/git'
 require 'janus/vim'
 require 'janus/gems'
 require 'janus/github'
