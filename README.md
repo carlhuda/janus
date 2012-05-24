@@ -28,7 +28,7 @@ To upgrade to the latest version:
 2. move customizations from `~/.vimrc.local` to `~/.vimrc.before` and
    `~/.vimrc.after`.
 3. Do the same with `/.gvimrc.local`.
-4. Run the installer: `curl -Lo- http://bit.ly/janus-bootstrap | bash`
+4. Run the installer: `curl -Lo- https://bit.ly/janus-bootstrap | bash`
 
 ## Updating to the latest version (from any time after January 10th, 2012)
 
@@ -80,7 +80,7 @@ installer](https://github.com/carlhuda/janus/blob/master/bootstrap.sh)
 Janus.
 
 ```bash
-$ curl -Lo- http://bit.ly/janus-bootstrap | bash
+$ curl -Lo- https://bit.ly/janus-bootstrap | bash
 ```
 
 ## Customization
