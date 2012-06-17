@@ -65,6 +65,7 @@ submodules:
         - syntax
     handlebars:
     javascript:
+    less:
     markdown:
     nodejs:
     puppet:
