@@ -84,6 +84,9 @@
 [submodule "janus/vim/langs/arduino"]
 	path = janus/vim/langs/arduino
 	url = https://github.com/vim-scripts/Arduino-syntax-file.git
+[submodule "janus/vim/langs/clojure"]
+	path = janus/vim/langs/clojure
+	url = https://github.com/vim-scripts/VimClojure.git
 
 # Tools
 [submodule "janus/vim/tools/unimpaired"]
