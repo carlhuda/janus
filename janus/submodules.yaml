@@ -74,6 +74,7 @@ submodules:
     scala:
     scss:
     textile:
+    clojure:
 
 
   # Tools
