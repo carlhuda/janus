@@ -87,6 +87,9 @@
 [submodule "janus/vim/langs/clojure"]
 	path = janus/vim/langs/clojure
 	url = https://github.com/vim-scripts/VimClojure.git
+[submodule "janus/vim/langs/less"]
+	path = janus/vim/langs/less
+	url = https://github.com/groenewege/vim-less.git
 
 # Tools
 [submodule "janus/vim/tools/unimpaired"]
