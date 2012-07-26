@@ -39,7 +39,7 @@ map <leader>et :tabe %%
 nmap <silent> gw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 
 " Underline the current line with '='
-nmap <silent> <leader>ul :t.\|s/./=/g\|:nohls<cr>
+nmap <silent> <leader>ul :t.<CR>Vr=
 
 " set text wrapping toggles
 nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
