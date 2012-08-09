@@ -90,6 +90,9 @@
 [submodule "janus/vim/langs/less"]
 	path = janus/vim/langs/less
 	url = https://github.com/groenewege/vim-less.git
+[submodule "janus/vim/langs/haskell"]
+	path = janus/vim/langs/haskell
+	url = https://github.com/wlangstroth/vim-haskell.git
 
 # Tools
 [submodule "janus/vim/tools/unimpaired"]
