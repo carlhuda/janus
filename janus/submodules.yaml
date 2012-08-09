@@ -64,6 +64,7 @@ submodules:
         - rails
         - syntax
     handlebars:
+    haskell:
     javascript:
     less:
     markdown:
