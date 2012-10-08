@@ -167,11 +167,14 @@ Here're some tips in case you've never used VIM before:
 
 ## Modes
 
-* VIM has two modes:
+* VIM has three modes:
   * insert mode- stuff you type is added to the buffer
   * normal mode- keys you hit are interpreted as commands
+  * visual mode- allows you to select blocks of text
 * To enter insert mode, hit `i`
 * To exit insert mode, hit `<ESC>`
+* To enter visual mode, hit `v`
+* To exit visual mode, hit `<ESC>`
 
 ## Useful commands
 
