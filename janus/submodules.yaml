@@ -34,6 +34,7 @@ submodules:
     janus-colors:
       dependencies:
         - sampler-pack
+    tomorrow-theme:
 
 
   # Langs
