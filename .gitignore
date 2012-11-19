@@ -1,16 +1,11 @@
+# ViM files
+_backup
+_temp
 .netrwhist
-tmp
-nerdtree_plugin
 
-after
-autoload
-doc
-plugin
-ruby
-snippets
-syntax
-ftdetect
-ftplugin
-colors
-indent
-.VimballRecord
+# Vimius file
+.vimius
+
+# Plugins without git-mirror
+watchtower.vim
+mustache.vim
