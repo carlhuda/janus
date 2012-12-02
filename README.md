@@ -11,8 +11,8 @@ and `~/.vimrc.after` Vim RC files.
 
 ## Updating to the latest version
 
-Note: If you haven't upgraded since Jan 10, 2012, see instructions near
-the bottom of this readme.
+(Note: If you haven't upgraded since Jan 10, 2012, see instructions
+[below](https://github.com/galtenberg/janus#alternative-upgrade-steps).)
 
 To update to the latest version of the distribution, just run `rake`
 inside your `~/.vim` directory.
