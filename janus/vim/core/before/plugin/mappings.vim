@@ -163,5 +163,5 @@ endif
 "" Command-Line Mappings
 ""
 
-" Insert the current directory into a command-line path
-cmap <C-P> <C-R>=expand("%:p:h") . "/"<CR>
+" After whitespace, insert the current directory into a command-line path
+cnoremap <expr> <C-P> getcmdline()[getcmdpos()-2] ==# ' ' ? expand('%:p:h') : "\<C-P>"
