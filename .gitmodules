@@ -185,3 +185,6 @@
 [submodule "janus/vim/tools/eunuch"]
 	path = janus/vim/tools/eunuch
 	url = https://github.com/tpope/vim-eunuch.git
+[submodule "janus/vim/tools/repeat"]
+	path = janus/vim/tools/repeat
+	url = https://github.com/tpope/vim-repeat.git
