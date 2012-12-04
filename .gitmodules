@@ -185,3 +185,6 @@
 [submodule "janus/vim/langs/minitest"]
 	path = janus/vim/langs/minitest
 	url = https://github.com/sunaku/vim-ruby-minitest.git
+[submodule "janus/vim/tools/eunuch"]
+	path = janus/vim/tools/eunuch
+	url = https://github.com/tpope/vim-eunuch.git
