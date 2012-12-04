@@ -182,3 +182,6 @@
 [submodule "janus/vim/tools/vroom"]
 	path = janus/vim/tools/vroom
 	url = https://github.com/skalnik/vim-vroom.git
+[submodule "janus/vim/langs/minitest"]
+	path = janus/vim/langs/minitest
+	url = https://github.com/sunaku/vim-ruby-minitest.git

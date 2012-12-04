@@ -68,6 +68,7 @@ submodules:
     javascript:
     less:
     markdown:
+    minitest:
     nodejs:
     puppet:
     rails:
