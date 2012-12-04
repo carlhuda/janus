@@ -260,6 +260,20 @@ NERDTree:
 * In general, assume that there is a single NERDTree buffer on the left
   and one or more editing buffers on the right
 
+## [Unimpaired](https://github.com/tpope/vim-unimpaired)
+
+This plugin provides a lot of useful mappings, here's a brief example of
+what it does provide:
+
+* `[b` to go to the previous buffer
+* `]b` to go to the next buffer
+* `[n` to go to the previous SCM conflict marker
+* `]n` to go to the next SCM conflict marker
+
+Please check [`:help
+unimpaired`](https://github.com/tpope/vim-unimpaired/blob/master/doc/unimpaired.txt)
+for a complete list
+
 ## [SuperTab](http://github.com/ervandew/supertab)
 
 In insert mode, start typing something and hit `<TAB>` to tab-complete
