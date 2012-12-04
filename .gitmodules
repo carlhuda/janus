@@ -6,7 +6,7 @@
 # Colors
 [submodule "janus/vim/colors/sampler-pack"]
 	path = janus/vim/colors/sampler-pack
-	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
+	url = https://github.com/vim-scripts/Colour-Sampler-Pack.git
 [submodule "janus/vim/colors/solarized"]
 	path = janus/vim/colors/solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
