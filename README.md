@@ -195,9 +195,8 @@ Janus ships with a number of basic customizations for vim:
   a vertical split)
 * `<leader>et` expands to `:tabe (directory of current file)/` (open in
   a new tab)
-* `:w!!` expands to `%!sudo tee > /dev/null %`. Write to the current file
-  using sudo (if you forgot to run it with sudo), it will prompt for
-sudo password when writing
+* Write a privileged file with `:SudoW` or `:SudoWrite`, it will prompt
+  for sudo password when writing
 * `<F4>` toggles paste mode
 * `<leader>fef` formats the entire file
 * `<leader>u` converts the entire word to uppercace

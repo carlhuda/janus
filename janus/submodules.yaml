@@ -97,6 +97,7 @@ submodules:
     gundo:
     indent-object:
     kwbd:
+    eunuch:
     matchit:
     narrowregion:
     nerdcommenter:
