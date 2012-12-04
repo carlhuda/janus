@@ -9,28 +9,10 @@ popular plug-ins and the most common mappings.
 The distribution is completely customisable using a `~/.vimrc.before`
 and `~/.vimrc.after` Vim RC files.
 
-# UPGRADING FROM JANUARY 1st 2012 THROUGH JANUARY 10th
+## Updating to the latest version
 
-Please run `rake` twice before running macvim; make sure `command-t` is
-gone.
-
-# UPGRADING FROM BEFORE JANUARY 1st 2012
-
-If you were using Janus before January 2012, note that Janus has gone
-through a rewrite to make it more stable and customizable. Most notably,
-you can now disable plugins using `janus#disable_plugin` and customize
-Janus using `~/.vimrc.before` and `~/.vimrc.after`. See the rest of this
-`README` and the [Customization wiki page](https://github.com/carlhuda/janus/wiki/Customization).
-
-To upgrade to the latest version:
-
-1. remove `~/.vim`, `~/.vimrc` and `~/.gvimrc`.
-2. move customizations from `~/.vimrc.local` to `~/.vimrc.before` and
-   `~/.vimrc.after`.
-3. Do the same with `/.gvimrc.local`.
-4. Run the installer: `curl -Lo- https://bit.ly/janus-bootstrap | bash`
-
-## Updating to the latest version (from any time after January 10th, 2012)
+(Note: If you haven't upgraded since Jan 10, 2012, see instructions
+[below](https://github.com/galtenberg/janus#alternative-upgrade-steps).)
 
 To update to the latest version of the distribution, just run `rake`
 inside your `~/.vim` directory.
@@ -411,7 +393,31 @@ Rakefile then please head over to the [rakefile
 branch](https://github.com/carlhuda/janus/tree/rakefile) but please note
 that the rakefile branch will not be maintained.
 
-## License
+# Alternative Upgrade Steps
+
+## Upgrading from before January 1st, 2012
+
+If you were using Janus before January 2012, note that Janus has gone
+through a rewrite to make it more stable and customizable. Most notably,
+you can now disable plugins using `janus#disable_plugin` and customize
+Janus using `~/.vimrc.before` and `~/.vimrc.after`. See the rest of this
+`README` and the [Customization wiki page](https://github.com/carlhuda/janus/wiki/Customization).
+
+## Upgrading from January 1st, 2012 through January 10th
+
+Please run `rake` twice before running macvim; make sure `command-t` is
+gone.
+
+To upgrade to the latest version:
+
+1. remove `~/.vim`, `~/.vimrc` and `~/.gvimrc`.
+2. move customizations from `~/.vimrc.local` to `~/.vimrc.before` and
+   `~/.vimrc.after`.
+3. Do the same with `/.gvimrc.local`.
+4. Run the installer: `curl -Lo- https://bit.ly/janus-bootstrap | bash`
+
+
+# License
 
 ### This code is free to use under the terms of the MIT license.
 
