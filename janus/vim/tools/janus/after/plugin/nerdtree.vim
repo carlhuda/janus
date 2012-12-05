@@ -3,8 +3,6 @@ if janus#is_plugin_enabled("nerdtree")
 
   " Default mapping, <leader>n
   call janus#add_mapping('nerdtree', 'map', '<leader>n', ':NERDTreeToggle<CR>')
-  call janus#add_mapping('nerdtree', 'map', '<leader>nn', ':NERDTreeToggle<CR>')
-  call janus#add_mapping('nerdtree', 'map', '<leader>nf', ':NERDTreeFind<CR>')
 
   augroup AuNERDTreeCmd
   autocmd AuNERDTreeCmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
