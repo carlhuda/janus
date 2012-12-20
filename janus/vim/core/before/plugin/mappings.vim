@@ -2,10 +2,6 @@
 "" General Mappings (Normal, Visual, Operator-pending)
 ""
 
-" use :w!! to write to a file using sudo if you forgot to 'sudo vim file'
-" (it will prompt for sudo password when writing)
-cmap w!! %!sudo tee > /dev/null %
-
 " Toggle paste mode
 nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
 imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
