@@ -13,7 +13,11 @@ if !has("ruby")
 endif
 
 " Ack requires ack command
-if !executable("ack") && !executable("ack-grep")
+if executable("ack")
+  " use default config
+elseif executable("ack-grep")
+  let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+else
   call janus#disable_plugin("ack", "The ack program is not installed")
 endif
 
