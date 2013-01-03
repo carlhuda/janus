@@ -13,7 +13,7 @@ if !has("ruby")
 endif
 
 " Ack requires ack command
-if !executable("ack")
+if !executable("ack") && !executable("ack-grep")
   call janus#disable_plugin("ack", "The ack program is not installed")
 endif
 
