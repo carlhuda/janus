@@ -188,3 +188,6 @@
 [submodule "janus/vim/tools/repeat"]
 	path = janus/vim/tools/repeat
 	url = https://github.com/tpope/vim-repeat.git
+[submodule "janus/vim/langs/slim"]
+	path = janus/vim/langs/slim
+	url = git://github.com/slim-template/vim-slim.git
