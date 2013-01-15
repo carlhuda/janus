@@ -74,7 +74,7 @@
 	url = https://github.com/cakebaker/scss-syntax.vim.git
 [submodule "janus/vim/langs/csv"]
 	path = janus/vim/langs/csv
-	url = https://github.com/vim-scripts/csv.vim.git
+	url = https://github.com/chrisbra/csv.vim.git
 [submodule "janus/vim/langs/nodejs"]
 	path = janus/vim/langs/nodejs
 	url = https://github.com/mmalecki/vim-node.js.git
