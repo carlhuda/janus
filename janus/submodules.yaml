@@ -76,6 +76,7 @@ submodules:
     ruby:
     scala:
     scss:
+    slim:
     textile:
     clojure:
 
