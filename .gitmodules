@@ -109,7 +109,7 @@
 	url = https://github.com/ervandew/supertab.git
 [submodule "janus/vim/tools/zoomwin"]
 	path = janus/vim/tools/zoomwin
-	url = https://github.com/vim-scripts/ZoomWin.git
+	url = https://github.com/itspriddle/ZoomWin.git
 [submodule "janus/vim/tools/ack"]
 	path = janus/vim/tools/ack
 	url = https://github.com/mileszs/ack.vim.git
