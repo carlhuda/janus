@@ -93,6 +93,15 @@
 [submodule "janus/vim/langs/haskell"]
 	path = janus/vim/langs/haskell
 	url = https://github.com/wlangstroth/vim-haskell.git
+[submodule "janus/vim/langs/slim"]
+	path = janus/vim/langs/slim
+	url = https://github.com/slim-template/vim-slim.git
+[submodule "janus/vim/langs/erlang"]
+	path = janus/vim/langs/erlang
+	url = https://github.com/jimenezrick/vimerl.git
+[submodule "janus/vim/langs/minitest"]
+	path = janus/vim/langs/minitest
+	url = https://github.com/sunaku/vim-ruby-minitest.git
 
 # Tools
 [submodule "janus/vim/tools/unimpaired"]
@@ -179,18 +188,9 @@
 [submodule "janus/vim/tools/vroom"]
 	path = janus/vim/tools/vroom
 	url = https://github.com/skalnik/vim-vroom.git
-[submodule "janus/vim/langs/minitest"]
-	path = janus/vim/langs/minitest
-	url = https://github.com/sunaku/vim-ruby-minitest.git
 [submodule "janus/vim/tools/eunuch"]
 	path = janus/vim/tools/eunuch
 	url = https://github.com/tpope/vim-eunuch.git
 [submodule "janus/vim/tools/repeat"]
 	path = janus/vim/tools/repeat
 	url = https://github.com/tpope/vim-repeat.git
-[submodule "janus/vim/langs/slim"]
-	path = janus/vim/langs/slim
-	url = https://github.com/slim-template/vim-slim.git
-[submodule "janus/vim/langs/erlang"]
-	path = janus/vim/langs/erlang
-	url = https://github.com/jimenezrick/vimerl.git
