@@ -84,9 +84,6 @@
 [submodule "janus/vim/langs/arduino"]
 	path = janus/vim/langs/arduino
 	url = https://github.com/vim-scripts/Arduino-syntax-file.git
-[submodule "janus/vim/langs/clojure"]
-	path = janus/vim/langs/clojure
-	url = https://github.com/vim-scripts/VimClojure.git
 [submodule "janus/vim/langs/less"]
 	path = janus/vim/langs/less
 	url = https://github.com/groenewege/vim-less.git
@@ -102,6 +99,9 @@
 [submodule "janus/vim/langs/minitest"]
 	path = janus/vim/langs/minitest
 	url = https://github.com/sunaku/vim-ruby-minitest.git
+[submodule "janus/vim/langs/clojure"]
+	path = janus/vim/langs/clojure
+	url = https://github.com/guns/vim-clojure-static.git
 
 # Tools
 [submodule "janus/vim/tools/unimpaired"]
