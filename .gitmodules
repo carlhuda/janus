@@ -101,7 +101,7 @@
 	url = https://github.com/sunaku/vim-ruby-minitest.git
 [submodule "janus/vim/langs/clojure"]
 	path = janus/vim/langs/clojure
-	url = git://github.com/guns/vim-clojure-static.git
+	url = https://github.com/guns/vim-clojure-static.git
 
 # Tools
 [submodule "janus/vim/tools/unimpaired"]
