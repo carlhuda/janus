@@ -126,7 +126,7 @@ function! janus#load_core()
   " the rtp
   call janus#add_group("core")
   let core = g:janus_vim_path . janus#separator() . "core"
-  call pathogen#infect(core)
+  call pathogen#infect(core . janus#separator() . '{}')
 endfunction
 
 " Load pathogen groups
@@ -140,7 +140,7 @@ function! janus#load_pathogen()
   call janus#load_custom_before()
 
   for group in g:janus_loaded_groups
-    call pathogen#infect(group)
+    call pathogen#infect(group . janus#separator() . '{}')
   endfor
 
   " Add custom 'after' directories to rtp and then load the core
