@@ -2,7 +2,7 @@ if janus#is_plugin_enabled("nerdtree")
   let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
 
   " Default mapping, <leader>n
-  call janus#add_mapping('nerdtree', 'map', '<leader>n', ':NERDTreeToggle<CR>')
+  call janus#add_mapping('nerdtree', 'map', '<leader>n', ':NERDTreeToggle<CR> :NERDTreeMirror<CR>')
 
   augroup AuNERDTreeCmd
   autocmd AuNERDTreeCmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
