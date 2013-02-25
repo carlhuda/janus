@@ -22,6 +22,17 @@ module Janus
     define_install_plugin_tasks(group, name, &block)
   end
 
+  # Post Install a plugin
+  #
+  # @param [String] The group the plugin belongs to
+  # @param [String] The plugin name
+  # @param [&block] The installation block
+  def postinstall_vim_plugin(group, name, &block)
+    raise Janus::BlockNotGivenError unless block_given?
+
+    define_postinstall_plugin_tasks(group, name, &block)
+  end
+
   # Download and save file
   #
   # @param [String] url
@@ -74,5 +85,29 @@ module Janus
 
     # Hook the plugin's install task to the global install task
     task :install => "#{name}:install"
+  end
+
+  # Define tasks for post installing a plugin
+  #
+  # @param [String] The group the plugin belongs to
+  # @param [String] The plugin name
+  # @param [&block] The installation block
+  def define_postinstall_plugin_tasks(group, name, &block)
+    # Create a namespace for the plugin
+    namespace(name) do
+      # Define the plugin installation task
+      desc "Post Install #{name} plugin."
+      task :post_install do
+        puts
+        puts "*" * 40
+        puts "*#{"Post Installing #{name}".center(38)}*"
+        puts "*" * 40
+        puts
+        yield(Dir["#{vim_path}/#{group}/#{name}/**"].any?)
+      end
+    end
+
+    # Hook the plugin's install task to the global install task
+    task :install => "#{name}:post_install"
   end
 end
