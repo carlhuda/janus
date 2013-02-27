@@ -102,6 +102,9 @@
 [submodule "janus/vim/langs/clojure"]
 	path = janus/vim/langs/clojure
 	url = https://github.com/guns/vim-clojure-static.git
+[submodule "janus/vim/langs/elixir"]
+	path = janus/vim/langs/elixir
+	url = https://github.com/elixir-lang/vim-elixir.git
 
 # Tools
 [submodule "janus/vim/tools/unimpaired"]

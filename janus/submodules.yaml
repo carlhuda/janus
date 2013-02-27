@@ -54,6 +54,7 @@ submodules:
         - rails
         - syntax
         - behavior driven development
+    elixir:
     erlang:
     git:
       categories:
