@@ -12,7 +12,7 @@
 	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "janus/vim/colors/irblack"]
 	path = janus/vim/colors/irblack
-	url = https://github.com/wgibbs/vim-irblack.git
+	url = https://github.com/twerth/ir_black.git
 [submodule "janus/vim/colors/vividchalk"]
 	path = janus/vim/colors/vividchalk
 	url = https://github.com/tpope/vim-vividchalk.git
