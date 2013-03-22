@@ -23,13 +23,7 @@ module Janus
   #
   # @param [String] The gem name
   def install_gem(gem_name)
-    require 'rubygems'
-
-    # Install the gem only if it can't be found
-    if find_gem(gem_name).length == 0
-      # XXX: We should not run sudo if we do not need to!
-      sudo "gem install #{gem_name}"
-    end
+    sudo "gem install #{gem_name}" if find_gem(gem_name).length == 0
   rescue RubyGemsNotFoundError
     puts "Could not install the gem #{gem_name}, please do so manually."
     puts "sudo gem install #{gem_name}"

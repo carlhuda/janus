@@ -6,8 +6,8 @@ module Janus
 
   def self.included(base)
     # Load all plugin installation tasks
-    Dir["#{vim_path}/*/tasks/**.rake"].each do |f|
-      base.send :import, f
+    Dir["#{vim_path}/*/tasks/**.rake"].each do |rake_file|
+      base.send :import, rake_file
     end
   end
 
@@ -39,7 +39,10 @@ module Janus
   # @param [String] path
   def download_and_save_file(url, path)
     proxy = ENV['http_proxy'] || ENV['HTTP_PROXY']
-    open_and_save_file(path, open(url, :proxy => proxy).read)
+
+    open_and_save_file(path) do
+      open(url, :proxy => proxy).read
+    end
   end
 
   # Open and save file
@@ -48,10 +51,8 @@ module Janus
   # @param [Value] What to write in the file
   # @param [&block]
   def open_and_save_file(path, value = nil, &block)
-    # Make sure the directory up to the folder exists
     mkdir_p File.dirname(path)
-    # Open the file and use either the block or the value to write the
-    # file
+
     File.open path, 'w' do |f|
       if block_given?
         f.write(yield)
