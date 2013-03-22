@@ -58,6 +58,6 @@ end
 
 desc "Install or Update Janus."
 task :default do
-  sh "rake update"
-  sh "rake install"
+  Rake::Task['update'].invoke
+  Rake::Task['install'].invoke
 end
