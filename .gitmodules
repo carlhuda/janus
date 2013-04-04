@@ -143,9 +143,6 @@
 [submodule "janus/vim/tools/vim-addon-mw-utils"]
 	path = janus/vim/tools/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "janus/vim/tools/snipmate-snippets"]
-	path = janus/vim/tools/snipmate-snippets
-	url = https://github.com/honza/snipmate-snippets.git
 [submodule "janus/vim/tools/syntastic"]
 	path = janus/vim/tools/syntastic
 	url = https://github.com/scrooloose/syntastic.git
@@ -197,3 +194,6 @@
 [submodule "janus/vim/tools/repeat"]
 	path = janus/vim/tools/repeat
 	url = https://github.com/tpope/vim-repeat.git
+[submodule "janus/vim/tools/vim-snippets"]
+	path = janus/vim/tools/vim-snippets
+	url = https://github.com/honza/vim-snippets.git

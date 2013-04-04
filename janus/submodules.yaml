@@ -110,7 +110,7 @@ submodules:
       dependencies:
         - vim-addon-mw-utils
         - tlib
-    snipmate-snippets:
+    vim-snippets:
       dependencies:
         - snipmate
     supertab:
