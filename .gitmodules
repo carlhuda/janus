@@ -197,3 +197,6 @@
 [submodule "janus/vim/tools/vim-snippets"]
 	path = janus/vim/tools/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
+[submodule "janus/vim/tools/dispatch"]
+	path = janus/vim/tools/dispatch
+	url = https://github.com/tpope/vim-dispatch.git
