@@ -200,3 +200,6 @@
 [submodule "janus/vim/tools/dispatch"]
 	path = janus/vim/tools/dispatch
 	url = https://github.com/tpope/vim-dispatch.git
+[submodule "janus/vim/tools/multiple-cursors"]
+	path = janus/vim/tools/multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors.git
