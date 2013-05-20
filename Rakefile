@@ -18,7 +18,7 @@ end
 namespace :dev do
   desc "Update submodules"
   task :update_submodules do
-    sh "git submodule foreach git pull origin master"
+    sh "git submodule foreach 'git fetch origin && git reset --hard origin/master'"
   end
 
   # Taken from RefineryCMD
