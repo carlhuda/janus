@@ -289,6 +289,19 @@ Tagbar is a vim plugin for browsing the tags of source code files.
 
 **Customizations**: Janus binds `<Leader>rt` to toggle Tagbar.
 
+## [SnipMate](https://github.com/garbas/vim-snipmate)
+SnipMate defines text snippets (a series of characters) that expand to
+a useful piece of code when tab is pressed.  For example, in a Ruby
+file, def`<TAB>` expands to:
+```ruby
+def method_name
+
+end
+```
+After typing in the method name, press tab again to put the cursor right
+where you want it on the next line.  [This repository](https://github.com/honza/vim-snippets/tree/master/snippets)
+has a full list of the Snippets that are available in Janus.
+
 ## [EasyMotion](https://github.com/Lokaltog/vim-easymotion)
 
 EasyMotion provides a much simpler way to use some motions in vim. It
