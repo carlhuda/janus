@@ -7,7 +7,7 @@ nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
 imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
 
 " format the entire file
-nmap <leader>fef ggVG=``
+nnoremap <leader>fef :normal! gg=G``<CR>
 
 " upper/lower word
 nmap <leader>u mQviwU`Q
