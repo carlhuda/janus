@@ -59,7 +59,7 @@
 	url = https://github.com/ajf/puppet-vim.git
 [submodule "janus/vim/langs/scala"]
 	path = janus/vim/langs/scala
-	url = https://github.com/rosstimson/scala-vim-support.git
+	url = https://github.com/derekwyatt/vim-scala.git
 [submodule "janus/vim/langs/coffeescript"]
 	path = janus/vim/langs/coffeescript
 	url = https://github.com/kchmck/vim-coffee-script.git
