@@ -23,6 +23,7 @@ submodules:
   # Colors
   #
   colors:
+    base16-vim:
     getafe:
     github:
     irblack:
@@ -30,6 +31,7 @@ submodules:
     pyte:
     sampler-pack:
     solarized:
+    vim-tomorrow-theme:
     vividchalk:
     janus-colors:
       dependencies:
