@@ -31,7 +31,6 @@
 [submodule "janus/vim/colors/janus-colors"]
 	path = janus/vim/colors/janus-colors
 	url = https://github.com/TechnoGate/janus-colors.git
-
 [submodule "janus/vim/colors/vim-tomorrow-theme"]
 	path = janus/vim/colors/vim-tomorrow-theme
 	url = https://github.com/chriskempson/vim-tomorrow-theme/
