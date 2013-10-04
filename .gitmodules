@@ -212,3 +212,6 @@
 [submodule "janus/vim/tools/multiple-cursors"]
 	path = janus/vim/tools/multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors.git
+[submodule "janus/vim/tools/visualstar"]
+	path = janus/vim/tools/visualstar
+	url = https://github.com/thinca/vim-visualstar.git
