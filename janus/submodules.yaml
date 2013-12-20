@@ -124,6 +124,7 @@ submodules:
     tlib:
     unimpaired:
     vim-addon-mw-utils:
+    vim-multiple-cursors:
     vimwiki:
     zoomwin:
     vroom:
