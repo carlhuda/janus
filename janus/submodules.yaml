@@ -125,6 +125,7 @@ submodules:
     unimpaired:
     vim-addon-mw-utils:
     vim-multiple-cursors:
+    vim-trailing-whitespace:
     vimwiki:
     zoomwin:
     vroom:

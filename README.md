@@ -401,6 +401,13 @@ cursor at every line and leaves you in Normal mode.
 
 More at [QuickStart](https://github.com/terryma/vim-multiple-cursors/blob/master/README.md#quick-start)
 
+## [vim-trailing-whitespace](https://github.com/bronson/vim-trailing-whitespace)
+This plugin causes all trailing whitespace to be highlighted in red.
+
+To fix the whitespace errors, just call :FixWhitespace.  By default it
+operates on the entire file.  Pass a range (or use V to select some lines)
+to restrict the portion of the file that gets fixed.
+
 ## Additional Syntaxes
 
 Janus ships with a few additional syntaxes:
