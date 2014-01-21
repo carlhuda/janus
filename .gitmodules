@@ -220,4 +220,4 @@
 	url = https://github.com/terryma/vim-multiple-cursors.git
 [submodule "janus/vim/tools/vim-trailing-whitespace"]
 	path = janus/vim/tools/vim-trailing-whitespace
-	url = git@github.com:bronson/vim-trailing-whitespace.git
+	url = https://github.com/bronson/vim-trailing-whitespace.git
