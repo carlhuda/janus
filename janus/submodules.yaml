@@ -84,6 +84,7 @@ submodules:
     textile:
     clojure:
     golang:
+    liquid:
 
 
   # Tools
