@@ -218,9 +218,6 @@
 [submodule "janus/vim/tools/visualstar"]
 	path = janus/vim/tools/visualstar
 	url = https://github.com/thinca/vim-visualstar.git
-[submodule "janus/vim/tools/vim-multiple-cursors"]
-	path = janus/vim/tools/vim-multiple-cursors
-	url = https://github.com/terryma/vim-multiple-cursors.git
 [submodule "janus/vim/tools/vim-trailing-whitespace"]
 	path = janus/vim/tools/vim-trailing-whitespace
 	url = https://github.com/bronson/vim-trailing-whitespace.git
