@@ -39,7 +39,13 @@ module Janus
   # @param [String] path
   def download_and_save_file(url, path)
     proxy = ENV['http_proxy'] || ENV['HTTP_PROXY']
-    open_and_save_file(path, open(url, :proxy => proxy).read)
+
+    uri = URI.parse(proxy)
+    proxy_host = uri.scheme + "://" + uri.host + ":" + uri.port.to_s
+    proxy_user, proxy_pass = uri.userinfo.split(/:/) if uri.userinfo
+    options = { :proxy_http_basic_authentication => [proxy_host,proxy_user,proxy_pass] }
+
+    open_and_save_file(path, open(url, options).read)
   end
 
   # Open and save file
