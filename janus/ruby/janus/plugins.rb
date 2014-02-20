@@ -38,12 +38,15 @@ module Janus
   # @param [String] url
   # @param [String] path
   def download_and_save_file(url, path)
+    options = {}
+    
     proxy = ENV['http_proxy'] || ENV['HTTP_PROXY']
-
-    uri = URI.parse(proxy)
-    proxy_host = uri.scheme + "://" + uri.host + ":" + uri.port.to_s
-    proxy_user, proxy_pass = uri.userinfo.split(/:/) if uri.userinfo
-    options = { :proxy_http_basic_authentication => [proxy_host,proxy_user,proxy_pass] }
+    if proxy
+      uri = URI.parse(proxy)
+      proxy_host = uri.scheme + "://" + uri.host + ":" + uri.port.to_s
+      proxy_user, proxy_pass = uri.userinfo.split(/:/) if uri.userinfo
+      options[:proxy_http_basic_authentication] = [proxy_host,proxy_user,proxy_pass]
+    end
 
     open_and_save_file(path, open(url, options).read)
   end
