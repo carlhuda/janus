@@ -224,3 +224,6 @@
 [submodule "janus/vim/tools/vim-trailing-whitespace"]
 	path = janus/vim/tools/vim-trailing-whitespace
 	url = https://github.com/bronson/vim-trailing-whitespace.git
+[submodule "janus/vim/tools/vim-json"]
+	path = janus/vim/tools/vim-json
+	url = https://github.com/elzr/vim-json.git
