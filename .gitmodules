@@ -117,6 +117,9 @@
 [submodule "janus/vim/langs/liquid"]
 	path = janus/vim/langs/liquid
 	url = https://github.com/tpope/vim-liquid.git
+[submodule "janus/vim/langs/rdoc"]
+	path = janus/vim/langs/rdoc
+	url = https://github.com/depuracao/vim-rdoc.git
 
 # Tools
 [submodule "janus/vim/tools/unimpaired"]
