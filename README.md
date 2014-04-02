@@ -413,6 +413,9 @@ to restrict the portion of the file that gets fixed.
 Janus ships with a few additional syntaxes:
 
 * Markdown (bound to \*.markdown, \*.md, and \*.mk)
+* Markdown auto styling (disabled by setting
+  `g:disable_markdown_autostyle` in `~/.vimrc.before` => `let
+  g:disable_markdown_autostyle = 1`)
 * Mustache (bound to \*.mustache)
 * Haml (bound to \*.haml)
 * Sass (bound to \*.sass)
