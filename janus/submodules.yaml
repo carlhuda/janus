@@ -67,11 +67,11 @@ submodules:
         - ruby
         - rails
         - syntax
-    handlebars:
     haskell:
     javascript:
     less:
     markdown:
+    mustache_handlebars:
     minitest:
     nodejs:
     puppet:

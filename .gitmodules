@@ -51,15 +51,15 @@
 [submodule "janus/vim/langs/markdown"]
 	path = janus/vim/langs/markdown
 	url = https://github.com/tpope/vim-markdown.git
+[submodule "janus/vim/langs/mustache_handlebars"]
+	path = janus/vim/langs/mustache_handlebars
+	url = https://github.com/mustache/vim-mustache-handlebars.git
 [submodule "janus/vim/langs/puppet"]
 	path = janus/vim/langs/puppet
 	url = https://github.com/ajf/puppet-vim.git
 [submodule "janus/vim/langs/scala"]
 	path = janus/vim/langs/scala
 	url = https://github.com/rosstimson/scala-vim-support.git
-[submodule "janus/vim/langs/handlebars"]
-	path = janus/vim/langs/handlebars
-	url = https://github.com/nono/vim-handlebars.git
 [submodule "janus/vim/langs/coffeescript"]
 	path = janus/vim/langs/coffeescript
 	url = https://github.com/kchmck/vim-coffee-script.git
