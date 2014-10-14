@@ -83,7 +83,7 @@ submodules:
     slim:
     textile:
     clojure:
-    golang:
+    go:
     liquid:
     rdoc:
 

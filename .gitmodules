@@ -111,15 +111,15 @@
 [submodule "janus/vim/langs/elixir"]
 	path = janus/vim/langs/elixir
 	url = https://github.com/elixir-lang/vim-elixir.git
-[submodule "janus/vim/langs/golang"]
-	path = janus/vim/langs/golang
-	url = https://github.com/jnwhiteh/vim-golang.git
 [submodule "janus/vim/langs/liquid"]
 	path = janus/vim/langs/liquid
 	url = https://github.com/tpope/vim-liquid.git
 [submodule "janus/vim/langs/rdoc"]
 	path = janus/vim/langs/rdoc
 	url = https://github.com/depuracao/vim-rdoc.git
+[submodule "janus/vim/langs/go"]
+	path = janus/vim/langs/go
+	url = https://github.com/fatih/vim-go.git
 
 # Tools
 [submodule "janus/vim/tools/unimpaired"]
