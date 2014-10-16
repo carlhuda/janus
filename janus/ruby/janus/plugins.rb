@@ -1,5 +1,8 @@
 require 'rake'
 require 'open-uri'
+require 'uri'
+require 'net/http'
+require 'openssl'
 
 module Janus
   include Rake::DSL if defined?(Rake::DSL)
@@ -39,16 +42,31 @@ module Janus
   # @param [String] path
   def download_and_save_file(url, path)
     options = {}
-    
+
     proxy = ENV['http_proxy'] || ENV['HTTP_PROXY']
+    uri = URI.parse(url)
     if proxy
-      uri = URI.parse(proxy)
-      proxy_host = uri.scheme + "://" + uri.host + ":" + uri.port.to_s
-      proxy_user, proxy_pass = uri.userinfo.split(/:/) if uri.userinfo
+      proxy_uri = URI.parse(proxy)
+      proxy_host = proxy_uri.scheme + "://" + proxy_uri.host + ":" + proxy_uri.port.to_s
+      proxy_user, proxy_pass = proxy_uri.userinfo.split(/:/) if proxy_uri.userinfo
+
       options[:proxy_http_basic_authentication] = [proxy_host,proxy_user,proxy_pass]
+      http = Net::HTTP.new(uri.host, 443, proxy_uri.host, proxy_uri.port)
+    else
+      http = Net::HTTP.new(uri.host, 443)
     end
 
-    open_and_save_file(path, open(url, options).read)
+
+    http.use_ssl = true
+    http.ssl_version = :TLSv1
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    response = http.request_get(uri.path)
+
+    if response.code == '301'
+      download_and_save_file(response.to_hash['location'].first, path)
+    else
+      open_and_save_file(path, response.body)
+    end
   end
 
   # Open and save file
