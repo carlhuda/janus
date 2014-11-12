@@ -86,6 +86,7 @@ submodules:
     go:
     liquid:
     rdoc:
+    json:
 
 
   # Tools
