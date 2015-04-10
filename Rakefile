@@ -10,7 +10,15 @@ task :link_vim_conf_files do
   %w[ vimrc gvimrc ].each do |file|
     dest = expand("~/.#{file}")
     unless File.exist?(dest)
-      ln_s(expand("../janus/vim/#{file}", __FILE__), dest)
+      require 'rbconfig'
+      source = expand("../janus/vim/#{file}", __FILE__)
+      if RbConfig::CONFIG['host_os'] =~ /mswin|mingw/
+        require 'open3'
+        stdin, stdout, stderr, wait_thr = Open3.popen3('cmd.exe', "/c mklink #{dest} #{source}")
+        wait_thr.value.exitstatus
+      else
+        ln_s(source, dest)
+      end
     end
   end
 end
@@ -44,26 +52,30 @@ task :folders do
 end
 
 task :update do
+  is_windows = RbConfig::CONFIG['host_os'] =~ /mswin|mingw/
+  redirect_out = is_windows ? '> NUL' : '> /dev/null'
+  redirect_out_err = is_windows ? '> NUL 2> NUL' : '&> /dev/null'
+
   puts "Cleaning the janus folder"
-  `git clean -xdf -- janus &> /dev/null`
+  `git clean -xdf -- janus #{redirect_out_err}`
   `git ls-files --exclude-standard --others -- janus`.split("\n").each do |untracked|
     FileUtils.rm_rf File.expand_path(untracked.chomp, File.dirname(__FILE__))
   end
 
   puts "Pulling latest changes"
-  `git pull > /dev/null`
+  `git pull #{redirect_out}`
 
   puts "Cleaning the janus folder"
-  `git clean -xdf -- janus &> /dev/null`
+  `git clean -xdf -- janus #{redirect_out_err}`
   `git ls-files --exclude-standard --others -- janus`.split("\n").each do |untracked|
     FileUtils.rm_rf File.expand_path(untracked.chomp, File.dirname(__FILE__))
   end
 
   puts "Synchronising submodules urls"
-  `git submodule sync > /dev/null`
+  `git submodule sync #{redirect_out}`
 
   puts "Updating the submodules"
-  `git submodule update --init > /dev/null`
+  `git submodule update --init #{redirect_out}`
 end
 
 task :install => [:folders, :link_vim_conf_files] do
