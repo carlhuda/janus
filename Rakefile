@@ -14,6 +14,8 @@ task :link_vim_conf_files do
       source = expand("../janus/vim/#{file}", __FILE__)
       if RbConfig::CONFIG['host_os'] =~ /mswin|mingw/
         require 'open3'
+        dest = dest.gsub(?/, ?\\)
+        source = source.gsub(?/, ?\\)
         stdin, stdout, stderr, wait_thr = Open3.popen3('cmd.exe', "/c mklink #{dest} #{source}")
         wait_thr.value.exitstatus
       else
