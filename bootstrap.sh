@@ -9,8 +9,8 @@ function die()
 # Add .old to any existing Vim file in the home directory
 for filepath in "${HOME}/.vim" "${HOME}/.vimrc" "${HOME}/.gvimrc"; do
   if [ -e $filepath ]; then
-    mv "${i}" "${i}.old" || die "Could not move ${i} to ${i}.old"
-    echo "${i} has been renamed to ${i}.old"
+    mv "${filepath}" "${filepath}.old" || die "Could not move ${filepath} to ${filepath}.old"
+    echo "${filepath} has been renamed to ${filepath}.old"
   fi
 done
 
