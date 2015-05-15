@@ -227,3 +227,6 @@
 [submodule "janus/vim/langs/json"]
 	path = janus/vim/langs/json
 	url = https://github.com/elzr/vim-json.git
+[submodule "janus/vim/tools/vim-gitgutter"]
+	path = janus/vim/tools/vim-gitgutter
+	url = git@github.com:airblade/vim-gitgutter.git
