@@ -95,14 +95,12 @@ function! janus#add_group(name, ...)
   call add(g:janus_loaded_groups, base_path . janus#separator() . a:name)
 endfunction
 
-
 " Prepends custom plugins first so they will end up last after pathogen loads
 " other janus groups
-function! janus#load_custom_before()
+function! janus#load_custom_before(path)
   if isdirectory(g:janus_custom_path)
     let rtp = pathogen#split(&rtp)
-    let custom_path = g:janus_custom_path . janus#separator() . "*"
-    let custom = filter(pathogen#glob_directories(custom_path), '!pathogen#is_disabled(v:val)')
+    let custom = filter(pathogen#glob_directories(a:path), '!pathogen#is_disabled(v:val)')
     let &rtp = pathogen#join(pathogen#uniq(custom + rtp))
   endif
 endfunction
@@ -137,11 +135,14 @@ function! janus#load_pathogen()
   endif
 
   " Add custom plugins before bundled groups
-  call janus#load_custom_before()
+  call janus#load_custom_before(g:janus_custom_path . janus#separator() . "*")
 
   for group in g:janus_loaded_groups
     call pathogen#infect(group . janus#separator() . '{}')
   endfor
+
+  " Add custom plugins to override bundled groups
+  call janus#load_custom_before(g:janus_custom_path . ".before" . janus#separator() . "*")
 
   " Add custom 'after' directories to rtp and then load the core
   call janus#load_custom_after()
