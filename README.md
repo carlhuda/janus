@@ -280,9 +280,9 @@ based on the current context.
 
 ## [Syntastic](https://github.com/scrooloose/syntastic/)
 
-Syntastic is a syntax checking plugin that runs buffers through external syntax 
-checkers as they are saved and opened. If syntax errors are detected, the user 
-is notified and is happy because they didn't have to compile their code or 
+Syntastic is a syntax checking plugin that runs buffers through external syntax
+checkers as they are saved and opened. If syntax errors are detected, the user
+is notified and is happy because they didn't have to compile their code or
 execute their script to find them.
 
 ## [Tagbar](https://github.com/majutsushi/tagbar)
@@ -352,6 +352,12 @@ file
 * `<leader>gc` maps to `:Gcommit<CR>`
 * `<leader>gp` maps to `:Git push<CR>`
 
+## [Git Gutter](http://github.com/airblade/vim-gitgutter)
+
+A Vim plugin which shows a git diff in the 'gutter' (sign column). It
+shows whether each line has been added, modified, and where lines have
+been removed. You can also stage and revert individual hunks.
+
 ## [ZoomWin](http://github.com/vim-scripts/ZoomWin)
 
 When working with split windows, ZoomWin lets you zoom into a window and
@@ -380,7 +386,7 @@ without leaving the buffer catalog viewer.
 ## [Vroom](https://github.com/skalnik/vim-vroom)
 
 VRoom is a plugin inspired by [Gary Bernhardt's vim
-config](https://github.com/garybernhardt/dotfiles/blob/69330074b7a15c67efa4594a71fa91592f1ce4f9/.vimrc#L286-342) 
+config](https://github.com/garybernhardt/dotfiles/blob/69330074b7a15c67efa4594a71fa91592f1ce4f9/.vimrc#L286-342)
 for running your ruby tests/specs/features.
 
 Imagine you're hacking on a Rails controller, when you switch to the
