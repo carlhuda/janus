@@ -164,7 +164,7 @@ Here're some tips in case you've never used VIM before:
   by default. You can, for example, use `let mapleader = ","` to change this to a comma. If you want this
   to be in effect for uses of `<Leader>` in the .vimrc file, make sure to define
   this in `~/.vimrc.before`
-* Keyboard [cheat sheet](http://walking-without-crutches.heroku.com/image/images/vi-vim-cheat-sheet.png).
+* Keyboard [cheat sheet](http://vim.rtorr.com/).
 
 # Features
 
