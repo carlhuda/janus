@@ -230,7 +230,7 @@ You can learn more about it with :help Ack.
 **Customizations**: Janus rebinds command-shift-f (`<D-F>`) to bring up
 `:Ack `.
 
-## [CtrlP](https://github.com/kien/ctrlp.vim)
+## [CtrlP](https://github.com/ctrlpvim/ctrlp.vim)
 
 Fuzzy file, buffer, mru and tag finder. Replaces [Command-T](https://github.com/wincent/Command-T)
 
