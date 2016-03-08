@@ -198,7 +198,7 @@ Janus ships with a number of basic customizations for vim:
   for sudo password when writing
 * `<F4>` toggles paste mode
 * `<leader>fef` formats the entire file
-* `<leader>u` converts the entire word to uppercace
+* `<leader>u` converts the entire word to uppercase
 * `<leader>l` converts the entire word to lowercase
 * `<leader>U` converts the first char of a word to uppercase
 * `<leader>L` converts the first char of a word to lowercase
