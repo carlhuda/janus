@@ -196,7 +196,7 @@
 	url = https://github.com/rgarver/Kwbd.vim.git
 [submodule "janus/vim/tools/ctrlp"]
 	path = janus/vim/tools/ctrlp
-	url = https://github.com/kien/ctrlp.vim.git
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
 [submodule "janus/vim/tools/vroom"]
 	path = janus/vim/tools/vroom
 	url = https://github.com/skalnik/vim-vroom.git
