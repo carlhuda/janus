@@ -87,6 +87,7 @@ submodules:
     liquid:
     rdoc:
     json:
+    typescript:
 
 
   # Tools
