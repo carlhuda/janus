@@ -120,6 +120,9 @@
 [submodule "janus/vim/langs/go"]
 	path = janus/vim/langs/go
 	url = https://github.com/fatih/vim-go.git
+[submodule "janus/vim/langs/typescript"]
+	path = janus/vim/langs/typescript
+	url = https://github.com/leafgarland/typescript-vim.git
 
 # Tools
 [submodule "janus/vim/tools/unimpaired"]
