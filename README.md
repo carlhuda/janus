@@ -127,6 +127,7 @@ with a submodule.
 For more information on how to customize Janus, you might want to take
 a look at the [Customization wiki
 page](https://github.com/carlhuda/janus/wiki/Customization).
+Additional you can see [Example](https://github.com/khusnetdinov/.janus) of customization.
 
 # Intro to VIM
 
