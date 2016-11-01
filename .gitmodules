@@ -131,9 +131,6 @@
 [submodule "janus/vim/tools/nerdcommenter"]
 	path = janus/vim/tools/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule "janus/vim/tools/matchit"]
-	path = janus/vim/tools/matchit
-	url = https://github.com/edsono/vim-matchit.git
 [submodule "janus/vim/tools/supertab"]
 	path = janus/vim/tools/supertab
 	url = https://github.com/ervandew/supertab.git
