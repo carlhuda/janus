@@ -27,6 +27,8 @@ call janus#add_group("colors")
 
 if filereadable(expand("~/.vimrc.before"))
   source ~/.vimrc.before
+else
+  let g:syntastic_mode_map = { 'mode': 'passive' }
 endif
 
 
