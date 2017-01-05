@@ -281,10 +281,14 @@ based on the current context.
 
 ## [Syntastic](https://github.com/scrooloose/syntastic/)
 
-Syntastic is a syntax checking plugin that runs buffers through external syntax
+Syntastic is a syntax checking plugin that runs files through external syntax
 checkers as they are saved and opened. If syntax errors are detected, the user
 is notified and is happy because they didn't have to compile their code or
 execute their script to find them.
+
+Please see [`:help
+syntastic`](https://github.com/vim-syntastic/syntastic/blob/master/doc/syntastic.txt)
+for more information.
 
 ## [Tagbar](https://github.com/majutsushi/tagbar)
 
