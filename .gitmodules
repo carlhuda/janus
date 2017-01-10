@@ -157,7 +157,7 @@
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
 [submodule "janus/vim/tools/syntastic"]
 	path = janus/vim/tools/syntastic
-	url = https://github.com/scrooloose/syntastic.git
+	url = https://github.com/vim-syntastic/syntastic.git
 [submodule "janus/vim/tools/tagbar"]
 	path = janus/vim/tools/tagbar
 	url = https://github.com/majutsushi/tagbar.git

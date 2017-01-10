@@ -308,12 +308,23 @@ In insert mode, start typing something and hit `<TAB>` to tab-complete
 based on the current context.
 
 
-## [Syntastic](https://github.com/scrooloose/syntastic/)     *janus-features-syntastic*
+## [Syntastic](https://github.com/vim-syntastic/syntastic)   *janus-features-syntastic*
 
-Syntastic is a syntax checking plugin that runs buffers through external syntax 
+Syntastic is a syntax checking plugin that runs files through external syntax 
 checkers as they are saved and opened. If syntax errors are detected, the user 
 is notified and is happy because they didn't have to compile their code or 
-execute their script to find them.
+execute their script to find them. See `:help syntastic` for details.
+
+**Customizations**: Janus adds a number of customizations to Syntastic:
+
+* Set Syntastic to passive mode by default (use `:SyntasticToggleMode` to
+  toggle modes)
+* Enable the statusline flag
+* Always fill in location lists
+* Open and close error windows automatically
+* Enable syntax checks when opening files
+* Disable syntax checks when quitting Vim with `:wq`, `:x`, and `:ZZ`
+* Changes symbols for signs placed in the gutter margins.
 
 
 ## [Tagbar](https://github.com/majutsushi/tagbar)    *janus-features-tagbar*
