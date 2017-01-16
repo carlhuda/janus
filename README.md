@@ -368,6 +368,8 @@ been removed. You can also stage and revert individual hunks.
 When working with split windows, ZoomWin lets you zoom into a window and
 out again using `Ctrl-W o`
 
+**Customizations**: Janus binds `<leader>zw` to `:ZoomWin`
+
 ## [JSON](https://github.com/elzr/vim-json)
 
 Better JSON and JSONP with distinct highlighting for keywords versus
@@ -376,8 +378,6 @@ quotes concealed (disable with `let g:vim_json_syntax_conceal = 0` in
 `~/.vimrc.after`, folding of {...} and [...] blocks (enable with
 `:setlocal foldmethod=syntax`, and JSON-specific warnings highlighted in
 red.
-
-**Customizations**: Janus binds `<leader>zw` to `:ZoomWin`
 
 ## [BufferGator](https://github.com/jeetsukumaran/vim-buffergator)
 
