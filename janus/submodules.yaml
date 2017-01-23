@@ -24,6 +24,7 @@ submodules:
   #
   colors:
     base16-vim:
+    darcula:
     getafe:
     github:
     irblack:

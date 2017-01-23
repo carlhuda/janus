@@ -37,6 +37,9 @@
 [submodule "janus/vim/colors/base16-vim"]
 	path = janus/vim/colors/base16-vim
 	url = https://github.com/chriskempson/base16-vim.git
+[submodule "janus/vim/colors/darcula"]
+	path = janus/vim/colors/darcula
+	url = https://github.com/blueshirts/darcula
 
 # Langs
 [submodule "janus/vim/langs/haml"]
