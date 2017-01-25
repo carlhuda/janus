@@ -317,8 +317,6 @@ execute their script to find them. See `:help syntastic` for details.
 
 **Customizations**: Janus adds a number of customizations to Syntastic:
 
-* Set Syntastic to passive mode by default (use `:SyntasticToggleMode` to
-  toggle modes)
 * Enable the statusline flag
 * Always fill in location lists
 * Open and close error windows automatically
