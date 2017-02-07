@@ -4,8 +4,8 @@
 
 " Define paths
 if has('win32') || has('win64') || has('win32unix')
-  let g:janus_path = expand("~/.vim/janus/vim")
-  let g:janus_vim_path = expand("~/.vim/janus/vim")
+  let g:janus_path = escape(expand("~/.vim/janus/vim"), ' ')
+  let g:janus_vim_path = escape(expand("~/.vim/janus/vim"), ' ')
 else
   let g:janus_path = escape(fnamemodify(resolve(expand("<sfile>:p")), ":h"), ' ')
   let g:janus_vim_path = escape(fnamemodify(resolve(expand("<sfile>:p" . "vim")), ":h"), ' ')
