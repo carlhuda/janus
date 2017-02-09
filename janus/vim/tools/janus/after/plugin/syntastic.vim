@@ -1,5 +1,5 @@
 if janus#is_plugin_enabled('syntastic')
-  if globpath(&runtimepath, 'plugin/airline.vim', 1) ==# '' && globpath(&runtimepath, 'plugin/lightline.vim', 1) ==# ''
+  if globpath(&runtimepath, 'plugin/airline.vim', 1) ==# '' && globpath(&runtimepath, 'plugin/lightline.vim', 1) ==# '' && globpath(&runtimepath, 'plugin/powerline.vim', 1) ==# ''
     set statusline+=%#warningmsg#
     set statusline+=%{SyntasticStatuslineFlag()}
     set statusline+=%*
