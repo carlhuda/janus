@@ -3,7 +3,9 @@ let s:no_python_support = "Vim is compiled without python support"
 let s:no_ruby_support = "Vim is compiled without ruby support"
 
 " Plugins that requires python support
-if !has("python")
+if has("python3")
+  let g:gundo_prefer_python3 = 1
+elseif !has("python")
   call janus#disable_plugin("gundo", s:no_python_support)
 endif
 
