@@ -42,53 +42,15 @@ submodules:
   # Langs
   #
   langs:
-    arduino:
-    coffeescript:
-      categories:
-        - coffeescript
-        - syntax
     csv:
       categories:
         - csv
         - syntax
-    cucumber:
-      categories:
-        - ruby
-        - rails
-        - syntax
-        - behavior driven development
-    elixir:
-    erlang:
-    git:
-      categories:
-        - git
-        - syntax
-    haml:
-      categories:
-        - ruby
-        - rails
-        - syntax
-    haskell:
-    javascript:
-    less:
-    markdown:
-    mustache_handlebars:
     minitest:
     nodejs:
-    puppet:
     rails:
-    rspec:
-    ruby:
-    scala:
-    scss:
-    slim:
-    textile:
-    clojure:
-    go:
-    liquid:
     rdoc:
-    json:
-    typescript:
+    vim-polyglot:
 
 
   # Tools
