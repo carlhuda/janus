@@ -25,11 +25,6 @@ call janus#add_group("colors")
 "" Customisations
 ""
 
-if filereadable(expand("~/.vimrc.before"))
-  source ~/.vimrc.before
-endif
-
-
 " Disable plugins prior to loading pathogen
 exe 'source ' . g:janus_vim_path . '/core/plugins.vim'
 
@@ -40,4 +35,340 @@ exe 'source ' . g:janus_vim_path . '/core/plugins.vim'
 " Load all groups, custom dir, and janus core
 call janus#load_pathogen()
 
+" Remitano Plugins --- {{{
+" Auto installation for vim-plug plugin manager
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/bundle')
+Plug 'Konfekt/FastFold'
+Plug 'sbdchd/neoformat'
+Plug 'janko-m/vim-test'
+Plug 'benmills/vimux'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'vim-ruby/vim-ruby'
+Plug 'bogado/file-line'
+Plug 'tpope/vim-abolish'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'Yggdroot/LeaderF'
+Plug 'drmingdrmer/vim-toggle-quickfix'
+Plug 'dense-analysis/ale'
+"
+
+" Moved from Janus submodules
+
+" Language
+Plug 'tpope/vim-rails'
+Plug 'chrisbra/csv.vim'
+Plug 'mmalecki/vim-node.js'
+Plug 'sunaku/vim-ruby-minitest'
+Plug 'depuracao/vim-rdoc'
+Plug 'sheerun/vim-polyglot'
+
+" Tools
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-unimpaired'
+Plug 'scrooloose/nerdcommenter'
+Plug 'ervandew/supertab'
+Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'sjl/gundo.vim'
+Plug 'tpope/vim-surround'
+Plug 'garbas/vim-snipmate'
+Plug 'tomtom/tlib_vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'vim-syntastic/syntastic'
+Plug 'majutsushi/tagbar'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'tpope/vim-endwise'
+Plug 'mattn/webapi-vim'
+Plug 'mattn/gist-vim'
+Plug 'vim-scripts/vimwiki'
+Plug 'ap/vim-css-color'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'chrisbra/NrrwRgn'
+Plug 'jeetsukumaran/vim-buffergator'
+Plug 'rgarver/Kwbd.vim'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-cucumber'
+Plug 'honza/vim-snippets'
+Plug 'tpope/vim-dispatch'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'thinca/vim-visualstar'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'airblade/vim-gitgutter'
+Plug 'troydm/zoomwintab.vim'
+
+" Custom
+Plug 'itchyny/lightline.vim'
+Plug 'alvan/vim-closetag'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'honza/vim-snippets'
+Plug 'ervandew/supertab'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" Themes
+Plug 'dracula/vim'
+
+" Search
+Plug 'haya14busa/incsearch-easymotion.vim'
+
+if filereadable(expand("~/.vimrc.before"))
+  source ~/.vimrc.before
+endif
+call plug#end()
+"  }}}
+
+highlight ExtraWhitespace ctermbg=yellow guibg=yellow
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+autocmd BufWritePre * :%s/\s\+$//e
+
+" make test commands execute using vimux.vim
+let test#strategy = "vimux"
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> t<C-n> :TestNearest<CR> " t Ctrl+n
+nmap <silent> t<C-f> :TestFile<CR>    " t Ctrl+f
+nmap <silent> t<C-s> :TestSuite<CR>   " t Ctrl+s
+nmap <silent> t<C-l> :TestLast<CR>    " t Ctrl+l
+nmap <silent> t<C-g> :TestVisit<CR>   " t Ctrl+g
+
+" Delete a line without override the default register
+noremap R "_d
+
+" No need to hold shift comma anymore
+nnoremap ; :
+
+let mapleader = ","
+" No need for ex mode
+  nnoremap Q <nop>
+
+" Align blocks of text and keep them selected
+  vmap < <gv
+  vmap > >gv
+  nnoremap <leader>d "_d
+  vnoremap <leader>d "_d
+
+set timeoutlen=500
+set ttimeoutlen=100
+
+" Numbers
+set relativenumber
+set number
+set numberwidth=5
+
+" Use ripgrep for Ack
+if executable("rg")
+  set grepprg=rg\ --vimgrep\ --no-heading
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
+
+  let g:ackprg = 'rg --vimgrep --no-heading'
+elseif executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+
+  " Use ag over ack
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+let g:syntastic_mode_map={ "mode": "passive" }
+
+" Some NERDTree configution
+let NERDTreeShowHidden=1
+let NERDTreeIgnore = ['\.DS_Store$', '\.git$']
+let NERDTreeAutoDeleteBuffer=1
+let NERDTreeQuitOnOpen=1
+
+nmap <silent> <leader>N :NERDTreeFind<CR>
+map <silent> - :NERDTreeToggle<CR>
+
+" Fix nerdtree syntax highlight too slow
+augroup nerdtreedisablecursorline
+  autocmd!
+  autocmd FileType nerdtree setlocal nocursorline
+augroup end
+
+" NerdCommenter
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = "left"
+
 " .vimrc.after is loaded after the plugins have loaded
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_rails = 1
+
+" Refresh changed content of a file
+set autoread
+autocmd BufEnter,FocusGained * checktime
+
+" Clear highlighting on escape in normal mode
+" The second line is needed for mapping to the escape key since Vim internally uses escape to represent special keys.
+nnoremap <esc> :noh<return><esc>
+nnoremap <esc>^[ <esc>^[
+
+" copy current files path to clipboard
+nmap cp :let @+= expand("%") <cr>
+
+" re-index tags file
+map <Leader>ct :!ctags --extra=+f -R *<CR><CR>
+
+" Yggdroot/LeaderF
+let g:Lf_ReverseOrder = 1
+nmap <C-p> :LeaderfFile<CR>
+nmap <silent> <Leader>p :LeaderfMru<CR>
+" search word under cursor, the pattern is treated as regex, and enter normal mode directly
+nmap <silent> <Leader>h :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR><CR>
+
+" System Settings  ----------------------------------------------------------{{{
+  set noswapfile
+" {{{
+
+" drmingdrmer/vim-toggle-quickfix
+  nmap <C-g><C-o> <Plug>window:quickfix:toggle
+
+" Ctrl + S to save
+map <C-s> :w<CR>
+imap <C-s> <Esc>:w<CR>i
+
+" Ctrl + A to select all
+map <C-a> <esc>ggVG<CR>
+
+" Ctrl + X to quit
+map <C-x> :q<CR>
+imap <C-x> <Esc>:q<CR>i
+
+if &diff
+  nmap <silent> <C-c> :cquit<Cr>
+end
+
+" Only run linters that are specified here
+let g:ale_linters_explicit = 1
+let g:ale_linters = { 'javascript': ['eslint'], 'ruby': ['rubocop'] }
+
+" These options bellow to make sure we only run lint when saving file
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_enter = 0
+
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
+
+" Quickly insert an empty new line without entering insert mode
+nnoremap <Leader>o o<Esc>
+nnoremap <Leader>O O<Esc>
+
+" Define theme
+syntax on
+set lazyredraw
+set termguicolors
+set background=dark
+colorscheme dracula
+
+" Remove highlight
+map <C-h> :nohl<CR>
+
+" fzf
+noremap ~ :Files<CR>
+noremap ; :Buffers<CR>
+
+" bind \ (backward slash) to grep shortcut
+nnoremap K :Ag <C-R><C-W><CR>
+nnoremap <C-k> /<C-R><C-W><CR>
+nnoremap \ :Ag<SPACE>
+
+" coc.vim config
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+
+" Use `:Format` to format current buffer
+command! -nargs=0 Format :call CocAction('format')
+
+nmap <Leader>f :Format <CR>
+
+" incsearch.vim x fuzzy x vim-easymotion
+
+function! s:config_easyfuzzymotion(...) abort
+  return extend(copy({
+  \   'converters': [incsearch#config#fuzzy#converter()],
+  \   'modules': [incsearch#config#easymotion#module()],
+  \   'keymap': {"\<CR>": '<Over>(easymotion)'},
+  \   'is_expr': 0,
+  \   'is_stay': 1
+  \ }), get(a:, 1, {}))
+endfunction
+
+noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
+
+" Lightline
+let g:lightline = {
+      \ 'colorscheme': 'darcula',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'cocstatus', 'readonly', 'filename', 'modified' ] ],
+      \   'right': [ [ 'lineinfo', 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head',
+      \   'cocstatus': 'coc#status'
+      \ },
+      \ }
+
+" fzf.vim
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+" nerdtree-git-plugin
+" Custom symbols
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+
+" Auto close tag
+let g:closetag_filenames = '*.rb,*.html,*.js,*.jsx,*.vue'
+let g:closetag_emptyTags_caseSensitive = 1
+let g:jsx_ext_required = 0
