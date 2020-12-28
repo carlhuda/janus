@@ -9,28 +9,7 @@ popular plug-ins and the most common mappings.
 The distribution is completely customisable using a `~/.vimrc.before`
 and `~/.vimrc.after` Vim RC files.
 
-# UPGRADING FROM JANUARY 1st 2012 THROUGH JANUARY 10th
-
-Please run `rake` twice before running macvim; make sure `command-t` is
-gone.
-
-# UPGRADING FROM BEFORE JANUARY 1st 2012
-
-If you were using Janus before January 2012, note that Janus has gone
-through a rewrite to make it more stable and customizable. Most notably,
-you can now disable plugins using `janus#disable_plugin` and customize
-Janus using `~/.vimrc.before` and `~/.vimrc.after`. See the rest of this
-`README` and the [Customization wiki page](https://github.com/carlhuda/janus/wiki/Customization).
-
-To upgrade to the latest version:
-
-1. remove `~/.vim`, `~/.vimrc` and `~/.gvimrc`.
-2. move customizations from `~/.vimrc.local` to `~/.vimrc.before` and
-   `~/.vimrc.after`.
-3. Do the same with `/.gvimrc.local`.
-4. Run the installer: `curl -Lo- https://bit.ly/janus-bootstrap | bash`
-
-## Updating to the latest version (from any time after January 10th, 2012)
+## Updating to the latest version
 
 To update to the latest version of the distribution, just run `rake`
 inside your `~/.vim` directory.
@@ -65,7 +44,7 @@ $ brew install macvim
 ```
 
 If you don't use Homebrew, you can still download MacVim
-[here](https://github.com/b4winckler/macvim/downloads).
+[here](https://github.com/b4winckler/macvim/releases).
 
 Take a look at the [Pre-requisites wiki
 page](https://github.com/carlhuda/janus/wiki/Pre-requisites) for more
@@ -80,7 +59,7 @@ installer](https://github.com/carlhuda/janus/blob/master/bootstrap.sh)
 Janus.
 
 ```bash
-$ curl -Lo- https://bit.ly/janus-bootstrap | bash
+$ curl -L https://bit.ly/janus-bootstrap | bash
 ```
 
 ## Customization
@@ -148,6 +127,7 @@ with a submodule.
 For more information on how to customize Janus, you might want to take
 a look at the [Customization wiki
 page](https://github.com/carlhuda/janus/wiki/Customization).
+Additional you can see [Example](https://github.com/khusnetdinov/.janus) of customization.
 
 # Intro to VIM
 
@@ -157,13 +137,15 @@ Here're some tips in case you've never used VIM before:
 
 * Type `vimtutor` into a shell to go through a brief interactive
   tutorial inside VIM.
-* Read the slides at [VIM: Walking Without Crutches](http://walking-without-crutches.heroku.com/#1).
+* Watch this presentation at [VIM: Walking Without Crutches](https://vimeo.com/16458939) or read the [slides on Speaker Deck](https://speakerdeck.com/nelstrom/vim-precision-editing-at-the-speed-of-thought).
 * Watch the screencasts at [vimcasts.org](http://vimcasts.org/)
-* Watch Derek Wyatt's energetic tutorial videos at [his site](http://www.derekwyatt.org/vim/vim-tutorial-videos/)
+* Watch Derek Wyatt's energetic tutorial videos at [his site](http://derekwyatt.org/vim/tutorials/)
 * Read wycats' perspective on learning Vim at
   [Everyone who tried to convince me to use vim was wrong](http://yehudakatz.com/2010/07/29/everyone-who-tried-to-convince-me-to-use-vim-was-wrong/)
 * Read this and other answers to a question about vim at StackOverflow:
   [Your problem with Vim is that you don't grok vi](http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118)
+* Read the [Getting Started with Vim](http://www.sitepoint.com/getting-started-vim/) tutorial on SitePoint
+* Read the [Effective Rails Development with Vim](http://www.sitepoint.com/effective-rails-development-vim/) tutorial on SitePoint
 
 ## Modes
 
@@ -183,7 +165,7 @@ Here're some tips in case you've never used VIM before:
   by default. You can, for example, use `let mapleader = ","` to change this to a comma. If you want this
   to be in effect for uses of `<Leader>` in the .vimrc file, make sure to define
   this in `~/.vimrc.before`
-* Keyboard [cheat sheet](http://walking-without-crutches.heroku.com/image/images/vi-vim-cheat-sheet.png).
+* Keyboard [cheat sheet](http://vim.rtorr.com/).
 
 # Features
 
@@ -213,12 +195,11 @@ Janus ships with a number of basic customizations for vim:
   a vertical split)
 * `<leader>et` expands to `:tabe (directory of current file)/` (open in
   a new tab)
-* `:w!!` expands to `%!sudo tee > /dev/null %`. Write to the current file
-  using sudo (if you forgot to run it with sudo), it will prompt for
-sudo password when writing
+* Write a privileged file with `:SudoW` or `:SudoWrite`, it will prompt
+  for sudo password when writing
 * `<F4>` toggles paste mode
 * `<leader>fef` formats the entire file
-* `<leader>u` converts the entire word to uppercace
+* `<leader>u` converts the entire word to uppercase
 * `<leader>l` converts the entire word to lowercase
 * `<leader>U` converts the first char of a word to uppercase
 * `<leader>L` converts the first char of a word to lowercase
@@ -250,7 +231,7 @@ You can learn more about it with :help Ack.
 **Customizations**: Janus rebinds command-shift-f (`<D-F>`) to bring up
 `:Ack `.
 
-## [CtrlP](https://github.com/kien/ctrlp.vim)
+## [CtrlP](https://github.com/ctrlpvim/ctrlp.vim)
 
 Fuzzy file, buffer, mru and tag finder. Replaces [Command-T](https://github.com/wincent/Command-T)
 
@@ -279,6 +260,20 @@ NERDTree:
 * In general, assume that there is a single NERDTree buffer on the left
   and one or more editing buffers on the right
 
+## [Unimpaired](https://github.com/tpope/vim-unimpaired)
+
+This plugin provides a lot of useful mappings, here's a brief example of
+what it does provide:
+
+* `[b` to go to the previous buffer
+* `]b` to go to the next buffer
+* `[n` to go to the previous SCM conflict marker
+* `]n` to go to the next SCM conflict marker
+
+Please check [`:help
+unimpaired`](https://github.com/tpope/vim-unimpaired/blob/master/doc/unimpaired.txt)
+for a complete list
+
 ## [SuperTab](http://github.com/ervandew/supertab)
 
 In insert mode, start typing something and hit `<TAB>` to tab-complete
@@ -286,16 +281,33 @@ based on the current context.
 
 ## [Syntastic](https://github.com/scrooloose/syntastic/)
 
-Syntastic is a syntax checking plugin that runs buffers through external syntax 
-checkers as they are saved and opened. If syntax errors are detected, the user 
-is notified and is happy because they didn't have to compile their code or 
+Syntastic is a syntax checking plugin that runs files through external syntax
+checkers as they are saved and opened. If syntax errors are detected, the user
+is notified and is happy because they didn't have to compile their code or
 execute their script to find them.
+
+Please see [`:help
+syntastic`](https://github.com/vim-syntastic/syntastic/blob/master/doc/syntastic.txt)
+for more information.
 
 ## [Tagbar](https://github.com/majutsushi/tagbar)
 
 Tagbar is a vim plugin for browsing the tags of source code files.
 
 **Customizations**: Janus binds `<Leader>rt` to toggle Tagbar.
+
+## [SnipMate](https://github.com/garbas/vim-snipmate)
+SnipMate defines text snippets (a series of characters) that expand to
+a useful piece of code when tab is pressed.  For example, in a Ruby
+file, def`<TAB>` expands to:
+```ruby
+def method_name
+
+end
+```
+After typing in the method name, press tab again to put the cursor right
+where you want it on the next line.  [This repository](https://github.com/honza/vim-snippets/tree/master/snippets)
+has a full list of the Snippets that are available in Janus.
 
 ## [EasyMotion](https://github.com/Lokaltog/vim-easymotion)
 
@@ -345,12 +357,27 @@ file
 * `<leader>gc` maps to `:Gcommit<CR>`
 * `<leader>gp` maps to `:Git push<CR>`
 
+## [Git Gutter](http://github.com/airblade/vim-gitgutter)
+
+A Vim plugin which shows a git diff in the 'gutter' (sign column). It
+shows whether each line has been added, modified, and where lines have
+been removed. You can also stage and revert individual hunks.
+
 ## [ZoomWin](http://github.com/vim-scripts/ZoomWin)
 
 When working with split windows, ZoomWin lets you zoom into a window and
 out again using `Ctrl-W o`
 
 **Customizations**: Janus binds `<leader>zw` to `:ZoomWin`
+
+## [JSON](https://github.com/elzr/vim-json)
+
+Better JSON and JSONP with distinct highlighting for keywords versus
+values, strings colored differently from numbers and booleans and double
+quotes concealed (disable with `let g:vim_json_syntax_conceal = 0` in
+`~/.vimrc.after`, folding of {...} and [...] blocks (enable with
+`:setlocal foldmethod=syntax`, and JSON-specific warnings highlighted in
+red.
 
 ## [BufferGator](https://github.com/jeetsukumaran/vim-buffergator)
 
@@ -373,7 +400,7 @@ without leaving the buffer catalog viewer.
 ## [Vroom](https://github.com/skalnik/vim-vroom)
 
 VRoom is a plugin inspired by [Gary Bernhardt's vim
-config](https://github.com/garybernhardt/dotfiles/blob/69330074b7a15c67efa4594a71fa91592f1ce4f9/.vimrc#L286-342) 
+config](https://github.com/garybernhardt/dotfiles/blob/69330074b7a15c67efa4594a71fa91592f1ce4f9/.vimrc#L286-342)
 for running your ruby tests/specs/features.
 
 Imagine you're hacking on a Rails controller, when you switch to the
@@ -386,11 +413,31 @@ Then benefits of this plugin are to centralize your workflow in one
 window, one software to do it all, which is a huge speedup over using
 `tmux` or multiple terminal tabs.
 
+## [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
+Out of the box, all you need to know is a single key `Ctrl-n`. Pressing the key
+in Normal mode highlights the current word under the cursor in Visual mode and
+places a virtual cursor at the end of it. Pressing it again finds the next
+occurrence and places another virtual cursor at the end of the visual selection.
+If you select multiple lines in Visual mode, pressing the key puts a virtual
+cursor at every line and leaves you in Normal mode.
+
+More at [QuickStart](https://github.com/terryma/vim-multiple-cursors/blob/master/README.md#quick-start)
+
+## [vim-trailing-whitespace](https://github.com/bronson/vim-trailing-whitespace)
+This plugin causes all trailing whitespace to be highlighted in red.
+
+To fix the whitespace errors, just call :FixWhitespace.  By default it
+operates on the entire file.  Pass a range (or use V to select some lines)
+to restrict the portion of the file that gets fixed.
+
 ## Additional Syntaxes
 
 Janus ships with a few additional syntaxes:
 
 * Markdown (bound to \*.markdown, \*.md, and \*.mk)
+* Markdown auto styling (disabled by setting
+  `g:disable_markdown_autostyle` in `~/.vimrc.before` => `let
+  g:disable_markdown_autostyle = 1`)
 * Mustache (bound to \*.mustache)
 * Haml (bound to \*.haml)
 * Sass (bound to \*.sass)
@@ -404,14 +451,7 @@ Janus ships with a few additional syntaxes:
   global config to set this if you have EDITOR set to something else
   `$ git config --global core.editor 'vim -f'`
 
-## Rakefile
-
-If you're looking for the old janus distribution controlled by a
-Rakefile then please head over to the [rakefile
-branch](https://github.com/carlhuda/janus/tree/rakefile) but please note
-that the rakefile branch will not be maintained.
-
-## License
+# License
 
 ### This code is free to use under the terms of the MIT license.
 

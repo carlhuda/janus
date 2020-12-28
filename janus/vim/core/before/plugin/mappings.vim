@@ -2,16 +2,12 @@
 "" General Mappings (Normal, Visual, Operator-pending)
 ""
 
-" use :w!! to write to a file using sudo if you forgot to 'sudo vim file'
-" (it will prompt for sudo password when writing)
-cmap w!! %!sudo tee > /dev/null %
-
 " Toggle paste mode
 nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
 imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
 
 " format the entire file
-nmap <leader>fef ggVG=
+nnoremap <leader>fef :normal! gg=G``<CR>
 
 " upper/lower word
 nmap <leader>u mQviwU`Q
@@ -29,17 +25,16 @@ nmap <silent> <leader>md :!mkdir -p %:p:h<CR>
 
 " Some helpers to edit mode
 " http://vimcasts.org/e/14
-cnoremap %% <C-R>=expand('%:h').'/'<cr>
-map <leader>ew :e %%
-map <leader>es :sp %%
-map <leader>ev :vsp %%
-map <leader>et :tabe %%
+nmap <leader>ew :e <C-R>=expand('%:h').'/'<cr>
+nmap <leader>es :sp <C-R>=expand('%:h').'/'<cr>
+nmap <leader>ev :vsp <C-R>=expand('%:h').'/'<cr>
+nmap <leader>et :tabe <C-R>=expand('%:h').'/'<cr>
 
 " Swap two words
 nmap <silent> gw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 
 " Underline the current line with '='
-nmap <silent> <leader>ul :t.\|s/./=/g\|:nohls<cr>
+nmap <silent> <leader>ul :t.<CR>Vr=
 
 " set text wrapping toggles
 nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
@@ -163,5 +158,5 @@ endif
 "" Command-Line Mappings
 ""
 
-" Insert the current directory into a command-line path
-cmap <C-P> <C-R>=expand("%:p:h") . "/"<CR>
+" After whitespace, insert the current directory into a command-line path
+cnoremap <expr> <C-P> getcmdline()[getcmdpos()-2] ==# ' ' ? expand('%:p:h') : "\<C-P>"
