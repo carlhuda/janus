@@ -40,3 +40,7 @@ endif
 if exists("*DetectNode")
   call janus#disable_plugin("nodejs", "Nodejs already exists on your system.")
 endif
+
+" SnipMate needs to be told to use v1 engine
+" See #712
+let g:snipMate = { 'snippet_version' : 1 }
